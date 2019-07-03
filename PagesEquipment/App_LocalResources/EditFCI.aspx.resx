@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TextBotonEnScada" xml:space="preserve">
+    <value>Scada</value>
+  </data>
+  <data name="TextBotonLeerEstadisticas" xml:space="preserve">
+    <value>Leer Estadísicas OnLine</value>
+  </data>
+  <data name="TextBotonResetFCI" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="TextBotonResetFCIToolTip" xml:space="preserve">
+    <value>Enviar comando de reposición al FCI de manera OnLine</value>
+  </data>
+  <data name="TextCircuitoOriginal" xml:space="preserve">
+    <value>Circuito Original</value>
+  </data>
+  <data name="TextCollapsedText" xml:space="preserve">
+    <value>(Mostrar...)</value>
+  </data>
+  <data name="TextEnScada" xml:space="preserve">
+    <value>En Scada</value>
+  </data>
+  <data name="TextEstadisticasFCI" xml:space="preserve">
+    <value>Estadísticas FCI</value>
+  </data>
+  <data name="TextEstadisticasOtrosCmds" xml:space="preserve">
+    <value>Otros Comandos</value>
+  </data>
+  <data name="TextExpandedText" xml:space="preserve">
+    <value>(Ocultar...)</value>
+  </data>
+  <data name="TextFaseOriginal" xml:space="preserve">
+    <value>Fase Original</value>
+  </data>
+  <data name="TextGVResetsResultados" xml:space="preserve">
+    <value>Resultados</value>
+  </data>
+  <data name="TextGVStdContAusenciasTension" xml:space="preserve">
+    <value>Ausencias de Tensión</value>
+  </data>
+  <data name="TextGVStdContFallasBatBaja" xml:space="preserve">
+    <value>Contador Fallas Batería Baja</value>
+  </data>
+  <data name="TextGVStdContFallasPermanentes" xml:space="preserve">
+    <value>Contador Fallas Permanentes</value>
+  </data>
+  <data name="TextGVStdContFallasTemp" xml:space="preserve">
+    <value>Contador Fallas Temporales</value>
+  </data>
+  <data name="TextGVStdCorrienteActual" xml:space="preserve">
+    <value>Corriente Actual</value>
+  </data>
+  <data name="TextGVStdCorrienteMaxima" xml:space="preserve">
+    <value>Max. Corriente</value>
+  </data>
+  <data name="TextGVStdCorrienteMin" xml:space="preserve">
+    <value>Min. Corriente</value>
+  </data>
+  <data name="TextGVStdCorrientePromedio" xml:space="preserve">
+    <value>Corriente Promedio</value>
+  </data>
+  <data name="TextGVStdFecha" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="TextGVStdTension" xml:space="preserve">
+    <value>Tensión</value>
+  </data>
+  <data name="TextModoDisparoAutorango" xml:space="preserve">
+    <value>Autorango</value>
+  </data>
+  <data name="TextModoDisparoIncremental" xml:space="preserve">
+    <value>Incremental</value>
+  </data>
+  <data name="TextModoDisparoProporcional" xml:space="preserve">
+    <value>Proporcional</value>
+  </data>
+  <data name="TextModoDisparoValorFijo" xml:space="preserve">
+    <value>Valor Fijo</value>
+  </data>
+  <data name="TextModosResetPorImanCte" xml:space="preserve">
+    <value>Imán y Corriente</value>
+  </data>
+  <data name="TextModosResetPorImanCteHabilitado" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="TextModosResetPorImanCtePorCorriente" xml:space="preserve">
+    <value>Corriente</value>
+  </data>
+  <data name="TextModosResetPorImanCtePorIman" xml:space="preserve">
+    <value>Imán</value>
+  </data>
+  <data name="TextModosResetPorTension" xml:space="preserve">
+    <value>Tensión</value>
+  </data>
+  <data name="TextModosResetPorTensionHabilitado" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="TextModosResetPorTensionTiemporetardoVal" xml:space="preserve">
+    <value>Tiempo Retardo Validación Tensión</value>
+  </data>
+  <data name="TextModosResetPorTensionToleraciaTension" xml:space="preserve">
+    <value>Toleracia Reposición Tensión</value>
+  </data>
+  <data name="TextModosResetPorTensionUnidsTiemporetardo" xml:space="preserve">
+    <value>(1-120)Segs</value>
+  </data>
+  <data name="TextModosResetPorTiempo" xml:space="preserve">
+    <value>Tiempo</value>
+  </data>
+  <data name="TextModosResetPorTiempoHabilitado" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="TextModosResetPorTiempoTpoFallaPerm" xml:space="preserve">
+    <value>Indicación Falla Permanante</value>
+  </data>
+  <data name="TextModosResetPorTiempoTpoFallaTemp" xml:space="preserve">
+    <value>Indicación Falla Temporal</value>
+  </data>
+  <data name="TextMostrarDefecto" xml:space="preserve">
+    <value>(Mostrar...)</value>
+  </data>
+  <data name="TextoBotonGuardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="TextoBotonNoScada" xml:space="preserve">
+    <value>No Scada</value>
+  </data>
+  <data name="TextoFechaInstalacion" xml:space="preserve">
+    <value>Fecha Instalación :</value>
+  </data>
+  <data name="TextoFechaRegistro" xml:space="preserve">
+    <value>Fecha Registro :</value>
+  </data>
+  <data name="TextoGestionElectrica" xml:space="preserve">
+    <value>GESTIÓN ELÉCTRICA</value>
+  </data>
+  <data name="TextoTipoBifasico" xml:space="preserve">
+    <value>Bifásico</value>
+  </data>
+  <data name="TextoTipoCircuito" xml:space="preserve">
+    <value>Tipo Circuito</value>
+  </data>
+  <data name="TextoTipoMonofasico" xml:space="preserve">
+    <value>Monofásico</value>
+  </data>
+  <data name="TextoTipoTrifasico" xml:space="preserve">
+    <value>Trifásico</value>
+  </data>
+  <data name="TextOtrosComandos" xml:space="preserve">
+    <value>Otros Comandos</value>
+  </data>
+  <data name="TextSinScada" xml:space="preserve">
+    <value>No Scada</value>
+  </data>
+  <data name="TextTittleActivaciones" xml:space="preserve">
+    <value>Activaciones</value>
+  </data>
+  <data name="TextTittleActivacionesFallaTemporal" xml:space="preserve">
+    <value>Falla Temporal</value>
+  </data>
+  <data name="TextTittleActivacionesReloj" xml:space="preserve">
+    <value>Reloj</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestello" xml:space="preserve">
+    <value>Autonomía Batería en Destello</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestelloEstimar" xml:space="preserve">
+    <value>Estimar Autonomía</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestelloLabel" xml:space="preserve">
+    <value>Autonomía</value>
+  </data>
+  <data name="TextTittleAutonomiaBatNormal" xml:space="preserve">
+    <value>Autonomía Batería en Funcionamiento</value>
+  </data>
+  <data name="TextTittleAutonomiaBatNormalConnectPeriod" xml:space="preserve">
+    <value>Período de Auto-reporte</value>
+  </data>
+  <data name="TextTittleAutonomiaBatNormalRetriesComms" xml:space="preserve">
+    <value>Intentos Conexión</value>
+  </data>
+  <data name="TextTittleAutonomiaBatNormalUnidsConnectPeriod" xml:space="preserve">
+    <value>30-3600 Segs</value>
+  </data>
+  <data name="TextTittleAutonomiaBatNormalUnidsRetries" xml:space="preserve">
+    <value>(1-10)</value>
+  </data>
+  <data name="TextTittleAutonomiaBotonAutonomiaNormal" xml:space="preserve">
+    <value>Estimar Autonomía</value>
+  </data>
+  <data name="TextTittleAutonomiaEnfuncionamiento" xml:space="preserve">
+    <value>Autonomía Batería</value>
+  </data>
+  <data name="TextTittleCorrientes" xml:space="preserve">
+    <value>Corrientes</value>
+  </data>
+  <data name="TextTittleCorrientesCorrienteAbsoluta" xml:space="preserve">
+    <value>Corriente Absoluta Disparo</value>
+  </data>
+  <data name="TextTittleCorrientesUnidsCteAbsoluta" xml:space="preserve">
+    <value>(10-1000)A</value>
+  </data>
+  <data name="TextTittleEventosRepRemota" xml:space="preserve">
+    <value>Reposiones Remotas</value>
+  </data>
+  <data name="TextTittleModoDisparo" xml:space="preserve">
+    <value>Modo de Disparo</value>
+  </data>
+  <data name="TextTittleParametros" xml:space="preserve">
+    <value>PARÁMETROS</value>
+  </data>
+  <data name="TextTittleResetModes" xml:space="preserve">
+    <value>Modos Reposición</value>
+  </data>
+  <data name="TextTittleTiempos" xml:space="preserve">
+    <value>Tiempos</value>
+  </data>
+  <data name="TextTittleTiemposInrushProteccion" xml:space="preserve">
+    <value>Tiempo Protección Inrush</value>
+  </data>
+  <data name="TextTittleTiemposUnidsInrushProteccion" xml:space="preserve">
+    <value>(1-120)Segs</value>
+  </data>
+  <data name="TextTittleTiemposUnidsValidacionFalla" xml:space="preserve">
+    <value>(1-120)Segs</value>
+  </data>
+  <data name="TextTittleTiemposValidacionFalla" xml:space="preserve">
+    <value>Tiempo Validación Falla</value>
+  </data>
+  <data name="TextTittleValorFalla" xml:space="preserve">
+    <value>Valor Falla</value>
+  </data>
+  <data name="TextToolTipBotonLeerEstadisticas" xml:space="preserve">
+    <value>Lee estadísticas del FCI, las almacena en BD y las visualiza</value>
+  </data>
+  <data name="TextBotonBorrar" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="TextBotonCancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="TextBotonEnviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="TextBotonLeerPrmOnline" xml:space="preserve">
+    <value>Leer Parámetros OnLine</value>
+  </data>
+  <data name="TextCapacidadBateria" xml:space="preserve">
+    <value>Capacidad Batería Instalada</value>
+  </data>
+  <data name="TextLinkVerPrms" xml:space="preserve">
+    <value>Ver Valores...</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestelloDurDestello" xml:space="preserve">
+    <value>Duración Iluminación</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestelloTpoEntreDeste" xml:space="preserve">
+    <value>Tiempo Apagado</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestelloUnidsDurDestello" xml:space="preserve">
+    <value>mult. 8 ms</value>
+  </data>
+  <data name="TextTittleAutonomiaBatDestelloUnidsEntreDes" xml:space="preserve">
+    <value>(1-10)Segs</value>
+  </data>
+  <data name="TextHistoriaActualizacionesPrms" xml:space="preserve">
+    <value>Historia Actualizaciones Prms</value>
+  </data>
+  <data name="TextlblEstadoFCIDatosOK" xml:space="preserve">
+    <value>PARÁMETROS ACTUALIZADOS</value>
+  </data>
+  <data name="TextlblEstadoFCIPendienteConfirmar" xml:space="preserve">
+    <value>PENDIENTE CONFIRMAR ACTUALIZACIÓN PARÁMETROS</value>
+  </data>
+  <data name="TextlblEstadoFCIPendienteEnviar" xml:space="preserve">
+    <value>PENDIENTE ENVIAR PARÁMETROS</value>
+  </data>
+  <data name="TextlblEstadoFCIPendienteRecibir" xml:space="preserve">
+    <value>PENDIENTE RECIBIR PARÁMETROS</value>
+  </data>
+  <data name="TextRealizarOpScadaCreandoColas" xml:space="preserve">
+    <value>Error al crear colas de comunicacion</value>
+  </data>
+  <data name="TextRealizarOpScadaErrBD" xml:space="preserve">
+    <value>Error al actualizar indicador Scada en el dispositivo - BD</value>
+  </data>
+  <data name="TextRealizarOpScadaErrColas" xml:space="preserve">
+    <value>Error al recuperar los nombres de las colas de comunicacion</value>
+  </data>
+  <data name="TextRealizarOpScadaErrMQSrvOp" xml:space="preserve">
+    <value>Error interno del servicio Messaging al enviar solicitud de operación al WinScada</value>
+  </data>
+  <data name="TextRealizarOpScadaErrMQVerifyWinScada" xml:space="preserve">
+    <value>Error interno del servicio Messaging al verificar servicio WinScada</value>
+  </data>
+  <data name="TextRealizarOpScadaErrNombresColas" xml:space="preserve">
+    <value>Error en el formato de los nombres de las colas de comunicacion</value>
+  </data>
+  <data name="TextRealizarOpScadaErrorInternoMQSrv" xml:space="preserve">
+    <value>Error interno en el servicio Messaging Queue</value>
+  </data>
+  <data name="TextRealizarOpScadaOk" xml:space="preserve">
+    <value>Operación Exitosa</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNoK" xml:space="preserve">
+    <value>Operación en WinScada no exitosa</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNotAvail" xml:space="preserve">
+    <value>El servicio WinScada no está disponible</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNotAvailable" xml:space="preserve">
+    <value>El servicio WinScada no está disponible al enviar solicitud de operación</value>
+  </data>
+  <data name="TextResetFCIEnvioOK" xml:space="preserve">
+    <value>Envio OK. Luego se deberá visualizar el evento de RESET del FCI</value>
+  </data>
+  <data name="TextStdsActualesNoExisteInformacion" xml:space="preserve">
+    <value>No existe aún información de estadísticas para este FCI</value>
+  </data>
+  <data name="TextStdsActualesNuevaInformacion" xml:space="preserve">
+    <value>Se visualiza nueva información</value>
+  </data>
+  <data name="TextStdsActualesPrevInformacion" xml:space="preserve">
+    <value>Se visualiza información anterior</value>
+  </data>
+  <data name="CusValDurDestelloErrMsg" xml:space="preserve">
+    <value>Duración iluminación debe ser múltiplo de 8</value>
+  </data>
+  <data name="RanValCapBateriaErrMsg" xml:space="preserve">
+    <value>Capacidad batería instalada fuera de rango - (2400-20000)</value>
+  </data>
+  <data name="RanValCteDisparoErrMsg" xml:space="preserve">
+    <value>Corriente absoluta de disparo fuera de rango - (10-1000)</value>
+  </data>
+  <data name="RanValNroReintentosErrMsg" xml:space="preserve">
+    <value>Intentos de conexión fuera de rango - (1-10)</value>
+  </data>
+  <data name="RanValPrm2ErrMsg" xml:space="preserve">
+    <value>Tolerancia de tensión reposición fuera de rango - (1-100)</value>
+  </data>
+  <data name="RanValPrm3ErrMsg" xml:space="preserve">
+    <value>Tiempo de indicación de falla permanente fuera de rango - (1-86400)</value>
+  </data>
+  <data name="RanValPrm4ErrMsg" xml:space="preserve">
+    <value>Tiempo Indicación Falla Temp. fuera de rango - (1-86400)</value>
+  </data>
+  <data name="RanValPrm5ErrMsg" xml:space="preserve">
+    <value>Duración iluminación fuera de rango - (8-104)</value>
+  </data>
+  <data name="RanValPrm6ErrMsg" xml:space="preserve">
+    <value>Tiempo apagado fuera de rango - (1-10)</value>
+  </data>
+  <data name="RanValPrm7ErrMsg" xml:space="preserve">
+    <value>Tiempo protección Inrush fuera de rango - (1-120)</value>
+  </data>
+  <data name="RanValPrm8ErrMsg" xml:space="preserve">
+    <value>Tiempo de retardo de validación tensión fuera de rango - (1-120)</value>
+  </data>
+  <data name="RanValSegsProxComErrMsg" xml:space="preserve">
+    <value>Período de auto-reporte fuera de rango - (30-3600)</value>
+  </data>
+  <data name="RanValT1ErrMsg" xml:space="preserve">
+    <value>Tiempo de validación de falla fuera de rango - (1-120)</value>
+  </data>
+  <data name="RegExValConfPrm1ErrMsg" xml:space="preserve">
+    <value>Corriente absoluta de disparo incorrecta</value>
+  </data>
+  <data name="RegExValConfPrm2ErrMsg" xml:space="preserve">
+    <value>Intentos de conexión incorrecto</value>
+  </data>
+  <data name="RegExValConfPrm3ErrMsg" xml:space="preserve">
+    <value>Período de auto-reporte incorrecto</value>
+  </data>
+  <data name="RegExValConfPrm4ErrMsg" xml:space="preserve">
+    <value>Capacidad batería instalada incorrecta</value>
+  </data>
+  <data name="RegExValPrm2ErrMsg" xml:space="preserve">
+    <value>Tolerancia de tensión reposición incorrecta</value>
+  </data>
+  <data name="RegExValPrm3ErrMsg" xml:space="preserve">
+    <value>Tiempo de indicación de falla permanente incorrecto</value>
+  </data>
+  <data name="RegExValPrm4ErrMsg" xml:space="preserve">
+    <value>Tiempo Indicación Falla Temporal Incorrecto</value>
+  </data>
+  <data name="RegExValPrm5ErrMsg" xml:space="preserve">
+    <value>Duración iluminación incorrecta</value>
+  </data>
+  <data name="RegExValPrm6ErrMsg" xml:space="preserve">
+    <value>Tiempo apagado incorrecto</value>
+  </data>
+  <data name="RegExValPrm7ErrMsg" xml:space="preserve">
+    <value>Tiempo protección Inrush incorrecto</value>
+  </data>
+  <data name="RegExValPrm8ErrMsg" xml:space="preserve">
+    <value>Tiempo de retardo de validación tensión incorrecto</value>
+  </data>
+  <data name="RegExValT1ErrMsg" xml:space="preserve">
+    <value>Tiempo de validación de falla incorrecto</value>
+  </data>
+  <data name="ReqValConfPrm1ErrMsg" xml:space="preserve">
+    <value>Corriente absoluta de disparo es requerida</value>
+  </data>
+  <data name="ReqValConfPrm3ErrMsg" xml:space="preserve">
+    <value>Período de auto-reporte es requerido</value>
+  </data>
+  <data name="ReqValConfPrm4ErrMsg" xml:space="preserve">
+    <value>Capacidad batería instalada es requerida</value>
+  </data>
+  <data name="ReqValCongPrm2ErrMsg" xml:space="preserve">
+    <value>Intentos de conexión es requerido</value>
+  </data>
+  <data name="ReqValPrm2ErrMsg" xml:space="preserve">
+    <value>Tolerancia de tensión reposición es requerida</value>
+  </data>
+  <data name="ReqValPrm3ErrMsg" xml:space="preserve">
+    <value>Se requiere tiempo de indicación falla permanente</value>
+  </data>
+  <data name="ReqValPrm4ErrMsg" xml:space="preserve">
+    <value>Se Requiere Tiempo Indicación Falla Temporal</value>
+  </data>
+  <data name="ReqValPrm5ErrMsg" xml:space="preserve">
+    <value>Duración iluminación es requerida </value>
+  </data>
+  <data name="ReqValPrm6ErrMsg" xml:space="preserve">
+    <value>Tiempo apagado es requerido</value>
+  </data>
+  <data name="ReqValPrm7ErrMsg" xml:space="preserve">
+    <value>Tiempo protección Inrush es requerido</value>
+  </data>
+  <data name="ReqValPrm8ErrMsg" xml:space="preserve">
+    <value>Tiempo de retardo de validación tensión es requerido</value>
+  </data>
+  <data name="ReqValT1ErrMsg" xml:space="preserve">
+    <value>Tiempo de validación de falla es requerido</value>
+  </data>
+  <data name="TextlblEstActFCIOnLineOK" xml:space="preserve">
+    <value>Parametros actualizados Online</value>
+  </data>
+  <data name="TextlblEstActFCIOnLineOtroSerial" xml:space="preserve">
+    <value>Se recibió otro Serial de FWT </value>
+  </data>
+  <data name="TextlblEstActFCIOnLineRecibidos" xml:space="preserve">
+    <value>Se recibieron los parametros del FCI</value>
+  </data>
+  <data name="TextlblEstadoActFCINoCambios" xml:space="preserve">
+    <value>No realizó cambios en parámetros funcionales del FCI.</value>
+  </data>
+  <data name="TextlblEstadoActFCIPendiente" xml:space="preserve">
+    <value>PENDIENTE ENVIAR PARAMETROS FCI.</value>
+  </data>
+  <data name="TextlblNombreValorFallaCorriente" xml:space="preserve">
+    <value>Corriente :</value>
+  </data>
+  <data name="TextlblNombreValorFallaDeltaI" xml:space="preserve">
+    <value>DeltaI (di/dt) :</value>
+  </data>
+  <data name="TextlblNombreValorFallaEscalon" xml:space="preserve">
+    <value>Escalón :</value>
+  </data>
+  <data name="TextlblUnidsVeces" xml:space="preserve">
+    <value>2-100 Veces</value>
+  </data>
+  <data name="ToolTipBotonLeerCorrientes" xml:space="preserve">
+    <value>Lee las corrientes actuales del FCI, las actualiza en el sistema y las muestra en pantalla.</value>
+  </data>
+  <data name="ToolTipBotonUpdateOnLine" xml:space="preserve">
+    <value>Envía todos los parametros configurados en esta pantalla al dispositivo inmediatamente</value>
+  </data>
+  <data name="ToolTipLblIdentificador" xml:space="preserve">
+    <value>Es el identificador de este FCI  dentro del respectivo FWT.</value>
+  </data>
+  <data name="ToolTipLinkBotonVerHistPrms" xml:space="preserve">
+    <value>Ver los valores de los parámtros según la fecha en la que fueron confirmados</value>
+  </data>
+  <data name="ToolTipTxtBoxTiempoIndicacionFallaTemp" xml:space="preserve">
+    <value>Tiempo Indicación Falla Temporal</value>
+  </data>
+  <data name="TextoVersionFirmware" xml:space="preserve">
+    <value>Version Firmware : </value>
+  </data>
+  <data name="RanValFijoErrText" xml:space="preserve">
+    <value>Valor fijo de corriente fuera de rango - (10-1000)</value>
+  </data>
+  <data name="RanValIncreErrText" xml:space="preserve">
+    <value>Valor de Escalón fuera de rango - (10-1000)</value>
+  </data>
+  <data name="RanValProporErrText" xml:space="preserve">
+    <value>Valor DeltaI (di/dt) fuera de rango - (2-100)</value>
+  </data>
+  <data name="RegExProporErrText" xml:space="preserve">
+    <value>Valor de DeltaI (di/dt) inválido</value>
+  </data>
+  <data name="RegExValFijoErrText" xml:space="preserve">
+    <value>Valor fijo de corriente inválido</value>
+  </data>
+  <data name="RegExValIncreErrText" xml:space="preserve">
+    <value>Valor de Escalón Incorrecto </value>
+  </data>
+  <data name="ReqValFijoErrText" xml:space="preserve">
+    <value>Valor fijo de corriente es requerido</value>
+  </data>
+  <data name="ReqValIncreErrText" xml:space="preserve">
+    <value>Se requiere valor de Escalón</value>
+  </data>
+  <data name="ReqValProporErrText" xml:space="preserve">
+    <value>Valor DeltaI (di/dt) requerido</value>
+  </data>
+  <data name="TextBotonCmdTest" xml:space="preserve">
+    <value>Test FCI</value>
+  </data>
+  <data name="TextTestFCIEnvioOK" xml:space="preserve">
+    <value>Comando enviado OK</value>
+  </data>
+  <data name="ToolTipBotonTestCmd" xml:space="preserve">
+    <value>Envía un comando de Test a este FCI. Es similar al acercamiento del magneto</value>
+  </data>
+  <data name="TextFrecuencia" xml:space="preserve">
+    <value>Frecuencia:</value>
+  </data>
+</root>

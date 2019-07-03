@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TextAntesReconexion" xml:space="preserve">
+    <value>Time Bef Connect</value>
+  </data>
+  <data name="TextBandaGSM" xml:space="preserve">
+    <value>GSM Band</value>
+  </data>
+  <data name="TextBotonGuardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="TextBotonLeerEstadoOnline" xml:space="preserve">
+    <value>Ask Status Online</value>
+  </data>
+  <data name="TextCanalIec104" xml:space="preserve">
+    <value>IEC CHANNEL</value>
+  </data>
+  <data name="TextCanalRF" xml:space="preserve">
+    <value>RF Channel</value>
+  </data>
+  <data name="TextCantidadFCIs" xml:space="preserve">
+    <value>FCI Max. Qty</value>
+  </data>
+  <data name="TextCantidadSIXs" xml:space="preserve">
+    <value>SIX Max. Qty</value>
+  </data>
+  <data name="TextDirIp" xml:space="preserve">
+    <value>IP Addss</value>
+  </data>
+  <data name="TextequiposDisponibles" xml:space="preserve">
+    <value>Available Devices</value>
+  </data>
+  <data name="TextEquiposGestionados" xml:space="preserve">
+    <value>Managed devices for this FWT</value>
+  </data>
+  <data name="TextEquiposMatriculados" xml:space="preserve">
+    <value>REGISTERED DEVICES</value>
+  </data>
+  <data name="TextEsperaPaquete" xml:space="preserve">
+    <value>Wait Time Frame</value>
+  </data>
+  <data name="TextFechaInstalacion" xml:space="preserve">
+    <value>Installation Date</value>
+  </data>
+  <data name="TextFechaMatriculaGestion" xml:space="preserve">
+    <value>Registration Date</value>
+  </data>
+  <data name="TextFechaUltimaConeccion" xml:space="preserve">
+    <value>Last Connection Date</value>
+  </data>
+  <data name="TextGestionElectrica" xml:space="preserve">
+    <value>COMPLEMENTARY INFORMATION</value>
+  </data>
+  <data name="TextIntentosConexion" xml:space="preserve">
+    <value>Connect Tries</value>
+  </data>
+  <data name="TextIntentosPaquetes" xml:space="preserve">
+    <value>Packect Tries</value>
+  </data>
+  <data name="TextJavaScriptClearBoton" xml:space="preserve">
+    <value>return confirm('Do you really want to delete this device from the FWT?');</value>
+  </data>
+  <data name="TextLeerCteSix" xml:space="preserve">
+    <value>SIX Current Ask Period</value>
+  </data>
+  <data name="TextLeyendoEstadoOnLine" xml:space="preserve">
+    <value>Requesting FWT status ...</value>
+  </data>
+  <data name="TextNivelSenal" xml:space="preserve">
+    <value>Signal</value>
+  </data>
+  <data name="TextPeriodoReporte" xml:space="preserve">
+    <value>Sending Period</value>
+  </data>
+  <data name="TextPuerto" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="TextTemperatura" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="TextTittleConectividad" xml:space="preserve">
+    <value>CONNECTIVITY INFORMATION</value>
+  </data>
+  <data name="TextTittleEstadoConcentrador" xml:space="preserve">
+    <value>COLLECTOR-FWT STATE</value>
+  </data>
+  <data name="TextTittleUbicacion" xml:space="preserve">
+    <value>LOCATION</value>
+  </data>
+  <data name="TextToolTipBotonClear" xml:space="preserve">
+    <value>Delete the device from the FWT. It leaves a space for another device</value>
+  </data>
+  <data name="TextToolTipBotonLeerEstado" xml:space="preserve">
+    <value>Asks for FWT status information and stores it in DB </value>
+  </data>
+  <data name="TextUsuarioAPN" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="TextVersionFwModulo" xml:space="preserve">
+    <value>Cellular Module Version</value>
+  </data>
+  <data name="TextVersionMonitor" xml:space="preserve">
+    <value>Monitor Version</value>
+  </data>
+  <data name="TextVersionPrograma" xml:space="preserve">
+    <value>Firmware Version</value>
+  </data>
+  <data name="TextVoltagePanel" xml:space="preserve">
+    <value>Panel Voltage</value>
+  </data>
+  <data name="TextVoltajeBateria" xml:space="preserve">
+    <value>Battery Voltage</value>
+  </data>
+  <data name="TextVoltajeCargador" xml:space="preserve">
+    <value>Charger Voltage</value>
+  </data>
+  <data name="CompValRePWDMsgErr" xml:space="preserve">
+    <value>The passwords are different</value>
+  </data>
+  <data name="CusValMaxSixsMsgErr" xml:space="preserve">
+    <value>FCI Max. Qty and SIX Max. Qty can not add more than 9 devices</value>
+  </data>
+  <data name="lblEstadoActualizacionOnlineOtroSerial" xml:space="preserve">
+    <value>Another FWT serial was received</value>
+  </data>
+  <data name="lblMsgErrSeleccionFCIClearBorradoOk" xml:space="preserve">
+    <value>Device deleted successfully from FWT</value>
+  </data>
+  <data name="lblMsgErrSeleccionFCIClearErrManipulandoIdEquipo" xml:space="preserve">
+    <value>Error to parse the device identifier</value>
+  </data>
+  <data name="lblMsgErrSeleccionFCIClearErrRecupIdEquipo" xml:space="preserve">
+    <value>Error to recover the device identifier inside the FWT</value>
+  </data>
+  <data name="RangValASDUMsgErr" xml:space="preserve">
+    <value>ASDU value out of range (0-65535)</value>
+  </data>
+  <data name="RanValCanalMsgErr" xml:space="preserve">
+    <value>RF Channel out of range</value>
+  </data>
+  <data name="RanValCorrienteBateriaMsgErr" xml:space="preserve">
+    <value>Battery Current out of range</value>
+  </data>
+  <data name="RanValPtoGestion" xml:space="preserve">
+    <value>Port number out of range</value>
+  </data>
+  <data name="RanValQtyFciMsgErr" xml:space="preserve">
+    <value>FCI Max. Qty out of range</value>
+  </data>
+  <data name="RanValQtySixMsgErr" xml:space="preserve">
+    <value>SIX Max. Qty out of range</value>
+  </data>
+  <data name="RanValReporteCteSixMsgErr" xml:space="preserve">
+    <value>SIX current ask period out of range</value>
+  </data>
+  <data name="RanValRevisionFuentesMsgErr" xml:space="preserve">
+    <value>Verify Supplies out of range</value>
+  </data>
+  <data name="RanValSecsBeforeMsgErr" xml:space="preserve">
+    <value>Time Bef Connect out of range</value>
+  </data>
+  <data name="RanValtxtMaxNumeroReintentosConexionToSGRMsgErr" xml:space="preserve">
+    <value>Connect Tries out of range</value>
+  </data>
+  <data name="RanValTxtMaxNumeroReintentosPack" xml:space="preserve">
+    <value>Packect tries out of range</value>
+  </data>
+  <data name="RanValtxtPeriodoReporteSegMsgErr" xml:space="preserve">
+    <value>Sending Period out of range</value>
+  </data>
+  <data name="RanValtxtTiempoEsperaPaqueteDeSGRMsgErr" xml:space="preserve">
+    <value>Wait time frame out of range</value>
+  </data>
+  <data name="RanValVoltajeBateriaBajaMsgErr" xml:space="preserve">
+    <value>Battery Low Voltage out of range</value>
+  </data>
+  <data name="RanValVoltajeMinBateriaMsgErr" xml:space="preserve">
+    <value>Battery Min. Voltage out of range</value>
+  </data>
+  <data name="RanValVoltajeMinCargadorMsgErr" xml:space="preserve">
+    <value>Charger Min. Voltage out of range</value>
+  </data>
+  <data name="RanValVoltajeMinPanelMsgErr" xml:space="preserve">
+    <value>Panel Min. Voltage out of range</value>
+  </data>
+  <data name="ReExReporteCteSixMsgErr" xml:space="preserve">
+    <value>Incorrect SIX current ask period</value>
+  </data>
+  <data name="RegExBateriaBajaMsgErr" xml:space="preserve">
+    <value>Incorrect Battery Low Voltage</value>
+  </data>
+  <data name="RegExCteBateriaMsgErr" xml:space="preserve">
+    <value>Incorrect Battery Current</value>
+  </data>
+  <data name="RegExpValCanalMsgErr" xml:space="preserve">
+    <value>Incorrect RF Channel</value>
+  </data>
+  <data name="RegExpValPtoGestionMsgErr" xml:space="preserve">
+    <value>Incorrect port number</value>
+  </data>
+  <data name="RegExRevisarFuentesMsgErr" xml:space="preserve">
+    <value>Incorrect Verify Supplies</value>
+  </data>
+  <data name="RegExSecsBeforeMsgErr" xml:space="preserve">
+    <value>Incorrect Time Bef Connect</value>
+  </data>
+  <data name="RegExtxtMaxNumeroReintentosConexionToSGRMsgErr" xml:space="preserve">
+    <value>Incorrect Connect Tries</value>
+  </data>
+  <data name="RegExTxtMaxNumeroReintentosPack" xml:space="preserve">
+    <value>Incorrect packect tries</value>
+  </data>
+  <data name="RegExtxtPeriodoReporteSegMsgErr" xml:space="preserve">
+    <value>Incorrect Sending Period</value>
+  </data>
+  <data name="RegExtxtTiempoEsperaPaqueteDeSGRMsgErr" xml:space="preserve">
+    <value>Incorrect wait time frame</value>
+  </data>
+  <data name="RegExValASDUMsgErr" xml:space="preserve">
+    <value>Incorrect ASDU value</value>
+  </data>
+  <data name="RegExValIPGestionMsgErr" xml:space="preserve">
+    <value>Incorrect IP address</value>
+  </data>
+  <data name="RegExValQtyFciMsgErr" xml:space="preserve">
+    <value>Incorrect FCI Max. Qty</value>
+  </data>
+  <data name="RegExValQtySixMsgErr" xml:space="preserve">
+    <value>Incorrect SIX Max. Qty</value>
+  </data>
+  <data name="RegExVolMinCargadorMsgErr" xml:space="preserve">
+    <value>Incorrect Charger Min. Voltage</value>
+  </data>
+  <data name="RegExVoltajeMinBateriaMsgErr" xml:space="preserve">
+    <value>Incorrect Battery Min. Voltage</value>
+  </data>
+  <data name="RegExVoltajeMinPanelMsgErr" xml:space="preserve">
+    <value>Incorrect Panel Min. Voltage</value>
+  </data>
+  <data name="ReqReporteCteSixMsgErr" xml:space="preserve">
+    <value>SIX current ask period is required</value>
+  </data>
+  <data name="ReqRevisarFuentesMsgErr" xml:space="preserve">
+    <value>Verify Supplies is required</value>
+  </data>
+  <data name="ReqValAPNMsgErr" xml:space="preserve">
+    <value>APN info. is required</value>
+  </data>
+  <data name="ReqValASDUMsgErr" xml:space="preserve">
+    <value>ASDU value is required</value>
+  </data>
+  <data name="ReqValCalleMsgErr" xml:space="preserve">
+    <value>Street is required</value>
+  </data>
+  <data name="ReqValCanalMsgErr" xml:space="preserve">
+    <value>RF Channel id required</value>
+  </data>
+  <data name="ReqValCircuitoMsgErr" xml:space="preserve">
+    <value>Circuit is required</value>
+  </data>
+  <data name="ReqValCorrienteBateriaMsgErr" xml:space="preserve">
+    <value>Battery Current is required</value>
+  </data>
+  <data name="ReqValGestionMsgErr" xml:space="preserve">
+    <value>Port number is required</value>
+  </data>
+  <data name="ReqValIPGestionMsgErr" xml:space="preserve">
+    <value>IP address is required</value>
+  </data>
+  <data name="ReqValNumeroMsgErr" xml:space="preserve">
+    <value>NumberAddss is required</value>
+  </data>
+  <data name="ReqValQtyFciMsgErr" xml:space="preserve">
+    <value>FCI Max. Qty is required</value>
+  </data>
+  <data name="ReqValQtySixMsgErr" xml:space="preserve">
+    <value>SIX Max. Qty is required</value>
+  </data>
+  <data name="ReqValSecsBeforeMsgErr" xml:space="preserve">
+    <value>Time Bef Connect is required</value>
+  </data>
+  <data name="ReqValSubEstaMsgErr" xml:space="preserve">
+    <value>Substation is required</value>
+  </data>
+  <data name="ReqValTramoMsgErr" xml:space="preserve">
+    <value>Section is required</value>
+  </data>
+  <data name="ReqValtxtMaxNumeroReintentosConexionToSGRMsgErr" xml:space="preserve">
+    <value>Connect Tries is required</value>
+  </data>
+  <data name="ReqValTxtMaxNumeroReintentosPack" xml:space="preserve">
+    <value>Packect tries is required</value>
+  </data>
+  <data name="ReqValtxtPeriodoReporteSegMsgErr" xml:space="preserve">
+    <value>Sending Period is required</value>
+  </data>
+  <data name="ReqValTxtTiempoEsperaPaqueteDeSGRMsgErr" xml:space="preserve">
+    <value>Wait time frame is required</value>
+  </data>
+  <data name="ReqValVoltajeBateriaBajaMsgErr" xml:space="preserve">
+    <value>Battery Low Voltage is required</value>
+  </data>
+  <data name="ReqValVoltajeMinBateriaMsgErr" xml:space="preserve">
+    <value>Battery Min. Voltage is required</value>
+  </data>
+  <data name="ReqValVoltajeMinCargadorMsgErr" xml:space="preserve">
+    <value>Charger Min. Voltage is required</value>
+  </data>
+  <data name="ReqValVoltajeMinPanelMsgErr" xml:space="preserve">
+    <value>Panel Min. Voltage is required</value>
+  </data>
+  <data name="TextBotonAsignar" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="TextBotonBorrar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TextBotonEnviar" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="TextBotonLeerPrmsOnLine" xml:space="preserve">
+    <value>Read Settings OnLine</value>
+  </data>
+  <data name="TextCorrienteBateria" xml:space="preserve">
+    <value>Battery Current</value>
+  </data>
+  <data name="TextEnviandoFirmware" xml:space="preserve">
+    <value>Sending...</value>
+  </data>
+  <data name="TextHistoriaActPrms" xml:space="preserve">
+    <value>Historic Changes Settings</value>
+  </data>
+  <data name="TextJSBotonBorrar" xml:space="preserve">
+    <value>return confirm('Do you really want to delete this FWT?');</value>
+  </data>
+  <data name="TextProcCargaBateria" xml:space="preserve">
+    <value>Charge Battery</value>
+  </data>
+  <data name="TextRevisarFuentes" xml:space="preserve">
+    <value>Verify Supplies</value>
+  </data>
+  <data name="TextTittleActualizaciones" xml:space="preserve">
+    <value>UPDATE PROCESSES</value>
+  </data>
+  <data name="TextTittleFirmware" xml:space="preserve">
+    <value>FWT Firmware</value>
+  </data>
+  <data name="TextTittleParametros" xml:space="preserve">
+    <value>Functional Settings</value>
+  </data>
+  <data name="TextTittleParametrosFuentes" xml:space="preserve">
+    <value>POWER SUPPLY SETTINGS</value>
+  </data>
+  <data name="TextToolTipBotonEnviar" xml:space="preserve">
+    <value>Try to send the settings immediately to the device</value>
+  </data>
+  <data name="TextToolTipBotonLeerPrmsOnline" xml:space="preserve">
+    <value>Reads remotely the FWT functional settings and updates them in DB</value>
+  </data>
+  <data name="TextToolTipValoresHistoricos" xml:space="preserve">
+    <value>View the value settings according to the confirmation date</value>
+  </data>
+  <data name="TextVerValoresHistoricos" xml:space="preserve">
+    <value>View Values...</value>
+  </data>
+  <data name="TextVoltajeBatBaja" xml:space="preserve">
+    <value>Battery Low Voltage</value>
+  </data>
+  <data name="TextVoltajeMinBateria" xml:space="preserve">
+    <value>Battery Min. Voltage </value>
+  </data>
+  <data name="TextVoltajeMinCargador" xml:space="preserve">
+    <value>Charger Min. Voltage</value>
+  </data>
+  <data name="TextVoltajeMinPanel" xml:space="preserve">
+    <value>Panel Min. Voltage</value>
+  </data>
+  <data name="ImgNivelSenalBueno" xml:space="preserve">
+    <value>Good Signal.</value>
+  </data>
+  <data name="ImgNivelSenalMalo" xml:space="preserve">
+    <value>Weak Signal.</value>
+  </data>
+  <data name="ImgNivelSenalMuyMalo" xml:space="preserve">
+    <value>Very Weak Signal.</value>
+  </data>
+  <data name="ImgNivelSenalNormal" xml:space="preserve">
+    <value>Normal Signal.</value>
+  </data>
+  <data name="imgPorcActFirmwarePcksActualizados" xml:space="preserve">
+    <value>Packets sent.</value>
+  </data>
+  <data name="lblErrorValAsduBadAsdu" xml:space="preserve">
+    <value>Incorrect ASDU value.</value>
+  </data>
+  <data name="lblEstadoACTFirmwareActualizacionTerminada" xml:space="preserve">
+    <value>FIRMWARE UPGRADE FINISHED.</value>
+  </data>
+  <data name="lblEstadoACTFirmwareActualizado" xml:space="preserve">
+    <value>FIRMWARE UPDATED.</value>
+  </data>
+  <data name="lblEstadoACTFirmwareActualizandoFW" xml:space="preserve">
+    <value>UPDATING FIRMWARE.</value>
+  </data>
+  <data name="lblEstadoACTFirmwarePendienteIniciar" xml:space="preserve">
+    <value>WAITING TO BEGIN FIRMWARE UPDATE.</value>
+  </data>
+  <data name="lblEstadoActualizacionNoCambiosEnFWT" xml:space="preserve">
+    <value>It does not make changes in the FWT.</value>
+  </data>
+  <data name="lblEstadoActualizacionOnlinePrmsActOnLine" xml:space="preserve">
+    <value>Settings updated Online</value>
+  </data>
+  <data name="lblEstadoActualizacionOnlinePrmsRecibidos" xml:space="preserve">
+    <value>FWT settings received.</value>
+  </data>
+  <data name="lblEstadoActualizacionPendienteEnviarPrms" xml:space="preserve">
+    <value>WAITING TO SEND SETTINGS.</value>
+  </data>
+  <data name="lblEstadoActualizacionValoresPwdsDistintos" xml:space="preserve">
+    <value>Passwords have different value</value>
+  </data>
+  <data name="lblLecturaOnlineEstadoFWTEstadoOk" xml:space="preserve">
+    <value>FWT state information received.</value>
+  </data>
+  <data name="lblMsgCosoftAsduCosoftNoRespondio" xml:space="preserve">
+    <value>The communication software did not reply to the ASDU value change notification.</value>
+  </data>
+  <data name="lblMsgCosoftAsduNotifyOk" xml:space="preserve">
+    <value>Notification to FWT OnLine successful.</value>
+  </data>
+  <data name="lblMsgErrSeleccionFCIClearSeleccionarEquip" xml:space="preserve">
+    <value>You must select a device for this operation</value>
+  </data>
+  <data name="lblNivelSenalDesconocido" xml:space="preserve">
+    <value>Unknown </value>
+  </data>
+  <data name="TextActAsduCanalOK" xml:space="preserve">
+    <value>ASDU and Channel update was successful</value>
+  </data>
+  <data name="TextErrorAsduUpdateInDB" xml:space="preserve">
+    <value>Error changing the ASDU and Channel in DB</value>
+  </data>
+  <data name="TextlblEstadoActFWTPendiente" xml:space="preserve">
+    <value>WAITING TO SEND FCI SETTINGS.</value>
+  </data>
+  <data name="TextlblEstadoFWTDatosOK" xml:space="preserve">
+    <value>SETTINGS UPDATED</value>
+  </data>
+  <data name="TextlblEstadoFWTPendienteConfirmar" xml:space="preserve">
+    <value>WAITING TO CONFIRM SETTINGS UPDATE</value>
+  </data>
+  <data name="TextlblEstadoFWTPendienteEnviar" xml:space="preserve">
+    <value>WAITING TO SEND SETTINGS</value>
+  </data>
+  <data name="TextlblEstadoFWTPendienteRecibir" xml:space="preserve">
+    <value>WAITING TO RECEIVE SETTINGS</value>
+  </data>
+  <data name="TextRealizarOpScadaCreandoColas" xml:space="preserve">
+    <value>Error creating queues</value>
+  </data>
+  <data name="TextRealizarOpScadaErrBD" xml:space="preserve">
+    <value>Error updating the FCI Scada indicator in DB</value>
+  </data>
+  <data name="TextRealizarOpScadaErrColas" xml:space="preserve">
+    <value>Error recovering the queues names</value>
+  </data>
+  <data name="TextRealizarOpScadaErrMQSrvOp" xml:space="preserve">
+    <value>Internal error in Message Service when sending operation request</value>
+  </data>
+  <data name="TextRealizarOpScadaErrMQVerifyWinScada" xml:space="preserve">
+    <value>Internal error in Message Service when verifying WinScada service</value>
+  </data>
+  <data name="TextRealizarOpScadaErrNombresColas" xml:space="preserve">
+    <value>Error in queue format names</value>
+  </data>
+  <data name="TextRealizarOpScadaErrorInternoMQSrv" xml:space="preserve">
+    <value>Internal error in Message Queue Service</value>
+  </data>
+  <data name="TextRealizarOpScadaOk" xml:space="preserve">
+    <value>Successful operation</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNoK" xml:space="preserve">
+    <value>WinScada operation failed</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNotAvail" xml:space="preserve">
+    <value>WinScada Service is not available</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNotAvailable" xml:space="preserve">
+    <value>WinScada Service not available when sending operation request</value>
+  </data>
+  <data name="TextValidarAsduAunTieneEquipos" xml:space="preserve">
+    <value>This FWT still has devices under Scada management.</value>
+  </data>
+  <data name="TextValidarAsduIgualAnterior" xml:space="preserve">
+    <value>The new ASDU value is the same to the previous value.</value>
+  </data>
+  <data name="TextValidarAsduNoCambioOtroAsdu" xml:space="preserve">
+    <value>Is not possible to change to another ASDU. You must first disable It with 0 value.</value>
+  </data>
+  <data name="TextValidarAsduYaExisteMismoAsdu" xml:space="preserve">
+    <value>There is another FWT with the same ASDU.</value>
+  </data>
+  <data name="ToolTiptxtMaxNumeroReintentosPack" xml:space="preserve">
+    <value>Tries of frames sent that have not received reply from the SGR. If the tries are reached, the FWT disconnects</value>
+  </data>
+  <data name="ToolTiptxtTiempoEsperaPaqueteDeSGR" xml:space="preserve">
+    <value>Time for a reply that the FWT waits when a frame is sent to management system - WinSGR</value>
+  </data>
+  <data name="TextBotonbtnWriteResetFwt" xml:space="preserve">
+    <value>Reset FWT Online</value>
+  </data>
+  <data name="TextEnviandoResetFwt" xml:space="preserve">
+    <value>Sending Reset command to FWT...</value>
+  </data>
+  <data name="TextJavaScriptSendReset" xml:space="preserve">
+    <value>return confirm('Do you really want to reset the FWT?. This will re-start It');</value>
+  </data>
+  <data name="TextToolTipBotonbtnWriteResetFwt" xml:space="preserve">
+    <value>Sends a reset FWT command. Re-start the FWT</value>
+  </data>
+  <data name="TextlblResetOnLineFWTCmdOk" xml:space="preserve">
+    <value>Reset command OK</value>
+  </data>
+  <data name="TextQtySixMayor" xml:space="preserve">
+    <value>is higher than registered SIX devices. Set a correct value, otherwise the FWT is doing extra RF work</value>
+  </data>
+  <data name="TextQtySixMenor" xml:space="preserve">
+    <value>is less than registered SIX devices. Erase the unnecessary SIXs</value>
+  </data>
+  <data name="TextRecordarAjustarQtySixPrm" xml:space="preserve">
+    <value>Remember to adjust the quantity of SIX devices settings to support</value>
+  </data>
+  <data name="RanValPtoGestion1" xml:space="preserve">
+    <value>Alternative Port Number Out of Range</value>
+  </data>
+  <data name="RegExpValPtoGestionMsgErr1" xml:space="preserve">
+    <value>Incorrect Alternative Port Number</value>
+  </data>
+  <data name="RegExValIPGestionMsgErr1" xml:space="preserve">
+    <value>Incorrect Alternative IP address</value>
+  </data>
+  <data name="TextDirIpAlternativa" xml:space="preserve">
+    <value>Alternative IP</value>
+  </data>
+  <data name="TextPuertoAlternativo" xml:space="preserve">
+    <value>Alternative Port</value>
+  </data>
+  <data name="ToolTipGestionAlternativa" xml:space="preserve">
+    <value>Emty text to disable this feature</value>
+  </data>
+  <data name="TextHeaderActivar" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
+  <data name="TextHeaderFechaSolicitud" xml:space="preserve">
+    <value>Submit Date</value>
+  </data>
+  <data name="TextHeaderPorcentajeUpgrade" xml:space="preserve">
+    <value>Porcentage</value>
+  </data>
+  <data name="TextHeaderSerialDevRt" xml:space="preserve">
+    <value>Serial</value>
+  </data>
+  <data name="TextHeaderVersionFw" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="TextTittleAdminFirmwareDevRt" xml:space="preserve">
+    <value>DEVICES FIRMWARE MANAGEMENT</value>
+  </data>
+  <data name="TextActivarActFwDevRt" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TextNoActivarActFwDevRt" xml:space="preserve">
+    <value>Not Apply</value>
+  </data>
+  <data name="TextPreguntaContinuarActFwDevRT" xml:space="preserve">
+    <value>Really, Do you want to send the order to upgrade firmware to the remote device?</value>
+  </data>
+  <data name="TextTittleFirmwareCargadoDEVRT" xml:space="preserve">
+    <value>Remote Devices Uploaded Firmware in FWT: </value>
+  </data>
+  <data name="TextToolTipActivarFwDevRt" xml:space="preserve">
+    <value>Send to the FWT the order for upgrading the device firmware using the version uploaded on the FWT</value>
+  </data>
+  <data name="TextFechaUltimoEnvio" xml:space="preserve">
+    <value>Last Transmmision Date</value>
+  </data>
+</root>

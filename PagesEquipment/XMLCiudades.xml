@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ciudades>
+
+<ciudad>
+	<valor>Medellin</valor>
+	<texto>Medellin</texto>
+</ciudad>
+
+<ciudad>
+	<valor>Cali</valor>
+	<texto>Cali</texto>
+</ciudad>
+
+</ciudades>

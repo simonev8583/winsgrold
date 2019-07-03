@@ -1,0 +1,177 @@
+﻿html, body, form 
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/** Para la página FwtConnectionsState : Layout principal de la página. **/
+
+#filtros {
+    background-color:white;
+    color:black;
+    text-align:center;
+    padding:1px;
+    margin: 0px;
+    width:100%;
+    height:20%;
+}
+
+#conectados 
+{
+    background-color:white;
+    /** height:350px; **/
+    height:55%;
+    width:50%;
+    float:left;
+    padding:0px;
+    margin: 0px;
+}
+
+#desconectados 
+{
+    /** height:350px; **/
+    height:55%;
+    width:49%;
+    float:left;
+    padding:0px;	 	 
+    margin: 0px;
+}
+
+#resultados 
+{
+    /** height:350px; **/
+    height:60%;
+    width:100%;
+    float:left;
+    padding:0px;	 	 
+    margin: 0px; 
+
+}
+
+#grafica {
+    background-color:white;
+    clear:both;
+    height:100px;
+    padding:0px;
+    width:100%;
+    height:20%;
+}
+
+.centerDiv
+{
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0px 0px 0px;
+    overflow: auto;
+    
+}
+
+.centerDivResultados
+{
+    width: 60%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0px 0px 0px;
+    overflow: auto;
+    
+}
+
+.centerDivChart
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.centerDivFilters
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset
+{
+    border: solid black thin;
+    margin: 0 0 0 -10px;
+    padding: 0;
+    width: 450px;
+}
+
+legend
+{
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-align:left;
+}
+
+.lebField
+{
+    text-align: right;
+    width: 100px;
+    float: left;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+input.textbox-300
+{
+    width: 300px;
+    float: left;
+}
+
+fieldset p
+{
+    clear: both;
+    padding: 2px;
+    width: 450px;
+}
+
+input.botonSubmit
+{
+    font-family: Arial;
+    font-size: 11px;
+    float: none;
+}
+
+.pTextCentered
+{
+    text-align:center;
+}
+
+.FieldGeneral
+{
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 11px;
+}
+
+.TextInput
+{
+    font-family: arial, sans serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight : normal;
+    font-variant: normal;
+}
+
+/** Formatting the GridView controls **/
+
+.GVstyle
+{
+    font-family: arial, sans serif;
+    font-size: 11px;
+    color : #000000;
+    font-style: normal;
+    font-weight : normal;
+    font-variant: normal;
+    letter-spacing: 0.3px;
+    line-height : 11px;
+}

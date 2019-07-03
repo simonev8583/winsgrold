@@ -1,0 +1,713 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+body.backgroundWhite   
+{
+    background: white;
+   
+}
+
+body.leftBody
+{
+    background-image:url('/Images/whitecolor.jpg');
+    background-repeat:repeat-y;
+}
+
+body.RightBody
+{
+    background-image:url('/Images/whitecolorRight.jpg');
+    background-repeat:repeat-y;
+}
+a:link, a:visited
+{
+    color:black;
+    text-decoration:none;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+     color:black;
+     text-decoration:none;
+}
+
+a.blanco
+{
+     color:white;
+     text-decoration:none;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 90%;
+    background-color: #fff;
+    margin: 20px auto 0px auto;
+    
+}
+
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    width: 100%;
+	top: -99px;
+	left: 9px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#E3EAEB;
+    width:100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a ,  ul li a:visited
+{
+    background-color: #1C5E55;
+    border: 1px #E3EAEB solid;
+    color: #E3EAEB;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+
+
+
+div.menu ul li a:hover
+{
+    background-color: #1C5E55;
+    color: Red;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #E3EAEB;
+    color: Black;
+    text-decoration: none;
+}
+
+
+
+       
+
+div.centerDiv /*centra completo*/
+{
+ width:95%;
+ margin-left:auto;
+ margin-right:auto;	
+ background: white;
+}
+
+div.centerDivHeader /*En el encabezado , se centra el 90% */
+{
+ background: #696969;
+ width:90%;
+ margin-left:auto;
+ margin-right:auto;	
+ margin-top:5px;
+
+}
+
+div.centerDivFooter /*En el encabezado , se centra el 90% */
+{
+ background: #696969;
+ color:White;
+ width:90%;
+ margin-left:auto;
+ margin-right:auto;	
+ margin-top:5px;
+ height:100%;
+ text-align: center;
+}
+
+div.fullscreen{
+    display:block;
+
+    /*set the div in the top-left corner of the screen*/
+    position:absolute;
+    top:0;
+    left:0;
+    
+    /*set the width and height to 100% of the screen*/
+    width:100%;
+    height:100%;
+    background: white;
+  }
+
+
+div.leftDiv 
+{
+ 
+  width:75%;  
+  margin-right:0px;	 
+  margin-left:auto;
+  height:100%;
+  
+  background:#E3EAEB;
+  color:White ;
+  
+}
+ 
+div.leftDivWhite
+{
+ 
+  width:75%;  
+  margin-right:0px;	 
+  margin-left:auto;
+  height:100%;
+  background : white;
+  
+  
+}
+ 
+
+
+div.leftDivConf /*Las paginas en el frameset de la izquierda para Config */
+{
+ background: white;
+ width:80%;
+ margin-left:auto;
+ margin-right:0px;	
+}
+
+div.rightDiv /*Las paginas en el frameset de la derecha */
+{
+  display:block;
+  position:absolute;
+  top:11px;
+  left:0px;
+  width:94%;
+  margin-left:0px;
+  margin-right:auto;  
+  height:100%;
+  /*background: white;*/
+
+}
+
+div.rightDivMargLeft /*Las paginas en el frameset de la derecha con margen de la izquierda */
+{
+  display:block;
+  position:absolute;
+  top:11px;
+  left:-3px;
+  width:94%;
+  margin-left:10px;
+  margin-right:auto;  
+  height:100%;
+  /*background: white;*/
+
+}
+
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.activeMenuItem
+{ 
+    background-color: #E3EAEB;
+    color: Black;
+    text-decoration: none;
+} 
+
+.StaticSelectedStyle
+{
+     background-color: #E3EAEB;
+    color: Black;
+    text-decoration: none;
+}
+
+.StaticHoverStyle
+{
+     background-color: #E3EAEB;
+    color: Red;
+    text-decoration: none;
+}
+
+
+.StaticMenuItemStyle
+{
+     background-color: #1C5E55;
+    border: 1px #E3EAEB solid;
+    color: #E3EAEB;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.titleRight
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+
+ .wizard
+ {
+ /*border:solid 1px black;*/
+ font:13px Verdana,Sans-Serif;
+ }
+ .wizardHeader
+ {
+ color:gray;
+ font:bold 18px Verdana,Sans-Serif;
+ padding:10px;
+ }
+ .sideBar
+ {
+ background-color:#eeeeee;
+ padding:10px;
+ width:100px;
+ }
+ .sideBar a
+ {
+ text-decoration:none;
+ }
+ .step
+ {
+ padding:10px;
+ }
+ 
+ .labelTitulo
+ {
+ 	font-weight:bold;
+ }
+ 
+ .textBoxHora
+ {
+     width:20px;
+ }
+
+ .labelParametros
+ {
+ 	font-weight:normal;
+ }   
+
+.tablaConcentrador
+{
+    width: 100%;
+}
+
+.style2
+{
+    width: 332px;
+}
+
+.validador
+{
+    color:red;
+}
+
+.textInUsuario
+{
+	text-align: left; /*font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;*/
+	font-family: sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+
+.textLabelInUsuario
+{
+    text-align:left;
+    /*font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;*/
+    font-family: sans-serif;
+    font-size: 11px;
+    
+}
+  
+
+.listInUsuario
+{
+    text-align:left;
+    /*font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;*/
+    font-family: sans-serif;
+    font-size: 1em;
+    }
+         .leftColumn
+        {
+        float:left;
+                    
+        }
+        .rightColumn
+        {
+        float:right ;
+        
+        }
+        
+        
+ .collapsePanelHeader
+{
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    
+    BACKGROUND-COLOR:White;
+   
+    WIDTH: 100%;
+    
+    HEIGHT: 20px;
+    COLOR: #1C5E55;
+    VERTICAL-ALIGN: middle;
+    CURSOR: pointer;
+    FONT-WEIGHT: bold;
+    PADDING-TOP: 5px
+}
+
+ .collapsePanelHeaderBlue
+{
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-RIGHT: 5px;
+    
+    BACKGROUND-COLOR:White;
+   
+    WIDTH: 100%;
+    
+    HEIGHT: 20px;
+    COLOR: #5D7B9D;
+    VERTICAL-ALIGN: middle;
+    CURSOR: pointer;
+    FONT-WEIGHT: bold;
+    PADDING-TOP: 5px
+}
+
+/*Modal PopUp*/
+
+.modalBackground
+ {
+	background-color:Gray;
+ }
+
+.modalPopup {
+	background-color:#ffffff;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+.TituloSeccion
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: uppercase;
+	color: #000000;
+}
+.LabelDato
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+}
+.LabelInformacion
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+}
+.TextBoton
+{
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+}
+.LabelAyuda
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+}
+.TextError
+{
+	font-family: 'MS Sans Serif';
+	font-size: 12px;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FF0000;
+}
+.EstiloTituloSeccion
+{
+	background-color: #EEEEEE;
+}
+.NombreReporte
+{
+	border-style: none;
+	border-color: #000000;
+	font-family: Calibri;
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.txtLabelPrms
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.bodyColorSeccionAB
+{
+	background: #696969;
+}

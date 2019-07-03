@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TextBotonConfirmar" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="TextBotonLeerPrmsOnline" xml:space="preserve">
+    <value>Leer OnLine</value>
+  </data>
+  <data name="TextCheckHabilitadoScada" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="TextLabelActivado" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="TextLabelCanalComunicaciones" xml:space="preserve">
+    <value>Canal Comunicación</value>
+  </data>
+  <data name="TextLabelCodigoGrupo" xml:space="preserve">
+    <value>Código de Grupo</value>
+  </data>
+  <data name="TextLabelComunicaciones" xml:space="preserve">
+    <value>Comunicaciones</value>
+  </data>
+  <data name="TextLabelConteos" xml:space="preserve">
+    <value>Conteos</value>
+  </data>
+  <data name="TextLabelConteosFalla" xml:space="preserve">
+    <value>Conteos de Falla</value>
+  </data>
+  <data name="TextLabelCorrienteApertura" xml:space="preserve">
+    <value>Corriente de Línea Muerta</value>
+  </data>
+  <data name="TextLabelCorrienteIncremental" xml:space="preserve">
+    <value>Corriente Incremental</value>
+  </data>
+  <data name="TextLabelCorrienteUmbral" xml:space="preserve">
+    <value>Corriente Umbral</value>
+  </data>
+  <data name="TextLabelEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="TextLabelEstadoScada" xml:space="preserve">
+    <value>Estado Scada</value>
+  </data>
+  <data name="TextLabelFallaCircuito" xml:space="preserve">
+    <value>Falla en Circuito</value>
+  </data>
+  <data name="TextLabelFechaInstalacion" xml:space="preserve">
+    <value>Fecha Instalación</value>
+  </data>
+  <data name="TextLabelFechaRegistro" xml:space="preserve">
+    <value>Fecha Registro Gestión</value>
+  </data>
+  <data name="TextLabelGestionElectrica" xml:space="preserve">
+    <value>gestión eléctrica</value>
+  </data>
+  <data name="TextLabelModo" xml:space="preserve">
+    <value>Modo</value>
+  </data>
+  <data name="TextLabelModoComunicaciones" xml:space="preserve">
+    <value>Modo</value>
+  </data>
+  <data name="TextLabelSGR" xml:space="preserve">
+    <value>SGR</value>
+  </data>
+  <data name="TextLabelSixSerial" xml:space="preserve">
+    <value>Serial SIX</value>
+  </data>
+  <data name="TextLabelTiempoDeteccion" xml:space="preserve">
+    <value>Tiempo Detección</value>
+  </data>
+  <data name="TextLabelTiempoIncremental" xml:space="preserve">
+    <value>Tiempo Incremental</value>
+  </data>
+  <data name="TextLabelTiempoInrush" xml:space="preserve">
+    <value>Tiempo Validación Inrush</value>
+  </data>
+  <data name="TextLabelTiempoReset" xml:space="preserve">
+    <value>Tiempo de Reset</value>
+  </data>
+  <data name="TextLabelTiempoValidacion" xml:space="preserve">
+    <value>Tiempo Validación</value>
+  </data>
+  <data name="TextLabelTipoCircuito" xml:space="preserve">
+    <value>Tipo Circuito</value>
+  </data>
+  <data name="TextLabelUmbralCteApertura" xml:space="preserve">
+    <value>Umbral</value>
+  </data>
+  <data name="TextLabelVarios" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="TextLabelVersionPrograma" xml:space="preserve">
+    <value>Versión Programa</value>
+  </data>
+  <data name="TextModoIncremental" xml:space="preserve">
+    <value>Incremental</value>
+  </data>
+  <data name="TextModoUmbral" xml:space="preserve">
+    <value>Umbral</value>
+  </data>
+  <data name="TextoTipoBifasico" xml:space="preserve">
+    <value>Bifásico</value>
+  </data>
+  <data name="TextoTipoMonofasico" xml:space="preserve">
+    <value>Monofásico</value>
+  </data>
+  <data name="TextoTipoTrifasico" xml:space="preserve">
+    <value>Trifásico</value>
+  </data>
+  <data name="TextPanelCtesCollapsedText" xml:space="preserve">
+    <value>Ver estadísticas...</value>
+  </data>
+  <data name="TextPanelCtesExpandedText" xml:space="preserve">
+    <value>Ocultar estadísticas</value>
+  </data>
+  <data name="TextTittleCorrienteActuacion" xml:space="preserve">
+    <value>Corriente de Actuación</value>
+  </data>
+  <data name="TextTittleGenerales" xml:space="preserve">
+    <value>GENERALES</value>
+  </data>
+  <data name="TextTittleParametros" xml:space="preserve">
+    <value>parámetros</value>
+  </data>
+  <data name="TextTittleStdsCorriente" xml:space="preserve">
+    <value>estadísticas corriente</value>
+  </data>
+  <data name="TextAvisoFallaPermanente" xml:space="preserve">
+    <value>Falla Permanente - Fecha :</value>
+  </data>
+  <data name="TextBotonModificar" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="TextCmdOnLineCteActualLeida" xml:space="preserve">
+    <value>Corriente Actual Leida :</value>
+  </data>
+  <data name="TextCmdOnLineFWTNoConectado" xml:space="preserve">
+    <value>FWT No Conectado</value>
+  </data>
+  <data name="TextCmdOnLineMQException" xml:space="preserve">
+    <value>MessageQueueException en servidor comunicaciones  :</value>
+  </data>
+  <data name="TextCmdOnLineMQExceptionRecibir" xml:space="preserve">
+    <value>MessageQueueException al recibir :</value>
+  </data>
+  <data name="TextCmdOnLineOtraRta" xml:space="preserve">
+    <value>Se recibió otra respuesta :</value>
+  </data>
+  <data name="TextCmdOnLineOtroSerialFWT" xml:space="preserve">
+    <value>Se recibió otro Serial de FWT </value>
+  </data>
+  <data name="TextCmdOnLinePrmsLeidos" xml:space="preserve">
+    <value>Parámeteros Leídos</value>
+  </data>
+  <data name="TextCmdOnLineStdsActualizadas" xml:space="preserve">
+    <value>Estadisticas Actualizadas</value>
+  </data>
+  <data name="TextGridStdsBotonActualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="TextGridStdsBotonAskOnline" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="TextGridStdsOperaciones" xml:space="preserve">
+    <value>Operaciones</value>
+  </data>
+  <data name="TextGridStdsTiempoSobreActuacion" xml:space="preserve">
+    <value>Tiempo Sobre Actuación</value>
+  </data>
+  <data name="TextGridStdsTiempoSobreCteMax" xml:space="preserve">
+    <value>Tiempo Sobre Corriente Max</value>
+  </data>
+  <data name="TextGridStdsTransitorios" xml:space="preserve">
+    <value>Transitorios</value>
+  </data>
+  <data name="TextlblEstadoActFCIPendiente" xml:space="preserve">
+    <value>PENDIENTE ENVIAR PARAMETROS SIX.</value>
+  </data>
+  <data name="TextlblEstadoFCIDatosOK" xml:space="preserve">
+    <value>PARÁMETROS ACTUALIZADOS</value>
+  </data>
+  <data name="TextlblEstadoFCIPendienteConfirmar" xml:space="preserve">
+    <value>PENDIENTE CONFIRMAR ACTUALIZACIÓN PARÁMETROS</value>
+  </data>
+  <data name="TextlblEstadoFCIPendienteEnviar" xml:space="preserve">
+    <value>PENDIENTE ENVIAR PARÁMETROS</value>
+  </data>
+  <data name="TextlblEstadoFCIPendienteRecibir" xml:space="preserve">
+    <value>PENDIENTE RECIBIR PARÁMETROS</value>
+  </data>
+  <data name="TextPanelCtesBotonActualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="TextPanelCtesBotonValorCteActual" xml:space="preserve">
+    <value>Valor Actual OnLine</value>
+  </data>
+  <data name="TextPanelCtesUltimosDatosCtes" xml:space="preserve">
+    <value>Últimos datos corriente</value>
+  </data>
+  <data name="TextPanelStdsCollapsedText" xml:space="preserve">
+    <value>Ver datos funcionales...</value>
+  </data>
+  <data name="TextPanelStdsExpandedText" xml:space="preserve">
+    <value>Ocultar datos funcionales</value>
+  </data>
+  <data name="TextPanelStdsUltimosDatosFunc" xml:space="preserve">
+    <value>Últimos datos funcionales</value>
+  </data>
+  <data name="TextRealizarOpScadaCreandoColas" xml:space="preserve">
+    <value>Error al crear colas de comunicacion</value>
+  </data>
+  <data name="TextRealizarOpScadaErrBD" xml:space="preserve">
+    <value>Error al actualizar indicador Scada en el dispositivo - BD</value>
+  </data>
+  <data name="TextRealizarOpScadaErrColas" xml:space="preserve">
+    <value>Error al recuperar los nombres de las colas de comunicacion</value>
+  </data>
+  <data name="TextRealizarOpScadaErrMQSrvOp" xml:space="preserve">
+    <value>Error interno del servicio Messaging al enviar solicitud de operación al WinScada</value>
+  </data>
+  <data name="TextRealizarOpScadaErrMQVerifyWinScada" xml:space="preserve">
+    <value>Error interno del servicio Messaging al verificar servicio WinScada</value>
+  </data>
+  <data name="TextRealizarOpScadaErrNombresColas" xml:space="preserve">
+    <value>Error en el formato de los nombres de las colas de comunicacion</value>
+  </data>
+  <data name="TextRealizarOpScadaErrorInternoMQSrv" xml:space="preserve">
+    <value>Error interno en el servicio Messaging Queue</value>
+  </data>
+  <data name="TextRealizarOpScadaOk" xml:space="preserve">
+    <value>Operación Exitosa</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNoK" xml:space="preserve">
+    <value>Operación en WinScada no exitosa</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNotAvail" xml:space="preserve">
+    <value>El servicio WinScada no está disponible</value>
+  </data>
+  <data name="TextRealizarOpScadaWinScadaNotAvailable" xml:space="preserve">
+    <value>El servicio WinScada no está disponible al enviar solicitud de operación</value>
+  </data>
+  <data name="TextTittleEstadisticasFuncionales" xml:space="preserve">
+    <value>estadísticas funcionales</value>
+  </data>
+  <data name="TextErrorTiempoIncremental" xml:space="preserve">
+    <value>Valor de Tiempo Incremental debe estar entre </value>
+  </data>
+  <data name="TextLabelFrecuencia" xml:space="preserve">
+    <value>Frecuencia</value>
+  </data>
+  <data name="TextEscrituraPrmsOnLineOK" xml:space="preserve">
+    <value>Parámetros enviados OK</value>
+  </data>
+  <data name="TextErrCusValCambioGrupo" xml:space="preserve">
+    <value>En modo Monofásico, no es posible modificar el Código de Grupo</value>
+  </data>
+  <data name="TextErrvalCVTiempoIncremental" xml:space="preserve">
+    <value>El Tiempo Incremental debe ser múltiplo de 20 ms</value>
+  </data>
+  <data name="TextErrvalRExCorrienteIncremental" xml:space="preserve">
+    <value>Solo valores numéricos para la Corriente Incremental</value>
+  </data>
+  <data name="TextErrvalRFconteos" xml:space="preserve">
+    <value>Definir valor para parámetro Conteos</value>
+  </data>
+  <data name="TextErrvalRFCorrienteIncremental" xml:space="preserve">
+    <value>Se requiere valor para el parámetro Corriente Incremental</value>
+  </data>
+  <data name="TextErrvalRFcteNominal" xml:space="preserve">
+    <value>Definir valor para Corriente Umbral</value>
+  </data>
+  <data name="TextErrvalRFresetCon" xml:space="preserve">
+    <value>Definir valor para parámetro Tiempo de Reset</value>
+  </data>
+  <data name="TextErrvalRFTiempoDeteccion" xml:space="preserve">
+    <value>Se requiere definir valor para Tiempo Detección</value>
+  </data>
+  <data name="TextErrvalRFTiempoIncremental" xml:space="preserve">
+    <value>Se requiere definir valor para Tiempo Incremental</value>
+  </data>
+  <data name="TextErrvalRFTiempoInrush" xml:space="preserve">
+    <value>Se requiere definir valor para Tiempo Validación Inrush</value>
+  </data>
+  <data name="TextErrvalRFTiempoValidacion" xml:space="preserve">
+    <value>Se requiere valor para Tiempo Validación</value>
+  </data>
+  <data name="TextErrvalRVconteos" xml:space="preserve">
+    <value>Valor parámetro Conteos de Falla debe ser entre 1 y 4</value>
+  </data>
+  <data name="TextErrvalRVCorrienteIncremental" xml:space="preserve">
+    <value>El valor de la Corriente Incremental debe estar entre 4 y 200 A</value>
+  </data>
+  <data name="TextErrvalRVcteNominal" xml:space="preserve">
+    <value>Valor Corriente Umbral deber ser entre 4 y 320 A</value>
+  </data>
+  <data name="TextErrvalRVTiempoDeteccion" xml:space="preserve">
+    <value>El valor de Tiempo Detección debe estar entre 50 y 5000 ms</value>
+  </data>
+  <data name="TextErrvalRVTiempoIncremental" xml:space="preserve">
+    <value>Valor de Tiempo Incremental debe estar entre 40 y 100 ms</value>
+  </data>
+  <data name="TextErrvalRVTiempoValidacionInrush" xml:space="preserve">
+    <value>Tiempo Validadción Inrush debe estar entre 1 y 99 segs</value>
+  </data>
+  <data name="TextErrvalRVTiempoValidadcion" xml:space="preserve">
+    <value>Tiempo Validadción debe estar entre 80 y 120 ms</value>
+  </data>
+  <data name="TextToolTipprmTxtTiempoIncremental" xml:space="preserve">
+    <value>Solo valores múltiplos de 20 ms</value>
+  </data>
+  <data name="TextvalRVresetCon" xml:space="preserve">
+    <value>Valor parámetro Tiempo de Reset debe ser entre 1 y 99 segs</value>
+  </data>
+  <data name="TextSGRLocalRemoto" xml:space="preserve">
+    <value>Local y Remoto</value>
+  </data>
+  <data name="TextSGRRemoto" xml:space="preserve">
+    <value>Remoto</value>
+  </data>
+</root>
