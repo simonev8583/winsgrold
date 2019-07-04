@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SistemaGestionRemotoStoreContainer" CdmEntityContainer="SistemaGestionRemotoContainer">
+    <EntitySetMapping Name="AlarmasFCI">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.AlarmaFCI)">
+        <MappingFragment StoreEntitySet="AlarmasFCI">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FCIId" ColumnName="FCIId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ClearAlarma" ColumnName="ClearAlarma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FCIs">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.FCI)">
+        <MappingFragment StoreEntitySet="FCIs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FWTId" ColumnName="FWTId" />
+          <ScalarProperty Name="UltimaFechaInicializacion" ColumnName="UltimaFechaInicializacion" />
+          <ScalarProperty Name="FechaInstalacion" ColumnName="FechaInstalacion" />
+          <ScalarProperty Name="FechaRegistroGestion" ColumnName="FechaRegistroGestion" />
+          <ComplexProperty Name="ParamFCI" TypeName="SistemaGestionRemoto.ParametrosFCI">
+            <ScalarProperty Name="ModoDisparo" ColumnName="ParamFCI_ModoDisparo" />
+            <ScalarProperty Name="ValorFalla" ColumnName="ParamFCI_ValorFalla" />
+            <ScalarProperty Name="ReposicionPorTiempo" ColumnName="ParamFCI_ReposicionPorTiempo" />
+            <ScalarProperty Name="ReposicionPorTension" ColumnName="ParamFCI_ReposicionPorTension" />
+            <ScalarProperty Name="TiempoIndicacionFallaTemporalSegundos" ColumnName="ParamFCI_TiempoIndicacionFallaTemporalSegundos" />
+            <ScalarProperty Name="TiempoFlashIndicacion8ms" ColumnName="ParamFCI_TiempoFlashIndicacion8ms" />
+            <ScalarProperty Name="TiermpoEntreFlashIndicacionSegundos" ColumnName="ParamFCI_TiermpoEntreFlashIndicacionSegundos" />
+            <ScalarProperty Name="TiempoProteccionInRushSegundos" ColumnName="ParamFCI_TiempoProteccionInRushSegundos" />
+            <ScalarProperty Name="CorrienteAbsolutaDisparo" ColumnName="ParamFCI_CorrienteAbsolutaDisparo" />
+            <ScalarProperty Name="NumeroReintentosComunicacion" ColumnName="ParamFCI_NumeroReintentosComunicacion" />
+            <ScalarProperty Name="SegundosParaProximaComunicacion" ColumnName="ParamFCI_SegundosParaProximaComunicacion" />
+            <ScalarProperty Name="TiempoRetardoValidacionTensionSegundos" ColumnName="ParamFCI_TiempoRetardoValidacionTensionSegundos" />
+            <ScalarProperty Name="ReposicionPorMagneto" ColumnName="ParamFCI_ReposicionPorMagneto" />
+            <ScalarProperty Name="ReposicionPorCorriente" ColumnName="ParamFCI_ReposicionPorCorriente" />
+            <ScalarProperty Name="HabilitarReloj" ColumnName="ParamFCI_HabilitarReloj" />
+            <ScalarProperty Name="HabilitarFallaTransitoria" ColumnName="ParamFCI_HabilitarFallaTransitoria" />
+            <ScalarProperty Name="TiempoValidacionFallaSegundos" ColumnName="ParamFCI_TiempoValidacionFallaSegundos" />
+            <ScalarProperty Name="ToleranciaTensionReposicion" ColumnName="ParamFCI_ToleranciaTensionReposicion" />
+            <ScalarProperty Name="TiempoReposicionSegundos" ColumnName="ParamFCI_TiempoReposicionSegundos" />
+            <ScalarProperty Name="CapacidadBateriaInstalada" ColumnName="ParamFCI_CapacidadBateriaInstalada" />
+          </ComplexProperty>
+          <ScalarProperty Name="Fase" ColumnName="Fase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FWTs">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.FWT)">
+        <MappingFragment StoreEntitySet="FWTs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UltimaFechaInicializacion" ColumnName="UltimaFechaInicializacion" />
+          <ScalarProperty Name="FechaInstalacion" ColumnName="FechaInstalacion" />
+          <ScalarProperty Name="FechaRegistroGestion" ColumnName="FechaRegistroGestion" />
+          <ScalarProperty Name="HoraReporte" ColumnName="HoraReporte" />
+          <ComplexProperty Name="ParamFWT" TypeName="SistemaGestionRemoto.ParametrosFWT">
+            <ScalarProperty Name="CanalRF" ColumnName="ParamFWT_CanalRF" />
+            <ScalarProperty Name="VecesSinReportarse" ColumnName="ParamFWT_VecesSinReportarse" />
+            <ScalarProperty Name="DireccionIPSCADA" ColumnName="ParamFWT_DireccionIPSCADA" />
+            <ScalarProperty Name="PuertoSCADA" ColumnName="ParamFWT_PuertoSCADA" />
+            <ScalarProperty Name="DireccionIPGESTION" ColumnName="ParamFWT_DireccionIPGESTION" />
+            <ScalarProperty Name="PuertoGESTION" ColumnName="ParamFWT_PuertoGESTION" />
+            <ScalarProperty Name="APN" ColumnName="ParamFWT_APN" />
+            <ScalarProperty Name="Usuario" ColumnName="ParamFWT_Usuario" />
+            <ScalarProperty Name="Password" ColumnName="ParamFWT_Password" />
+            <ComplexProperty Name="DireccionNomenclatura" TypeName="SistemaGestionRemoto.UbicacionDireccion">
+              <ScalarProperty Name="CalleCarrera" ColumnName="ParamFWT_DireccionNomenclatura_CalleCarrera" />
+              <ScalarProperty Name="Numero" ColumnName="ParamFWT_DireccionNomenclatura_Numero" />
+              <ScalarProperty Name="Ciudad" ColumnName="ParamFWT_DireccionNomenclatura_Ciudad" />
+            </ComplexProperty>
+            <ComplexProperty Name="DireccionElectrica" TypeName="SistemaGestionRemoto.UbicacionElectrica">
+              <ScalarProperty Name="SubEstacion" ColumnName="ParamFWT_DireccionElectrica_SubEstacion" />
+              <ScalarProperty Name="Circuito" ColumnName="ParamFWT_DireccionElectrica_Circuito" />
+              <ScalarProperty Name="Tramo" ColumnName="ParamFWT_DireccionElectrica_Tramo" />
+            </ComplexProperty>
+            <ComplexProperty Name="DireccionGPS" TypeName="SistemaGestionRemoto.UbicacionGPS">
+              <ScalarProperty Name="Longitud" ColumnName="ParamFWT_DireccionGPS_Longitud" />
+              <ScalarProperty Name="Latitud" ColumnName="ParamFWT_DireccionGPS_Latitud" />
+            </ComplexProperty>
+            <ScalarProperty Name="NumeroMaximoFCIs" ColumnName="ParamFWT_NumeroMaximoFCIs" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlarmasFWT">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.AlarmaFWT)">
+        <MappingFragment StoreEntitySet="AlarmasFWT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FWTId" ColumnName="FWTId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LlamadasCallToCallSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.LlamadaCallToCall)">
+        <MappingFragment StoreEntitySet="LlamadasCallToCallSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="FWTId" ColumnName="FWTId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConexionesFWT">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.ConexionFWT)">
+        <MappingFragment StoreEntitySet="ConexionesFWT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplatesParametrosFCI">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.TemplateParametrosFCI)">
+        <MappingFragment StoreEntitySet="TemplatesParametrosFCI">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ComplexProperty Name="Parametros" TypeName="SistemaGestionRemoto.ParametrosFCI">
+            <ScalarProperty Name="ModoDisparo" ColumnName="Parametros_ModoDisparo" />
+            <ScalarProperty Name="ValorFalla" ColumnName="Parametros_ValorFalla" />
+            <ScalarProperty Name="ReposicionPorTiempo" ColumnName="Parametros_ReposicionPorTiempo" />
+            <ScalarProperty Name="ReposicionPorTension" ColumnName="Parametros_ReposicionPorTension" />
+            <ScalarProperty Name="TiempoIndicacionFallaTemporalSegundos" ColumnName="Parametros_TiempoIndicacionFallaTemporalSegundos" />
+            <ScalarProperty Name="TiempoFlashIndicacion8ms" ColumnName="Parametros_TiempoFlashIndicacion8ms" />
+            <ScalarProperty Name="TiermpoEntreFlashIndicacionSegundos" ColumnName="Parametros_TiermpoEntreFlashIndicacionSegundos" />
+            <ScalarProperty Name="TiempoProteccionInRushSegundos" ColumnName="Parametros_TiempoProteccionInRushSegundos" />
+            <ScalarProperty Name="CorrienteAbsolutaDisparo" ColumnName="Parametros_CorrienteAbsolutaDisparo" />
+            <ScalarProperty Name="NumeroReintentosComunicacion" ColumnName="Parametros_NumeroReintentosComunicacion" />
+            <ScalarProperty Name="SegundosParaProximaComunicacion" ColumnName="Parametros_SegundosParaProximaComunicacion" />
+            <ScalarProperty Name="TiempoRetardoValidacionTensionSegundos" ColumnName="Parametros_TiempoRetardoValidacionTensionSegundos" />
+            <ScalarProperty Name="ReposicionPorMagneto" ColumnName="Parametros_ReposicionPorMagneto" />
+            <ScalarProperty Name="ReposicionPorCorriente" ColumnName="Parametros_ReposicionPorCorriente" />
+            <ScalarProperty Name="HabilitarReloj" ColumnName="Parametros_HabilitarReloj" />
+            <ScalarProperty Name="HabilitarFallaTransitoria" ColumnName="Parametros_HabilitarFallaTransitoria" />
+            <ScalarProperty Name="TiempoValidacionFallaSegundos" ColumnName="Parametros_TiempoValidacionFallaSegundos" />
+            <ScalarProperty Name="ToleranciaTensionReposicion" ColumnName="Parametros_ToleranciaTensionReposicion" />
+            <ScalarProperty Name="TiempoReposicionSegundos" ColumnName="Parametros_TiempoReposicionSegundos" />
+            <ScalarProperty Name="CapacidadBateriaInstalada" ColumnName="Parametros_CapacidadBateriaInstalada" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplatesParametrosFWT">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.TemplateParametrosFWT)">
+        <MappingFragment StoreEntitySet="TemplatesParametrosFWT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ComplexProperty Name="Parametros" TypeName="SistemaGestionRemoto.ParametrosFWT">
+            <ScalarProperty Name="CanalRF" ColumnName="Parametros_CanalRF" />
+            <ScalarProperty Name="VecesSinReportarse" ColumnName="Parametros_VecesSinReportarse" />
+            <ScalarProperty Name="DireccionIPSCADA" ColumnName="Parametros_DireccionIPSCADA" />
+            <ScalarProperty Name="PuertoSCADA" ColumnName="Parametros_PuertoSCADA" />
+            <ScalarProperty Name="DireccionIPGESTION" ColumnName="Parametros_DireccionIPGESTION" />
+            <ScalarProperty Name="PuertoGESTION" ColumnName="Parametros_PuertoGESTION" />
+            <ScalarProperty Name="APN" ColumnName="Parametros_APN" />
+            <ScalarProperty Name="Usuario" ColumnName="Parametros_Usuario" />
+            <ScalarProperty Name="Password" ColumnName="Parametros_Password" />
+            <ComplexProperty Name="DireccionNomenclatura" TypeName="SistemaGestionRemoto.UbicacionDireccion">
+              <ScalarProperty Name="CalleCarrera" ColumnName="Parametros_DireccionNomenclatura_CalleCarrera" />
+              <ScalarProperty Name="Numero" ColumnName="Parametros_DireccionNomenclatura_Numero" />
+              <ScalarProperty Name="Ciudad" ColumnName="Parametros_DireccionNomenclatura_Ciudad" />
+            </ComplexProperty>
+            <ComplexProperty Name="DireccionElectrica" TypeName="SistemaGestionRemoto.UbicacionElectrica">
+              <ScalarProperty Name="SubEstacion" ColumnName="Parametros_DireccionElectrica_SubEstacion" />
+              <ScalarProperty Name="Circuito" ColumnName="Parametros_DireccionElectrica_Circuito" />
+              <ScalarProperty Name="Tramo" ColumnName="Parametros_DireccionElectrica_Tramo" />
+            </ComplexProperty>
+            <ComplexProperty Name="DireccionGPS" TypeName="SistemaGestionRemoto.UbicacionGPS">
+              <ScalarProperty Name="Longitud" ColumnName="Parametros_DireccionGPS_Longitud" />
+              <ScalarProperty Name="Latitud" ColumnName="Parametros_DireccionGPS_Latitud" />
+            </ComplexProperty>
+            <ScalarProperty Name="NumeroMaximoFCIs" ColumnName="Parametros_NumeroMaximoFCIs" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadisticasFCIs">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemaGestionRemoto.EstadisticaFCI)">
+        <MappingFragment StoreEntitySet="EstadisticasFCIs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FCIId" ColumnName="FCIId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ContFallasTemporales" ColumnName="ContFallasTemporales" />
+          <ScalarProperty Name="ContFallasPermanentes" ColumnName="ContFallasPermanentes" />
+          <ScalarProperty Name="ContFallasTension" ColumnName="ContFallasTension" />
+          <ScalarProperty Name="ContFallasLowBattery" ColumnName="ContFallasLowBattery" />
+          <ScalarProperty Name="ContFiFoFallasIn" ColumnName="ContFiFoFallasIn" />
+          <ScalarProperty Name="ValorPromedioIL" ColumnName="ValorPromedioIL" />
+          <ScalarProperty Name="ValorMaximoIL" ColumnName="ValorMaximoIL" />
+          <ScalarProperty Name="ValorMinimoIL" ColumnName="ValorMinimoIL" />
+          <ScalarProperty Name="ValorActualIL" ColumnName="ValorActualIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FWTConexionFWT" TypeName="SistemaGestionRemoto.FWTConexionFWT" StoreEntitySet="ConexionesFWT">
+      <EndProperty Name="FWT">
+        <ScalarProperty Name="Id" ColumnName="FWT_Id" />
+      </EndProperty>
+      <EndProperty Name="ConexionFWT">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

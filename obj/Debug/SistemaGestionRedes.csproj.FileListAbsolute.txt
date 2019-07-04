@@ -1,0 +1,165 @@
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.pdb
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.pdb
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+E:\D_Ant\proyectos_net\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.pdb
+D:\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+D:\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+D:\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.CommunicationLibrary.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.CommunicationLibrary.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes ultimo CONtadores y  Estadisticas\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.pdb
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+E:\temp\SGR\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibrary.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\bin\SGR.CommunicationLibraryLowLevel.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\DOCUMENTOS\HenryDevelopmentProjects\SistemaGestionRedes\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\Celsa.ConexionMensajeria.dll
+E:\temp\SGR\SistemaGestionRedes_Scada\SitioWebSGR\SistemaGestionRedes\bin\Celsa.ConexionMensajeria.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\Celsa.ConexionMensajeria.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\Celsa.ConexionMensajeria.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\obj\Debug\ResolveAssemblyReference.cache
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\en-US\SGR.BussinessLayer.resources.dll
+E:\temp\SGR\SistemaGestionRedesSix\SitioWebSGR\SistemaGestionRedes\bin\en\Celsa.ConexionMensajeria.resources.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\en-US\SGR.BussinessLayer.resources.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\ADF.Comunicaciones.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\ADF.Comunicaciones.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll.config
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\en\ADF.Comunicaciones.resources.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojAssemblyReference.cache
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csproj.CoreCompileInputs.cache
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csproj.CopyComplete
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\ADF.Comunicaciones.pdb
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\en\ADF.Comunicaciones.resources.dll
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\en-US\SGR.BussinessLayer.resources.dll
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb

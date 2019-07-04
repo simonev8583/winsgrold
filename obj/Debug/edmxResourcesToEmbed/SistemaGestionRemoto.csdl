@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SistemaGestionRemoto" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="SistemaGestionRemotoContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AlarmasFCI" EntityType="SistemaGestionRemoto.AlarmaFCI" />
+    <EntitySet Name="FCIs" EntityType="SistemaGestionRemoto.FCI" />
+    <EntitySet Name="FWTs" EntityType="SistemaGestionRemoto.FWT" />
+    <EntitySet Name="AlarmasFWT" EntityType="SistemaGestionRemoto.AlarmaFWT" />
+    <AssociationSet Name="FWTAlarmaFWT" Association="SistemaGestionRemoto.FWTAlarmaFWT">
+      <End Role="FWT" EntitySet="FWTs" />
+      <End Role="AlarmaFWT" EntitySet="AlarmasFWT" />
+    </AssociationSet>
+    <AssociationSet Name="FCIAlarmaFCI" Association="SistemaGestionRemoto.FCIAlarmaFCI">
+      <End Role="FCI" EntitySet="FCIs" />
+      <End Role="AlarmaFCI" EntitySet="AlarmasFCI" />
+    </AssociationSet>
+    <AssociationSet Name="FWTFCI" Association="SistemaGestionRemoto.FWTFCI">
+      <End Role="FWT" EntitySet="FWTs" />
+      <End Role="FCI" EntitySet="FCIs" />
+    </AssociationSet>
+    <EntitySet Name="LlamadasCallToCallSet" EntityType="SistemaGestionRemoto.LlamadaCallToCall" />
+    <AssociationSet Name="FWTLlamadaCallToCall" Association="SistemaGestionRemoto.FWTLlamadaCallToCall">
+      <End Role="FWT" EntitySet="FWTs" />
+      <End Role="LlamadaCallToCall" EntitySet="LlamadasCallToCallSet" />
+    </AssociationSet>
+    <EntitySet Name="ConexionesFWT" EntityType="SistemaGestionRemoto.ConexionFWT" />
+    <AssociationSet Name="FWTConexionFWT" Association="SistemaGestionRemoto.FWTConexionFWT">
+      <End Role="FWT" EntitySet="FWTs" />
+      <End Role="ConexionFWT" EntitySet="ConexionesFWT" />
+    </AssociationSet>
+    <EntitySet Name="TemplatesParametrosFCI" EntityType="SistemaGestionRemoto.TemplateParametrosFCI" />
+    <EntitySet Name="TemplatesParametrosFWT" EntityType="SistemaGestionRemoto.TemplateParametrosFWT" />
+    <EntitySet Name="EstadisticasFCIs" EntityType="SistemaGestionRemoto.EstadisticaFCI" />
+    <AssociationSet Name="FCIEstadisticaFCI" Association="SistemaGestionRemoto.FCIEstadisticaFCI">
+      <End Role="FCI" EntitySet="FCIs" />
+      <End Role="EstadisticaFCI" EntitySet="EstadisticasFCIs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AlarmaFCI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="FCI" Relationship="SistemaGestionRemoto.FCIAlarmaFCI" FromRole="AlarmaFCI" ToRole="FCI" />
+    <Property Type="Int32" Name="FCIId" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="DateTime" Name="ClearAlarma" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FCI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="AlarmasFCI" Relationship="SistemaGestionRemoto.FCIAlarmaFCI" FromRole="FCI" ToRole="AlarmaFCI" />
+    <NavigationProperty Name="FWT" Relationship="SistemaGestionRemoto.FWTFCI" FromRole="FCI" ToRole="FWT" />
+    <Property Type="Int32" Name="FWTId" Nullable="false" />
+    <Property Type="DateTime" Name="UltimaFechaInicializacion" Nullable="false" />
+    <Property Type="DateTime" Name="FechaInstalacion" Nullable="false" />
+    <Property Type="DateTime" Name="FechaRegistroGestion" Nullable="false" />
+    <Property Name="ParamFCI" Type="SistemaGestionRemoto.ParametrosFCI" Nullable="false" />
+    <Property Type="Byte" Name="Fase" Nullable="true" />
+    <NavigationProperty Name="EstadisticasFCI" Relationship="SistemaGestionRemoto.FCIEstadisticaFCI" FromRole="FCI" ToRole="EstadisticaFCI" />
+  </EntityType>
+  <EntityType Name="FWT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="AlarmasFWT" Relationship="SistemaGestionRemoto.FWTAlarmaFWT" FromRole="FWT" ToRole="AlarmaFWT" />
+    <NavigationProperty Name="FCIs" Relationship="SistemaGestionRemoto.FWTFCI" FromRole="FWT" ToRole="FCI" />
+    <Property Type="DateTime" Name="UltimaFechaInicializacion" Nullable="false" />
+    <Property Type="DateTime" Name="FechaInstalacion" Nullable="false" />
+    <Property Type="DateTime" Name="FechaRegistroGestion" Nullable="false" />
+    <Property Type="String" Name="HoraReporte" Nullable="false" />
+    <NavigationProperty Name="LlamadasCallToCall" Relationship="SistemaGestionRemoto.FWTLlamadaCallToCall" FromRole="FWT" ToRole="LlamadaCallToCall" />
+    <NavigationProperty Name="ConexionFWT" Relationship="SistemaGestionRemoto.FWTConexionFWT" FromRole="FWT" ToRole="ConexionFWT" />
+    <Property Name="ParamFWT" Type="SistemaGestionRemoto.ParametrosFWT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlarmaFWT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="FWT" Relationship="SistemaGestionRemoto.FWTAlarmaFWT" FromRole="AlarmaFWT" ToRole="FWT" />
+    <Property Type="Int32" Name="FWTId" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+  </EntityType>
+  <Association Name="FWTAlarmaFWT">
+    <End Type="SistemaGestionRemoto.FWT" Role="FWT" Multiplicity="1" />
+    <End Type="SistemaGestionRemoto.AlarmaFWT" Role="AlarmaFWT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FWT">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlarmaFWT">
+        <PropertyRef Name="FWTId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FCIAlarmaFCI">
+    <End Type="SistemaGestionRemoto.FCI" Role="FCI" Multiplicity="1" />
+    <End Type="SistemaGestionRemoto.AlarmaFCI" Role="AlarmaFCI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FCI">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlarmaFCI">
+        <PropertyRef Name="FCIId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FWTFCI">
+    <End Type="SistemaGestionRemoto.FWT" Role="FWT" Multiplicity="1" />
+    <End Type="SistemaGestionRemoto.FCI" Role="FCI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FWT">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FCI">
+        <PropertyRef Name="FWTId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LlamadaCallToCall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <NavigationProperty Name="FWT" Relationship="SistemaGestionRemoto.FWTLlamadaCallToCall" FromRole="LlamadaCallToCall" ToRole="FWT" />
+    <Property Type="Int32" Name="FWTId" Nullable="false" />
+  </EntityType>
+  <Association Name="FWTLlamadaCallToCall">
+    <End Type="SistemaGestionRemoto.FWT" Role="FWT" Multiplicity="1" />
+    <End Type="SistemaGestionRemoto.LlamadaCallToCall" Role="LlamadaCallToCall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FWT">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LlamadaCallToCall">
+        <PropertyRef Name="FWTId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ConexionFWT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <NavigationProperty Name="FWT" Relationship="SistemaGestionRemoto.FWTConexionFWT" FromRole="ConexionFWT" ToRole="FWT" />
+  </EntityType>
+  <Association Name="FWTConexionFWT">
+    <End Type="SistemaGestionRemoto.FWT" Role="FWT" Multiplicity="1" />
+    <End Type="SistemaGestionRemoto.ConexionFWT" Role="ConexionFWT" Multiplicity="0..1" />
+  </Association>
+  <ComplexType Name="ParametrosFCI">
+    <Property Type="Byte" Name="ModoDisparo" Nullable="false" />
+    <Property Type="Int16" Name="ValorFalla" Nullable="false" />
+    <Property Type="Boolean" Name="ReposicionPorTiempo" Nullable="false" />
+    <Property Type="Boolean" Name="ReposicionPorTension" Nullable="false" />
+    <Property Type="Int32" Name="TiempoIndicacionFallaTemporalSegundos" Nullable="false" />
+    <Property Type="Byte" Name="TiempoFlashIndicacion8ms" Nullable="false" />
+    <Property Type="Byte" Name="TiermpoEntreFlashIndicacionSegundos" Nullable="false" />
+    <Property Type="Byte" Name="TiempoProteccionInRushSegundos" Nullable="false" />
+    <Property Type="Int16" Name="CorrienteAbsolutaDisparo" Nullable="false" />
+    <Property Type="Byte" Name="NumeroReintentosComunicacion" Nullable="false" />
+    <Property Type="Int32" Name="SegundosParaProximaComunicacion" Nullable="false" />
+    <Property Type="Int16" Name="TiempoRetardoValidacionTensionSegundos" Nullable="false" />
+    <Property Type="Boolean" Name="ReposicionPorMagneto" Nullable="false" />
+    <Property Type="Boolean" Name="ReposicionPorCorriente" Nullable="false" />
+    <Property Type="Boolean" Name="HabilitarReloj" Nullable="false" />
+    <Property Type="Boolean" Name="HabilitarFallaTransitoria" Nullable="false" />
+    <Property Type="Int16" Name="TiempoValidacionFallaSegundos" Nullable="false" />
+    <Property Type="Int16" Name="ToleranciaTensionReposicion" Nullable="false" />
+    <Property Type="Int32" Name="TiempoReposicionSegundos" Nullable="false" />
+    <Property Type="Int16" Name="CapacidadBateriaInstalada" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="TemplateParametrosFCI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Name="Parametros" Type="SistemaGestionRemoto.ParametrosFCI" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="ParametrosFWT">
+    <Property Type="Byte" Name="CanalRF" Nullable="false" />
+    <Property Type="Byte" Name="VecesSinReportarse" Nullable="false" />
+    <Property Type="String" Name="DireccionIPSCADA" Nullable="false" />
+    <Property Type="Int16" Name="PuertoSCADA" Nullable="false" />
+    <Property Type="String" Name="DireccionIPGESTION" Nullable="false" />
+    <Property Type="Int16" Name="PuertoGESTION" Nullable="false" />
+    <Property Type="String" Name="APN" Nullable="false" />
+    <Property Type="String" Name="Usuario" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" />
+    <Property Type="SistemaGestionRemoto.UbicacionDireccion" Name="DireccionNomenclatura" Nullable="false" />
+    <Property Type="SistemaGestionRemoto.UbicacionElectrica" Name="DireccionElectrica" Nullable="false" />
+    <Property Type="SistemaGestionRemoto.UbicacionGPS" Name="DireccionGPS" Nullable="false" />
+    <Property Type="Byte" Name="NumeroMaximoFCIs" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="UbicacionGPS">
+    <Property Type="Decimal" Name="Longitud" Nullable="false" />
+    <Property Type="Decimal" Name="Latitud" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="UbicacionElectrica">
+    <Property Type="String" Name="SubEstacion" Nullable="false" />
+    <Property Type="String" Name="Circuito" Nullable="false" />
+    <Property Type="String" Name="Tramo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="UbicacionDireccion">
+    <Property Type="String" Name="CalleCarrera" Nullable="false" />
+    <Property Type="Int16" Name="Numero" Nullable="false" />
+    <Property Type="String" Name="Ciudad" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="TemplateParametrosFWT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Name="Parametros" Type="SistemaGestionRemoto.ParametrosFWT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadisticaFCI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="FCI" Relationship="SistemaGestionRemoto.FCIEstadisticaFCI" FromRole="EstadisticaFCI" ToRole="FCI" />
+    <Property Type="Int32" Name="FCIId" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" />
+    <Property Type="Byte" Name="ContFallasTemporales" Nullable="false" />
+    <Property Type="Byte" Name="ContFallasPermanentes" Nullable="false" />
+    <Property Type="Byte" Name="ContFallasTension" Nullable="false" />
+    <Property Type="Byte" Name="ContFallasLowBattery" Nullable="false" />
+    <Property Type="Byte" Name="ContFiFoFallasIn" Nullable="false" />
+    <Property Type="Int16" Name="ValorPromedioIL" Nullable="false" />
+    <Property Type="Int16" Name="ValorMaximoIL" Nullable="false" />
+    <Property Type="Int16" Name="ValorMinimoIL" Nullable="false" />
+    <Property Type="Int16" Name="ValorActualIL" Nullable="false" />
+  </EntityType>
+  <Association Name="FCIEstadisticaFCI">
+    <End Type="SistemaGestionRemoto.FCI" Role="FCI" Multiplicity="1" />
+    <End Type="SistemaGestionRemoto.EstadisticaFCI" Role="EstadisticaFCI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FCI">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EstadisticaFCI">
+        <PropertyRef Name="FCIId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

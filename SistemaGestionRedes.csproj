@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1593CA2-E04D-417A-8B5D-645919533842}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaGestionRedes</RootNamespace>
+    <AssemblyName>SistemaGestionRedes</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="SistemaGestionRemotoContainer-Implementación" Order="1" xmlns="">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=CDG\SQLEXPRESS2008%3bInitial Catalog=SistemaGestionRemotoSofasa%3bUser ID=sa%3bPassword=sonic2008" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" />
+            <Source Path="obj\Debug\AutoScripts\SistemaGestionRemotoContainer-Implementación_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="SistemaGestionRemotoConnectionString-Implementación" Order="2" xmlns="">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=CDG\SQLEXPRESS2008%3bInitial Catalog=SistemaGestionRemotoSofasa%3bUser ID=sa%3bPassword=sonic2008" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" />
+            <Source Path="obj\Debug\AutoScripts\SistemaGestionRemotoConnectionString-Implementación_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="conexionADO-Implementación" Order="3" xmlns="">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=CDG\SQLEXPRESS2008%3bInitial Catalog=SistemaGestionRemotoSofasa%3bUser ID=sa%3bPassword=sonic2008" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" />
+            <Source Path="obj\Debug\AutoScripts\conexionADO-Implementación_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ADF.Comunicaciones">
+      <HintPath>..\..\DiagnosticsFWTApp\ADF.Comunicaciones\bin\Debug\ADF.Comunicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Celsa.ConexionMensajeria">
+      <HintPath>..\..\..\WinSGR2Scada\SistemaGestionSCADA104\SCADA104.DataAccessLayer\Celsa.ConexionMensajeria\bin\Debug\Celsa.ConexionMensajeria.dll</HintPath>
+    </Reference>
+    <Reference Include="ExportToExcel, Version=1.0.4107.15628, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ExportToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="RJS.Web.WebControl.PopCalendar.Net.2010, Version=8.1.4043.37381, Culture=neutral, PublicKeyToken=5edbe80336f06114, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\RJS.Web.WebControl.PopCalendar.Net.2010.dll</HintPath>
+    </Reference>
+    <Reference Include="SCADA104.Definiciones, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WinSGR2Scada\SistemaGestionSCADA104\SCADA104.DataAccessLayer\SCADA104.Definiciones\bin\Debug\SCADA104.Definiciones.dll</HintPath>
+    </Reference>
+    <Reference Include="SGR.BussinessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ComunicacionesSGRSCADA104\SGR.BussinessLayer\bin\Debug\SGR.BussinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="SGR.DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CosoftEEC\SGR.DataAccessLayer\bin\Debug\SGR.DataAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="SGR.UtilityLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ComunicacionesSGRSCADA104\SGR.UtilityLibrary\bin\Debug\SGR.UtilityLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="ActualizacionesFrames.htm" />
+    <Content Include="NoAuthorPage.aspx" />
+    <Content Include="Images\ActualizandoPage.gif" />
+    <Content Include="Images\bar.GIF" />
+    <Content Include="Images\barGreen.GIF" />
+    <Content Include="Images\roller.gif" />
+    <Content Include="PagesCommunications\FwtAvailability.aspx" />
+    <Content Include="PagesCommunications\FwtConnectionsState.aspx" />
+    <Content Include="PagesCommunications\StylesSection.css" />
+    <Content Include="PagesConfiguration\Alarms.aspx" />
+    <Content Include="PagesEquipment\AlarmaSound.swf" />
+    <Content Include="PagesEquipment\CircuitFault.aspx" />
+    <Content Include="PagesEquipment\DetallePrmsFCI.aspx" />
+    <Content Include="PagesEquipment\DetallePrmsFWT.aspx" />
+    <Content Include="PagesEquipment\EditSIX.aspx" />
+    <Content Include="PagesEquipment\SIXsAll.aspx" />
+    <Content Include="PagesEquipment\XMLCiudades.xml" />
+    <Content Include="PagesNewUsr\ModUser.aspx" />
+    <Content Include="PagesNewUsr\NewUser.aspx" />
+    <Content Include="PagesReportes\ConfiguracionColumnas.aspx" />
+    <Content Include="PagesReportes\CurrentStatisticsSix.aspx" />
+    <Content Include="PagesReportes\HistorialFWT.aspx" />
+    <Content Include="PagesReportes\HistorialStateFWT.aspx" />
+    <Content Include="PagesReportes\StatisticsSix.aspx" />
+    <Content Include="PagesSecurity\ChangePassword.aspx" />
+    <Content Include="CollapsePanel.aspx" />
+    <Content Include="EquiposFrames.htm" />
+    <Content Include="Hola.html" />
+    <Content Include="Images\collapse.jpg" />
+    <Content Include="Images\collapse_blue.jpg" />
+    <Content Include="Images\ConnectDataBase.JPG" />
+    <Content Include="Images\expand.jpg" />
+    <Content Include="Images\expand_blue.jpg" />
+    <Content Include="Images\Refresh.JPG" />
+    <Content Include="Images\whitecolor.JPG" />
+    <Content Include="Images\whitecolorRight.JPG" />
+    <Content Include="Login.aspx" />
+    <Content Include="PagesCommunications\ActualCommunications.aspx" />
+    <Content Include="PagesCommunications\CommunicationServer.aspx" />
+    <Content Include="ComunicacionesFrames.htm" />
+    <Content Include="ConfiguracionesFrames.htm" />
+    <Content Include="PagesEquipment\EditFCI.aspx" />
+    <Content Include="PagesEquipment\EditFWT.aspx" />
+    <Content Include="PagesEquipment\FCIFault.aspx" />
+    <Content Include="PagesEquipment\FCIOK.aspx" />
+    <Content Include="PagesEquipment\FCIsAll.aspx" />
+    <Content Include="PagesEquipment\FWTFault.aspx" />
+    <Content Include="PagesUpdates\FirmwareStateReport.aspx" />
+    <Content Include="PagesUpdates\FWTFirmwareUpdating.aspx" />
+    <Content Include="PagesEquipment\FWTOK.aspx" />
+    <Content Include="PagesEquipment\FWTsAll.aspx" />
+    <Content Include="PagesReportes\CurrentStatistics.aspx" />
+    <Content Include="PagesReportes\Historial.aspx" />
+    <Content Include="HomeFrames.htm" />
+    <Content Include="Images\electricity.jpg" />
+    <Content Include="PagesEquipment\NewFCI.aspx" />
+    <Content Include="PagesEquipment\NewFWT.aspx" />
+    <Content Include="PagesConfiguration\NewTemplateFCI.aspx" />
+    <Content Include="PagesConfiguration\NewTemplateFWT.aspx" />
+    <Content Include="PagesUpdates\StylesSection.css" />
+    <Content Include="PopCalendar2010\Calendar.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic.css" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\baddate.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\close.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\closedown.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\down.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\drop1.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\drop2.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\left1.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\left2.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\right1.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\right2.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\special.gif" />
+    <Content Include="PopCalendar2010\CSS\Classic_Images\up.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern.css" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\baddate.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\baddatex.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\close.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\closedown.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\down.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\drop1.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\drop2.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\left1.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\left2.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\right1.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\right2.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\special.gif" />
+    <Content Include="PopCalendar2010\CSS\Modern_Images\up.gif" />
+    <Content Include="PopCalendar2010\CSS\Small.css" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\baddate.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\close.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\closedown.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\down.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\drop1.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\drop2.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\left1.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\left2.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\right1.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\right2.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\special.gif" />
+    <Content Include="PopCalendar2010\CSS\Small_Images\up.gif" />
+    <Content Include="PopCalendar2010\DisableCalendar.gif" />
+    <Content Include="PopCalendar2010\PopCalendarAjaxNet.js" />
+    <Content Include="PopCalendar2010\PopCalendarFunctionsAjaxNet.js" />
+    <Content Include="ReportesFrames.htm" />
+    <Content Include="PagesEquipment\SearchEquipment.aspx" />
+    <Content Include="seccionAB.aspx" />
+    <Content Include="seccionC.aspx" />
+    <Content Include="SeccionDActualizaciones.aspx" />
+    <Content Include="seccionDComunicaciones.aspx" />
+    <Content Include="seccionDConfiguracion.aspx" />
+    <Content Include="seccionDReportes.aspx" />
+    <Content Include="SeccionDSeguridad.aspx" />
+    <Content Include="seccionE.aspx" />
+    <Content Include="seccionF.aspx" />
+    <Content Include="PagesEquipment\StateDescription.aspx" />
+    <Content Include="PagesReportes\Statistics.aspx" />
+    <Content Include="SeguridadFrames.htm" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="PagesConfiguration\TemplatesFCI.aspx" />
+    <Content Include="PagesConfiguration\TemplatesFWT.aspx" />
+    <Content Include="TestWinIdentity.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\TextosGlobales.designer.cs">
+      <DependentUpon>TextosGlobales.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\TextosGlobales.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextosGlobales.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DataControlFieldsCel.cs" />
+    <Compile Include="ConfigApp.cs" />
+    <Compile Include="NoAuthorPage.aspx.cs">
+      <DependentUpon>NoAuthorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoAuthorPage.aspx.designer.cs">
+      <DependentUpon>NoAuthorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionGenerica.cs" />
+    <Compile Include="PagesCommunications\FwtAvailability.aspx.cs">
+      <DependentUpon>FwtAvailability.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesCommunications\FwtAvailability.aspx.designer.cs">
+      <DependentUpon>FwtAvailability.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesCommunications\FwtConnectionsState.aspx.cs">
+      <DependentUpon>FwtConnectionsState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesCommunications\FwtConnectionsState.aspx.designer.cs">
+      <DependentUpon>FwtConnectionsState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesConfiguration\Alarms.aspx.cs">
+      <DependentUpon>Alarms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesConfiguration\Alarms.aspx.designer.cs">
+      <DependentUpon>Alarms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\CircuitFault.aspx.cs">
+      <DependentUpon>CircuitFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\CircuitFault.aspx.designer.cs">
+      <DependentUpon>CircuitFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\DetallePrmsFCI.aspx.cs">
+      <DependentUpon>DetallePrmsFCI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\DetallePrmsFCI.aspx.designer.cs">
+      <DependentUpon>DetallePrmsFCI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\DetallePrmsFWT.aspx.cs">
+      <DependentUpon>DetallePrmsFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\DetallePrmsFWT.aspx.designer.cs">
+      <DependentUpon>DetallePrmsFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\EditSIX.aspx.cs">
+      <DependentUpon>EditSIX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\EditSIX.aspx.designer.cs">
+      <DependentUpon>EditSIX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\SIXsAll.aspx.cs">
+      <DependentUpon>SIXsAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\SIXsAll.aspx.designer.cs">
+      <DependentUpon>SIXsAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNewUsr\ModUser.aspx.cs">
+      <DependentUpon>ModUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesNewUsr\ModUser.aspx.designer.cs">
+      <DependentUpon>ModUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesNewUsr\NewUser.aspx.cs">
+      <DependentUpon>NewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesNewUsr\NewUser.aspx.designer.cs">
+      <DependentUpon>NewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\ConfiguracionColumnas.aspx.cs">
+      <DependentUpon>ConfiguracionColumnas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\ConfiguracionColumnas.aspx.designer.cs">
+      <DependentUpon>ConfiguracionColumnas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\CurrentStatisticsSix.aspx.cs">
+      <DependentUpon>CurrentStatisticsSix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\CurrentStatisticsSix.aspx.designer.cs">
+      <DependentUpon>CurrentStatisticsSix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\HistorialFWT.aspx.cs">
+      <DependentUpon>HistorialFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\HistorialFWT.aspx.designer.cs">
+      <DependentUpon>HistorialFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\HistorialStateFWT.aspx.cs">
+      <DependentUpon>HistorialStateFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\HistorialStateFWT.aspx.designer.cs">
+      <DependentUpon>HistorialStateFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\StatisticsSix.aspx.cs">
+      <DependentUpon>StatisticsSix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\StatisticsSix.aspx.designer.cs">
+      <DependentUpon>StatisticsSix.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesSecurity\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesSecurity\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CollapsePanel.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesCommunications\ActualCommunications.aspx.cs">
+      <DependentUpon>ActualCommunications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesCommunications\ActualCommunications.aspx.designer.cs">
+      <DependentUpon>ActualCommunications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesCommunications\CommunicationServer.aspx.cs">
+      <DependentUpon>CommunicationServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesCommunications\CommunicationServer.aspx.designer.cs">
+      <DependentUpon>CommunicationServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\EditFCI.aspx.cs">
+      <DependentUpon>EditFCI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\EditFCI.aspx.designer.cs">
+      <DependentUpon>EditFCI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\EditFWT.aspx.cs">
+      <DependentUpon>EditFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\EditFWT.aspx.designer.cs">
+      <DependentUpon>EditFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\FCIFault.aspx.cs">
+      <DependentUpon>FCIFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\FCIFault.aspx.designer.cs">
+      <DependentUpon>FCIFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\FCIOK.aspx.cs">
+      <DependentUpon>FCIOK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\FCIOK.aspx.designer.cs">
+      <DependentUpon>FCIOK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\FCIsAll.aspx.cs">
+      <DependentUpon>FCIsAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\FCIsAll.aspx.designer.cs">
+      <DependentUpon>FCIsAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\FWTFault.aspx.cs">
+      <DependentUpon>FWTFault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\FWTFault.aspx.designer.cs">
+      <DependentUpon>FWTFault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesUpdates\FirmwareStateReport.aspx.cs">
+      <DependentUpon>FirmwareStateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesUpdates\FirmwareStateReport.aspx.designer.cs">
+      <DependentUpon>FirmwareStateReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesUpdates\FWTFirmwareUpdating.aspx.cs">
+      <DependentUpon>FWTFirmwareUpdating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesUpdates\FWTFirmwareUpdating.aspx.designer.cs">
+      <DependentUpon>FWTFirmwareUpdating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\FWTOK.aspx.cs">
+      <DependentUpon>FWTOK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\FWTOK.aspx.designer.cs">
+      <DependentUpon>FWTOK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\FWTsAll.aspx.cs">
+      <DependentUpon>FWTsAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\FWTsAll.aspx.designer.cs">
+      <DependentUpon>FWTsAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\CurrentStatistics.aspx.cs">
+      <DependentUpon>CurrentStatistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\CurrentStatistics.aspx.designer.cs">
+      <DependentUpon>CurrentStatistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\Historial.aspx.cs">
+      <DependentUpon>Historial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\Historial.aspx.designer.cs">
+      <DependentUpon>Historial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\NewFCI.aspx.cs">
+      <DependentUpon>NewFCI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\NewFCI.aspx.designer.cs">
+      <DependentUpon>NewFCI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\NewFWT.aspx.cs">
+      <DependentUpon>NewFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\NewFWT.aspx.designer.cs">
+      <DependentUpon>NewFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesConfiguration\NewTemplateFCI.aspx.cs">
+      <DependentUpon>NewTemplateFCI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesConfiguration\NewTemplateFCI.aspx.designer.cs">
+      <DependentUpon>NewTemplateFCI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesConfiguration\NewTemplateFWT.aspx.cs">
+      <DependentUpon>NewTemplateFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesConfiguration\NewTemplateFWT.aspx.designer.cs">
+      <DependentUpon>NewTemplateFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileCelsa.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PagesEquipment\SearchEquipment.aspx.cs">
+      <DependentUpon>SearchEquipment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\SearchEquipment.aspx.designer.cs">
+      <DependentUpon>SearchEquipment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionAB.aspx.cs">
+      <DependentUpon>seccionAB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionAB.aspx.designer.cs">
+      <DependentUpon>seccionAB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionC.aspx.cs">
+      <DependentUpon>seccionC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionC.aspx.designer.cs">
+      <DependentUpon>seccionC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeccionDActualizaciones.aspx.cs">
+      <DependentUpon>SeccionDActualizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeccionDActualizaciones.aspx.designer.cs">
+      <DependentUpon>SeccionDActualizaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionDComunicaciones.aspx.cs">
+      <DependentUpon>seccionDComunicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionDComunicaciones.aspx.designer.cs">
+      <DependentUpon>seccionDComunicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionDConfiguracion.aspx.cs">
+      <DependentUpon>seccionDConfiguracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionDConfiguracion.aspx.designer.cs">
+      <DependentUpon>seccionDConfiguracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionDReportes.aspx.cs">
+      <DependentUpon>seccionDReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionDReportes.aspx.designer.cs">
+      <DependentUpon>seccionDReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeccionDSeguridad.aspx.cs">
+      <DependentUpon>SeccionDSeguridad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeccionDSeguridad.aspx.designer.cs">
+      <DependentUpon>SeccionDSeguridad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionE.aspx.cs">
+      <DependentUpon>seccionE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionE.aspx.designer.cs">
+      <DependentUpon>seccionE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seccionF.aspx.cs">
+      <DependentUpon>seccionF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seccionF.aspx.designer.cs">
+      <DependentUpon>seccionF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\StateDescription.aspx.cs">
+      <DependentUpon>StateDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\StateDescription.aspx.designer.cs">
+      <DependentUpon>StateDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\Statistics.aspx.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\Statistics.aspx.designer.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesConfiguration\TemplatesFCI.aspx.cs">
+      <DependentUpon>TemplatesFCI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesConfiguration\TemplatesFCI.aspx.designer.cs">
+      <DependentUpon>TemplatesFCI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesConfiguration\TemplatesFWT.aspx.cs">
+      <DependentUpon>TemplatesFWT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesConfiguration\TemplatesFWT.aspx.designer.cs">
+      <DependentUpon>TemplatesFWT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoUsr.cs" />
+    <Compile Include="TestWinIdentity.aspx.cs">
+      <DependentUpon>TestWinIdentity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestWinIdentity.aspx.designer.cs">
+      <DependentUpon>TestWinIdentity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UtilitariosWebGUI.cs" />
+    <Compile Include="UtilsScada.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="ErrorPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\CircuitFault.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\CircuitFault.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\CircuitFault.aspx.pt.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesNewUsr\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesUpdates\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionAB.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionAB.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionC.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionC.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SeccionDActualizaciones.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SeccionDActualizaciones.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionDComunicaciones.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionDComunicaciones.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionDReportes.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionDReportes.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SeccionDSeguridad.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\SeccionDSeguridad.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionF.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\seccionF.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Login.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Login.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\NoAuthorPage.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\NoAuthorPage.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\UtilitariosWebGUI.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\UtilitariosWebGUI.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditFCI.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\TextosGlobales.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>TextosGlobales.en.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\TextosGlobales.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>TextosGlobales.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditFCI.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditFWT.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditFWT.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditSIX.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditSIX.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\DetallePrmsFCI.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\DetallePrmsFCI.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\DetallePrmsFWT.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\DetallePrmsFWT.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FCIFault.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FCIFault.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FCIOK.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FCIOK.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FCIsAll.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FCIsAll.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FWTFault.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FWTFault.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FWTsAll.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\FWTsAll.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\SearchEquipment.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\SearchEquipment.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\SIXsAll.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\SIXsAll.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesCommunications\App_LocalResources\ActualCommunications.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesCommunications\App_LocalResources\ActualCommunications.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesNewUsr\App_LocalResources\NewUser.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesNewUsr\App_LocalResources\NewUser.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesNewUsr\App_LocalResources\ModUser.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesNewUsr\App_LocalResources\ModUser.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesUpdates\App_LocalResources\FWTFirmwareUpdating.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesUpdates\App_LocalResources\FWTFirmwareUpdating.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\ConfiguracionColumnas.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\ConfiguracionColumnas.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\Historial.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\Historial.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\Statistics.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\Statistics.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\StatisticsSix.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\StatisticsSix.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\CurrentStatistics.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\CurrentStatistics.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\CurrentStatisticsSix.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\CurrentStatisticsSix.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\HistorialFWT.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\HistorialFWT.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\HistorialStateFWT.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\HistorialStateFWT.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesCommunications\App_LocalResources\FwtConnectionsState.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesCommunications\App_LocalResources\FwtConnectionsState.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesCommunications\App_LocalResources\FwtAvailability.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesCommunications\App_LocalResources\FwtAvailability.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesUpdates\App_LocalResources\FirmwareStateReport.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesUpdates\App_LocalResources\FirmwareStateReport.aspx.en.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2846</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
