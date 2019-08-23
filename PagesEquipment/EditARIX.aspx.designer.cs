@@ -10,7 +10,7 @@
 namespace SistemaGestionRedes {
     
     
-    public partial class EditFWT {
+    public partial class EditARIX {
         
         /// <summary>
         /// Head1 control.
@@ -31,24 +31,6 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ToolkitScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ToolkitScriptManager1;
-        
-        /// <summary>
-        /// Literal1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
-        
-        /// <summary>
         /// lblId control.
         /// </summary>
         /// <remarks>
@@ -58,1012 +40,832 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblId;
         
         /// <summary>
-        /// lblSerial control.
+        /// ToolkitScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSerial;
+        protected global::System.Web.UI.ScriptManager ToolkitScriptManager1;
         
         /// <summary>
-        /// Label7 control.
+        /// CollapsiblePanelOperacionGeneral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelOperacionGeneral;
         
         /// <summary>
-        /// Label29 control.
+        /// TitleOperacionGeneral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label29;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionGeneral;
         
         /// <summary>
-        /// Label43 control.
+        /// ImageActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label43;
+        protected global::System.Web.UI.WebControls.Image ImageActual;
         
         /// <summary>
-        /// Label17 control.
+        /// lblTextTitleOperacionGeneral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label17;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionGeneral;
         
         /// <summary>
-        /// lblFechaRegistroGestion control.
+        /// ContentOperacionGeneral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaRegistroGestion;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionGeneral;
         
         /// <summary>
-        /// lblFechaInstalacion control.
+        /// LabelOpGeneral_modoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaInstalacion;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_modoOperacion;
         
         /// <summary>
-        /// lblFechaUltimaComunicacion control.
+        /// LabelOpGeneral_porcentajeHisteresis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaUltimaComunicacion;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_porcentajeHisteresis;
         
         /// <summary>
-        /// lblFechaUltimoEnvio control.
+        /// LabelOpGeneral_ciclosVerifResetDismCorrFalla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaUltimoEnvio;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_ciclosVerifResetDismCorrFalla;
         
         /// <summary>
-        /// Literal2 control.
+        /// listBoxModoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal2;
+        protected global::System.Web.UI.WebControls.ListBox listBoxModoOperacion;
         
         /// <summary>
-        /// upPanelLeerEstadoOnline control.
+        /// txtOpGeneral_porcentajeHisteresis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPanelLeerEstadoOnline;
+        protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_porcentajeHisteresis;
         
         /// <summary>
-        /// Label33 control.
+        /// txtOpGeneral_ciclosVerifResetDismCorrFalla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label33;
+        protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_ciclosVerifResetDismCorrFalla;
         
         /// <summary>
-        /// Label39 control.
+        /// LabelOpGeneral_frecOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label39;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_frecOperacion;
         
         /// <summary>
-        /// Label36 control.
+        /// LabelOpGeneral_habilitarFuncionalidadInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label36;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_habilitarFuncionalidadInrush;
         
         /// <summary>
-        /// lblIMEI control.
+        /// LabelOpGeneral_modOperacionFinVidaUtil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIMEI;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_modOperacionFinVidaUtil;
         
         /// <summary>
-        /// lblIMSI control.
+        /// listBoxFrecOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIMSI;
+        protected global::System.Web.UI.WebControls.ListBox listBoxFrecOperacion;
         
         /// <summary>
-        /// lblNivelSenal control.
+        /// chkBoxOpGeneral_habilitarInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNivelSenal;
+        protected global::System.Web.UI.WebControls.CheckBox chkBoxOpGeneral_habilitarInrush;
         
         /// <summary>
-        /// ImgNivelSenal control.
+        /// listBoxmodOperacionFinVidaUtil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImgNivelSenal;
+        protected global::System.Web.UI.WebControls.ListBox listBoxmodOperacionFinVidaUtil;
         
         /// <summary>
-        /// Label34 control.
+        /// LabelOpGeneral_modoInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label34;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_modoInrush;
         
         /// <summary>
-        /// Label37 control.
+        /// LabelOpGeneral_corrInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label37;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_corrInrush;
         
         /// <summary>
-        /// Label38 control.
+        /// LabelOpGeneral_porcentaje2doArmonicoInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label38;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_porcentaje2doArmonicoInrush;
         
         /// <summary>
-        /// Label42 control.
+        /// listBoxmodoInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label42;
+        protected global::System.Web.UI.WebControls.ListBox listBoxmodoInrush;
         
         /// <summary>
-        /// lblVoltBatt control.
+        /// txtOpGeneral_corrInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVoltBatt;
+        protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_corrInrush;
         
         /// <summary>
-        /// lblVoltCargador control.
+        /// txtOpGeneral_porcentaje2doArmonicoInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVoltCargador;
+        protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_porcentaje2doArmonicoInrush;
         
         /// <summary>
-        /// lblVoltPanel control.
+        /// LabelOpGeneral_tiempoDeValidacionInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVoltPanel;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_tiempoDeValidacionInrush;
         
         /// <summary>
-        /// lblTemperatura control.
+        /// LabelOpGeneral_tiempoSostenimientoInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTemperatura;
+        protected global::System.Web.UI.WebControls.Label LabelOpGeneral_tiempoSostenimientoInrush;
         
         /// <summary>
-        /// Label35 control.
+        /// txtOpGeneral_tiempoDeValidacionInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label35;
+        protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_tiempoDeValidacionInrush;
         
         /// <summary>
-        /// Label40 control.
+        /// txtOpGeneral_tiempoSostenimientoInrush control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label40;
+        protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_tiempoSostenimientoInrush;
         
         /// <summary>
-        /// Label41 control.
+        /// CollapsiblePanelOperacionReconectador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label41;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelOperacionReconectador;
         
         /// <summary>
-        /// lblVerPrograma control.
+        /// TitleOperacionReconectador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVerPrograma;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionReconectador;
         
         /// <summary>
-        /// lblVerMonitor control.
+        /// ImageReconectador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVerMonitor;
+        protected global::System.Web.UI.WebControls.Image ImageReconectador;
         
         /// <summary>
-        /// lblVerFirmwModulo control.
+        /// lblTextTitleOperacionReconectador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVerFirmwModulo;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionReconectador;
         
         /// <summary>
-        /// butLeerEstadoFWTOnLine control.
+        /// ContentOperacionReconectador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butLeerEstadoFWTOnLine;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionReconectador;
         
         /// <summary>
-        /// upProgLeerEstadoOnline control.
+        /// LabelOpReconectador_numRecierres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress upProgLeerEstadoOnline;
+        protected global::System.Web.UI.WebControls.Label LabelOpReconectador_numRecierres;
         
         /// <summary>
-        /// lblLecturaOnlineEstadoFWT control.
+        /// LabelOpReconectador_corrMaxAbsoluta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLecturaOnlineEstadoFWT;
+        protected global::System.Web.UI.WebControls.Label LabelOpReconectador_corrMaxAbsoluta;
         
         /// <summary>
-        /// upPanelResetFWT control.
+        /// LabelOpReconectador_tiempoDefDisparoCorrMaxAbs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPanelResetFWT;
+        protected global::System.Web.UI.WebControls.Label LabelOpReconectador_tiempoDefDisparoCorrMaxAbs;
         
         /// <summary>
-        /// btnWriteResetFwt control.
+        /// txtOpReconectador_numRecierres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnWriteResetFwt;
+        protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_numRecierres;
         
         /// <summary>
-        /// upProgWriteResetFwt control.
+        /// txtOpReconectador_corrMaxAbsolutas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress upProgWriteResetFwt;
+        protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_corrMaxAbsolutas;
         
         /// <summary>
-        /// lblResetOnLineFWT control.
+        /// txtOpReconectador_tiempoDefDisparoCorrMaxAbs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResetOnLineFWT;
+        protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_tiempoDefDisparoCorrMaxAbs;
         
         /// <summary>
-        /// Literal4 control.
+        /// LabelOpReconectador_resetTimeAfterLockout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal4;
+        protected global::System.Web.UI.WebControls.Label LabelOpReconectador_resetTimeAfterLockout;
         
         /// <summary>
-        /// Label1 control.
+        /// LabelOpReconectador_resetTimeLockout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label LabelOpReconectador_resetTimeLockout;
         
         /// <summary>
-        /// ddlFCIsAll control.
+        /// LabelOpReconectador_corrMaxCapacidadRIX control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFCIsAll;
+        protected global::System.Web.UI.WebControls.Label LabelOpReconectador_corrMaxCapacidadRIX;
         
         /// <summary>
-        /// butAddFCI control.
+        /// txtOpReconectador_resetTimeAfterLockout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butAddFCI;
+        protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_resetTimeAfterLockout;
         
         /// <summary>
-        /// butRemoveFCI control.
+        /// txtOpReconectador_resetTimeLockout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butRemoveFCI;
+        protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_resetTimeLockout;
         
         /// <summary>
-        /// Label2 control.
+        /// txtOpReconectador_corrMaxCapacidadRIX control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_corrMaxCapacidadRIX;
         
         /// <summary>
-        /// listBoxFCIsPropios control.
+        /// CollapsiblePanelOperacionModoDisparo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listBoxFCIsPropios;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelOperacionModoDisparo;
         
         /// <summary>
-        /// btnClearFCI control.
+        /// TitleOperacionModoDisparo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClearFCI;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionModoDisparo;
         
         /// <summary>
-        /// lblMsgErrSeleccionFCIClear control.
+        /// ImageModoDisparo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgErrSeleccionFCIClear;
+        protected global::System.Web.UI.WebControls.Image ImageModoDisparo;
         
         /// <summary>
-        /// updatePanelVerificarQtySix control.
+        /// lblTextTitleOperacionModoDisparo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatePanelVerificarQtySix;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionModoDisparo;
         
         /// <summary>
-        /// lblMsgErrQtySixIncompatibles control.
+        /// ContentOperacionModoDisparo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgErrQtySixIncompatibles;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionModoDisparo;
         
         /// <summary>
-        /// timerQtySixIncompatible control.
+        /// CollapsiblePanelDisparo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer timerQtySixIncompatible;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelDisparo1;
         
         /// <summary>
-        /// Literal10 control.
+        /// TitleOperacionDisparo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal10;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionDisparo1;
         
         /// <summary>
-        /// Label5 control.
+        /// ImageDisparo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Image ImageDisparo1;
         
         /// <summary>
-        /// lblVersionFwDevRTCargado control.
+        /// lblTextTitleOperacionDisparo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargado;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionDisparo1;
         
         /// <summary>
-        /// Label18 control.
+        /// ContentOperacionDisparo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionDisparo1;
         
         /// <summary>
-        /// lblVersionFwDevRTCargadoARIX control.
+        /// LabelDisparo1_tipoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargadoARIX;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_tipoOperacion;
         
         /// <summary>
-        /// GVEquiposRemotos control.
+        /// LabelDisparo1_tipoReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVEquiposRemotos;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_tipoReset;
         
         /// <summary>
-        /// SqlDSDevsRT control.
+        /// LabelDisparo1_habilitaModificadores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSDevsRT;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_habilitaModificadores;
         
         /// <summary>
-        /// Literal5 control.
+        /// listBoxDisparo1_tipoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal5;
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo1_tipoOperacion;
         
         /// <summary>
-        /// Literal6 control.
+        /// listBoxDisparo1_tipoReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal6;
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo1_tipoReset;
         
         /// <summary>
-        /// Literal7 control.
+        /// checkDisparo1_habilitaModificadores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal7;
+        protected global::System.Web.UI.WebControls.CheckBox checkDisparo1_habilitaModificadores;
         
         /// <summary>
-        /// Label6 control.
+        /// LabelDisparo1_corrArranque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_corrArranque;
         
         /// <summary>
-        /// txtCiudad control.
+        /// LabelDisparo1_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtCiudad;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_modCorrMaxActuacion;
         
         /// <summary>
-        /// Label10 control.
+        /// LabelDisparo1_modTd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_modTd;
         
         /// <summary>
-        /// txtSubEstacion control.
+        /// txtDisparo1_corrArranque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubEstacion;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_corrArranque;
         
         /// <summary>
-        /// ReqValSubEsta control.
+        /// txtDisparo1_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValSubEsta;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modCorrMaxActuacion;
         
         /// <summary>
-        /// Label22 control.
+        /// txtDisparo1_modTd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTd;
         
         /// <summary>
-        /// txtIpGestion control.
+        /// LabelDisparo1_tiempoDisparoDefinido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIpGestion;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_tiempoDisparoDefinido;
         
         /// <summary>
-        /// ReqValIPGestion control.
+        /// LabelDisparo1_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValIPGestion;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_tiempoResetCiclo;
         
         /// <summary>
-        /// RegExValIPGestion control.
+        /// LabelDisparo1_tiempoApertura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExValIPGestion;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_tiempoApertura;
         
         /// <summary>
-        /// Label48 control.
+        /// txtDisparo1_tiempoDisparoDefinido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label48;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_tiempoDisparoDefinido;
         
         /// <summary>
-        /// txtTiempoEsperaPaqueteDeSGR control.
+        /// txtDisparo1_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTiempoEsperaPaqueteDeSGR;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_tiempoResetCiclo;
         
         /// <summary>
-        /// Label49 control.
+        /// txtDisparo1_tiempoApertura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label49;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_tiempoApertura;
         
         /// <summary>
-        /// ReqValTxtTiempoEsperaPaqueteDeSGR control.
+        /// LabelDisparo1_modTiempoMaxRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValTxtTiempoEsperaPaqueteDeSGR;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_modTiempoMaxRespuesta;
         
         /// <summary>
-        /// RegExtxtTiempoEsperaPaqueteDeSGR control.
+        /// LabelDisparo1_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExtxtTiempoEsperaPaqueteDeSGR;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_modTiempoMinRespuesta;
         
         /// <summary>
-        /// RanValtxtTiempoEsperaPaqueteDeSGR control.
+        /// LabelDisparo1_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValtxtTiempoEsperaPaqueteDeSGR;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_modTiempoDefIMaxAct;
         
         /// <summary>
-        /// Label8 control.
+        /// txtDisparo1_modTiempoMaxRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTiempoMaxRespuesta;
         
         /// <summary>
-        /// txtCalle control.
+        /// txtDisparo1_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCalle;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTiempoMinRespuesta;
         
         /// <summary>
-        /// ReqValCalle control.
+        /// txtDisparo1_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValCalle;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTiempoDefIMaxAct;
         
         /// <summary>
-        /// Label11 control.
+        /// LabelDisparo1_modRetardoAdicional control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo1_modRetardoAdicional;
         
         /// <summary>
-        /// txtCircuito control.
+        /// txtDisparo1_modRetardoAdicional control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCircuito;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modRetardoAdicional;
         
         /// <summary>
-        /// ReqValCircuito control.
+        /// CollapsiblePanelDisparo2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValCircuito;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelDisparo2;
         
         /// <summary>
-        /// Label23 control.
+        /// TitleOperacionDisparo2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionDisparo2;
         
         /// <summary>
-        /// txtPuertoGestion control.
+        /// ImageDisparo2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPuertoGestion;
+        protected global::System.Web.UI.WebControls.Image ImageDisparo2;
         
         /// <summary>
-        /// ReqValGestion control.
+        /// lblTextTitleOperacionDisparo2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValGestion;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionDisparo2;
         
         /// <summary>
-        /// RegExpValPtoGestion control.
+        /// ContentOperacionDisparo2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExpValPtoGestion;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionDisparo2;
         
         /// <summary>
-        /// RanValPtoGestion control.
+        /// LabelDisparo2_tipoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValPtoGestion;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo2_tipoOperacion;
         
         /// <summary>
-        /// Label46 control.
+        /// LabelDisparo2_tipoReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label46;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo2_tipoReset;
         
         /// <summary>
-        /// txtMaxNumeroReintentosPack control.
+        /// LabelDisparo2_habilitaModificadores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaxNumeroReintentosPack;
+        protected global::System.Web.UI.WebControls.Label LabelDisparo2_habilitaModificadores;
         
         /// <summary>
-        /// Label47 control.
+        /// listBoxDisparo2_tipoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label47;
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo2_tipoOperacion;
         
         /// <summary>
-        /// ReqValTxtMaxNumeroReintentosPack control.
+        /// listBoxDisparo2_tipoReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValTxtMaxNumeroReintentosPack;
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo2_tipoReset;
         
         /// <summary>
-        /// RegExTxtMaxNumeroReintentosPack control.
+        /// checkDisparo2_habilitaModificadores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExTxtMaxNumeroReintentosPack;
-        
-        /// <summary>
-        /// RanValTxtMaxNumeroReintentosPack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValTxtMaxNumeroReintentosPack;
-        
-        /// <summary>
-        /// Label9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
-        
-        /// <summary>
-        /// txtNumero control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumero;
-        
-        /// <summary>
-        /// ReqValNumero control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValNumero;
-        
-        /// <summary>
-        /// Label12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
-        
-        /// <summary>
-        /// txtTramo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTramo;
-        
-        /// <summary>
-        /// ReqValTramo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValTramo;
-        
-        /// <summary>
-        /// Label76 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label76;
-        
-        /// <summary>
-        /// txtIpGestionAlternativa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIpGestionAlternativa;
-        
-        /// <summary>
-        /// RegExValIPGestionAlternativa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExValIPGestionAlternativa;
-        
-        /// <summary>
-        /// Label44 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label44;
-        
-        /// <summary>
-        /// txtSecondsBeforeRetryConnection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSecondsBeforeRetryConnection;
-        
-        /// <summary>
-        /// Label45 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label45;
-        
-        /// <summary>
-        /// ReqValSecsBefore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValSecsBefore;
-        
-        /// <summary>
-        /// RegExSecsBefore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExSecsBefore;
-        
-        /// <summary>
-        /// RanValSecsBefore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValSecsBefore;
-        
-        /// <summary>
-        /// Label13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
-        
-        /// <summary>
-        /// txtLatitud control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLatitud;
-        
-        /// <summary>
-        /// Label72 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label72;
-        
-        /// <summary>
-        /// txtNodo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNodo;
+        protected global::System.Web.UI.WebControls.CheckBox checkDisparo2_habilitaModificadores;
         
         /// <summary>
         /// Label4 control.
@@ -1075,67 +877,274 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// txtPuertoGestionAlternativo control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPuertoGestionAlternativo;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Label50 control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label50;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// txtMaxNumeroReintentosConexionToSGR control.
+        /// txtDisparo2_corrArranque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaxNumeroReintentosConexionToSGR;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_corrArranque;
         
         /// <summary>
-        /// Label51 control.
+        /// txtDisparo2_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label51;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modCorrMaxActuacion;
         
         /// <summary>
-        /// ReqValtxtMaxNumeroReintentosConexionToSGR control.
+        /// txtDisparo2_modTd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValtxtMaxNumeroReintentosConexionToSGR;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTd;
         
         /// <summary>
-        /// RegExtxtMaxNumeroReintentosConexionToSGR control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExtxtMaxNumeroReintentosConexionToSGR;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// RanValtxtMaxNumeroReintentosConexionToSGR control.
+        /// Label8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValtxtMaxNumeroReintentosConexionToSGR;
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// Label9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+        
+        /// <summary>
+        /// txtDisparo2_tiempoDisparoDefinido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_tiempoDisparoDefinido;
+        
+        /// <summary>
+        /// txtDisparo2_tiempoResetCiclo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_tiempoResetCiclo;
+        
+        /// <summary>
+        /// txtDisparo2_tiempoApertura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_tiempoApertura;
+        
+        /// <summary>
+        /// Label10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label10;
+        
+        /// <summary>
+        /// Label11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label11;
+        
+        /// <summary>
+        /// Label12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label12;
+        
+        /// <summary>
+        /// txtDisparo2_modTiempoMaxRespuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTiempoMaxRespuesta;
+        
+        /// <summary>
+        /// txtDisparo2_modTiempoMinRespuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTiempoMinRespuesta;
+        
+        /// <summary>
+        /// txtDisparo2_modTiempoDefIMaxAct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Label13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
+        
+        /// <summary>
+        /// txtDisparo2_modRetardoAdicional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modRetardoAdicional;
+        
+        /// <summary>
+        /// CollapsiblePanelDisparo3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelDisparo3;
+        
+        /// <summary>
+        /// TitleOperacionDisparo3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionDisparo3;
+        
+        /// <summary>
+        /// ImageDisparo3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImageDisparo3;
+        
+        /// <summary>
+        /// lblTextTitleOperacionDisparo3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionDisparo3;
+        
+        /// <summary>
+        /// ContentOperacionDisparo3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionDisparo3;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// listBoxDisparo3_tipoOperacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo3_tipoOperacion;
+        
+        /// <summary>
+        /// listBoxDisparo3_tipoReset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo3_tipoReset;
+        
+        /// <summary>
+        /// checkDisparo3_habilitaModificadores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkDisparo3_habilitaModificadores;
         
         /// <summary>
         /// Label14 control.
@@ -1147,141 +1156,6 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// txtLongitud control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLongitud;
-        
-        /// <summary>
-        /// Label74 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label74;
-        
-        /// <summary>
-        /// txtCodigoCorporativo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoCorporativo;
-        
-        /// <summary>
-        /// Label19 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
-        
-        /// <summary>
-        /// txtAPN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAPN;
-        
-        /// <summary>
-        /// ReqValAPN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValAPN;
-        
-        /// <summary>
-        /// Label52 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label52;
-        
-        /// <summary>
-        /// txtPeriodoReporteSeg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPeriodoReporteSeg;
-        
-        /// <summary>
-        /// Label53 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label53;
-        
-        /// <summary>
-        /// ReqValtxtPeriodoReporteSeg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValtxtPeriodoReporteSeg;
-        
-        /// <summary>
-        /// RegExtxtPeriodoReporteSeg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExtxtPeriodoReporteSeg;
-        
-        /// <summary>
-        /// RanValtxtPeriodoReporteSeg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValtxtPeriodoReporteSeg;
-        
-        /// <summary>
-        /// btnSaveInfoNoActualizable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveInfoNoActualizable;
-        
-        /// <summary>
-        /// Label20 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
-        
-        /// <summary>
-        /// txtUsuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
-        
-        /// <summary>
         /// Label15 control.
         /// </summary>
         /// <remarks>
@@ -1289,105 +1163,6 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label15;
-        
-        /// <summary>
-        /// txtCanalRF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCanalRF;
-        
-        /// <summary>
-        /// NumericUpDownExtenderCanalRF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.NumericUpDownExtender NumericUpDownExtenderCanalRF;
-        
-        /// <summary>
-        /// ReqValCanal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValCanal;
-        
-        /// <summary>
-        /// RegExpValCanal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExpValCanal;
-        
-        /// <summary>
-        /// RanValCanal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValCanal;
-        
-        /// <summary>
-        /// ValSumDatosNoActualizables control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValSumDatosNoActualizables;
-        
-        /// <summary>
-        /// Label21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
-        
-        /// <summary>
-        /// Label28 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label28;
-        
-        /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
-        /// <summary>
-        /// txtRePassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRePassword;
-        
-        /// <summary>
-        /// CompValRePWD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompValRePWD;
         
         /// <summary>
         /// Label16 control.
@@ -1399,607 +1174,202 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
-        /// txtNumeroMaximoFCI control.
+        /// txtDisparo3_corrArranque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroMaximoFCI;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_corrArranque;
         
         /// <summary>
-        /// ReqValQtyFci control.
+        /// txtDisparo3_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValQtyFci;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modCorrMaxActuacion;
         
         /// <summary>
-        /// RegExValQtyFci control.
+        /// txtDisparo3_modTd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExValQtyFci;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTd;
         
         /// <summary>
-        /// RanValQtyFci control.
+        /// Label17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValQtyFci;
+        protected global::System.Web.UI.WebControls.Label Label17;
         
         /// <summary>
-        /// Label66 control.
+        /// Label18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label66;
+        protected global::System.Web.UI.WebControls.Label Label18;
         
         /// <summary>
-        /// prmDDLBandaGsm control.
+        /// Label19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList prmDDLBandaGsm;
+        protected global::System.Web.UI.WebControls.Label Label19;
         
         /// <summary>
-        /// lblPrmQtySix control.
+        /// txtDisparo3_tiempoDisparoDefinido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrmQtySix;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_tiempoDisparoDefinido;
         
         /// <summary>
-        /// txtNumeroMaximoSIX control.
+        /// txtDisparo3_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroMaximoSIX;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_tiempoResetCiclo;
         
         /// <summary>
-        /// ReqValQtySix control.
+        /// txtDisparo3_tiempoApertura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValQtySix;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_tiempoApertura;
         
         /// <summary>
-        /// RegExValQtySix control.
+        /// Label20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExValQtySix;
+        protected global::System.Web.UI.WebControls.Label Label20;
         
         /// <summary>
-        /// RanValQtySix control.
+        /// Label21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValQtySix;
+        protected global::System.Web.UI.WebControls.Label Label21;
         
         /// <summary>
-        /// CusValMaxSixs control.
+        /// Label22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CusValMaxSixs;
+        protected global::System.Web.UI.WebControls.Label Label22;
         
         /// <summary>
-        /// lblLeerCteSix control.
+        /// txtDisparo3_modTiempoMaxRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLeerCteSix;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTiempoMaxRespuesta;
         
         /// <summary>
-        /// txtPrmReporteCteSix control.
+        /// txtDisparo3_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmReporteCteSix;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTiempoMinRespuesta;
         
         /// <summary>
-        /// Label71 control.
+        /// txtDisparo3_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label71;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTiempoDefIMaxAct;
         
         /// <summary>
-        /// ReExReporteCteSix control.
+        /// Label23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator ReExReporteCteSix;
+        protected global::System.Web.UI.WebControls.Label Label23;
         
         /// <summary>
-        /// RanValReporteCteSix control.
+        /// txtDisparo3_modRetardoAdicional control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValReporteCteSix;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modRetardoAdicional;
         
         /// <summary>
-        /// ReqReporteCteSix control.
+        /// CollapsiblePanelDisparo4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqReporteCteSix;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelDisparo4;
         
         /// <summary>
-        /// Label65 control.
+        /// TitleOperacionDisparo4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label65;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionDisparo4;
         
         /// <summary>
-        /// txtASDU control.
+        /// ImageDisparo4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtASDU;
+        protected global::System.Web.UI.WebControls.Image ImageDisparo4;
         
         /// <summary>
-        /// ReqValASDU control.
+        /// lblTextTitleOperacionDisparo4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValASDU;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionDisparo4;
         
         /// <summary>
-        /// RegExValASDU control.
+        /// ContentOperacionDisparo4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExValASDU;
-        
-        /// <summary>
-        /// RangValASDU control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangValASDU;
-        
-        /// <summary>
-        /// lblErrorValAsdu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorValAsdu;
-        
-        /// <summary>
-        /// lblMsgCosoftAsdu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsgCosoftAsdu;
-        
-        /// <summary>
-        /// btnAsduSet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAsduSet;
-        
-        /// <summary>
-        /// Label75 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label75;
-        
-        /// <summary>
-        /// ddListCanalesIEC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddListCanalesIEC;
-        
-        /// <summary>
-        /// Literal8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal8;
-        
-        /// <summary>
-        /// Label55 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label55;
-        
-        /// <summary>
-        /// txtPrmVoltajeMinNivelCargador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmVoltajeMinNivelCargador;
-        
-        /// <summary>
-        /// Label60 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label60;
-        
-        /// <summary>
-        /// RegExVolMinCargador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExVolMinCargador;
-        
-        /// <summary>
-        /// RanValVoltajeMinCargador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValVoltajeMinCargador;
-        
-        /// <summary>
-        /// ReqValVoltajeMinCargador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValVoltajeMinCargador;
-        
-        /// <summary>
-        /// Label58 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label58;
-        
-        /// <summary>
-        /// txtPrmVoltajeLowBatt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmVoltajeLowBatt;
-        
-        /// <summary>
-        /// Label63 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label63;
-        
-        /// <summary>
-        /// RegExBateriaBaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExBateriaBaja;
-        
-        /// <summary>
-        /// RanValVoltajeBateriaBaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValVoltajeBateriaBaja;
-        
-        /// <summary>
-        /// ReqValVoltajeBateriaBaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValVoltajeBateriaBaja;
-        
-        /// <summary>
-        /// Label56 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label56;
-        
-        /// <summary>
-        /// txtPrmVoltajeMinNivelPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmVoltajeMinNivelPanel;
-        
-        /// <summary>
-        /// Label61 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label61;
-        
-        /// <summary>
-        /// RegExVoltajeMinPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExVoltajeMinPanel;
-        
-        /// <summary>
-        /// RanValVoltajeMinPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValVoltajeMinPanel;
-        
-        /// <summary>
-        /// ReqValVoltajeMinPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValVoltajeMinPanel;
-        
-        /// <summary>
-        /// Label59 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label59;
-        
-        /// <summary>
-        /// txtPrmCorrienteBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmCorrienteBateria;
-        
-        /// <summary>
-        /// Label64 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label64;
-        
-        /// <summary>
-        /// RegExCteBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExCteBateria;
-        
-        /// <summary>
-        /// RanValCorrienteBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValCorrienteBateria;
-        
-        /// <summary>
-        /// ReqValCorrienteBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValCorrienteBateria;
-        
-        /// <summary>
-        /// Label57 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label57;
-        
-        /// <summary>
-        /// txtPrmvoltajeMinBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmvoltajeMinBateria;
-        
-        /// <summary>
-        /// Label62 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label62;
-        
-        /// <summary>
-        /// RegExVoltajeMinBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExVoltajeMinBateria;
-        
-        /// <summary>
-        /// RanValVoltajeMinBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValVoltajeMinBateria;
-        
-        /// <summary>
-        /// ReqValVoltajeMinBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValVoltajeMinBateria;
-        
-        /// <summary>
-        /// Label67 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label67;
-        
-        /// <summary>
-        /// txtPrmPeriodoRevisionFuentes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrmPeriodoRevisionFuentes;
-        
-        /// <summary>
-        /// Label69 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label69;
-        
-        /// <summary>
-        /// RegExRevisarFuentes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExRevisarFuentes;
-        
-        /// <summary>
-        /// RanValRevisionFuentes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValRevisionFuentes;
-        
-        /// <summary>
-        /// ReqRevisarFuentes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqRevisarFuentes;
-        
-        /// <summary>
-        /// Label68 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label68;
-        
-        /// <summary>
-        /// prmChkProcesoCargaBateria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox prmChkProcesoCargaBateria;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionDisparo4;
         
         /// <summary>
         /// Label24 control.
@@ -2011,33 +1381,6 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label24;
         
         /// <summary>
-        /// txtIpSCADA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIpSCADA;
-        
-        /// <summary>
-        /// ReqValIPScada control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValIPScada;
-        
-        /// <summary>
-        /// RegExValIPScada control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExValIPScada;
-        
-        /// <summary>
         /// Label25 control.
         /// </summary>
         /// <remarks>
@@ -2047,40 +1390,40 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label25;
         
         /// <summary>
-        /// txtPuertoSCADA control.
+        /// Label26 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPuertoSCADA;
+        protected global::System.Web.UI.WebControls.Label Label26;
         
         /// <summary>
-        /// ReqValPtoScada control.
+        /// listBoxDisparo4_tipoOperacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqValPtoScada;
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo4_tipoOperacion;
         
         /// <summary>
-        /// RegExpValPtoScada control.
+        /// listBoxDisparo4_tipoReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExpValPtoScada;
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo4_tipoReset;
         
         /// <summary>
-        /// RanValPtoScada control.
+        /// checkDisparo4_habilitaModificadores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RanValPtoScada;
+        protected global::System.Web.UI.WebControls.CheckBox checkDisparo4_habilitaModificadores;
         
         /// <summary>
         /// Label27 control.
@@ -2092,76 +1435,49 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label27;
         
         /// <summary>
-        /// txtVecesNoReportar control.
+        /// Label28 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVecesNoReportar;
+        protected global::System.Web.UI.WebControls.Label Label28;
         
         /// <summary>
-        /// UpPanelHistorialPrms control.
+        /// Label29 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpPanelHistorialPrms;
+        protected global::System.Web.UI.WebControls.Label Label29;
         
         /// <summary>
-        /// Label73 control.
+        /// txtDisparo4_corrArranque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label73;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_corrArranque;
         
         /// <summary>
-        /// DDLFechasActualizacionesPrms control.
+        /// txtDisparo4_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLFechasActualizacionesPrms;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modCorrMaxActuacion;
         
         /// <summary>
-        /// HyperLinkVerPrmsHistorico control.
+        /// txtDisparo4_modTd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkVerPrmsHistorico;
-        
-        /// <summary>
-        /// lblEstadoActualizacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoActualizacion;
-        
-        /// <summary>
-        /// ValSumEdicionFWT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValSumEdicionFWT;
-        
-        /// <summary>
-        /// Literal9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal9;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTd;
         
         /// <summary>
         /// Label30 control.
@@ -2182,165 +1498,723 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label Label31;
         
         /// <summary>
-        /// upPanelEstadoParametros control.
+        /// Label32 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPanelEstadoParametros;
+        protected global::System.Web.UI.WebControls.Label Label32;
         
         /// <summary>
-        /// lblEstadoFWT control.
+        /// txtDisparo4_tiempoDisparoDefinido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoFWT;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_tiempoDisparoDefinido;
         
         /// <summary>
-        /// imgEstadoFWT control.
+        /// txtDisparo4_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgEstadoFWT;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_tiempoResetCiclo;
         
         /// <summary>
-        /// tmrActualizacionEstadoFWT control.
+        /// txtDisparo4_tiempoApertura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer tmrActualizacionEstadoFWT;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_tiempoApertura;
         
         /// <summary>
-        /// upPanelActFirmware control.
+        /// Label33 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPanelActFirmware;
+        protected global::System.Web.UI.WebControls.Label Label33;
         
         /// <summary>
-        /// tmrActFirmware control.
+        /// Label34 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer tmrActFirmware;
+        protected global::System.Web.UI.WebControls.Label Label34;
         
         /// <summary>
-        /// lblEstadoACTFirmware control.
+        /// Label35 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoACTFirmware;
+        protected global::System.Web.UI.WebControls.Label Label35;
         
         /// <summary>
-        /// lblPorcentajeActFirmware control.
+        /// txtDisparo4_modTiempoMaxRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPorcentajeActFirmware;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTiempoMaxRespuesta;
         
         /// <summary>
-        /// imgPorcActFirmware control.
+        /// txtDisparo4_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPorcActFirmware;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTiempoMinRespuesta;
         
         /// <summary>
-        /// upProgActParametrosOnline control.
+        /// txtDisparo4_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdateProgress upProgActParametrosOnline;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTiempoDefIMaxAct;
         
         /// <summary>
-        /// lblEstadoActualizacionOnline control.
+        /// Label36 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoActualizacionOnline;
+        protected global::System.Web.UI.WebControls.Label Label36;
         
         /// <summary>
-        /// butUpdate control.
+        /// txtDisparo4_modRetardoAdicional control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butUpdate;
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modRetardoAdicional;
         
         /// <summary>
-        /// butUpdateOnline control.
+        /// CollapsiblePanelDisparo5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butUpdateOnline;
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelDisparo5;
         
         /// <summary>
-        /// butLeerParamOnline control.
+        /// TitleOperacionDisparo5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butLeerParamOnline;
+        protected global::System.Web.UI.WebControls.Panel TitleOperacionDisparo5;
         
         /// <summary>
-        /// tmrActivarBotones control.
+        /// ImageDisparo5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer tmrActivarBotones;
+        protected global::System.Web.UI.WebControls.Image ImageDisparo5;
         
         /// <summary>
-        /// butDelete control.
+        /// lblTextTitleOperacionDisparo5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butDelete;
+        protected global::System.Web.UI.WebControls.Label lblTextTitleOperacionDisparo5;
         
         /// <summary>
-        /// butCancelar control.
+        /// ContentOperacionDisparo5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button butCancelar;
+        protected global::System.Web.UI.WebControls.Panel ContentOperacionDisparo5;
         
         /// <summary>
-        /// SqlDSCiudades control.
+        /// Label37 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSCiudades;
+        protected global::System.Web.UI.WebControls.Label Label37;
+        
+        /// <summary>
+        /// Label38 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label38;
+        
+        /// <summary>
+        /// Label39 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label39;
+        
+        /// <summary>
+        /// listBoxDisparo5_tipoOperacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo5_tipoOperacion;
+        
+        /// <summary>
+        /// listBoxDisparo5_tipoReset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listBoxDisparo5_tipoReset;
+        
+        /// <summary>
+        /// checkDisparo5_habilitaModificadores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkDisparo5_habilitaModificadores;
+        
+        /// <summary>
+        /// Label40 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label40;
+        
+        /// <summary>
+        /// Label41 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label41;
+        
+        /// <summary>
+        /// Label42 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label42;
+        
+        /// <summary>
+        /// txtDisparo5_corrArranque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_corrArranque;
+        
+        /// <summary>
+        /// txtDisparo5_modCorrMaxActuacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modCorrMaxActuacion;
+        
+        /// <summary>
+        /// txtDisparo5_modTd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTd;
+        
+        /// <summary>
+        /// Label43 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label43;
+        
+        /// <summary>
+        /// Label44 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label44;
+        
+        /// <summary>
+        /// Label45 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label45;
+        
+        /// <summary>
+        /// txtDisparo5_tiempoDisparoDefinido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_tiempoDisparoDefinido;
+        
+        /// <summary>
+        /// txtDisparo5_tiempoResetCiclo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_tiempoResetCiclo;
+        
+        /// <summary>
+        /// txtDisparo5_tiempoApertura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_tiempoApertura;
+        
+        /// <summary>
+        /// Label46 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label46;
+        
+        /// <summary>
+        /// Label47 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label47;
+        
+        /// <summary>
+        /// Label48 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label48;
+        
+        /// <summary>
+        /// txtDisparo5_modTiempoMaxRespuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTiempoMaxRespuesta;
+        
+        /// <summary>
+        /// txtDisparo5_modTiempoMinRespuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTiempoMinRespuesta;
+        
+        /// <summary>
+        /// txtDisparo5_modTiempoDefIMaxAct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Label49 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label49;
+        
+        /// <summary>
+        /// txtDisparo5_modRetardoAdicional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modRetardoAdicional;
+        
+        /// <summary>
+        /// CollapsiblePanelParametrosEquipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelParametrosEquipo;
+        
+        /// <summary>
+        /// TitleParametrosEquipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel TitleParametrosEquipo;
+        
+        /// <summary>
+        /// ImageHardware control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImageHardware;
+        
+        /// <summary>
+        /// lblTextTitleParametrosEquipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextTitleParametrosEquipo;
+        
+        /// <summary>
+        /// ContentParametrosEquipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ContentParametrosEquipo;
+        
+        /// <summary>
+        /// LabelHardware_adcCargaLOWCapacitorDisparo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_adcCargaLOWCapacitorDisparo;
+        
+        /// <summary>
+        /// LabelHardware_adcCargaOKCapacitorDisparo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_adcCargaOKCapacitorDisparo;
+        
+        /// <summary>
+        /// LabelHardware_adcCargaLOWFuenteBaja control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_adcCargaLOWFuenteBaja;
+        
+        /// <summary>
+        /// txtHardware_adcCargaLOWCapacitorDisparo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaLOWCapacitorDisparo;
+        
+        /// <summary>
+        /// txtHardware_adcCargaOKCapacitorDisparo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaOKCapacitorDisparo;
+        
+        /// <summary>
+        /// txtHardware_adcCargaLOWFuenteBaja control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaLOWFuenteBaja;
+        
+        /// <summary>
+        /// LabelHardware_adcCargaOKFuenteBaja control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_adcCargaOKFuenteBaja;
+        
+        /// <summary>
+        /// LabelHardware_numOperacionesBotellaCercanoAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_numOperacionesBotellaCercanoAlMax;
+        
+        /// <summary>
+        /// LabelHardware_numOperacionesBotellaLlegaAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_numOperacionesBotellaLlegaAlMax;
+        
+        /// <summary>
+        /// txtHardware_adcCargaOKFuenteBaja control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaOKFuenteBaja;
+        
+        /// <summary>
+        /// txtHardware_numOperacionesBotellaCercanoAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_numOperacionesBotellaCercanoAlMax;
+        
+        /// <summary>
+        /// txtHardware_numOperacionesBotellaLlegaAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_numOperacionesBotellaLlegaAlMax;
+        
+        /// <summary>
+        /// LabelHardware_porcentDesgasteBotellaCercanoAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_porcentDesgasteBotellaCercanoAlMax;
+        
+        /// <summary>
+        /// LabelHardware_porcentDesgasteBotellaLlegaAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_porcentDesgasteBotellaLlegaAlMax;
+        
+        /// <summary>
+        /// LabelHardware_adcCorrMinParaAutoalimentacion50Hz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_adcCorrMinParaAutoalimentacion50Hz;
+        
+        /// <summary>
+        /// txtHardware_porcentDesgasteBotellaCercanoAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_porcentDesgasteBotellaCercanoAlMax;
+        
+        /// <summary>
+        /// txtHardware_porcentDesgasteBotellaLlegaAlMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_porcentDesgasteBotellaLlegaAlMax;
+        
+        /// <summary>
+        /// txtHardware_adcCorrMinParaAutoalimentacion50Hz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCorrMinParaAutoalimentacion50Hz;
+        
+        /// <summary>
+        /// LabelHardware_adcCorrMinParaAutoalimentacion60Hz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelHardware_adcCorrMinParaAutoalimentacion60Hz;
+        
+        /// <summary>
+        /// txtHardware_adcCorrMinParaAutoalimentacion60Hz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCorrMinParaAutoalimentacion60Hz;
+        
+        /// <summary>
+        /// CollapsiblePanelComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelComunicacion;
+        
+        /// <summary>
+        /// TitleComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel TitleComunicacion;
+        
+        /// <summary>
+        /// ImageComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImageComunicacion;
+        
+        /// <summary>
+        /// lblTextTitleComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextTitleComunicacion;
+        
+        /// <summary>
+        /// ContentComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ContentComunicacion;
+        
+        /// <summary>
+        /// LabelComunicacion_canalComunicacionRF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelComunicacion_canalComunicacionRF;
+        
+        /// <summary>
+        /// LabelComunicacion_codigoDeGrupo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelComunicacion_codigoDeGrupo;
+        
+        /// <summary>
+        /// LabelComunicacion_canalRfEnMHz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelComunicacion_canalRfEnMHz;
+        
+        /// <summary>
+        /// txtComunicacion_canalComunicacionRF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComunicacion_canalComunicacionRF;
+        
+        /// <summary>
+        /// txtComunicacion_codigoDeGrupo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComunicacion_codigoDeGrupo;
+        
+        /// <summary>
+        /// txtComunicacion_canalRfEnMHz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComunicacion_canalRfEnMHz;
+        
+        /// <summary>
+        /// butActualizarParams control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button butActualizarParams;
     }
 }

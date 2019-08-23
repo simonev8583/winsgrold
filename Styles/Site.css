@@ -711,3 +711,64 @@ div.accountInfo
 {
 	background: #696969;
 }
+
+
+/*Header de tablas*/
+
+.itemHeader{
+    /*background-color: yellowgreen !important;*/
+}
+
+.itemHeader > tr > th {
+    font-size: 13px;
+    padding: 5px;
+}
+
+.tableClass {
+    width: 80%;
+   
+}
+
+.itemBody {
+    /*background-color: #4b6c9e;*/
+}
+
+.itemBody > tr > td {
+    width: 20%;
+    text-align: center;
+}
+
+.styleInput {
+    position: relative;
+    padding: 5px;
+    font-size: 15px;
+    text-align: right;
+}
+
+.styleCollapse {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.styleCollapse:hover {
+    color: #4b6c9e;
+}
+
+#ImageActual, #ImageReconectador, #ImageModoDisparo, #ImageModoDisparo, #ImageHardware, #ImageComunicacion{
+    width: 15px;
+}
+
+.styleCollapseDisparo {
+    font-size: 14px;
+    position: relative;
+    left: 5%;
+}
+
+.styleCollapseDisparo:hover {
+    color: #4b6c9e;
+}
+
+.styleButton {
+    text-align: right;
+    height: 26px
+}

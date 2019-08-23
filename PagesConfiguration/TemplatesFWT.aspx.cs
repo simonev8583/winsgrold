@@ -42,7 +42,7 @@ namespace SistemaGestionRedes
                 int tmplID = int.Parse(ddlPlantillasFWT.SelectedValue);
                 using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
                 {
-                    TemplateParametrosFWT tmplParamFwt = bData.TemplatesParametrosFWT.SingleOrDefault(t => t.Id == tmplID);
+                    TemplatesParametrosFWT tmplParamFwt = bData.TemplatesParametrosFWTs.SingleOrDefault(t => t.Id == tmplID);
                     if (tmplParamFwt != null)
                     {
 
@@ -55,7 +55,7 @@ namespace SistemaGestionRedes
                         tmplParamFwt.Parametros.APN = txtAPN.Text;
                         tmplParamFwt.Parametros.Usuario = txtUsuario.Text;
                         tmplParamFwt.Parametros.Password = txtPassword.Text;
-                        tmplParamFwt.Parametros.DireccionIPGESTION = txtIpGestion.Text;
+                        tmplParamFwt.Parametros.DireccionIPGestion = txtIpGestion.Text;
                         tmplParamFwt.Parametros.PuertoGESTION = short.Parse(txtPuertoGestion.Text);
                         tmplParamFwt.Parametros.DireccionIPSCADA = txtIpSCADA.Text;
                         tmplParamFwt.Parametros.PuertoSCADA = short.Parse(txtPuertoSCADA.Text);
@@ -94,7 +94,7 @@ namespace SistemaGestionRedes
                 int tmplID = int.Parse(ddlPlantillasFWT.SelectedValue);
                 using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
                 {
-                    TemplateParametrosFWT tmplParamFwt = bData.TemplatesParametrosFWT.SingleOrDefault(t => t.Id == tmplID);
+                    TemplatesParametrosFWT tmplParamFwt = bData.TemplatesParametrosFWTs.SingleOrDefault(t => t.Id == tmplID);
                     if (tmplParamFwt != null)
                     {
 
@@ -127,7 +127,7 @@ namespace SistemaGestionRedes
             {
 
 
-                ddlPlantillasFWT.DataSource = from u in db.TemplatesParametrosFWT
+                ddlPlantillasFWT.DataSource = from u in db.TemplatesParametrosFWTs
                                               orderby u.Id
                                               select new { Name = u.Nombre, Id = u.Id };
 
@@ -174,7 +174,7 @@ namespace SistemaGestionRedes
                 using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
                 {
                     int idTmplFWT = int.Parse(ddlPlantillasFWT.SelectedValue);
-                    TemplateParametrosFWT tmplParamFwt = bData.TemplatesParametrosFWT.SingleOrDefault(t => t.Id == idTmplFWT);
+                    TemplatesParametrosFWT tmplParamFwt = bData.TemplatesParametrosFWTs.SingleOrDefault(t => t.Id == idTmplFWT);
                     if (tmplParamFwt != null)
                     {
 
@@ -186,7 +186,7 @@ namespace SistemaGestionRedes
                         txtAPN.Text = tmplParamFwt.Parametros.APN;
                         txtUsuario.Text = tmplParamFwt.Parametros.Usuario;
                         txtPassword.Text = tmplParamFwt.Parametros.Password;
-                        txtIpGestion.Text = tmplParamFwt.Parametros.DireccionIPGESTION;
+                        txtIpGestion.Text = tmplParamFwt.Parametros.DireccionIPGestion;
                         txtPuertoGestion.Text = tmplParamFwt.Parametros.PuertoGESTION.ToString();
                         txtIpSCADA.Text = tmplParamFwt.Parametros.DireccionIPSCADA;
                         txtPuertoSCADA.Text = tmplParamFwt.Parametros.PuertoSCADA.ToString();

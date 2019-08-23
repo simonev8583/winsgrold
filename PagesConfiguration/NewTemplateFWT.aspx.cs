@@ -126,11 +126,48 @@ namespace SistemaGestionRedes
                         apnUsado = 1;
                     }
 
-                    ParametrosFWT paramFWT = ParametrosFWT.CreateParametrosFWT(canalRF, vecesSinReportarse, direccionIPSCADA, puertoSCADA, direccionIPGESTION, puertoGESTION,
-                                                aPN, usuario, password, direccionNomenclatura, direccionElectrica, direccionGPS, numeroMaximoFCIs
-                                                , "", "", "", "", "", "", 30, 4, 6, 3, 18000, 87m, 11m, 190m, 192m, 7, "", apnUsado, 120, 0, 120, true, 0, false);
-                    TemplateParametrosFWT tmplParamFWT = TemplateParametrosFWT.CreateTemplateParametrosFWT(1, nombre, paramFWT);
-                    baseDatos.TemplatesParametrosFWT.AddObject(tmplParamFWT); //Se adiciona a la colección de estas entidades
+                    ParametrosFWT paramFWT = ParametrosFWT.CreateParametrosFWT(
+                        aPN,
+                        0,
+                        canalRF,
+                        7,
+                        direccionElectrica,
+                        direccionGPS,
+                        direccionIPGESTION,
+                        direccionIPSCADA,
+                        direccionNomenclatura,
+                        3,
+                        4,
+                        numeroMaximoFCIs,
+                        0,
+                        password,
+                        18000,
+                        120,
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        true,
+                        puertoGESTION,
+                        puertoSCADA,
+                        30,
+                        120,
+                        6,
+                        apnUsado,
+                        false,
+                        usuario,
+                        vecesSinReportarse,
+                        192,
+                        87m,
+                        11m,
+                        "",
+                        190m
+                    );
+
+                    TemplatesParametrosFWT tmplParamFWT = TemplatesParametrosFWT.CreateTemplatesParametrosFWT(1, nombre, paramFWT);
+                    baseDatos.TemplatesParametrosFWTs.AddObject(tmplParamFWT); //Se adiciona a la colección de estas entidades
                     baseDatos.SaveChanges();
                     lblPlantillaIngresada.Text = "La plantilla de concentrador ha sido registrado en el sistema exitosamente.";
 

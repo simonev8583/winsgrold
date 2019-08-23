@@ -166,7 +166,7 @@ namespace SistemaGestionRedes.PagesEquipment
                 gesDDLConcentradores.SelectedValue = equipoSix.FWTId.ToString();
                 _serialConcentrador = equipoSix.FWT.Serial;
                 //_canalIECConcentrador = equipoSix.FWT.Canal104.Value;
-                _canalIECConcentrador = equipoSix.FWT.Canal104;
+                _canalIECConcentrador = (int)equipoSix.FWT.Canal104;
             }
             //else
             //{
@@ -301,7 +301,7 @@ namespace SistemaGestionRedes.PagesEquipment
 
         private void DefinirSeccionStdCorrientes(FCI equipoSix)
         {
-            var registros = (from corrientes in equipoSix.LogCorrientesSIX
+            var registros = (from corrientes in equipoSix.LogCorrienteSIXs
                              orderby corrientes.Fecha descending
                              select new { corrientes.Fecha, corrientes.ValorIL }).Take(5);
 
@@ -660,7 +660,7 @@ namespace SistemaGestionRedes.PagesEquipment
             bool respuesta = false;
             fechaFalla = "";
 
-            var fallaP = (from fallas in equipoSix.AlarmasFCIs
+            var fallaP = (from fallas in equipoSix.AlarmasFCI
                           where fallas.Id == 178 && fallas.ClearAlarma == null
                           orderby fallas.Fecha descending
                           select fallas).FirstOrDefault();

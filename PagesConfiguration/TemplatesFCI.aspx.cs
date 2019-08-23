@@ -31,7 +31,7 @@ namespace SistemaGestionRedes
             {
 
 
-                ddlPlantillasFCI.DataSource = from u in db.TemplatesParametrosFCI
+                ddlPlantillasFCI.DataSource = from u in db.TemplatesParametrosFCIs
                                               orderby u.Id
                                               select new { Name = u.Nombre, Id = u.Id };
 
@@ -80,7 +80,7 @@ namespace SistemaGestionRedes
                 using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
                 {
                     int idTmplFCI = int.Parse(ddlPlantillasFCI.SelectedValue);
-                    TemplateParametrosFCI tmplParamFCI = bData.TemplatesParametrosFCI.SingleOrDefault(t => t.Id == idTmplFCI);
+                    TemplatesParametrosFCI tmplParamFCI = bData.TemplatesParametrosFCIs.SingleOrDefault(t => t.Id == idTmplFCI);
                     if (tmplParamFCI != null)
                     {
                    
@@ -262,7 +262,7 @@ namespace SistemaGestionRedes
                 int tmplID = int.Parse(ddlPlantillasFCI.SelectedValue);
                 using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
                 {
-                    TemplateParametrosFCI tmplParamFci = bData.TemplatesParametrosFCI.SingleOrDefault(t => t.Id == tmplID);
+                    TemplatesParametrosFCI tmplParamFci = bData.TemplatesParametrosFCIs.SingleOrDefault(t => t.Id == tmplID);
                     //Se actualizan todos los campos 
                     if (tmplParamFci != null)
                     {
@@ -334,7 +334,7 @@ namespace SistemaGestionRedes
                 int tmplID = int.Parse(ddlPlantillasFCI.SelectedValue);
                 using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
                 {
-                    TemplateParametrosFCI tmplParamFCI = bData.TemplatesParametrosFCI.SingleOrDefault(t => t.Id == tmplID);
+                    TemplatesParametrosFCI tmplParamFCI = bData.TemplatesParametrosFCIs.SingleOrDefault(t => t.Id == tmplID);
                     if (tmplParamFCI != null)
                     {
 

@@ -117,58 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TextErrorBaseDatos" xml:space="preserve">
-    <value>Database Error Access</value>
+  <data name="TextBotonGraficaComparativa" xml:space="preserve">
+    <value>Comparative Chart</value>
   </data>
-  <data name="TextNoCodigo" xml:space="preserve">
-    <value>No Code</value>
+  <data name="TextBotonGraficarUnSIX" xml:space="preserve">
+    <value>Chart</value>
   </data>
-  <data name="TextNoHayFWTs" xml:space="preserve">
-    <value>There are not FWTs registered</value>
+  <data name="TextErrCriticoBD" xml:space="preserve">
+    <value>There was an error while processing the information in DB</value>
   </data>
-  <data name="TextNuevoConcentrador" xml:space="preserve">
-    <value>New Collector FWT</value>
+  <data name="TextMsgGraficaPara2o3SIX" xml:space="preserve">
+    <value>Shows graphic information for only 2 or 3 SIXs</value>
   </data>
-  <data name="TextNuevoIndicador" xml:space="preserve">
-    <value>New FCI</value>
+  <data name="TextMsgGraficaParaUnSIX" xml:space="preserve">
+    <value>Shows the chart only for one SIX</value>
   </data>
-  <data name="TextTittleAllARIXs" xml:space="preserve">
-    <value>ARIXs</value>
+  <data name="TextTittleAxisX" xml:space="preserve">
+    <value>Date-Time</value>
   </data>
-  <data name="TextTittleAllConcentradores" xml:space="preserve">
-    <value>Collectors</value>
+  <data name="TextTittleAxisY" xml:space="preserve">
+    <value>Current (A)</value>
   </data>
-  <data name="TextTittleAllFCIs" xml:space="preserve">
-    <value>FCIs</value>
+  <data name="TextTittleGeneral" xml:space="preserve">
+    <value>Current Behavior</value>
   </data>
-  <data name="TextTittleAllSIXs" xml:space="preserve">
-    <value>SIXs</value>
+  <data name="TextTittleLegendEquipos" xml:space="preserve">
+    <value>Devices</value>
   </data>
-  <data name="TextTittleEquipos" xml:space="preserve">
-    <value>DEVICES</value>
+  <data name="TextTittleReporte" xml:space="preserve">
+    <value>Report: SIX Currents Log</value>
   </data>
-  <data name="TextTittleEquiposOK" xml:space="preserve">
-    <value>Devices OK</value>
+  <data name="TextToolTipGrafComparativa" xml:space="preserve">
+    <value>Shows a comparative chart of current-time for 2 or 3 SIXs</value>
   </data>
-  <data name="TextTittleEstados" xml:space="preserve">
-    <value>STATES</value>
-  </data>
-  <data name="TextTittleFallasCircuitos" xml:space="preserve">
-    <value>Circuits Faults</value>
-  </data>
-  <data name="TextTittleFallasEquipos" xml:space="preserve">
-    <value>Devices Failures</value>
-  </data>
-  <data name="TextTittleTree" xml:space="preserve">
-    <value>SYSTEM</value>
-  </data>
-  <data name="TextVerCodigos" xml:space="preserve">
-    <value>See Codes</value>
-  </data>
-  <data name="TextVerCodigosToolTip" xml:space="preserve">
-    <value>See the corporate devices codes</value>
-  </data>
-  <data name="TextWordVacio" xml:space="preserve">
-    <value>Empty</value>
+  <data name="TextToolTipGraficarUnSIX" xml:space="preserve">
+    <value>Shows a graph of current-time for a SIX</value>
   </data>
 </root>

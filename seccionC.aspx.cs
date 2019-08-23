@@ -125,6 +125,7 @@ namespace SistemaGestionRedes
             nodoEquipos.ChildNodes.Add(nodoNuevoFCI);
             nodoEquipos.ChildNodes.Add(MakeEquiposFWT(baseDatos));
             nodoEquipos.ChildNodes.Add(MakeEquiposFCI(baseDatos));
+            nodoEquipos.ChildNodes.Add(MakeEquiposARIX(baseDatos));
             if (_verSix)
             {
                 nodoEquipos.ChildNodes.Add(MakeEquiposSIX(baseDatos));
@@ -245,7 +246,10 @@ namespace SistemaGestionRedes
             {
                 valUrl = "~/PagesEquipment/EditSIX.aspx?Id=" + idTxt;
             }
-
+            else if (serialEquipo.Substring(0, 2).ToUpper().Equals("RI"))
+            {
+                valUrl = "~/PagesEquipment/EditARIX.aspx?Id=" + idTxt;
+            }
             return valUrl;
         }
 
@@ -364,6 +368,37 @@ namespace SistemaGestionRedes
             }
         }
 
+        // ***********  CONSTRUCCIÓN DEL SUB-ARBOL TODOS LOS ARIX ***************
+        private TreeNode MakeEquiposARIX(AccesoDatos baseDatos)
+        {
+            TreeNode nodoPpalARIX = new TreeNode((string)this.GetLocalResourceObject("TextTittleAllARIXs"));
+            nodoPpalARIX.NavigateUrl = "~/PagesEquipment/ARIXsAll.aspx";
+            nodoPpalARIX.Target = "content";
+            PasteAllARIXsToNodoPpal(ref nodoPpalARIX, baseDatos);
+            return nodoPpalARIX;
+        }
+
+        private void PasteAllARIXsToNodoPpal(ref TreeNode nodoPpal, AccesoDatos baseDatos)
+        {
+            bool verCodificacion = (bool)Context.Profile.GetPropertyValue("VerCodificacionEquipos");
+            //bool verCodificacion = profileObj.CodificarEquipos;
+            int[] vectARIXs = baseDatos.GetAllIdsARIXs();
+            //string[] vectSerialFCIs = baseDatos.GetAllSerialesFCIs();
+            GenericaTwoStrings[] vectSerialARIXs = baseDatos.GetAllSerialesCodigosARIXs();
+            byte[] vectIdentifARIXs = baseDatos.GetAllIdentificadoresARIXs();
+            if (vectARIXs != null)
+            {
+                for (int i = 0; i < vectARIXs.Length; i++)
+                {
+                    string txtId = vectARIXs[i].ToString();
+                    TreeNode nodoArix = new TreeNode(/*ConstsTreeView.NOMBRE_EQU_FCI + " " +*/ SerialOrCodigo(vectSerialARIXs[i], verCodificacion) + "- Id " + vectIdentifARIXs[i], ConstsTreeView.NOMBRE_EQU_FCI + " " + SerialOrCodigo(vectSerialARIXs[i], verCodificacion) + "- Id " + vectIdentifARIXs[i]);
+                    nodoPpal.ChildNodes.Add(nodoArix);
+                    nodoArix.NavigateUrl = "~/PagesEquipment/EditARIX.aspx?Id=" + txtId;
+                    nodoArix.Target = "content";
+                    nodoArix.ToolTip = ToolTipEquipo(vectSerialARIXs[i], verCodificacion);
+                }
+            }
+        }
 
 
         /// <summary>

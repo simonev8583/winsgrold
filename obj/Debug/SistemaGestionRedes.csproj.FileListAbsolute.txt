@@ -140,26 +140,45 @@ C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.Ut
 C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\en-US\SGR.BussinessLayer.resources.dll
 C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
 C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache
 C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.dll
 C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
 C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\ADF.Comunicaciones.dll
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\ADF.Comunicaciones.pdb
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll.config
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\bin\en\ADF.Comunicaciones.resources.dll
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojAssemblyReference.cache
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csproj.CoreCompileInputs.cache
-C:\Trabajo\SGR\SistemaGestionRedesSIX\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csproj.CopyComplete
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\ADF.Comunicaciones.pdb
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\en\ADF.Comunicaciones.resources.dll
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\bin\en-US\SGR.BussinessLayer.resources.dll
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
-C:\Users\user\Desktop\0619 Implementacion arix\SGR docs\SitioWebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SistemaGestionRedes.dll.config
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SCADA104.Definiciones.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SCADA104.Definiciones.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SGR.UtilityLibrary.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\en-US\SGR.BussinessLayer.resources.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\ADF.Comunicaciones.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\Celsa.ConexionMensajeria.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\en\ADF.Comunicaciones.resources.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\en\Celsa.ConexionMensajeria.resources.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\bin\SGR.DataAccessLayer.dll.config
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojAssemblyReference.cache
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csproj.CoreCompileInputs.cache
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGRVS2015\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csproj.CopyComplete
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll.config
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\Microsoft.Web.Infrastructure.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.Helpers.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.Mvc.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.Razor.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.Deployment.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.Razor.dll
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.Helpers.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.Mvc.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.Razor.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.Deployment.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.Razor.xml
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache

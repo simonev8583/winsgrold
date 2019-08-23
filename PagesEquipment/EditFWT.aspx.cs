@@ -93,7 +93,7 @@ namespace SistemaGestionRedes
 
             using (SistemaGestionRemotoContainer context = new SistemaGestionRemotoContainer())
             {
-                var registros = from historia in context.HistoriaParamsFWT
+                var registros = from historia in context.HistorialParamsFWTs
                                 where historia.IdFWT == idInternoEquipo
                                 orderby historia.FechaConfirmacion descending
                                 select historia;
@@ -640,7 +640,7 @@ namespace SistemaGestionRedes
                     txtRePassword.Text = registro.ParamFWT.Password;
 
                     //Direcciones y puertos GPRS
-                    txtIpGestion.Text = registro.ParamFWT.DireccionIPGESTION;
+                    txtIpGestion.Text = registro.ParamFWT.DireccionIPGestion;
                     txtPuertoGestion.Text = registro.ParamFWT.PuertoGESTION.ToString();
                     txtIpGestionAlternativa.Text = registro.ParamFWT.DireccionIPSCADA;
                     txtPuertoGestionAlternativo.Text = registro.ParamFWT.PuertoSCADA.ToString();
@@ -686,7 +686,7 @@ namespace SistemaGestionRedes
                     txtNumeroMaximoFCI.Text = registro.ParamFWT.NumeroMaximoFCIs.ToString();
 
                     //Exclusivo para FWT que maneja equipos SIXs
-                    txtPrmReporteCteSix.Text = registro.ParamFWT.SegReporteCorrientesSIX.ToString();
+                    txtPrmReporteCteSix.Text = registro.ParamFWT.SegReporteCorrienteSIX.ToString();
                     txtNumeroMaximoSIX.Text = registro.ParamFWT.NumeroMaximoSIXs.ToString();
 
                     VerificarMensajeQtySixIncompatible(registro.NumeroMaximoSIXs_Menor, registro.NumeroMaximoSIXs_Mayor);
@@ -702,9 +702,19 @@ namespace SistemaGestionRedes
                         lblVersionFwDevRTCargado.Text = registro.VersionProgramaFCIUploaded;
                     }
 
+                    //Version firmware de equipos remotos cargado.
+                    if (registro.VersionProgramaARIXUploaded == null)
+                    {
+                        lblVersionFwDevRTCargadoARIX.Text = "";
+                    }
+                    else
+                    {
+                        lblVersionFwDevRTCargadoARIX.Text = registro.VersionProgramaARIXUploaded;
+                    }
+
 
                     //PARAMETROS FUNCIONALES DEL EQUIPO FWT 
-                    
+
                     //Parametros funcionales - Comunicación con SGR
 
                     txtSecondsBeforeRetryConnection.Text = registro.ParamFWT.SecondsBeforeRetryConnection.ToString();
@@ -716,8 +726,16 @@ namespace SistemaGestionRedes
 
                     //Parametros de Gestión bajo SCADA
                     txtASDU.Text = registro.ASDU.ToString();
-                    AccesoDatos dbObj = new AccesoDatos();
-                    int[] canales = dbObj.GetPosiblesCanalesIEC104(ConfigApp.MaxCanalesIEC104, ConfigApp.MaxEquiposCanalIEC104);
+                    int[] canales;
+                    if (registro.Canal104 > 0)
+                    {
+                        canales = new int[] { (int)registro.Canal104 };
+                    }
+                    else
+                    {
+                        AccesoDatos dbObj = new AccesoDatos();
+                        canales = dbObj.GetPosiblesCanalesIEC104(ConfigApp.MaxCanalesIEC104, ConfigApp.MaxEquiposCanalIEC104);
+                    }
                     if (canales != null)
                     {
                         try
@@ -751,6 +769,7 @@ namespace SistemaGestionRedes
 
                         }
                     }
+                    
 
 
 
@@ -842,10 +861,24 @@ namespace SistemaGestionRedes
                                    where fci.FWTId == idFWT
                                    orderby fci.Serial ascending 
                                    select fci;
+
+                var consultaARIXs = from arix in db.ARIXs
+                    where arix.FWTId == idFWT
+                    orderby arix.Serial ascending
+                    select arix;
                 foreach (var registro in consultaFCIs)
                 {
                     listBoxFCIsPropios.Items.Add(new ListItem(registro.Serial, registro.Id.ToString()));
                     if (registro.TipoEquipo == 2) //Es un Six
+                    {
+                        existeSix = true;
+                    }
+                }
+
+                foreach (var registro in consultaARIXs)
+                {
+                    listBoxFCIsPropios.Items.Add(new ListItem(registro.Serial, registro.Id.ToString()));
+                    if (registro.TipoEquipo == 4) //Es un Arix
                     {
                         existeSix = true;
                     }
@@ -940,14 +973,14 @@ namespace SistemaGestionRedes
                         AccesoDatosEF.SetDeleteProcessFWT(lblSerial.Text, true);
 
                         //Se borran los registros que pueda tener relacionado en  cascada
-                        if (fwt.AlarmasFWT.Count > 0)
+                        if (fwt.AlarmasFWTs.Count > 0)
                         {
-                            fwt.AlarmasFWT.Clear();
+                            fwt.AlarmasFWTs.Clear();
                         }
 
-                        if (fwt.LlamadasCallToCall.Count > 0)
+                        if (fwt.LlamadasCallToCallSets.Count > 0)
                         {
-                            fwt.LlamadasCallToCall.Clear();
+                            fwt.LlamadasCallToCallSets.Clear();
                         }
 
                         if (fwt.HistorialEstadosFWTs.Count > 0)
@@ -960,9 +993,9 @@ namespace SistemaGestionRedes
                             fwt.HistorialParamsFWTs.Clear();
                         }
 
-                        if (fwt.ConexionesFWT.Count > 0)
+                        if (fwt.ConexionesFWTs.Count > 0)
                         {
-                            fwt.ConexionesFWT.Clear();
+                            fwt.ConexionesFWTs.Clear();
                         }
 
                         //if (fwt.ConexionesFWT != null) //Chequear si hay  conexion FWT 
@@ -1056,7 +1089,7 @@ namespace SistemaGestionRedes
                                     fwt.ParamFWT.Password = txtPassword.Text;
                                     break;
                                 case "txtIpGestion":
-                                    fwt.ParamFWT.DireccionIPGESTION = txtIpGestion.Text;
+                                    fwt.ParamFWT.DireccionIPGestion = txtIpGestion.Text;
                                     break;
                                 case "txtPuertoGestion":
                                     fwt.ParamFWT.PuertoGESTION = ushort.Parse(txtPuertoGestion.Text);
@@ -1066,11 +1099,11 @@ namespace SistemaGestionRedes
                                     fwt.ParamFWT.DireccionIPSCADA = txtIpAlt;
                                     if (txtIpAlt.Equals(""))
                                     {
-                                        fwt.ParamFWT.UsarIPAlternativa = false;
+                                        fwt.ParamFWT.UsaIPAlternativa = false;
                                     }
                                     else
                                     {
-                                        fwt.ParamFWT.UsarIPAlternativa = true;
+                                        fwt.ParamFWT.UsaIPAlternativa = true;
                                     }
                                     break;
                                 case "txtPuertoGestionAlternativo":
@@ -1175,7 +1208,7 @@ namespace SistemaGestionRedes
                                     fwt.ParamFWT.CorrienteBateria = byte.Parse(txtPrmCorrienteBateria.Text);
                                     break;
                                 case "txtPrmReporteCteSix":
-                                    fwt.ParamFWT.SegReporteCorrientesSIX = short.Parse(txtPrmReporteCteSix.Text);
+                                    fwt.ParamFWT.SegReporteCorrienteSIX = short.Parse(txtPrmReporteCteSix.Text);
                                     break;
                                 case "prmDDLBandaGsm":
                                     fwt.ParamFWT.BandaDeOperacionGSM = byte.Parse(prmDDLBandaGsm.SelectedValue);
@@ -1847,12 +1880,31 @@ namespace SistemaGestionRedes
             {
                 string serialDevRT = "";
                 serialDevRT = e.CommandArgument.ToString();
+
+                //int i = 0;
+                AccesoDatos dataBD = new AccesoDatos();
+
                 if (!serialDevRT.Equals(""))
                 {
-                    //int i = 0;
-                    AccesoDatos dataBD = new AccesoDatos();
-                    dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
-                    GVEquiposRemotos.DataBind();
+                    //Identificar si el serial del dispositivo pertenece a un FCI 
+                    if (serialDevRT.Substring(0, 2).Equals("FI"))
+                    {
+                        dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
+                        GVEquiposRemotos.DataBind();
+                    }
+                    //Identificar si el serial del dispositivo pertenece a un SIX 
+                    else if (serialDevRT.Substring(0, 1).Equals("C"))
+                    {
+                        dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
+                        GVEquiposRemotos.DataBind();
+                    }
+                    //Identificar si el serial del dispositivo pertenece a un ARIX 
+                    else if (serialDevRT.Substring(0, 2).Equals("RI"))
+                    {
+                        //Crear servicio en cosoft que soporte la actualización del ARIX
+                        dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT_ARIX(serialDevRT);
+                        GVEquiposRemotos.DataBind();
+                    }
                 }
             }
         }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,8 +13,20 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SistemaGestionRedes</RootNamespace>
     <AssemblyName>SistemaGestionRedes</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +62,7 @@
         </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,17 +71,20 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ADF.Comunicaciones">
-      <HintPath>..\..\DiagnosticsFWTApp\ADF.Comunicaciones\bin\Debug\ADF.Comunicaciones.dll</HintPath>
+    <Reference Include="ADF.Comunicaciones, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SicProFWTVS2015\ADF.Comunicaciones\bin\Debug\ADF.Comunicaciones.dll</HintPath>
     </Reference>
     <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Celsa.ConexionMensajeria">
-      <HintPath>..\..\..\WinSGR2Scada\SistemaGestionSCADA104\SCADA104.DataAccessLayer\Celsa.ConexionMensajeria\bin\Debug\Celsa.ConexionMensajeria.dll</HintPath>
+    <Reference Include="Celsa.ConexionMensajeria, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WinScadaVS2015\Celsa.ConexionMensajeria\bin\Debug\Celsa.ConexionMensajeria.dll</HintPath>
     </Reference>
     <Reference Include="ExportToExcel, Version=1.0.4107.15628, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -75,39 +92,65 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RJS.Web.WebControl.PopCalendar.Net.2010, Version=8.1.4043.37381, Culture=neutral, PublicKeyToken=5edbe80336f06114, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\RJS.Web.WebControl.PopCalendar.Net.2010.dll</HintPath>
     </Reference>
     <Reference Include="SCADA104.Definiciones, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\WinSGR2Scada\SistemaGestionSCADA104\SCADA104.DataAccessLayer\SCADA104.Definiciones\bin\Debug\SCADA104.Definiciones.dll</HintPath>
+      <HintPath>..\..\WinScadaVS2015\SCADA104.Definiciones\bin\Debug\SCADA104.Definiciones.dll</HintPath>
     </Reference>
     <Reference Include="SGR.BussinessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ComunicacionesSGRSCADA104\SGR.BussinessLayer\bin\Debug\SGR.BussinessLayer.dll</HintPath>
+      <HintPath>..\..\CosoftEECVS2015\SGR.BussinessLayer\bin\Debug\SGR.BussinessLayer.dll</HintPath>
     </Reference>
     <Reference Include="SGR.DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CosoftEEC\SGR.DataAccessLayer\bin\Debug\SGR.DataAccessLayer.dll</HintPath>
+      <HintPath>..\..\CosoftEECVS2015\SGR.DataAccessLayer\bin\Debug\SGR.DataAccessLayer.dll</HintPath>
     </Reference>
     <Reference Include="SGR.UtilityLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ComunicacionesSGRSCADA104\SGR.UtilityLibrary\bin\Debug\SGR.UtilityLibrary.dll</HintPath>
+      <HintPath>..\..\CosoftEECVS2015\SGR.UtilityLibrary\bin\Debug\SGR.UtilityLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DataVisualization" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -115,6 +158,7 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\ChangePassword.aspx" />
@@ -135,18 +179,20 @@
     <Content Include="PagesEquipment\CircuitFault.aspx" />
     <Content Include="PagesEquipment\DetallePrmsFCI.aspx" />
     <Content Include="PagesEquipment\DetallePrmsFWT.aspx" />
+    <Content Include="PagesEquipment\EditARIX.aspx" />
     <Content Include="PagesEquipment\EditSIX.aspx" />
+    <Content Include="PagesEquipment\ARIXsAll.aspx" />
     <Content Include="PagesEquipment\SIXsAll.aspx" />
     <Content Include="PagesEquipment\XMLCiudades.xml" />
     <Content Include="PagesNewUsr\ModUser.aspx" />
     <Content Include="PagesNewUsr\NewUser.aspx" />
     <Content Include="PagesReportes\ConfiguracionColumnas.aspx" />
+    <Content Include="PagesReportes\CurrentStatisticsArix.aspx" />
     <Content Include="PagesReportes\CurrentStatisticsSix.aspx" />
     <Content Include="PagesReportes\HistorialFWT.aspx" />
     <Content Include="PagesReportes\HistorialStateFWT.aspx" />
     <Content Include="PagesReportes\StatisticsSix.aspx" />
     <Content Include="PagesSecurity\ChangePassword.aspx" />
-    <Content Include="CollapsePanel.aspx" />
     <Content Include="EquiposFrames.htm" />
     <Content Include="Hola.html" />
     <Content Include="Images\collapse.jpg" />
@@ -348,12 +394,26 @@
     <Compile Include="PagesEquipment\DetallePrmsFWT.aspx.designer.cs">
       <DependentUpon>DetallePrmsFWT.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PagesEquipment\EditARIX.aspx.cs">
+      <DependentUpon>EditARIX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\EditARIX.aspx.designer.cs">
+      <DependentUpon>EditARIX.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagesEquipment\EditSIX.aspx.cs">
       <DependentUpon>EditSIX.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PagesEquipment\EditSIX.aspx.designer.cs">
       <DependentUpon>EditSIX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEquipment\ARIXsAll.aspx.cs">
+      <DependentUpon>ARIXsAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEquipment\ARIXsAll.aspx.designer.cs">
+      <DependentUpon>ARIXsAll.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesEquipment\SIXsAll.aspx.cs">
       <DependentUpon>SIXsAll.aspx</DependentUpon>
@@ -382,6 +442,13 @@
     </Compile>
     <Compile Include="PagesReportes\ConfiguracionColumnas.aspx.designer.cs">
       <DependentUpon>ConfiguracionColumnas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\CurrentStatisticsArix.aspx.cs">
+      <DependentUpon>CurrentStatisticsArix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\CurrentStatisticsArix.aspx.designer.cs">
+      <DependentUpon>CurrentStatisticsArix.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesReportes\CurrentStatisticsSix.aspx.cs">
       <DependentUpon>CurrentStatisticsSix.aspx</DependentUpon>
@@ -417,9 +484,6 @@
     </Compile>
     <Compile Include="PagesSecurity\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CollapsePanel.cs">
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -734,7 +798,9 @@
     <Content Include="App_LocalResources\seccionDReportes.aspx.en.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\seccionDReportes.aspx.resx" />
+    <Content Include="App_LocalResources\seccionDReportes.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\SeccionDSeguridad.aspx.en.resx" />
@@ -784,13 +850,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PagesEquipment\App_LocalResources\EditFCI.aspx.resx" />
+    <Content Include="PagesEquipment\App_LocalResources\EditFCI.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PagesEquipment\App_LocalResources\EditFWT.aspx.en.resx" />
+    <Content Include="PagesEquipment\App_LocalResources\EditFWT.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PagesEquipment\App_LocalResources\EditFWT.aspx.resx" />
+    <Content Include="PagesEquipment\App_LocalResources\EditFWT.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PagesEquipment\App_LocalResources\EditSIX.aspx.en.resx" />
@@ -873,10 +945,14 @@
     <Content Include="PagesNewUsr\App_LocalResources\ModUser.aspx.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PagesUpdates\App_LocalResources\FWTFirmwareUpdating.aspx.en.resx" />
+    <Content Include="PagesUpdates\App_LocalResources\FWTFirmwareUpdating.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PagesUpdates\App_LocalResources\FWTFirmwareUpdating.aspx.resx" />
+    <Content Include="PagesUpdates\App_LocalResources\FWTFirmwareUpdating.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PagesReportes\App_LocalResources\ConfiguracionColumnas.aspx.en.resx" />
@@ -950,8 +1026,33 @@
   <ItemGroup>
     <Content Include="PagesUpdates\App_LocalResources\FirmwareStateReport.aspx.en.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\EditARIX.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesEquipment\App_LocalResources\ARIXsAll.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\CurrentStatisticsArix.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\CurrentStatisticsArix.aspx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">

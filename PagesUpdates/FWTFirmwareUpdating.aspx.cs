@@ -8,6 +8,7 @@ using System.Text;
 using System.Web.SessionState;
 using System.Data;
 using System.IO;
+using System.Threading;
 using SGR.UtilityLibrary;
 using SGR.BussinessLayer;
 using SGR.DataAccessLayer;
@@ -187,6 +188,27 @@ namespace SistemaGestionRedes
                     return;
                 }
             }
+            else if(fwType == FirmwareType.FMWR_TYPE_ARIX)
+            {
+                FirmwareARIX fwFciObj = (FirmwareARIX)_fwObj;
+                string fwtsNoHab = GetCadenaEquiposFWTNoHabilitados();
+                string serialesFwt = GetCadenaSerialesFWTs();
+                try
+                {
+                    _conexionBD.IniciarCargaFirmwareDEVRT(fwFciObj.VersionFirmware, (byte)fwFciObj.TipoFirmware, (int)fwFciObj.ChecksumFile, fwFciObj.PaginasDirecciones, fwFciObj.DatosFirmware, serialesFwt);
+                    //fwFciObj.ActualizarFirmware();
+                    lblMensaje.Text = (string)this.GetLocalResourceObject("lblMensajeCantidadFWTSeleccionados") + GetQtyProgramados().ToString() + " !!";
+                    if (!fwtsNoHab.Equals(""))
+                    {
+                        lblMensajeNoAptos.Text = (string)this.GetLocalResourceObject("lblMensajeFWTNoAptos") + " : " + fwtsNoHab;
+                    }
+                }
+                catch (Exception exGral)
+                {
+                    lblMensaje.Text = (string)this.GetLocalResourceObject("lblBDErrorUploadingFwDevice"); //Error en las operaciones de BDs que insertan la informacion del firmaware a subir...
+                    return;
+                }
+            }
 
         }
 
@@ -281,7 +303,7 @@ namespace SistemaGestionRedes
 			{
 			    using (SistemaGestionRemotoContainer Bdata = new SistemaGestionRemotoContainer())
                 {
-                    ActualizacionesFW actFW = ActualizacionesFW.CreateActualizacionesFW(nmActualizacionFinal , i ,renglonesPPageAddress[i-1], renglonesDatos[i-1]); //El contador empieza en 1 , el indice en cade lista en cero
+                    ActualizacionesFWs actFW = ActualizacionesFWs.CreateActualizacionesFWs(nmActualizacionFinal , i ,renglonesPPageAddress[i-1], renglonesDatos[i-1]); //El contador empieza en 1 , el indice en cade lista en cero
                     Bdata.ActualizacionesFWs.AddObject(actFW);
                     Bdata.SaveChanges();
             

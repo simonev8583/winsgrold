@@ -306,6 +306,14 @@
                 </tr>
                 <tr>
                     <td align="center" width="100%">
+                        <asp:Label ID="Label18" runat="server" 
+                                   Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT_ARIX %>" Font-Bold="True" 
+                                   Font-Italic="False" Font-Size="11px"></asp:Label>
+                        <asp:Label ID="lblVersionFwDevRTCargadoARIX" runat="server" Text="" Font-Bold="True" Font-Italic="False" Font-Size="11px"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="100%">
                         <asp:GridView ID="GVEquiposRemotos" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
                             CellPadding="4" DataSourceID="SqlDSDevsRT" ForeColor="Black" 

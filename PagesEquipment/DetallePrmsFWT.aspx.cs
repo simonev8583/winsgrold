@@ -21,7 +21,7 @@ namespace SistemaGestionRedes.PagesEquipment
         {
             using (SistemaGestionRemotoContainer context = new SistemaGestionRemotoContainer())
             {
-                var Prms = (from record in context.HistoriaParamsFWT
+                var Prms = (from record in context.HistorialParamsFWTs
                             where record.IdFWT == idInterno && record.FechaConfirmacion == fechaRegistro
                             select record).SingleOrDefault();
 

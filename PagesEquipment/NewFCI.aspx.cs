@@ -59,7 +59,7 @@ namespace SistemaGestionRedes
             {
 
 
-                ddlPlantillasFCI.DataSource = from u in db.TemplatesParametrosFCI
+                ddlPlantillasFCI.DataSource = from u in db.TemplatesParametrosFCIs
                                               orderby u.Id
                                               select new { Name = u.Nombre, Id = u.Id };
 
@@ -103,7 +103,7 @@ namespace SistemaGestionRedes
             using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
             {
 
-                var registros = from reg in db.TemplatesParametrosFCI
+                var registros = from reg in db.TemplatesParametrosFCIs
                                 where reg.Id == idPlantilla
                                 select reg;   //LINQ to SQL query para retornar todo el registro de esta plantilla
 

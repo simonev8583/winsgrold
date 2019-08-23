@@ -9,6 +9,7 @@ using SGR.DataAccessLayer;
 using SGR.BussinessLayer;
 using SCADA104.Definiciones;
 using Celsa.ConexionMensajeria;
+using ADF.Comunicaciones;
 
 namespace SistemaGestionRedes
 {
@@ -17,7 +18,8 @@ namespace SistemaGestionRedes
         private MessageQueue mqWebToSGR;
         private MessageQueue mqSGRToWeb;
         private bool _fwtIsConnected = false;
-        
+        private static FCISPrmsActualizablesFCI_RF _structFCIPrms;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -75,7 +77,7 @@ namespace SistemaGestionRedes
 
             using (SistemaGestionRemotoContainer context = new SistemaGestionRemotoContainer())
             {
-                var registros = from historia in context.HistoriaParamsFiSx
+                var registros = from historia in context.HistorialParamsFiSxes
                                 where historia.IdFiSx == idInternoEquipo
                                 orderby historia.FechaConfirmacion descending
                                 select historia;
@@ -250,6 +252,8 @@ namespace SistemaGestionRedes
                 //Código del equipo
                 txtCodigoEquipo.Text = consultaFCI.Codigo;
 
+                //Para menejo de modo de disparo según versión...
+                _structFCIPrms = new FCISPrmsActualizablesFCI_RF(consultaFCI);
 
                 switch (consultaFCI.ParamFCI.ModoDisparo)
                 {
@@ -266,7 +270,7 @@ namespace SistemaGestionRedes
                     case 2:
                         rdButModoPorValorFijo.Checked = true;
                         lblNombreValorFalla.Text = (string)this.GetLocalResourceObject("TextlblNombreValorFallaCorriente");
-                        lblUnids.Text = "(10-1000)A";
+                        //lblUnids.Text = "(10-1000)A";
                         break;
                     case 3:
                         rdButModoPorAutoRango.Checked = true;
@@ -709,7 +713,9 @@ namespace SistemaGestionRedes
                 lblNombreValorFalla.Text = (string)this.GetLocalResourceObject("TextlblNombreValorFallaCorriente");
                 //txtValorFalla.Text = "10";
                 lblUnids.Visible = true;
-                lblUnids.Text = "(10-1000)A";
+                //RanValFijo.MinimumValue = _structFCIPrms.ValMinValorFallaNumUpDown.ToString();
+                //lblUnids.Text = "(10-1000)A";
+                //lblUnids.Text = _structFCIPrms.TextoLabel1;
                 txtValorFalla.Focus();
 
             }
@@ -752,9 +758,9 @@ namespace SistemaGestionRedes
                 fci.Id = Convert.ToInt32(lblId.Text);
                 bDatos.FCIs.Attach(fci) ; //Para borrar posteriormente se utiliza attach
                 //Pueden existir FCis que tengan alarmasFCi relacionadas .. se debe borrar en cascada ascendente 
-                if (fci.AlarmasFCIs.Count > 0) 
+                if (fci.AlarmasFCI.Count > 0) 
                 {
-                    fci.AlarmasFCIs.Clear();       
+                    fci.AlarmasFCI.Clear();       
                 }
 
                 if (fci.LogCorrienteFCIs.Count > 0)

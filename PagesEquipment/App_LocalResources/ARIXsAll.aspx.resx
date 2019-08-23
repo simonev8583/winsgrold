@@ -117,58 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TextErrorBaseDatos" xml:space="preserve">
-    <value>Database Error Access</value>
-  </data>
-  <data name="TextNoCodigo" xml:space="preserve">
-    <value>No Code</value>
-  </data>
-  <data name="TextNoHayFWTs" xml:space="preserve">
-    <value>There are not FWTs registered</value>
-  </data>
-  <data name="TextNuevoConcentrador" xml:space="preserve">
-    <value>New Collector FWT</value>
-  </data>
-  <data name="TextNuevoIndicador" xml:space="preserve">
-    <value>New FCI</value>
-  </data>
-  <data name="TextTittleAllARIXs" xml:space="preserve">
-    <value>ARIXs</value>
-  </data>
-  <data name="TextTittleAllConcentradores" xml:space="preserve">
-    <value>Collectors</value>
-  </data>
-  <data name="TextTittleAllFCIs" xml:space="preserve">
-    <value>FCIs</value>
-  </data>
-  <data name="TextTittleAllSIXs" xml:space="preserve">
-    <value>SIXs</value>
-  </data>
-  <data name="TextTittleEquipos" xml:space="preserve">
-    <value>DEVICES</value>
-  </data>
-  <data name="TextTittleEquiposOK" xml:space="preserve">
-    <value>Devices OK</value>
-  </data>
-  <data name="TextTittleEstados" xml:space="preserve">
-    <value>STATES</value>
-  </data>
-  <data name="TextTittleFallasCircuitos" xml:space="preserve">
-    <value>Circuits Faults</value>
-  </data>
-  <data name="TextTittleFallasEquipos" xml:space="preserve">
-    <value>Devices Failures</value>
-  </data>
-  <data name="TextTittleTree" xml:space="preserve">
-    <value>SYSTEM</value>
-  </data>
-  <data name="TextVerCodigos" xml:space="preserve">
-    <value>See Codes</value>
-  </data>
-  <data name="TextVerCodigosToolTip" xml:space="preserve">
-    <value>See the corporate devices codes</value>
-  </data>
-  <data name="TextWordVacio" xml:space="preserve">
-    <value>Empty</value>
+  <data name="TextoTittleEquiposARIX" xml:space="preserve">
+    <value>EQUIPOS ARIX</value>
   </data>
 </root>

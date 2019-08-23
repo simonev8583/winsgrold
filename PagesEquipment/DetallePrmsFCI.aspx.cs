@@ -25,7 +25,7 @@ namespace SistemaGestionRedes.PagesEquipment
         {
             using (SistemaGestionRemotoContainer context = new SistemaGestionRemotoContainer())
             {
-                var Prms = (from record in context.HistoriaParamsFiSx
+                var Prms = (from record in context.HistorialParamsFiSxes
                             where record.IdFiSx == idInterno && record.FechaConfirmacion == fechaRegistro
                             select record).SingleOrDefault();
 

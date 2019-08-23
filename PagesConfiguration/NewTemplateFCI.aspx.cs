@@ -200,8 +200,8 @@ namespace SistemaGestionRedes
                         corrienteAbsolutaDisparo, numeroReintentosComunicacion, segundosParaProximaComunicacion, tiempoRetardoValidacionTensionSegundos,
                         reposicionPorMagneto, reposicionPorCorriente, habilitarReloj, habilitarFallaTransitoria, tiempoValidacionFallaSegundos, toleranciaTensionReposicion,
                         tiempoReposicionSegundos, capacidadBateriaInstalada,false, true); //cambio bateria = false . Ete parametro se envia solamente él mismo que se reciba del FCI
-                    TemplateParametrosFCI tmplParamFCI = TemplateParametrosFCI.CreateTemplateParametrosFCI(1, nombre, paramFCI);  //Se utilizan los factory Methods del EF 
-                    ObjCont.TemplatesParametrosFCI.AddObject(tmplParamFCI);
+                    TemplatesParametrosFCI tmplParamFCI = TemplatesParametrosFCI.CreateTemplatesParametrosFCI(1, nombre, paramFCI);  //Se utilizan los factory Methods del EF 
+                    ObjCont.TemplatesParametrosFCIs.AddObject(tmplParamFCI);
                     ObjCont.SaveChanges();
                     lblPlantillaParamFCIIngresada.Text = "Plantilla de parametros FCI ingresada";
                 }

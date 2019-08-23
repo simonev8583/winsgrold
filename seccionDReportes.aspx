@@ -21,6 +21,7 @@
                     <asp:MenuItem NavigateUrl="~/PagesReportes/StatisticsSix.aspx" Text="<%$ Resources:TextSIXStatistics %>" Target="content" />
                     <asp:MenuItem NavigateUrl="~/PagesReportes/CurrentStatistics.aspx" Text="<%$ Resources:TextLogCorrientesFCI %>" Target="content"/>
                     <asp:MenuItem NavigateUrl="~/PagesReportes/CurrentStatisticsSix.aspx" Text="<%$ Resources:TextLogCorrientesSIX %>" Target="content"/>
+                    <asp:MenuItem NavigateUrl="~/PagesReportes/CurrentStatisticsArix.aspx" Text="<%$ Resources:TextLogCorrientesARIX %>" Target="content"/>
                     <asp:MenuItem NavigateUrl="~/PagesReportes/HistorialFWT.aspx" Text="<%$ Resources:TextHistorialFallasFWT %>" Target="content"/>
                     <asp:MenuItem NavigateUrl="~/PagesReportes/HistorialStateFWT.aspx" Text="<%$ Resources:TextEstadosFWT %>" Target="content"/>
                 </Items>

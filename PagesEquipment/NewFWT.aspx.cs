@@ -133,7 +133,7 @@ namespace SistemaGestionRedes
             using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
             {
 
-                var registros = from reg in db.TemplatesParametrosFWT
+                var registros = from reg in db.TemplatesParametrosFWTs
                                 where reg.Id == idPlantilla
                                 select reg;   //LINQ to SQL query para retornar todo el registro de esta plantilla
 
@@ -143,7 +143,7 @@ namespace SistemaGestionRedes
                     lblAPNBD.Text = reg.Parametros.APN;
                     lblUserBD.Text = reg.Parametros.Usuario;
                     lblPwdBD.Text = reg.Parametros.Password;
-                    lblDirIpGesBD.Text = reg.Parametros.DireccionIPGESTION;
+                    lblDirIpGesBD.Text = reg.Parametros.DireccionIPGestion;
                     lblPtoGesBD.Text = reg.Parametros.PuertoGESTION.ToString();
                     lblDirIpSCADABD.Text = reg.Parametros.DireccionIPSCADA;
                     lblPtoSCADABD.Text = reg.Parametros.PuertoSCADA.ToString();
@@ -194,9 +194,47 @@ namespace SistemaGestionRedes
                         apnUsado = 1;
                     }
 
-                    ParametrosFWT paramFWT = ParametrosFWT.CreateParametrosFWT(canalRF,vecesNoReportar,ipSCA,ptoSCA,ipGes,ptoGes ,apn ,usr ,pwd ,ubicaDir,ubicaElec,
-                                                ubicaGPS, numeroMaximoFCIs, "", "", "", "", "", "", 30, 4, 6, 3, periodoReporte, 87m, 11m, 190m, 192, 7, "", apnUsado, 120, 0, 120, true, 0, false);
-                    FWT fwt = FWT.CreateFWT(1, DateTime.Now, paramFWT, serial, true, false);//sin falla empieza el equipo.//Queda pendiente por recibir parametros y No queda pendiente por enviar actualización 
+                    ParametrosFWT paramFWT = ParametrosFWT.CreateParametrosFWT(
+                        apn,
+                        0,
+                        canalRF,
+                        7,
+                        ubicaElec,
+                        ubicaGPS,
+                        ipGes,
+                        ipSCA,
+                        ubicaDir,
+                        6,
+                        4,
+                        numeroMaximoFCIs,
+                        0,
+                        pwd,
+                        periodoReporte,
+                        120,
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        true,
+                        ptoGes,
+                        ptoSCA,
+                        30,
+                        120,
+                        6,
+                        apnUsado,
+                        false,
+                        usr,
+                        vecesNoReportar,
+                        192,
+                        87m,
+                        11m,
+                        "",
+                        190m
+                    );
+
+                    FWT fwt = FWT.CreateFWT(1, DateTime.Now, serial, true, false, paramFWT);//sin falla empieza el equipo.//Queda pendiente por recibir parametros y No queda pendiente por enviar actualización 
                             
                     db.FWTs.AddObject(fwt);
                     db.SaveChanges();
@@ -222,7 +260,7 @@ namespace SistemaGestionRedes
             {
 
 
-                ddlPlantillasFWT.DataSource = from u in db.TemplatesParametrosFWT
+                ddlPlantillasFWT.DataSource = from u in db.TemplatesParametrosFWTs
                                               orderby u.Id
                                               select new { Name = u.Nombre, Id = u.Id };
 

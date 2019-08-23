@@ -138,6 +138,9 @@
   <data name="TextLogCorrientesSIX" xml:space="preserve">
     <value>Log Corriente SIX</value>
   </data>
+  <data name="TextLogCorrientesARIX" xml:space="preserve">
+    <value>Log Corriente ARIX</value>
+  </data>
   <data name="TextSIXStatistics" xml:space="preserve">
     <value>Estadisticas SIX</value>
   </data>

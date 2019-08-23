@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CollapseOperacionGeneral" xml:space="preserve">
+    <value>(Mostrar Parámetros)</value>
+  </data>
+  <data name="ExpandOperacionGeneral" xml:space="preserve">
+    <value>(Ocultar parámetros)</value>
+  </data>
+  <data name="lblTextTitleOperacionGeneral" xml:space="preserve">
+    <value>Parámetros de operación general</value>
+  </data>
+  <data name="lblTextTitleOperacionReconectador" xml:space="preserve">
+    <value>Parámetros de operación reconectador</value>
+  </data>
+  <data name="lblTextTitleOperacionModoDisparo" xml:space="preserve">
+    <value>Parámetros operación modo disparo</value>
+  </data>
+  <data name="lblTextTitleOperacionDisparo1" xml:space="preserve">
+    <value>Parámetros de disparo número 1</value>
+  </data>
+  <data name="lblTextTitleOperacionDisparo2" xml:space="preserve">
+    <value>Parámetros de disparo número 2</value>
+  </data>
+  <data name="lblTextTitleOperacionDisparo3" xml:space="preserve">
+    <value>Parámetros de disparo número 3</value>
+  </data>
+  <data name="lblTextTitleOperacionDisparo4" xml:space="preserve">
+    <value>Parámetros de disparo número 4</value>
+  </data>
+  <data name="lblTextTitleOperacionDisparo5" xml:space="preserve">
+    <value>Parámetros de disparo número 5</value>
+  </data>
+  <data name="lblTextTitleParametrosEquipo" xml:space="preserve">
+    <value>Parámetros de hardware</value>
+  </data>
+  <data name="lblTextTitleComunicacion" xml:space="preserve">
+    <value>Parámetros de comunicación</value>
+  </data>
+  <data name="lblOpGeneral_modoOperacion" xml:space="preserve">
+    <value>Modo de operación</value>
+  </data>
+  <data name="TextoModoOperacion_Reconectador" xml:space="preserve">
+    <value>Reconectador</value>
+  </data>
+  <data name="TextoModoOperacion_Seccionalizador" xml:space="preserve">
+    <value>Seccionalizador</value>
+  </data>
+  <data name="TextoModoOperacion_SinReconexion" xml:space="preserve">
+    <value>Sin Reconexión Automática</value>
+  </data>
+  <data name="lblOpGeneral_porcentajeHisteresis" xml:space="preserve">
+    <value>Histeresis y Disparo</value>
+  </data>
+  <data name="lblOpGeneral_ciclosVerifResetDismCorrFalla" xml:space="preserve">
+    <value>Ciclos de verificación reset disminución corriente de falla</value>
+  </data>
+  <data name="TextoFrecOperacion_50Hz" xml:space="preserve">
+    <value>50Hz</value>
+  </data>
+  <data name="TextoFrecOperacion_60Hz" xml:space="preserve">
+    <value>60Hz</value>
+  </data>
+  <data name="lblOpGeneral_frecOperacion" xml:space="preserve">
+    <value>Frecuencia de operación</value>
+  </data>
+  <data name="lblOpGeneral_habilitarFuncionalidadInrush" xml:space="preserve">
+    <value>Habilitar funcionalidad inrush</value>
+  </data>
+  <data name="lblOpGeneral_modOperacionFinVidaUtil" xml:space="preserve">
+    <value>Modo de operación al final de la vida útil</value>
+  </data>
+  <data name="TextoEstadoCerrado" xml:space="preserve">
+    <value>Cerrado</value>
+  </data>
+  <data name="TextoEstadoAbierto" xml:space="preserve">
+    <value>Abierto</value>
+  </data>
+  <data name="TextoSeccionalizador" xml:space="preserve">
+    <value>Seccionalizador</value>
+  </data>
+  <data name="lblOpGeneral_modoInrush" xml:space="preserve">
+    <value>Tipo funcionalidad inrush</value>
+  </data>
+  <data name="TextoInrush0" xml:space="preserve">
+    <value>Corriente definida</value>
+  </data>
+  <data name="TextoInrush1" xml:space="preserve">
+    <value>Segundo armónico</value>
+  </data>
+  <data name="lblOpGeneral_corrInrush" xml:space="preserve">
+    <value>Corriente inrush</value>
+  </data>
+  <data name="lblOpGeneral_porcentaje2doArmonicoInrush" xml:space="preserve">
+    <value>Porcentaje armónico inrush</value>
+  </data>
+  <data name="lblOpGeneral_tiempoDeValidacionInrush" xml:space="preserve">
+    <value>Tiempo de validación inrush</value>
+  </data>
+  <data name="lblOpGeneral_tiempoSostenimientoInrush" xml:space="preserve">
+    <value>Tiempo de sostenimiento inrush</value>
+  </data>
+  <data name="lblOpReconectador_numRecierres" xml:space="preserve">
+    <value>Número de recierres</value>
+  </data>
+  <data name="lblOpReconectador_corrMaxAbsoluta" xml:space="preserve">
+    <value>Corriente máxima absoluta</value>
+  </data>
+  <data name="lblOpReconectador_tiempoDefDisparoCorrMaxAbs" xml:space="preserve">
+    <value>Tiempo de disparo corriente máxima abs</value>
+  </data>
+  <data name="lblOpReconectador_resetTimeAfterLockout" xml:space="preserve">
+    <value>Tiempo de reset después de bloqueo</value>
+  </data>
+  <data name="lblOpReconectador_resetTimeLockout" xml:space="preserve">
+    <value>Tiempo de reset bloqueo</value>
+  </data>
+  <data name="lblOpReconectador_corrMaxCapacidadRIX" xml:space="preserve">
+    <value>Corriente máxima capacidad ARIX</value>
+  </data>
+  <data name="TextoDisparo1_TiempoDefinido" xml:space="preserve">
+    <value>Tiempo Fijo</value>
+  </data>
+  <data name="TextoDisparo1_IECNI" xml:space="preserve">
+    <value>IEC NI</value>
+  </data>
+  <data name="TextoDisparo1_IECVI" xml:space="preserve">
+    <value>IEC VI</value>
+  </data>
+  <data name="TextoDisparo1_IECEI" xml:space="preserve">
+    <value>IEC EI</value>
+  </data>
+  <data name="TextoDisparo1_IECLTI" xml:space="preserve">
+    <value>IEC LTI</value>
+  </data>
+  <data name="TextoDisparo1_ANSIMI" xml:space="preserve">
+    <value>ANSI MI</value>
+  </data>
+  <data name="TextoDisparo1_ANSIVI" xml:space="preserve">
+    <value>ANSI VI</value>
+  </data>
+  <data name="TextoDisparo1_ANSIEI" xml:space="preserve">
+    <value>ANSI EI</value>
+  </data>
+  <data name="TextoDisparo1_TiempoFijo" xml:space="preserve">
+    <value>Tiempo Fijo</value>
+  </data>
+  <data name="TextoDisparo1_Curva" xml:space="preserve">
+    <value>Curva</value>
+  </data>
+  <data name="lblDisp1_tipoReset" xml:space="preserve">
+    <value>Tipo de Reset</value>
+  </data>
+  <data name="lblDisparo1_habilitaModificadores" xml:space="preserve">
+    <value>Habilitar modificadores</value>
+  </data>
+  <data name="lblDisparo1_modCorrMaxActuacion" xml:space="preserve">
+    <value>Corriente máxima actuación</value>
+  </data>
+  <data name="lblDisparo1_corrArranque" xml:space="preserve">
+    <value>Corriente de arranque</value>
+  </data>
+  <data name="lblDisparo1_modTd" xml:space="preserve">
+    <value>Dial</value>
+  </data>
+  <data name="lblDisparo1_tiempoDisparoDefinido" xml:space="preserve">
+    <value>Tiempo disparo definido</value>
+  </data>
+  <data name="lblDisparo1_tiempoResetCiclo" xml:space="preserve">
+    <value>Tiempo reset ciclo</value>
+  </data>
+  <data name="lblDisparo1_tiempoApertura" xml:space="preserve">
+    <value>Tiempo apertura</value>
+  </data>
+  <data name="lblDisparo1_modTiempoMaxRespuesta" xml:space="preserve">
+    <value>mod Tiempo máximo de respuesta</value>
+  </data>
+  <data name="lblDisparo1_modTiempoMinRespuesta" xml:space="preserve">
+    <value>mod Tiempo Mmínimo de respuesta</value>
+  </data>
+  <data name="lblDisparo1_modTiempoDefIMaxAct" xml:space="preserve">
+    <value>mod Tiempo Def corriente máxima actuación</value>
+  </data>
+  <data name="lblDisparo1_modRetardoAdicional" xml:space="preserve">
+    <value>mod Retardo adicional</value>
+  </data>
+  <data name="lblHardware_adcCargaLOWCapacitorDisparo" xml:space="preserve">
+    <value>adc Carga baja capacitor disparo</value>
+  </data>
+  <data name="lblHardware_adcCargaOKCapacitorDisparo" xml:space="preserve">
+    <value>adc Carga capacitor disparo</value>
+  </data>
+  <data name="lblHardware_adcCargaLOWFuenteBaja" xml:space="preserve">
+    <value>adc Carga baja de fuente </value>
+  </data>
+  <data name="lblHardware_adcCargaOKFuenteBaja" xml:space="preserve">
+    <value>adc Carga fuente</value>
+  </data>
+  <data name="lblHardware_numOperacionesBotellaCercanoAlMax" xml:space="preserve">
+    <value>Número operaciones botella cerca Max</value>
+  </data>
+  <data name="lblHardware_numOperacionesBotellaLlegaAlMax" xml:space="preserve">
+    <value>Número operaciones botella llega Max</value>
+  </data>
+  <data name="lblHardware_porcentDesgasteBotellaCercanoAlMax" xml:space="preserve">
+    <value>Porcentaje desgaste botella cerca Max</value>
+  </data>
+  <data name="lblHardware_porcentDesgasteBotellaLlegaAlMax" xml:space="preserve">
+    <value>Porcentaje desgaste botella Max</value>
+  </data>
+  <data name="lblHardware_adcCorrMinParaAutoalimentacion50Hz" xml:space="preserve">
+    <value>adc Corriente mínima autoalimentación 50Hz</value>
+  </data>
+  <data name="lblHardware_adcCorrMinParaAutoalimentacion60Hz" xml:space="preserve">
+    <value>adc Corr mínima autoalimentación 60Hz</value>
+  </data>
+  <data name="lblComunicacion_canalComunicacionRF" xml:space="preserve">
+    <value>Canal de comunicación RF</value>
+  </data>
+  <data name="lblComunicacion_codigoDeGrupo" xml:space="preserve">
+    <value>Código de grupo</value>
+  </data>
+  <data name="lblComunicacion_canalRfEnMHz" xml:space="preserve">
+    <value>Canal Rf en MHz</value>
+  </data>
+  <data name="TextBotonLeerPrmOnline" xml:space="preserve">
+    <value>Enviar parámetros</value>
+  </data>
+</root>

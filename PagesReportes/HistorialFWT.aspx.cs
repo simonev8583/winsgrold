@@ -49,7 +49,7 @@ namespace SistemaGestionRedes
 
         }
 
-        public static IQueryable<AlarmaFWT> FiltrarPorFecha(IQueryable<AlarmaFWT> query)
+        public static IQueryable<AlarmasFWT> FiltrarPorFecha(IQueryable<AlarmasFWT> query)
         {
             return from falla in query
                    where falla.Fecha >= txtFi && falla.Fecha <= txtFf
@@ -57,7 +57,7 @@ namespace SistemaGestionRedes
 
         }
 
-        public static IQueryable<AlarmaFWT> FiltrarPorFalla(IQueryable<AlarmaFWT> query)
+        public static IQueryable<AlarmasFWT> FiltrarPorFalla(IQueryable<AlarmasFWT> query)
         {
             if (valFiltroFalla == 0)
             {
