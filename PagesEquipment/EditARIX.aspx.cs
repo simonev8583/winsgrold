@@ -603,7 +603,7 @@ namespace SistemaGestionRedes
             if (listBoxDisparo1_tipoOperacion.GetSelectedIndices()[0] != disparo1Arix.TipoOperacion) disparo1Arix.TipoOperacion = listBoxDisparo1_tipoOperacion.GetSelectedIndices()[0];
             if (listBoxDisparo1_tipoReset.GetSelectedIndices()[0] != disparo1Arix.TipoReset) disparo1Arix.TipoReset = (byte) listBoxDisparo1_tipoReset.GetSelectedIndices()[0];
             if (checkDisparo1_habilitaModificadores.Checked != disparo1Arix.HabilitaModificadores) disparo1Arix.HabilitaModificadores = checkDisparo1_habilitaModificadores.Checked;
-            if (txtDisparo1_corrArranque.Text != disparo1Arix.CorrArranque.ToString()) int.Parse(txtDisparo1_corrArranque.Text);
+            if (txtDisparo1_corrArranque.Text != disparo1Arix.CorrArranque.ToString()) disparo1Arix.CorrArranque =int.Parse(txtDisparo1_corrArranque.Text);
             if (txtDisparo1_modCorrMaxActuacion.Text != disparo1Arix.ModCorrMaxActuacion.ToString()) disparo1Arix.ModCorrMaxActuacion = int.Parse(txtDisparo1_modCorrMaxActuacion.Text);
             var modTd = txtDisparo1_modTd.Text.Replace(".", ",");
             if (modTd != disparo1Arix.ModTd.ToString()) disparo1Arix.ModTd = decimal.Parse(modTd);
@@ -626,7 +626,7 @@ namespace SistemaGestionRedes
             if (listBoxDisparo2_tipoOperacion.GetSelectedIndices()[0] != disparo2Arix.TipoOperacion) disparo2Arix.TipoOperacion = listBoxDisparo2_tipoOperacion.GetSelectedIndices()[0];
             if (listBoxDisparo2_tipoReset.GetSelectedIndices()[0] != disparo2Arix.TipoReset) disparo2Arix.TipoReset = (byte)listBoxDisparo2_tipoReset.GetSelectedIndices()[0];
             if (checkDisparo2_habilitaModificadores.Checked != disparo2Arix.HabilitaModificadores) disparo2Arix.HabilitaModificadores = checkDisparo2_habilitaModificadores.Checked;
-            if (txtDisparo2_corrArranque.Text != disparo2Arix.CorrArranque.ToString()) int.Parse(txtDisparo2_corrArranque.Text);
+            if (txtDisparo2_corrArranque.Text != disparo2Arix.CorrArranque.ToString()) disparo2Arix.CorrArranque = int.Parse(txtDisparo2_corrArranque.Text);
             if (txtDisparo2_modCorrMaxActuacion.Text != disparo2Arix.ModCorrMaxActuacion.ToString()) disparo2Arix.ModCorrMaxActuacion = int.Parse(txtDisparo2_modCorrMaxActuacion.Text);
             var modTd = txtDisparo2_modTd.Text.Replace(".", ",");
             if (modTd != disparo2Arix.ModTd.ToString()) disparo2Arix.ModTd = decimal.Parse(modTd);
@@ -649,7 +649,7 @@ namespace SistemaGestionRedes
             if (listBoxDisparo3_tipoOperacion.GetSelectedIndices()[0] != disparo3Arix.TipoOperacion) disparo3Arix.TipoOperacion = listBoxDisparo3_tipoOperacion.GetSelectedIndices()[0];
             if (listBoxDisparo3_tipoReset.GetSelectedIndices()[0] != disparo3Arix.TipoReset) disparo3Arix.TipoReset = (byte)listBoxDisparo3_tipoReset.GetSelectedIndices()[0];
             if (checkDisparo3_habilitaModificadores.Checked != disparo3Arix.HabilitaModificadores) disparo3Arix.HabilitaModificadores = checkDisparo3_habilitaModificadores.Checked;
-            if (txtDisparo3_corrArranque.Text != disparo3Arix.CorrArranque.ToString()) int.Parse(txtDisparo3_corrArranque.Text);
+            if (txtDisparo3_corrArranque.Text != disparo3Arix.CorrArranque.ToString()) disparo3Arix.CorrArranque = int.Parse(txtDisparo3_corrArranque.Text);
             if (txtDisparo3_modCorrMaxActuacion.Text != disparo3Arix.ModCorrMaxActuacion.ToString()) disparo3Arix.ModCorrMaxActuacion = int.Parse(txtDisparo3_modCorrMaxActuacion.Text);
             var modTd = txtDisparo3_modTd.Text.Replace(".", ",");
             if (modTd != disparo3Arix.ModTd.ToString()) disparo3Arix.ModTd = decimal.Parse(modTd);
@@ -672,7 +672,7 @@ namespace SistemaGestionRedes
             if (listBoxDisparo4_tipoOperacion.GetSelectedIndices()[0] != disparo4Arix.TipoOperacion) disparo4Arix.TipoOperacion = listBoxDisparo4_tipoOperacion.GetSelectedIndices()[0];
             if (listBoxDisparo4_tipoReset.GetSelectedIndices()[0] != disparo4Arix.TipoReset) disparo4Arix.TipoReset = (byte)listBoxDisparo4_tipoReset.GetSelectedIndices()[0];
             if (checkDisparo4_habilitaModificadores.Checked != disparo4Arix.HabilitaModificadores) disparo4Arix.HabilitaModificadores = checkDisparo4_habilitaModificadores.Checked;
-            if (txtDisparo4_corrArranque.Text != disparo4Arix.CorrArranque.ToString()) int.Parse(txtDisparo4_corrArranque.Text);
+            if (txtDisparo4_corrArranque.Text != disparo4Arix.CorrArranque.ToString()) disparo4Arix.CorrArranque = int.Parse(txtDisparo4_corrArranque.Text);
             if (txtDisparo4_modCorrMaxActuacion.Text != disparo4Arix.ModCorrMaxActuacion.ToString()) disparo4Arix.ModCorrMaxActuacion = int.Parse(txtDisparo4_modCorrMaxActuacion.Text);
             var modTd = txtDisparo4_modTd.Text.Replace(".", ",");
             if (modTd != disparo4Arix.ModTd.ToString()) disparo4Arix.ModTd = decimal.Parse(modTd);
@@ -695,7 +695,7 @@ namespace SistemaGestionRedes
             if (listBoxDisparo5_tipoOperacion.GetSelectedIndices()[0] != disparo5Arix.TipoOperacion) disparo5Arix.TipoOperacion = listBoxDisparo5_tipoOperacion.GetSelectedIndices()[0];
             if (listBoxDisparo5_tipoReset.GetSelectedIndices()[0] != disparo5Arix.TipoReset) disparo5Arix.TipoReset = (byte)listBoxDisparo5_tipoReset.GetSelectedIndices()[0];
             if (checkDisparo5_habilitaModificadores.Checked != disparo5Arix.HabilitaModificadores) disparo5Arix.HabilitaModificadores = checkDisparo5_habilitaModificadores.Checked;
-            if (txtDisparo5_corrArranque.Text != disparo5Arix.CorrArranque.ToString()) int.Parse(txtDisparo5_corrArranque.Text);
+            if (txtDisparo5_corrArranque.Text != disparo5Arix.CorrArranque.ToString()) disparo5Arix.CorrArranque = int.Parse(txtDisparo5_corrArranque.Text);
             if (txtDisparo5_modCorrMaxActuacion.Text != disparo5Arix.ModCorrMaxActuacion.ToString()) disparo5Arix.ModCorrMaxActuacion = int.Parse(txtDisparo5_modCorrMaxActuacion.Text);
             var modTd = txtDisparo5_modTd.Text.Replace(".", ",");
             if (modTd != disparo5Arix.ModTd.ToString()) disparo5Arix.ModTd = decimal.Parse(modTd);
