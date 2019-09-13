@@ -117,6 +117,7 @@
       <HintPath>..\..\CosoftEECVS2015\SGR.UtilityLibrary\bin\Debug\SGR.UtilityLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
@@ -187,6 +188,7 @@
     <Content Include="PagesNewUsr\ModUser.aspx" />
     <Content Include="PagesNewUsr\NewUser.aspx" />
     <Content Include="PagesReportes\ConfiguracionColumnas.aspx" />
+    <Content Include="PagesReportes\InfoHardwareArix.aspx" />
     <Content Include="PagesReportes\CurrentStatisticsArix.aspx" />
     <Content Include="PagesReportes\CurrentStatisticsSix.aspx" />
     <Content Include="PagesReportes\HistorialFWT.aspx" />
@@ -344,6 +346,7 @@
     </Compile>
     <Compile Include="DataControlFieldsCel.cs" />
     <Compile Include="ConfigApp.cs" />
+    <Compile Include="Models\ARIX\InfoHardware.cs" />
     <Compile Include="NoAuthorPage.aspx.cs">
       <DependentUpon>NoAuthorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -442,6 +445,13 @@
     </Compile>
     <Compile Include="PagesReportes\ConfiguracionColumnas.aspx.designer.cs">
       <DependentUpon>ConfiguracionColumnas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\InfoHardwareArix.aspx.cs">
+      <DependentUpon>InfoHardwareArix.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\InfoHardwareArix.aspx.designer.cs">
+      <DependentUpon>InfoHardwareArix.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesReportes\CurrentStatisticsArix.aspx.cs">
       <DependentUpon>CurrentStatisticsArix.aspx</DependentUpon>
@@ -1045,6 +1055,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PagesReportes\App_LocalResources\CurrentStatisticsArix.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\InfoHardwareArix.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

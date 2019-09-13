@@ -11,14 +11,6 @@
 <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
     <title></title>
 
-    <script language="javascript" type="text/javascript">
-
-        function abrirConfigColumnas() {
-            window.open('ConfiguracionColumnas.aspx?IdReporte=50', '_blank', 'width=800,height=500');
-            return false;
-        }
-
-        </script>
 
     </head>
 <body>
@@ -127,9 +119,6 @@
                         onclick="btnAceptar_Click" Visible="False" />
                     <asp:Button ID="btnNewAceptar" runat="server" CssClass="TextBoton" 
                         onclick="btnNewAceptar_Click" Text="<%$ Resources:TextosGlobales,TextBotonBuscar %>" />
-                &nbsp;<asp:Button ID="btnIrConfigColumnas" runat="server" CssClass="TextBoton" 
-                                    Text="<%$ Resources:TextosGlobales,TextBotonColoumnas %>" UseSubmitBehavior="False" 
-                                    OnClientClick="return abrirConfigColumnas();" Width="85px" />
                 </td>
             </tr>
             <tr>

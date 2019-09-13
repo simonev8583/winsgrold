@@ -258,4 +258,70 @@
   <data name="TextoWordVersion" xml:space="preserve">
     <value>Versión</value>
   </data>
+  <data name="TextoVoltActualSuperCapacitor" xml:space="preserve">
+    <value>VSuperCapacitor</value>
+  </data>
+  <data name="TextoFrecuenciaActual" xml:space="preserve">
+    <value>Frecuencia</value>
+  </data>
+  <data name="TextoVelActuacionAperturaMax" xml:space="preserve">
+    <value>VelActAperturaMax</value>
+  </data>
+  <data name="TextoVelActuacionAperturaUltima" xml:space="preserve">
+    <value>VelActApertura</value>
+  </data>
+  <data name="TextoVelActuacionCierreMax" xml:space="preserve">
+    <value>VelActCierreMax</value>
+  </data>
+  <data name="TextoVelActuacionCierreUltimo" xml:space="preserve">
+    <value>VelActCierre</value>
+  </data>
+  <data name="TextoDesplazamientoContactosMax" xml:space="preserve">
+    <value>DespContactosMax</value>
+  </data>
+  <data name="TextoDesplazamientoContactosUltimo" xml:space="preserve">
+    <value>DespContactos</value>
+  </data>
+  <data name="TextoAdcTension" xml:space="preserve">
+    <value>Adc Tensión</value>
+  </data>
+  <data name="TextoFrecuenciaActualSenalVoltaje" xml:space="preserve">
+    <value>FrecuenciaVolt</value>
+  </data>
+  <data name="TextoVoltActualCapDisparo" xml:space="preserve">
+    <value>VCapDisparo</value>
+  </data>
+  <data name="TextoCorrActuacionAperturaMax" xml:space="preserve">
+    <value>CorrActAperturaMax</value>
+  </data>
+  <data name="TextoCorrActuacionAperturaUltima" xml:space="preserve">
+    <value>CorrActApertura</value>
+  </data>
+  <data name="TextoCorrActuacionCierreMax" xml:space="preserve">
+    <value>CorrActCierreMax</value>
+  </data>
+  <data name="TextoCorrActuacionCierreUltimo" xml:space="preserve">
+    <value>CorrActCierre</value>
+  </data>
+  <data name="TextoTiempoActuacionAperturaMax" xml:space="preserve">
+    <value>TActAperturaMax</value>
+  </data>
+  <data name="TextoTiempoActuacionAperturaUltima" xml:space="preserve">
+    <value>TActApertura</value>
+  </data>
+  <data name="TextoTiempoActuacionCierreMax" xml:space="preserve">
+    <value>TActCierreMax</value>
+  </data>
+  <data name="TextoTiempoActuacionCierreUltimo" xml:space="preserve">
+    <value>TActCierre</value>
+  </data>
+  <data name="TextoTemperaturaMax" xml:space="preserve">
+    <value>Temp max</value>
+  </data>
+  <data name="TextoTemperaturaActual" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="TextoTemperaturaMin" xml:space="preserve">
+    <value>Temp min</value>
+  </data>
 </root>

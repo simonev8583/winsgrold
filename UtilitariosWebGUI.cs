@@ -192,9 +192,11 @@ namespace SistemaGestionRedes
 
             if (valCteObj != DBNull.Value)
             {
-                short sCte = (short)valCteObj;
-                decimal dCte = ((decimal)sCte / 10.0M);
-                valAjustado = String.Format("{0:0.0}", dCte);
+
+                    var sCte = valCteObj;
+                    decimal dCte = ((decimal)sCte / 10.0M);
+                    valAjustado = String.Format("{0:0.0}", dCte);
+                
             }
             else
             {

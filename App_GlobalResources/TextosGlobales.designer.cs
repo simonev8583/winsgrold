@@ -205,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adc Tensión.
+        /// </summary>
+        internal static string TextoAdcTension {
+            get {
+                return ResourceManager.GetString("TextoAdcTension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ASDU.
         /// </summary>
         internal static string TextoASDU {
@@ -259,6 +268,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CorrActAperturaMax.
+        /// </summary>
+        internal static string TextoCorrActuacionAperturaMax {
+            get {
+                return ResourceManager.GetString("TextoCorrActuacionAperturaMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CorrActApertura.
+        /// </summary>
+        internal static string TextoCorrActuacionAperturaUltima {
+            get {
+                return ResourceManager.GetString("TextoCorrActuacionAperturaUltima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CorrActCierreMax.
+        /// </summary>
+        internal static string TextoCorrActuacionCierreMax {
+            get {
+                return ResourceManager.GetString("TextoCorrActuacionCierreMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CorrActCierre.
+        /// </summary>
+        internal static string TextoCorrActuacionCierreUltimo {
+            get {
+                return ResourceManager.GetString("TextoCorrActuacionCierreUltimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DespContactosMax.
+        /// </summary>
+        internal static string TextoDesplazamientoContactosMax {
+            get {
+                return ResourceManager.GetString("TextoDesplazamientoContactosMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DespContactos.
+        /// </summary>
+        internal static string TextoDesplazamientoContactosUltimo {
+            get {
+                return ResourceManager.GetString("TextoDesplazamientoContactosUltimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alarma.
         /// </summary>
         internal static string TextoFalla {
@@ -309,6 +372,24 @@ namespace Resources {
         internal static string TextoFechaRegistro {
             get {
                 return ResourceManager.GetString("TextoFechaRegistro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frecuencia.
+        /// </summary>
+        internal static string TextoFrecuenciaActual {
+            get {
+                return ResourceManager.GetString("TextoFrecuenciaActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FrecuenciaVolt.
+        /// </summary>
+        internal static string TextoFrecuenciaActualSenalVoltaje {
+            get {
+                return ResourceManager.GetString("TextoFrecuenciaActualSenalVoltaje", resourceCulture);
             }
         }
         
@@ -430,6 +511,69 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Temp.
+        /// </summary>
+        internal static string TextoTemperaturaActual {
+            get {
+                return ResourceManager.GetString("TextoTemperaturaActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temp max.
+        /// </summary>
+        internal static string TextoTemperaturaMax {
+            get {
+                return ResourceManager.GetString("TextoTemperaturaMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temp min.
+        /// </summary>
+        internal static string TextoTemperaturaMin {
+            get {
+                return ResourceManager.GetString("TextoTemperaturaMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TActAperturaMax.
+        /// </summary>
+        internal static string TextoTiempoActuacionAperturaMax {
+            get {
+                return ResourceManager.GetString("TextoTiempoActuacionAperturaMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TActApertura.
+        /// </summary>
+        internal static string TextoTiempoActuacionAperturaUltima {
+            get {
+                return ResourceManager.GetString("TextoTiempoActuacionAperturaUltima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TActCierreMax.
+        /// </summary>
+        internal static string TextoTiempoActuacionCierreMax {
+            get {
+                return ResourceManager.GetString("TextoTiempoActuacionCierreMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TActCierre.
+        /// </summary>
+        internal static string TextoTiempoActuacionCierreUltimo {
+            get {
+                return ResourceManager.GetString("TextoTiempoActuacionCierreUltimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tipo Circuito.
         /// </summary>
         internal static string TextoTipoCircuito {
@@ -457,6 +601,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to VelActAperturaMax.
+        /// </summary>
+        internal static string TextoVelActuacionAperturaMax {
+            get {
+                return ResourceManager.GetString("TextoVelActuacionAperturaMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VelActApertura.
+        /// </summary>
+        internal static string TextoVelActuacionAperturaUltima {
+            get {
+                return ResourceManager.GetString("TextoVelActuacionAperturaUltima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VelActCierreMax.
+        /// </summary>
+        internal static string TextoVelActuacionCierreMax {
+            get {
+                return ResourceManager.GetString("TextoVelActuacionCierreMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VelActCierre.
+        /// </summary>
+        internal static string TextoVelActuacionCierreUltimo {
+            get {
+                return ResourceManager.GetString("TextoVelActuacionCierreUltimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Versión FW.
         /// </summary>
         internal static string TextoVersionFw {
@@ -471,6 +651,24 @@ namespace Resources {
         internal static string TextoVersionFwERT {
             get {
                 return ResourceManager.GetString("TextoVersionFwERT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VCapDisparo.
+        /// </summary>
+        internal static string TextoVoltActualCapDisparo {
+            get {
+                return ResourceManager.GetString("TextoVoltActualCapDisparo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VSuperCapacitor.
+        /// </summary>
+        internal static string TextoVoltActualSuperCapacitor {
+            get {
+                return ResourceManager.GetString("TextoVoltActualSuperCapacitor", resourceCulture);
             }
         }
         

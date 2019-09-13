@@ -10,7 +10,7 @@
 namespace SistemaGestionRedes.PagesReportes {
     
     
-    public partial class CurrentStatisticsSix {
+    public partial class InfoHardwareArix {
         
         /// <summary>
         /// form1 control.
@@ -175,6 +175,15 @@ namespace SistemaGestionRedes.PagesReportes {
         protected global::System.Web.UI.WebControls.Button btnNewAceptar;
         
         /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
         /// gvResultados control.
         /// </summary>
         /// <remarks>
@@ -218,6 +227,24 @@ namespace SistemaGestionRedes.PagesReportes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnManualPoints;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// chartCorriente control.
@@ -308,5 +335,42 @@ namespace SistemaGestionRedes.PagesReportes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataGrafOneSixCte;
+        
+        /// <summary>
+        /// SqlDataCapacitor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataCapacitor;
+        
+        /// <summary>
+        /// SqlDataFrecuencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataFrecuencia;
+        
+        /// <summary>
+        /// SqlDataTemperatura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataTemperatura;
+        
+        /// <summary>
+        /// sqlDSResultadosFechaUltimo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlDSResultadosFechaUltimo;
+
     }
 }

@@ -117,34 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TextEstadosFWT" xml:space="preserve">
-    <value>Historial Estado FWT</value>
+  <data name="TextTittleReporte" xml:space="preserve">
+    <value>Información de hardware</value>
   </data>
-  <data name="TextFCIStatistics" xml:space="preserve">
-    <value>Estadisticas FCI</value>
+  <data name="TextBotonGraficar" xml:space="preserve">
+    <value>Graficar V. Sup Capacitor</value>
   </data>
-  <data name="TextHistorialAlarmasBoth" xml:space="preserve">
-    <value>Historial Alarmas FCI/SIX</value>
+  <data name="TextToolTipGraficar" xml:space="preserve">
+    <value>Gráfica Voltaje SuperCapacitor</value>
   </data>
-  <data name="TextHistorialAlarmasFCI" xml:space="preserve">
-    <value>Historial Alarmas FCI</value>
+  <data name="TextBotonGraficaComparativa" xml:space="preserve">
+    <value>TextBotonGraficaComparativa</value>
   </data>
-  <data name="TextHistorialFallasFWT" xml:space="preserve">
-    <value>Historial Alarmas FWT</value>
+  <data name="TextToolTipGrafComparativa" xml:space="preserve">
+    <value>TextToolTipGrafComparativa</value>
   </data>
-  <data name="TextLogCorrientesFCI" xml:space="preserve">
-    <value>Log Corriente FCI</value>
+  <data name="TextTittleAxisY" xml:space="preserve">
+    <value>Escala de valores</value>
   </data>
-  <data name="TextLogCorrientesSIX" xml:space="preserve">
-    <value>Log Corriente SIX</value>
+  <data name="TextTittleLegendEquipos" xml:space="preserve">
+    <value>Dispositivos</value>
   </data>
-  <data name="TextLogCorrientesARIX" xml:space="preserve">
-    <value>Log Corriente ARIX</value>
+  <data name="TextTittleGeneral" xml:space="preserve">
+    <value>Información general VS Fecha</value>
   </data>
-  <data name="TextSIXStatistics" xml:space="preserve">
-    <value>Estadisticas SIX</value>
+  <data name="TextMsgGraficaParaUnSIX" xml:space="preserve">
+    <value>Seleccione un dispositivo</value>
   </data>
-  <data name="TextInfoHardware" xml:space="preserve">
-    <value>Información de hardware ARIX</value>
+  <data name="TextMsgGraficaPara2o3SIX" xml:space="preserve">
+    <value>TextMsgGraficaPara2o3SIX</value>
+  </data>
+  <data name="TextErrCriticoBD" xml:space="preserve">
+    <value>TextErrCriticoBD</value>
+  </data>
+  <data name="TextTittleAxisX" xml:space="preserve">
+    <value>Rango de fechas</value>
+  </data>
+  <data name="TextBotonGraficaCapacitor" xml:space="preserve">
+    <value>Graficar Capacitor</value>
+  </data>
+  <data name="TextToolTipGrafCapacitor" xml:space="preserve">
+    <value>Gráfica Capacitor de Disparo</value>
+  </data>
+  <data name="TextBotonGraficaFrecuencia" xml:space="preserve">
+    <value>Graficar Frecuencia</value>
+  </data>
+  <data name="TextToolTipGrafFrecuencia" xml:space="preserve">
+    <value>Gráfica de frecuencia</value>
+  </data>
+  <data name="TextBotonGraficaTemperatura" xml:space="preserve">
+    <value>Graficar Temperatura</value>
+  </data>
+  <data name="TextToolTipGrafTemperatura" xml:space="preserve">
+    <value>Gráfica de temperatura</value>
+  </data>
+  <data name="TempMax" xml:space="preserve">
+    <value>TempMax</value>
   </data>
 </root>
