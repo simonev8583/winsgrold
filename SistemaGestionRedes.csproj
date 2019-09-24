@@ -187,6 +187,7 @@
     <Content Include="PagesEquipment\XMLCiudades.xml" />
     <Content Include="PagesNewUsr\ModUser.aspx" />
     <Content Include="PagesNewUsr\NewUser.aspx" />
+    <Content Include="PagesReportes\ArixEvent.aspx" />
     <Content Include="PagesReportes\ConfiguracionColumnas.aspx" />
     <Content Include="PagesReportes\InfoHardwareArix.aspx" />
     <Content Include="PagesReportes\CurrentStatisticsArix.aspx" />
@@ -438,6 +439,13 @@
     </Compile>
     <Compile Include="PagesNewUsr\NewUser.aspx.designer.cs">
       <DependentUpon>NewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesReportes\ArixEvent.aspx.cs">
+      <DependentUpon>ArixEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesReportes\ArixEvent.aspx.designer.cs">
+      <DependentUpon>ArixEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesReportes\ConfiguracionColumnas.aspx.cs">
       <DependentUpon>ConfiguracionColumnas.aspx</DependentUpon>
@@ -1058,6 +1066,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PagesReportes\App_LocalResources\InfoHardwareArix.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PagesReportes\App_LocalResources\ArixEvent.aspx.resx">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

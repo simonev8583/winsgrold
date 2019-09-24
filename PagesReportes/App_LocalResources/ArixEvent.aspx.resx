@@ -117,37 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TextEstadosFWT" xml:space="preserve">
-    <value>Historial Estado FWT</value>
+  <data name="TextTittleReporte" xml:space="preserve">
+    <value>Log eventos ARIX</value>
   </data>
-  <data name="TextFCIStatistics" xml:space="preserve">
-    <value>Estadisticas FCI</value>
+  <data name="TextBotonGraficar" xml:space="preserve">
+    <value>Graficar (No disponible)</value>
   </data>
-  <data name="TextHistorialAlarmasBoth" xml:space="preserve">
-    <value>Historial Alarmas FCI/SIX</value>
+  <data name="TextToolTipGraficar" xml:space="preserve">
+    <value>Genera una gráfica por categorias de evento</value>
   </data>
-  <data name="TextHistorialAlarmasFCI" xml:space="preserve">
-    <value>Historial Alarmas FCI</value>
+  <data name="TextMsgGrafica" xml:space="preserve">
+    <value>Seleccione un dispositivo</value>
   </data>
-  <data name="TextHistorialFallasFWT" xml:space="preserve">
-    <value>Historial Alarmas FWT</value>
+  <data name="TextErrCriticoBD" xml:space="preserve">
+    <value>Hubo problemas cargando los datos, por favor vuelva a intentarlo más tarde</value>
   </data>
-  <data name="TextLogCorrientesFCI" xml:space="preserve">
-    <value>Log Corriente FCI</value>
+  <data name="TextTittleAxisY" xml:space="preserve">
+    <value>Dispositivos</value>
   </data>
-  <data name="TextLogCorrientesSIX" xml:space="preserve">
-    <value>Log Corriente SIX</value>
+  <data name="TextTittleLegendEquipos" xml:space="preserve">
+    <value>Evento</value>
   </data>
-  <data name="TextLogCorrientesARIX" xml:space="preserve">
-    <value>Log Corriente ARIX</value>
+  <data name="TextTittleGeneral" xml:space="preserve">
+    <value>Evento vs Dispositivos</value>
   </data>
-  <data name="TextSIXStatistics" xml:space="preserve">
-    <value>Estadisticas SIX</value>
+  <data name="TextTittleAxisX" xml:space="preserve">
+    <value> Eventos</value>
   </data>
-  <data name="TextInfoHardware" xml:space="preserve">
-    <value>Información de hardware ARIX</value>
+  <data name="TextTodosEventos" xml:space="preserve">
+    <value>Todos los eventos</value>
   </data>
-  <data name="TextArixEvent" xml:space="preserve">
-    <value>Eventos ARIX</value>
+  <data name="TextLblEvento" xml:space="preserve">
+    <value>Eventos </value>
   </data>
 </root>

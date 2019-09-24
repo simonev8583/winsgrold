@@ -324,4 +324,16 @@
   <data name="TextoTemperaturaMin" xml:space="preserve">
     <value>Temp min</value>
   </data>
+  <data name="TextoValorAdicional" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="TextoDescripcion" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="TextoSerial_Fwt" xml:space="preserve">
+    <value>Fwt</value>
+  </data>
+  <data name="TextoSerial_Arix" xml:space="preserve">
+    <value>Arix</value>
+  </data>
 </root>

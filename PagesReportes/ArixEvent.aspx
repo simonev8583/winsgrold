@@ -1,17 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InfoHardwareArix.aspx.cs" Inherits="SistemaGestionRedes.PagesReportes.InfoHardwareArix" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArixEvent.aspx.cs" Inherits="SistemaGestionRedes.PagesReportes.ArixEvent" %>
+<%@ Register TagPrefix="rjs" Namespace="RJS.Web.WebControl" Assembly="RJS.Web.WebControl.PopCalendar.Net.2010, Version=8.1.4043.37381, Culture=neutral, PublicKeyToken=5edbe80336f06114" %>
+<%@ Register TagPrefix="RK" Namespace="KrishLabs.Web.Controls" Assembly="ExportToExcel" %>
 
-<%@ Register Assembly="RJS.Web.WebControl.PopCalendar.Net.2010" Namespace="RJS.Web.WebControl" TagPrefix="rjs" %>
-<%@ Register Assembly="ExportToExcel" Namespace="KrishLabs.Web.Controls" TagPrefix="RK" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<%@ Register Assembly="SistemaGestionRedes" Namespace="SistemaGestionRedes" TagPrefix="asp" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
     <title></title>
-
 </head>
 <body>
     <form id="form1" runat="server">
@@ -69,6 +64,19 @@
                             runat="server" Calendar="PopCalFf" CenterText="True" />
                     </td>
                 </tr>
+            <tr>
+                <td align="right" width="50%">
+                    <asp:Label ID="Label9" runat="server"  CssClass="textLabelInUsuario"
+                               Text="<%$ Resources:TextLblEvento %>"></asp:Label>
+                </td>
+                <td align="left" width="50%">
+                    <asp:DropDownList ID="DDListFallas" runat="server" AppendDataBoundItems="True"
+                                      DataSourceID="SqDSFallas" DataTextField="Nombre" DataValueField="Id" Font-Names="Microsoft Sans Serif"
+                                      Font-Size="12px" OnSelectedIndexChanged="DDListEvents_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Text="<%$ Resources:TextTodosEventos %>" Value="0"></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
                 <tr>
                     <td width="50%" align="right">&nbsp;</td>
                     <td width="50%">&nbsp;</td>
@@ -121,57 +129,7 @@
                     <td width="50%" align="right">&nbsp;</td>
                     <td width="50%">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td width="100%" align="center" colspan="2">
-                        <br />
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4"
-                            ForeColor="#333333" GridLines="None" AllowPaging="True"
-                            AllowSorting="True" AutoGenerateColumns="False"
-                            DataSourceID="sqlDSResultadosFechaUltimo">
-                            <AlternatingRowStyle BackColor="White" />
-                            <Columns>
-                                <asp:BoundField DataField="CorrActuacionAperturaMax"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionAperturaMax %>"
-                                    SortExpression="CorrActuacionAperturaMax" Visible="True" />
-                                <asp:BoundField DataField="CorrActuacionCierreMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionCierreMax %>"
-                                                SortExpression="CorrActuacionCierreMax" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionAperturaMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionAperturaMax %>"
-                                                SortExpression="TiempoActuacionAperturaMax" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionCierreMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionCierreMax %>"
-                                                SortExpression="TiempoActuacionCierreMax" Visible="True" />
-                                <asp:BoundField DataField="TemperaturaMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMax %>"
-                                                SortExpression="TemperaturaMax" Visible="True" />
-                                <asp:BoundField DataField="TemperaturaMin"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMin %>"
-                                                SortExpression="TemperaturaMin" Visible="True" />
-                                <asp:BoundField DataField="VelActuacionAperturaMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionAperturaMax %>"
-                                                SortExpression="VelActuacionAperturaMax" Visible="True" />
-                                <asp:BoundField DataField="VelActuacionCierreMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionCierreMax %>"
-                                                SortExpression="VelActuacionCierreMax" Visible="True" />
-                                <asp:BoundField DataField="DesplazamientoContactosMax"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosMax %>"
-                                                SortExpression="DesplazamientoContactosMax" Visible="True" />
-                            </Columns>
-                            <EditRowStyle BackColor="#7C6F57" />
-                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#E3EAEB" />
-                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                            <SortedAscendingHeaderStyle BackColor="#246B61" />
-                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                            <SortedDescendingHeaderStyle BackColor="#15524A" />
-                        </asp:GridView>
-                    </td>
-                </tr>
-                <tr>
+            <tr>
                     <td width="100%" align="center" colspan="2">
                         <br />
                         <asp:GridView ID="gvResultados" runat="server" CellPadding="4"
@@ -179,59 +137,25 @@
                             AllowSorting="True" AutoGenerateColumns="False"
                             DataSourceID="sqlDSResultadosFecha">
                             <AlternatingRowStyle BackColor="White" />
-
                             <Columns>
-                                <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoSerialEquipo %>"
-                                    SortExpression="Serial">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblSerial" runat="server" Text='<%# Bind("Serial") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <asp:BoundField DataField="Serial_Arix"
+                                                HeaderText="<%$ Resources:TextosGlobales,TextoSerial_Arix %>"
+                                                SortExpression="Serial_Arix" Visible="True" />
+                                <asp:BoundField DataField="Serial_Fwt"
+                                                HeaderText="<%$ Resources:TextosGlobales,TextoSerial_Fwt %>"
+                                                SortExpression="Serial_Fwt" Visible="True" />
+                                <asp:BoundField DataField="Descripcion"
+                                                HeaderText="<%$ Resources:TextosGlobales,TextoDescripcion %>"
+                                                SortExpression="Descripcion" Visible="True" />
                                 <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>"
                                     SortExpression="Fecha">
                                     <ItemTemplate>
                                         <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="VoltActualCapDisparo"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoVoltActualCapDisparo %>"
-                                    SortExpression="VoltActualCapDisparo" Visible="True" />
-                                <asp:BoundField DataField="VoltActualSuperCapacitor"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoVoltActualSuperCapacitor %>"
-                                    SortExpression="VoltActualSuperCapacitor" Visible="True" />
-                                <asp:BoundField DataField="TemperaturaActual"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaActual %>"
-                                    SortExpression="TemperaturaActual" Visible="True" />
-                                <asp:BoundField DataField="FrecuenciaActual"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActual %>" SortExpression="FrecuenciaActual"
-                                    Visible="True" />
-                                <asp:BoundField DataField="AdcTension"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoAdcTension %>" SortExpression="AdcTension"
-                                    Visible="True" />
-                                <asp:BoundField DataField="FrecuenciaActualSenalVoltaje"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActualSenalVoltaje %>" SortExpression="FrecuenciaActualSenalVoltaje"
-                                    Visible="True" />
-                                <asp:BoundField DataField="CorrActuacionAperturaUltima"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionAperturaUltima %>"
-                                    SortExpression="CorrActuacionAperturaUltima" Visible="True" />
-                                <asp:BoundField DataField="CorrActuacionCierreUltimo"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionCierreUltimo %>"
-                                    SortExpression="CorrActuacionCierreUltimo" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionAperturaUltima"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionAperturaUltima %>"
-                                    SortExpression="TiempoActuacionAperturaUltima" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionCierreUltimo"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionCierreUltimo %>"
-                                    SortExpression="TiempoActuacionCierreUltimo" Visible="True" />
-                                <asp:BoundField DataField="VelActuacionAperturaUltima"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionAperturaUltima %>" SortExpression="VelActuacionAperturaUltima"
-                                    Visible="True" />
-                                <asp:BoundField DataField="VelActuacionCierreUltimo"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionCierreUltimo %>" SortExpression="VelActuacionCierreUltimo"
-                                    Visible="True" />
-                                <asp:BoundField DataField="DesplazamientoContactosUltimo"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosUltimo %>" SortExpression="DesplazamientoContactosUltimo"
-                                    Visible="True" />
+                                <asp:BoundField DataField="ValorAdicional"
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoValorAdicional %>"
+                                    SortExpression="ValorAdicional" Visible="True" />
 
                             </Columns>
 
@@ -253,26 +177,12 @@
                         <br />
                         <RK:ExportToExcel ID="ExportToExcel1" runat="server" ApplyStyleInExcel="True"
                             Charset="utf-8" ContentEncoding="windows-1250" CssClass="TextBoton"
-                            EnableHyperLinks="True" ExportFileName="Infohardware.xls"
+                            EnableHyperLinks="True" ExportFileName="LogEventArix.xls"
                             IncludeTimeStamp="True" PageSize="All" Text="<%$ Resources:TextosGlobales,TextBotonExpoExcel %>" />
                         &nbsp;<asp:Button ID="btnGraficar" runat="server" CssClass="TextBoton"
                             OnClick="btnGraficar_Click" Text="<%$ Resources:TextBotonGraficar%>"
                             ToolTip="<%$ Resources:TextToolTipGraficar %>" />
 
-                        &nbsp;<asp:Button ID="btnManualPoints" runat="server" CssClass="TextBoton"
-                            Text="<%$ Resources:TextBotonGraficaCapacitor %>"
-                            ToolTip="<%$ Resources:TextToolTipGrafCapacitor %>"
-                            OnClick="btnGraficarCap_Click" />
-
-                        &nbsp;<asp:Button ID="Button1" runat="server" CssClass="TextBoton"
-                            Text="<%$ Resources:TextBotonGraficaFrecuencia %>"
-                            ToolTip="<%$ Resources:TextToolTipGrafFrecuencia %>"
-                            OnClick="btnGraficarFrec_Click" />
-
-                        &nbsp;<asp:Button ID="Button2" runat="server" CssClass="TextBoton"
-                            Text="<%$ Resources:TextBotonGraficaTemperatura %>"
-                            ToolTip="<%$ Resources:TextToolTipGrafTemperatura %>"
-                            OnClick="btnGraficarTemp_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -307,11 +217,7 @@
                     <td width="100%" align="center" colspan="2">
                         <asp:Label ID="lblMsgGeneracionGrafica" runat="server" CssClass="TextError"
                             Font-Size="12px"
-                            Text="<%$ Resources:TextMsgGraficaParaUnSIX %>"
-                            Visible="False"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblMsgGraficaComparativa" runat="server" CssClass="TextError"
-                            Text="<%$ Resources:TextMsgGraficaPara2o3SIX %>"
+                            Text="<%$ Resources:TextMsgGrafica %>"
                             Visible="False"></asp:Label>
                         <br />
                         <asp:Label ID="lblMsgErrCriticoGenGrafico" runat="server" CssClass="TextError"
@@ -324,82 +230,39 @@
 
             <asp:SqlDataSource ID="sqlDSResultadosFecha" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="SELECT info.Id
-      ,[VoltActualCapDisparo]
-      ,[VoltActualSuperCapacitor] 
-      ,[CorrActuacionAperturaMax]
-      ,[CorrActuacionAperturaUltima]
-      ,[CorrActuacionCierreMax]
-      ,[CorrActuacionCierreUltimo]
-      ,[TiempoActuacionAperturaMax]
-      ,[TiempoActuacionAperturaUltima]
-      ,[TiempoActuacionCierreMax]
-      ,[TiempoActuacionCierreUltimo]
-      ,[TemperaturaMax]
-      ,[TemperaturaMin]
-      ,[TemperaturaActual]
-      ,[FrecuenciaActual]
-      ,[VelActuacionAperturaMax]
-      ,[VelActuacionAperturaUltima]
-      ,[VelActuacionCierreMax]
-      ,[VelActuacionCierreUltimo]
-      ,[DesplazamientoContactosMax]
-      ,[DesplazamientoContactosUltimo]
-      ,[AdcTension]
-      ,[FrecuenciaActualSenalVoltaje]
-      ,[Fecha]
-      ,[IdArix]
-	  ,arixs.Serial as [Serial]
-  FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] as info inner join
-  [SGRCelsa].[dbo].[ARIXs] arixs on info.IdArix = arixs.Id
-  inner JOIN FWTs on (arixs.FWTId = FWTs.Id)
-  WHERE (info.Fecha between @Finicial and @Ffinal)
-ORDER BY info.Fecha DESC">
+                SelectCommand="select a.Serial as Serial_Arix, f.Serial as Serial_Fwt, alog.Codigo, te.Descripcion, alog.Fecha, alog.ValorAdicional from 
+ARIX_LogEventos alog inner join
+ARIX_TipoEventos te on (te.Codigo = alog.Codigo) inner join
+ARIXs a on (alog.IdArix = a.Id) inner join
+FWTs f on (f.Id = a.FWTId)
+WHERE 
+((@idAlarma is null) or (te.Codigo = @idAlarma) ) and
+(alog.Fecha between @Finicial and @Ffinal) 
+ORDER BY alog.Fecha DESC">
                 <SelectParameters>
-                    <asp:Parameter Name="fechai" />
-                    <asp:Parameter Name="fechaf" />
+                    <asp:Parameter Name="Finicial" />
+                    <asp:Parameter Name="Ffinal" />
+                    <asp:Parameter Name="idAlarma" />
                 </SelectParameters>
             </asp:SqlDataSource>
 
             <asp:SqlDataSource ID="sqlDSResultadosConSix" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="SELECT info.Id
-      ,[VoltActualCapDisparo]
-      ,[VoltActualSuperCapacitor]
-      ,[CorrActuacionAperturaMax]
-      ,[CorrActuacionAperturaUltima]
-      ,[CorrActuacionCierreMax]
-      ,[CorrActuacionCierreUltimo]
-      ,[TiempoActuacionAperturaMax]
-      ,[TiempoActuacionAperturaUltima]
-      ,[TiempoActuacionCierreMax]
-      ,[TiempoActuacionCierreUltimo]
-      ,[TemperaturaMax]
-      ,[TemperaturaMin]
-      ,[TemperaturaActual]
-      ,[FrecuenciaActual]
-      ,[VelActuacionAperturaMax]
-      ,[VelActuacionAperturaUltima]
-      ,[VelActuacionCierreMax]
-      ,[VelActuacionCierreUltimo]
-      ,[DesplazamientoContactosMax]
-      ,[DesplazamientoContactosUltimo]
-      ,[AdcTension]
-      ,[FrecuenciaActualSenalVoltaje]
-      ,[Fecha]
-      ,[IdArix]
-	  ,arixs.Serial as [Serial]
-  FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] as info inner join
-  [SGRCelsa].[dbo].[ARIXs] arixs on info.IdArix = arixs.Id
-  inner JOIN FWTs on (arixs.FWTId = FWTs.Id)
-  WHERE (info.Fecha between @Finicial and @Ffinal)
-  AND ((@idfwt is null) or (FWTs.Id = @idfwt) )
-AND ((@idequipo is null) or (ARIXs.Id in (select GUI_IDS_Equipos_Reportes.Col_Id from GUI_IDS_Equipos_Reportes where UserName = @usuario)) )
-ORDER BY info.Fecha DESC"
+                SelectCommand="select a.Serial as Serial_Arix, f.Serial as Serial_Fwt, alog.Codigo, te.Descripcion, alog.Fecha, alog.ValorAdicional from 
+ARIX_LogEventos alog inner join
+ARIX_TipoEventos te on (te.Codigo = alog.Codigo) inner join
+ARIXs a on (alog.IdArix = a.Id) inner join
+FWTs f on (f.Id = a.FWTId)
+  WHERE (alog.Fecha between @Finicial and @Ffinal)
+ AND ((@idAlarma is null) or (te.Codigo = @idAlarma) )
+  AND ((@idfwt is null) or (f.Id = @idfwt) )
+AND ((@idequipo is null) or (a.Id in (select GUI_IDS_Equipos_Reportes.Col_Id from GUI_IDS_Equipos_Reportes where UserName = @usuario)) )
+ORDER BY alog.Fecha DESC"
                 CancelSelectOnNullParameter="False">
                 <SelectParameters>
                     <asp:Parameter Name="Finicial" />
                     <asp:Parameter Name="Ffinal" />
+                    <asp:Parameter Name="idAlarma" />
                     <asp:Parameter Name="idfwt" ConvertEmptyStringToNull="false" Type="Int32" />
                     <asp:Parameter Name="idequipo" ConvertEmptyStringToNull="false" Type="Int32" />
                     <asp:Parameter Name="usuario" ConvertEmptyStringToNull="false" Type="String" />
@@ -459,59 +322,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
                 </SelectParameters>
             </asp:SqlDataSource>
 
-            <asp:SqlDataSource ID="SqlDataCapacitor" runat="server"
-                ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
-CONVERT(decimal(15,1), ARIX_InfoHardware.VoltActualCapDisparo/10.0) as [ValorCorriente]
-FROM ARIX_InfoHardware
-WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
-and ARIX_InfoHardware.IdArix = @SixId
-ORDER BY ARIX_InfoHardware.Fecha ASC
-">
-                <SelectParameters>
-                    <asp:Parameter Name="Finicial" />
-                    <asp:Parameter Name="Ffinal" />
-                    <asp:Parameter Name="SixId" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-
-            <asp:SqlDataSource ID="SqlDataFrecuencia" runat="server"
-                ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
-CONVERT(decimal(15,1), ARIX_InfoHardware.FrecuenciaActual) as [ValorCorriente]
-FROM ARIX_InfoHardware
-WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
-and ARIX_InfoHardware.IdArix = @SixId
-ORDER BY ARIX_InfoHardware.Fecha ASC
-">
-                <SelectParameters>
-                    <asp:Parameter Name="Finicial" />
-                    <asp:Parameter Name="Ffinal" />
-                    <asp:Parameter Name="SixId" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-
-
-            <asp:SqlDataSource ID="SqlDataTemperatura" runat="server"
-                ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
-CONVERT(decimal(15,1), ARIX_InfoHardware.TemperaturaActual) as [ValorCorriente]
-FROM ARIX_InfoHardware
-WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
-and ARIX_InfoHardware.IdArix = @SixId
-ORDER BY ARIX_InfoHardware.Fecha ASC
-">
-                <SelectParameters>
-                    <asp:Parameter Name="Finicial" />
-                    <asp:Parameter Name="Ffinal" />
-                    <asp:Parameter Name="SixId" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-
-            <asp:SqlDataSource ID="sqlDSResultadosFechaUltimo" runat="server"
+        <asp:SqlDataSource ID="sqlDSResultadosFechaUltimo" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="SELECT [CorrActuacionAperturaMax]
       ,[CorrActuacionCierreMax]
@@ -533,6 +344,12 @@ ORDER BY Fecha ASC
                     <asp:Parameter Name="Ffinal" />
                 </SelectParameters>
             </asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="SqDSFallas" runat="server" 
+                           ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>" 
+                           SelectCommand="select Codigo as Id, Descripcion as Nombre From ARIX_TipoEventos ">
+        </asp:SqlDataSource>
+
             <br />
 
         </div>

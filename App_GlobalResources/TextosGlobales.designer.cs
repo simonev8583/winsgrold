@@ -304,6 +304,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Descripcion.
+        /// </summary>
+        internal static string TextoDescripcion {
+            get {
+                return ResourceManager.GetString("TextoDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DespContactosMax.
         /// </summary>
         internal static string TextoDesplazamientoContactosMax {
@@ -502,6 +511,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arix.
+        /// </summary>
+        internal static string TextoSerial_Arix {
+            get {
+                return ResourceManager.GetString("TextoSerial_Arix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fwt.
+        /// </summary>
+        internal static string TextoSerial_Fwt {
+            get {
+                return ResourceManager.GetString("TextoSerial_Fwt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subestación.
         /// </summary>
         internal static string TextoSubestacion {
@@ -588,6 +615,15 @@ namespace Resources {
         internal static string TextoTituloScada {
             get {
                 return ResourceManager.GetString("TextoTituloScada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valor.
+        /// </summary>
+        internal static string TextoValorAdicional {
+            get {
+                return ResourceManager.GetString("TextoValorAdicional", resourceCulture);
             }
         }
         

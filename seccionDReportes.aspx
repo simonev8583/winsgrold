@@ -25,6 +25,7 @@
                     <asp:MenuItem NavigateUrl="~/PagesReportes/HistorialFWT.aspx" Text="<%$ Resources:TextHistorialFallasFWT %>" Target="content"/>
                     <asp:MenuItem NavigateUrl="~/PagesReportes/HistorialStateFWT.aspx" Text="<%$ Resources:TextEstadosFWT %>" Target="content"/>
                     <asp:MenuItem NavigateUrl="~/PagesReportes/InfoHardwareArix.aspx" Text="<%$ Resources:TextInfoHardware %>" Target="content"/>
+                    <asp:MenuItem NavigateUrl="~/PagesReportes/ArixEvent.aspx" Text="<%$ Resources:TextArixEvent %>" Target="content"/>
                 </Items>
             </asp:Menu>
     </div>
