@@ -28,7 +28,7 @@ namespace SistemaGestionRedes
         /// <summary>
         /// Objeto que sirve para hacer un lock en el hilo actual 
         /// </summary>
-        Object objLock = new Object ();
+        Object objLock = new Object();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -174,10 +174,10 @@ namespace SistemaGestionRedes
         {
             Control cntrl = (Control)sender; //Control es la base class de todos los aps net server controls 
             string strViewStCntrlChgd = (string)ViewState["controlesChanged"];
-            if ((ViewState["controlesChanged"] == null ) || ( strViewStCntrlChgd.IndexOf(cntrl.ID) < 0)) //No se van a agregar controles duplicados , 
-                                                                                                         //no debe existir cntrl.ID en el viewState  , se utiliza orelse (||) de C#
+            if ((ViewState["controlesChanged"] == null) || (strViewStCntrlChgd.IndexOf(cntrl.ID) < 0)) //No se van a agregar controles duplicados , 
+                                                                                                       //no debe existir cntrl.ID en el viewState  , se utiliza orelse (||) de C#
             {                                                                                            //para que no vaya a existir problemas de null reference.
-                 ViewState["controlesChanged"] = ViewState["controlesChanged"] + "*" + cntrl.ID;  //Aca se almacenan los Ids de los controles que cambiaron , separados por *
+                ViewState["controlesChanged"] = ViewState["controlesChanged"] + "*" + cntrl.ID;  //Aca se almacenan los Ids de los controles que cambiaron , separados por *
             }
         }
 
@@ -275,10 +275,10 @@ namespace SistemaGestionRedes
                                     lblResetOnLineFWT.Text = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
                                 }
                                 break;
-                        
+
                             case ComandosUsuario.ReadParamFWT:
                                 if (msgRespuesta.Respuesta == RespuestasSvrCom.DATOS) //La respuesta debe ser datos .
-                                {   
+                                {
                                     LlenarValoresConcentrador(int.Parse(lblId.Text)); //SE llenan todos los datos del concentrador pues ya en base de datos cosoft actualizó los parametros.
                                     lblEstadoActualizacionOnline.Text = (string)this.GetLocalResourceObject("lblEstadoActualizacionOnlinePrmsRecibidos"); //"Se recibieron los parametros del FWT. ";
                                     lblEstadoActualizacion.Visible = false; //No se muestra , ya se actualizó .
@@ -297,18 +297,18 @@ namespace SistemaGestionRedes
                                     LlenarValoresConcentrador(int.Parse(lblId.Text)); //SE llenan todos los datos del concentrador pues ya en base de datos cosoft actualizó los parametros.
                                     lblLecturaOnlineEstadoFWT.Text = (string)this.GetLocalResourceObject("lblLecturaOnlineEstadoFWTEstadoOk"); //"Estado FWT recibido.";
                                     lblEstadoActualizacion.Visible = false; //No se muestra , ya se actualizó .
-                                   
+
                                 }
                                 else
                                 {
                                     //lblLecturaOnlineEstadoFWT.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
-                                    lblLecturaOnlineEstadoFWT.Text = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta); 
-                                  
+                                    lblLecturaOnlineEstadoFWT.Text = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
+
                                 }
                                 break;
 
                         } //end of switch
-                        
+
 
                     }
                     else
@@ -383,9 +383,9 @@ namespace SistemaGestionRedes
             ((XmlMessageFormatter)mqSGRToWeb.Formatter).TargetTypes[0] = (new MensajeRespuestasMQOnline()).GetType(); ; // Va a recibir MensajeRespuestasMQOnline
         }
 
-        private void MostrarEstadoActualizacionFirmware(byte?  estadoActFW, short? ContActFw, string serial)
+        private void MostrarEstadoActualizacionFirmware(byte? estadoActFW, short? ContActFw, string serial)
         {
-            EstadoActualizacionFirmware estado = (estadoActFW == null)? EstadoActualizacionFirmware.SinProceso   : (EstadoActualizacionFirmware) estadoActFW  ;
+            EstadoActualizacionFirmware estado = (estadoActFW == null) ? EstadoActualizacionFirmware.SinProceso : (EstadoActualizacionFirmware)estadoActFW;
             double contadorActFW = (ContActFw == null) ? 0 : (double)ContActFw;
             switch (estado)
             {
@@ -403,7 +403,7 @@ namespace SistemaGestionRedes
                     if ((porcActFware >= 0) && (porcActFware <= 100)) //ProgressBar
                     {
                         imgPorcActFirmware.Width = Unit.Percentage(porcActFware);
-                    } 
+                    }
                     else
                     {   //Para que la barra no se salga del tamanio 
                         imgPorcActFirmware.Width = Unit.Percentage(100);
@@ -413,7 +413,7 @@ namespace SistemaGestionRedes
                     imgPorcActFirmware.Visible = true;
                     tmrActFirmware.Enabled = true;
                     break;
-               
+
                 case EstadoActualizacionFirmware.Terminado:
                     lblEstadoACTFirmware.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizacionTerminada"); //"ACTUALIZACIÓN TERMINADA.";
                     tmrActFirmware.Enabled = true;
@@ -421,10 +421,10 @@ namespace SistemaGestionRedes
                 case EstadoActualizacionFirmware.SinProceso:
                     lblEstadoACTFirmware.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizado"); //"FIRMWARE ACTUALIZADO.";
                     lblPorcentajeActFirmware.Visible = false;
-                    imgPorcActFirmware.Visible = false ;
+                    imgPorcActFirmware.Visible = false;
                     tmrActFirmware.Enabled = false;
                     break;
-               
+
             }
         }
 
@@ -463,10 +463,10 @@ namespace SistemaGestionRedes
             using (SistemaGestionRemotoContainer bDatos = new SistemaGestionRemotoContainer())
             {
                 var registro = (from conc in bDatos.FWTs
-                               where conc.Id == idConc
-                               select conc).SingleOrDefault();
+                                where conc.Id == idConc
+                                select conc).SingleOrDefault();
                 if (registro != null)
-                {                    
+                {
                     if (registro.PendienteRecibirParametros)
                     {
                         lblEstadoFWT.Text = (string)this.GetLocalResourceObject("TextlblEstadoFWTPendienteRecibir"); //"PENDIENTE RECIBIR PARAMETROS.";
@@ -484,15 +484,16 @@ namespace SistemaGestionRedes
                         else
                         {
                             lblEstadoFWT.Text = (string)this.GetLocalResourceObject("TextlblEstadoFWTDatosOK"); //"DATOS ACTUALIZADOS.";
-                            imgEstadoFWT.Visible = false ;
+                            imgEstadoFWT.Visible = false;
                         }
                     }
-                                        
-                    MostrarEstadoActualizacionFirmware(  registro.EstadoProcesoActFw , registro.ContActFw   , registro.Serial);
-                    
+
+                    MostrarEstadoActualizacionFirmware(registro.EstadoProcesoActFw, registro.ContActFw, registro.Serial);
+                    MostrarEstadoActualizacionFirmwareDevices(registro.EstadoActFwARIX, registro.ContaActFwARIX, registro.Serial);
+                    MostrarEstadoActualizacionFirmwareDevicesFci(registro.EstadoActFwFCI, registro.ContaActFwFCI, registro.Serial);
                     lblSerial.Text = registro.Serial; //No se permite editar                                    
-                               
-                   
+
+
 
                     if (registro.FechaRegistroGestion == null)
                     {
@@ -575,16 +576,16 @@ namespace SistemaGestionRedes
                             {
                                 ImgNivelSenal.ToolTip = (string)this.GetLocalResourceObject("ImgNivelSenalMuyMalo"); //"Nivel señal Muy Malo .";
                             }
-                            
+
                             ImgNivelSenal.Visible = true;
 
                         }
-                                       
+
 
                     }
-                   
-                  
-                  
+
+
+
                     lblIMEI.Text = registro.IMEI;
                     lblIMSI.Text = registro.IMSI;
                     if (registro.VoltajeBatt != null)
@@ -628,11 +629,11 @@ namespace SistemaGestionRedes
                     lblVoltPanel.Text += " V";
 
                     lblTemperatura.Text = registro.Temperatura + " °C ";
-                   
+
                     lblVerPrograma.Text = registro.VersionPrograma;
                     lblVerMonitor.Text = registro.VersionMonitor;
                     lblVerFirmwModulo.Text = registro.VersionFirmwareModulo;
-                    
+
 
                     txtAPN.Text = registro.ParamFWT.APN;
                     txtUsuario.Text = registro.ParamFWT.Usuario;
@@ -769,7 +770,7 @@ namespace SistemaGestionRedes
 
                         }
                     }
-                    
+
 
 
 
@@ -837,15 +838,15 @@ namespace SistemaGestionRedes
             using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
             {
                 ddlFCIsAll.DataSource = from fci in db.FCIs
-                                        where fci.FWTId == null        
+                                        where fci.FWTId == null
                                         orderby fci.Id
-                                        select new { Id = fci.Id , Ser = fci.Serial  };
+                                        select new { Id = fci.Id, Ser = fci.Serial };
                 ddlFCIsAll.DataTextField = "Ser";
                 ddlFCIsAll.DataValueField = "Id";
                 ddlFCIsAll.DataBind();
 
             }
-        
+
         }
 
         /// <summary>
@@ -859,13 +860,13 @@ namespace SistemaGestionRedes
             {
                 var consultaFCIs = from fci in db.FCIs
                                    where fci.FWTId == idFWT
-                                   orderby fci.Serial ascending 
+                                   orderby fci.Serial ascending
                                    select fci;
 
                 var consultaARIXs = from arix in db.ARIXs
-                    where arix.FWTId == idFWT
-                    orderby arix.Serial ascending
-                    select arix;
+                                    where arix.FWTId == idFWT
+                                    orderby arix.Serial ascending
+                                    select arix;
                 foreach (var registro in consultaFCIs)
                 {
                     listBoxFCIsPropios.Items.Add(new ListItem(registro.Serial, registro.Id.ToString()));
@@ -919,7 +920,7 @@ namespace SistemaGestionRedes
                     btnClearFCI.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                     btnWriteResetFwt.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                     butUpdateOnline.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
-                    
+
                     //Para que el boton se desactive cuando se le haga click y además permita continuar con el postback 
                     butUpdateOnline.Attributes.Add("onclick", "javascript:" + butUpdateOnline.ClientID + ".disabled=true;" + ClientScript.GetPostBackEventReference(butUpdateOnline, ""));
                     butLeerEstadoFWTOnLine.Attributes.Add("onclick", "javascript:" + butLeerEstadoFWTOnLine.ClientID + ".disabled=true;" + ClientScript.GetPostBackEventReference(butLeerEstadoFWTOnLine, ""));
@@ -930,7 +931,7 @@ namespace SistemaGestionRedes
                     if (lblEstadoFWT.Text.ToUpper() != (string)this.GetLocalResourceObject("TextlblEstadoFWTPendienteEnviar")) //"PENDIENTE ENVIAR PARAMETROS."
                     {
                         butLeerParamOnline.Enabled = true;
-                        
+
                     }
                     else
                     {
@@ -940,7 +941,7 @@ namespace SistemaGestionRedes
 
                 }
             }
-            
+
         }
 
 
@@ -950,7 +951,7 @@ namespace SistemaGestionRedes
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void butCancelar_Click(object sender, EventArgs e)
-        { 
+        {
             //object refUrl = ViewState["paginaAnterior"];
             //if (refUrl != null)
             //{
@@ -1015,15 +1016,15 @@ namespace SistemaGestionRedes
                         butRemoveFCI.Focus();
                     }
                 }
-                
+
             }
             else
             {
                 Response.Write("<SCRIPT>alert('No es posible eliminar un Concentrador que gestione FCIs , puede hacer que este Concentrador NO gestione FCIs antes si lo desea .');</SCRIPT>");
-                butRemoveFCI.Focus(); 
+                butRemoveFCI.Focus();
             }
-            
-           
+
+
         }
 
         protected void btnSaveInfoNoActualizable_Click(object sender, EventArgs e)
@@ -1068,7 +1069,7 @@ namespace SistemaGestionRedes
                                select conc).SingleOrDefault();
                     if (fwt != null)
                     {
-                        apnUsado = fwt.ParamFWT.UsaApn;                        
+                        apnUsado = fwt.ParamFWT.UsaApn;
                         //ATENCION : Chequear cuales de todos los valores de controles de la pagina hacen que se necesite enviar actualización de parametros 
                         fwt.PendienteEnviarParametros = true;
                         lblEstadoFWT.Text = (string)this.GetLocalResourceObject("TextlblEstadoFWTPendienteEnviar"); //"PENDIENTE ENVIAR PARAMETROS.";
@@ -1183,13 +1184,13 @@ namespace SistemaGestionRedes
                                 case "txtPrmVoltajeMinNivelCargador":
                                     decimal valPrm = decimal.Parse(TransformarSeparadorDecimal(txtPrmVoltajeMinNivelCargador.Text));
                                     fwt.PrmVoltajeMinNivelCargador = valPrm;
-                                    decimal prmCalculado = ((valPrm - 0.7m)/9.2m)*(255m/3.3m); //Formula según firmware
+                                    decimal prmCalculado = ((valPrm - 0.7m) / 9.2m) * (255m / 3.3m); //Formula según firmware
                                     fwt.ParamFWT.VoltajeMinNivelCargador = Utilitarios.FixToOneDecimalDigit(prmCalculado);
                                     break;
                                 case "txtPrmVoltajeMinNivelPanel":
                                     decimal valPrmPanel = decimal.Parse(TransformarSeparadorDecimal(txtPrmVoltajeMinNivelPanel.Text));
                                     fwt.PrmVoltajeMinNivelPanel = valPrmPanel;
-                                    decimal prmPanelCalculado = ((valPrmPanel - 0.7m)/9.2m)*(255m/3.3m); //Formula según firmware
+                                    decimal prmPanelCalculado = ((valPrmPanel - 0.7m) / 9.2m) * (255m / 3.3m); //Formula según firmware
                                     fwt.ParamFWT.VoltajeMinNivelPanel = Utilitarios.FixToOneDecimalDigit(prmPanelCalculado);
                                     break;
                                 case "txtPrmvoltajeMinBateria":
@@ -1302,7 +1303,7 @@ namespace SistemaGestionRedes
             //{
             //    lblEstadoActualizacion.Text = "";
             //    ActualizarFWT();
-               
+
             //}
         }
 
@@ -1351,25 +1352,25 @@ namespace SistemaGestionRedes
                                where fci.FWTId == idFWT
                                select fci;
                 //Se quita la relación de estos FCIs al FWT
-                foreach (FCI  item in consulta)
+                foreach (FCI item in consulta)
                 {
                     item.FWTId = null;
                 }
                 bDatos.SaveChanges();
 
                 //Ahora hay que relacionar los FCIs que esten en la lista de propios con el id de este FWT
-                foreach (ListItem item in listBoxFCIsPropios.Items )
+                foreach (ListItem item in listBoxFCIsPropios.Items)
                 {
-                    int idItem = int.Parse(item.Value) ;
+                    int idItem = int.Parse(item.Value);
                     var fciPropio = (from fci in bDatos.FCIs
-                                     where fci.Id == idItem 
+                                     where fci.Id == idItem
                                      select fci).SingleOrDefault(); //Se escoge este especifico fci
                     if (fciPropio != null)
                     {
-                            fciPropio.FWTId = int.Parse(lblId.Text);
-                            bDatos.SaveChanges();
+                        fciPropio.FWTId = int.Parse(lblId.Text);
+                        bDatos.SaveChanges();
                     }
-                   
+
                 }
 
             }
@@ -1383,24 +1384,24 @@ namespace SistemaGestionRedes
         /// <param name="e"></param>
         protected void butAddFCI_Click(object sender, EventArgs e)
         {
-            if (ddlFCIsAll.SelectedItem != null )
+            if (ddlFCIsAll.SelectedItem != null)
             {
                 listBoxFCIsPropios.Items.Add(new ListItem(ddlFCIsAll.SelectedItem.Text, ddlFCIsAll.SelectedItem.Value));
                 ddlFCIsAll.Items.Remove(ddlFCIsAll.SelectedItem);
-                UtilitariosWebGUI.SortListBox(ref  listBoxFCIsPropios );
+                UtilitariosWebGUI.SortListBox(ref listBoxFCIsPropios);
                 TextBox_TextChanged(listBoxFCIsPropios, null); //Importante , se indica que cambió listBoxFCIsPropios
             }
-           
+
         }
 
         protected void butRemoveFCI_Click(object sender, EventArgs e)
         {
-            if (listBoxFCIsPropios.SelectedItem != null )
+            if (listBoxFCIsPropios.SelectedItem != null)
             {
                 ddlFCIsAll.Items.Add(new ListItem(listBoxFCIsPropios.SelectedItem.Text, listBoxFCIsPropios.SelectedItem.Value));
                 listBoxFCIsPropios.Items.Remove(listBoxFCIsPropios.SelectedItem);
-                UtilitariosWebGUI.SortDropDownList (ref ddlFCIsAll );
-                if (listBoxFCIsPropios.Items.Count > 0 )//Para que la lista propia continue seleccionando items 
+                UtilitariosWebGUI.SortDropDownList(ref ddlFCIsAll);
+                if (listBoxFCIsPropios.Items.Count > 0)//Para que la lista propia continue seleccionando items 
                 {
                     listBoxFCIsPropios.SelectedIndex = 0;  //selecciona el primer item de la lista 
                 }
@@ -1437,12 +1438,12 @@ namespace SistemaGestionRedes
 
         protected void tmrActFirmware_Tick(object sender, EventArgs e)
         {
-            using (SistemaGestionRemotoContainer  bData = new SistemaGestionRemotoContainer())
+            using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
             {
                 FWT fwt = bData.FWTs.SingleOrDefault(f => f.Serial == lblSerial.Text);
                 if (fwt != null)
                 {
-                    MostrarEstadoActualizacionFirmware(fwt.EstadoProcesoActFw ,fwt.ContActFw, fwt.Serial);
+                    MostrarEstadoActualizacionFirmware(fwt.EstadoProcesoActFw, fwt.ContActFw, fwt.Serial);
                 }
             }
         }
@@ -1461,9 +1462,9 @@ namespace SistemaGestionRedes
         {
             using (SistemaGestionRemotoContainer bDatos = new SistemaGestionRemotoContainer())
             {
-                
+
                 var registro = (from conc in bDatos.FWTs
-                                where conc.Serial  == lblSerial.Text 
+                                where conc.Serial == lblSerial.Text
                                 select conc).SingleOrDefault();
                 if (registro != null)
                 {
@@ -1478,7 +1479,7 @@ namespace SistemaGestionRedes
                             lblEstadoFWT.Text = (string)this.GetLocalResourceObject("TextlblEstadoFWTPendienteEnviar"); //"PENDIENTE ENVIAR PARAMETROS.";
                         }
                         else
-                        {   
+                        {
                             tmrActualizacionEstadoFWT.Enabled = false;
                             lblEstadoFWT.Text = (string)this.GetLocalResourceObject("TextlblEstadoFWTDatosOK"); //"DATOS ACTUALIZADOS.";
                             imgEstadoFWT.Visible = false;
@@ -1504,7 +1505,7 @@ namespace SistemaGestionRedes
             {
                 butLeerParamOnline.Enabled = false;
             }
-           
+
         }
 
         protected void btnAsduSet_Click(object sender, EventArgs e)
@@ -1804,7 +1805,7 @@ namespace SistemaGestionRedes
                 int idConc = int.Parse(lblId.Text);
                 var registro = (from conc in bDatos.FWTs
                                 where conc.Id == idConc
-                                select new {menor = conc.NumeroMaximoSIXs_Menor, mayor = conc.NumeroMaximoSIXs_Mayor});
+                                select new { menor = conc.NumeroMaximoSIXs_Menor, mayor = conc.NumeroMaximoSIXs_Mayor });
 
                 if (registro != null)
                 {
@@ -1827,6 +1828,8 @@ namespace SistemaGestionRedes
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
+                Button bntObjCancel = (Button)e.Row.FindControl("btnCancelar");
+
                 //Recuperar el valor de la consulta relacionado con la posibilidad de Activar o NO una actualización
                 //hacia un equipo remoto.
                 bool puedeActivar = Convert.ToBoolean(DataBinder.Eval(e.Row.DataItem, "Activar"));
@@ -1846,6 +1849,8 @@ namespace SistemaGestionRedes
                     bntObj.CommandArgument = serialDev;
                     bntObj.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
 
+                    bntObjCancel.Visible = false;
+
                     //linkObj.Text = (string)this.GetLocalResourceObject("TextActivarActFwDevRt");
                     //linkObj.NavigateUrl = "EditFWT.aspx?serialdev=" + serialDev + "&Id=" + lblId.Text;
                     //linkObj.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
@@ -1861,6 +1866,12 @@ namespace SistemaGestionRedes
                     bntObj.Text = (string)this.GetLocalResourceObject("TextNoActivarActFwDevRt");
                     bntObj.CommandArgument = "";
                     bntObj.Enabled = false;
+
+
+                    bntObjCancel.Text = (string)this.GetLocalResourceObject("TextCancelarActFwDevRt");
+                    bntObjCancel.CommandArgument = serialDev;
+                    bntObjCancel.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                    bntObjCancel.Visible = true;
 
                     //linkObj.Text = (string)this.GetLocalResourceObject("TextNoActivarActFwDevRt");
                     //linkObj.NavigateUrl = "";
@@ -1907,11 +1918,185 @@ namespace SistemaGestionRedes
                     }
                 }
             }
+            if (e.CommandName.Equals("Cancelar"))
+            {
+                string serialDevRT = "";
+                serialDevRT = e.CommandArgument.ToString();
+
+                AccesoDatos dataBD = new AccesoDatos();
+
+                if (!serialDevRT.Equals(""))
+                {
+                    if (serialDevRT.Substring(0, 2).Equals("FI"))
+                    {
+                        using (var db = new SistemaGestionRemotoContainer())
+                        {
+                            FCI fci = db.FCIs.Where(x => x.Serial == serialDevRT).FirstOrDefault();
+                            fci.ProximaVersionFW = "";
+                            fci.PorcentajeToProxVersionFW = null;
+                            fci.FechaSolicitudToProxVersionFW = null;
+
+                            db.SaveChanges();
+                        }
+                        GVEquiposRemotos.DataBind();
+                    }
+                    else if (serialDevRT.Substring(0, 1).Equals("C"))
+                    {
+                        using (var db = new SistemaGestionRemotoContainer())
+                        {
+                            FCI fci = db.FCIs.Where(x => x.Serial == serialDevRT).FirstOrDefault();
+                            fci.ProximaVersionFW = "";
+                            fci.PorcentajeToProxVersionFW = null;
+                            fci.FechaSolicitudToProxVersionFW = null;
+
+                            db.SaveChanges();
+                        }
+                    }
+                    else if (serialDevRT.Substring(0, 2).Equals("RI"))
+                    {
+                        using (var db = new SistemaGestionRemotoContainer())
+                        {
+                            ARIX arix = db.ARIXs.Where(x => x.Serial == serialDevRT).FirstOrDefault();
+                            arix.ProximaVersionFW = "";
+                            arix.PorcentajeToProxVersionFW = null;
+                            arix.FechaSolicitudToProxVersionFW = null;
+
+                            db.SaveChanges();
+                        }
+                        GVEquiposRemotos.DataBind();
+                    }
+                }
+            }
         }
 
         #endregion
 
-        
+        #region ProgressBarDevices
 
+        protected void tmrActFirmware_TickArix(object sender, EventArgs e)
+        {
+            using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
+            {
+                FWT fwt = bData.FWTs.SingleOrDefault(f => f.Serial == lblSerial.Text);
+                if (fwt != null)
+                {
+                    MostrarEstadoActualizacionFirmwareDevices(fwt.EstadoActFwARIX, fwt.ContaActFwARIX, fwt.Serial);
+                }
+            }
+        }
+
+        private void MostrarEstadoActualizacionFirmwareDevices(byte? estadoActFW, short? ContActFw, string serial)
+        {
+            EstadoActualizacionFirmware estado = (estadoActFW == null) ? EstadoActualizacionFirmware.SinProceso : (EstadoActualizacionFirmware)estadoActFW;
+            double contadorActFW = (ContActFw == null) ? 0 : (double)ContActFw;
+            switch (estado)
+            {
+                case EstadoActualizacionFirmware.Inicio:
+                    lblEstadoACTFirmwareDev.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwarePendienteIniciarArix"); //"PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE.";
+                    tmrActFirmwareDev.Enabled = true;
+                    break;
+                case EstadoActualizacionFirmware.Procesando:
+                    lblEstadoACTFirmwareDev.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizandoArix"); //"ACTUALIZANDO FIRMWARE.";
+                    double porcActFware;
+                    ///Instancia capa datos COSOFT
+                    var accesoDatosdatos = new AccesoDatos();
+                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT_ARIX(serial,4);
+                    porcActFware = ((contadorActFW / maxContador) * 100);
+                    lblPorcentajeActFirmwareDev.Text = porcActFware.ToString("F") + " % ";
+                    lblPorcentajeActFirmwareDev.Visible = true;
+                    if ((porcActFware >= 0) && (porcActFware <= 100)) //ProgressBar
+                    {
+                        ImgPorcActFirmwareDev.Width = Unit.Percentage(porcActFware);
+                    }
+                    else
+                    {   //Para que la barra no se salga del tamanio 
+                        ImgPorcActFirmwareDev.Width = Unit.Percentage(100);
+                    }
+
+                    ImgPorcActFirmwareDev.ToolTip = contadorActFW.ToString() + "/" + maxContador.ToString() + " " + (string)this.GetLocalResourceObject("imgPorcActFirmwarePcksActualizados"); //" paquetes actualizados.";
+                    ImgPorcActFirmwareDev.Visible = true;
+                    tmrActFirmwareDev.Enabled = true;
+                    break;
+
+                case EstadoActualizacionFirmware.Terminado:
+                    lblEstadoACTFirmwareDev.Visible = false;
+                    lblPorcentajeActFirmwareDev.Visible = false;
+                    ImgPorcActFirmwareDev.Visible = false;
+                    tmrActFirmwareDev.Enabled = true;
+                    break;
+                case EstadoActualizacionFirmware.SinProceso:
+                    lblEstadoACTFirmwareDev.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizado"); //"FIRMWARE ACTUALIZADO.";
+                    lblPorcentajeActFirmwareDev.Visible = false;
+                    ImgPorcActFirmwareDev.Visible = false;
+                    tmrActFirmwareDev.Enabled = false;
+                    break;
+            }
+        }
+
+        protected void tmrActFirmware_TickFci(object sender, EventArgs e)
+        {
+            using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
+            {
+                FWT fwt = bData.FWTs.SingleOrDefault(f => f.Serial == lblSerial.Text);
+                if (fwt != null)
+                {
+                    MostrarEstadoActualizacionFirmwareDevicesFci(fwt.EstadoActFwFCI, fwt.ContaActFwFCI, fwt.Serial);
+                }
+            }
+        }
+        /*FALTA PROBAR*/
+        private void MostrarEstadoActualizacionFirmwareDevicesFci(byte? estadoActFW, short? ContActFw, string serial)
+        {
+            EstadoActualizacionFirmware estado = (estadoActFW == null) ? EstadoActualizacionFirmware.SinProceso : (EstadoActualizacionFirmware)estadoActFW;
+            double contadorActFW = (ContActFw == null) ? 0 : (double)ContActFw;
+            switch (estado)
+            {
+                case EstadoActualizacionFirmware.Inicio:
+                    lblEstadoACTFirmwareDevFci.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwarePendienteIniciarFci"); //"PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE.";
+                    tmrActFirmwareDevFci.Enabled = true;
+                    break;
+                case EstadoActualizacionFirmware.Procesando:
+                    lblEstadoACTFirmwareDevFci.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizandoFci"); //"ACTUALIZANDO FIRMWARE.";
+                    double porcActFware;
+                    ///Instancia capa datos COSOFT
+                    var accesoDatosdatos = new AccesoDatos();
+                    const byte tipoFci = 1;
+                    const byte tipoSix = 2;
+                    byte tipoEquipo = (serial.Substring(2) == "FI") ? tipoFci : tipoSix; //
+                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT(serial, tipoEquipo);
+                    porcActFware = ((contadorActFW / maxContador) * 100);
+                    lblPorcentajeActFirmwareDevFci.Text = porcActFware.ToString("F") + " % ";
+                    lblPorcentajeActFirmwareDevFci.Visible = true;
+                    if ((porcActFware >= 0) && (porcActFware <= 100)) //ProgressBar
+                    {
+                        ImgPorcActFirmwareDevFci.Width = Unit.Percentage(porcActFware);
+                    }
+                    else
+                    {   //Para que la barra no se salga del tamanio 
+                        ImgPorcActFirmwareDevFci.Width = Unit.Percentage(100);
+                    }
+
+                    ImgPorcActFirmwareDevFci.ToolTip = contadorActFW.ToString() + "/" + maxContador.ToString() + " " + (string)this.GetLocalResourceObject("imgPorcActFirmwarePcksActualizados"); //" paquetes actualizados.";
+                    ImgPorcActFirmwareDevFci.Visible = true;
+                    tmrActFirmwareDevFci.Enabled = true;
+                    break;
+
+                case EstadoActualizacionFirmware.Terminado:
+                    lblEstadoACTFirmwareDevFci.Visible = false;
+                    lblPorcentajeActFirmwareDevFci.Visible = false;
+                    ImgPorcActFirmwareDevFci.Visible = false;
+                    tmrActFirmwareDevFci.Enabled = true;
+                    break;
+                case EstadoActualizacionFirmware.SinProceso:
+                    lblEstadoACTFirmwareDevFci.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizado"); //"FIRMWARE ACTUALIZADO.";
+                    lblPorcentajeActFirmwareDevFci.Visible = false;
+                    ImgPorcActFirmwareDevFci.Visible = false;
+                    tmrActFirmwareDevFci.Enabled = false;
+                    break;
+            }
+        }
+
+
+        #endregion
     }
 }

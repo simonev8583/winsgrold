@@ -544,6 +544,60 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargado;
         
         /// <summary>
+        /// upPanelActFirmwareDevicesFci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upPanelActFirmwareDevicesFci;
+        
+        /// <summary>
+        /// tmrActFirmwareDevFci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer tmrActFirmwareDevFci;
+        
+        /// <summary>
+        /// lblEstadoACTFirmwareDevFci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstadoACTFirmwareDevFci;
+        
+        /// <summary>
+        /// lblPorcentajeActFirmwareDevFci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPorcentajeActFirmwareDevFci;
+        
+        /// <summary>
+        /// ImgPorcActFirmwareDevFci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgPorcActFirmwareDevFci;
+        
+        /// <summary>
+        /// upProgActParametrosOnlineDevFci control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress upProgActParametrosOnlineDevFci;
+        
+        /// <summary>
         /// Label18 control.
         /// </summary>
         /// <remarks>
@@ -560,6 +614,60 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargadoARIX;
+        
+        /// <summary>
+        /// upPanelActFirmwareDevices control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upPanelActFirmwareDevices;
+        
+        /// <summary>
+        /// tmrActFirmwareDev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer tmrActFirmwareDev;
+        
+        /// <summary>
+        /// lblEstadoACTFirmwareDev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstadoACTFirmwareDev;
+        
+        /// <summary>
+        /// lblPorcentajeActFirmwareDev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPorcentajeActFirmwareDev;
+        
+        /// <summary>
+        /// ImgPorcActFirmwareDev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgPorcActFirmwareDev;
+        
+        /// <summary>
+        /// upProgActParametrosOnlineDev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress upProgActParametrosOnlineDev;
         
         /// <summary>
         /// GVEquiposRemotos control.

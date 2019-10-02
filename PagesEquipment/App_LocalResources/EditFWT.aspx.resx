@@ -519,8 +519,20 @@
   <data name="lblEstadoACTFirmwareActualizandoFW" xml:space="preserve">
     <value>ACTUALIZANDO FIRMWARE.</value>
   </data>
+  <data name="lblEstadoACTFirmwareActualizandoArix" xml:space="preserve">
+    <value>ACTUALIZANDO FIRMWARE ARIX.</value>
+  </data>
+  <data name="lblEstadoACTFirmwareActualizandoFci" xml:space="preserve">
+    <value>ACTUALIZANDO FIRMWARE FCI.</value>
+  </data>
   <data name="lblEstadoACTFirmwarePendienteIniciar" xml:space="preserve">
     <value>PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE.</value>
+  </data>
+  <data name="lblEstadoACTFirmwarePendienteIniciarArix" xml:space="preserve">
+    <value>PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE ARIX.</value>
+  </data>
+  <data name="lblEstadoACTFirmwarePendienteIniciarFci" xml:space="preserve">
+    <value>PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE FCI.</value>
   </data>
   <data name="lblEstadoActualizacionNoCambiosEnFWT" xml:space="preserve">
     <value>No realizó cambios en el Concentrador.</value>
@@ -687,6 +699,9 @@
   <data name="TextActivarActFwDevRt" xml:space="preserve">
     <value>Activar</value>
   </data>
+  <data name="TextCancelarActFwDevRt" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="TextNoActivarActFwDevRt" xml:space="preserve">
     <value>No Aplica</value>
   </data>
@@ -704,5 +719,11 @@
   </data>
   <data name="TextFechaUltimoEnvio" xml:space="preserve">
     <value>Fecha Ultimo Envío</value>
+  </data>
+  <data name="TextHeaderCancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="TextToolTipCancelarFwDevRt" xml:space="preserve">
+    <value>Enviar al FWT la orden de cancelar la actualización de firmware con el proposito de repetir el envío</value>
   </data>
 </root>
