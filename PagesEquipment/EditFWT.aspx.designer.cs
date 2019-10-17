@@ -409,6 +409,60 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblResetOnLineFWT;
         
         /// <summary>
+        /// Literal11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal11;
+        
+        /// <summary>
+        /// ListArixByFwt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ListArixByFwt;
+        
+        /// <summary>
+        /// SqlArixFromFWT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlArixFromFWT;
+        
+        /// <summary>
+        /// ProgressUpdLabelApertura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel ProgressUpdLabelApertura;
+        
+        /// <summary>
+        /// LabelApertura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelApertura;
+        
+        /// <summary>
+        /// LabelCerrado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelCerrado;
+        
+        /// <summary>
         /// Literal4 control.
         /// </summary>
         /// <remarks>

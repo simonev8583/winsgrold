@@ -331,9 +331,9 @@
     <value>Descripcion</value>
   </data>
   <data name="TextoSerial_Fwt" xml:space="preserve">
-    <value>Fwt</value>
+    <value>FWT</value>
   </data>
   <data name="TextoSerial_Arix" xml:space="preserve">
-    <value>Arix</value>
+    <value>ARIX</value>
   </data>
 </root>

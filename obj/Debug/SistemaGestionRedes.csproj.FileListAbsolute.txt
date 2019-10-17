@@ -182,3 +182,5 @@ C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.
 C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.Deployment.xml
 C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\System.Web.WebPages.Razor.xml
 C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
+C:\Trabajo\SGR\SistemaGestionRedesSIX\WebSGR\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb

@@ -511,7 +511,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arix.
+        ///   Looks up a localized string similar to ARIX.
         /// </summary>
         internal static string TextoSerial_Arix {
             get {
@@ -520,7 +520,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fwt.
+        ///   Looks up a localized string similar to FWT.
         /// </summary>
         internal static string TextoSerial_Fwt {
             get {

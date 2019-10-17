@@ -226,8 +226,83 @@
                         </table>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+            
+            <table style="width: 100%;" border="0">
+                <tr>
+                    <td align="center" bgcolor="#eeeeee">
+                        <font><strong>
+                            <asp:Literal ID="Literal11" Text="<%$ Resources:TextArixRegistrados %>" runat="server"></asp:Literal></strong></font>
+                    </td>
+                </tr>
+                <tr>
+                        <td align="center" width="100%">
+                            <asp:GridView ID="ListArixByFwt" runat="server" AutoGenerateColumns="False"
+                                BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
+                                CellPadding="4" DataSourceID="SqlArixFromFWT" ForeColor="Black"
+                                GridLines="Vertical" OnRowDataBound="ListArixByFwt_RowDataBound"
+                                OnRowCommand="ListArixByFwt_RowCommand">
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:BoundField DataField="Serial" HeaderText="<%$ Resources:TextHeaderSerialDevRt %>"
+                                        SortExpression="Serial" />
+                                    <asp:BoundField DataField="Identificador" HeaderText="<%$ Resources:TextHeaderIdentificador %>"
+                                        SortExpression="Identificador" />
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderAbrir %>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnAbrirArix" Text="" ToolTip="<%$ Resources:TextToolTipAbrirArix %>"
+                                                        CommandName="ABRIR" CssClass="TextBoton"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderCerrar %>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnCerrarArix" Text="" ToolTip="<%$ Resources:TextToolTipCerrarArix %>"
+                                                        CommandName="CERRAR" CssClass="TextBoton"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    
 
-                <table style="width: 100%;" border="0">
+
+                                </Columns>
+                                <FooterStyle BackColor="#CCCC99" />
+                                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                                <RowStyle BackColor="#F7F7DE" />
+                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                                <SortedAscendingHeaderStyle BackColor="#848384" />
+                                <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                                <SortedDescendingHeaderStyle BackColor="#575357" />
+                                <SortedAscendingCellStyle BackColor="#FBFBF2"></SortedAscendingCellStyle>
+                                <SortedAscendingHeaderStyle BackColor="#848384"></SortedAscendingHeaderStyle>
+                                <SortedDescendingCellStyle BackColor="#EAEAD3"></SortedDescendingCellStyle>
+                                <SortedDescendingHeaderStyle BackColor="#575357"></SortedDescendingHeaderStyle>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlArixFromFWT" runat="server"
+                                ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
+                                SelectCommand="select arix.Id, arix.Serial, arix.Identificador From ARIXs arix Inner Join FWTs fwt on (fwt.Id = arix.FWTId) Where fwt.Serial = @serialFwt">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="lblSerial" Name="serialFwt"
+                                        PropertyName="Text" Type="String" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                <tr>
+                    <div class="alert alert-info">
+                        <td align="center" width="100%">
+                            <asp:UpdatePanel ID="ProgressUpdLabelApertura" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:Label ID="LabelApertura" runat="server" Text="<%$ Resources:TextSinArixRegistrados %>"></asp:Label>
+                                    <asp:Label ID="LabelCerrado" runat="server" Text=""></asp:Label>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </td>
+                    </div>
+                    
+                </tr>
+                </table>
+
+            <table style="width: 100%;" border="0">
                     <tr>
                         <td align="center" bgcolor="#eeeeee">
                             <font><strong>
@@ -1508,28 +1583,6 @@
                     </tr>
                 </table>
 
-
-
-
-                <%--<asp:ModalPopupExtender ID="MPEActOnline" runat="server"
-                    TargetControlID="butUpdateOnline"
-                    PopupControlID="pnlActOnline"
-                    BackgroundCssClass="modalBackground"
-                    DropShadow="true" 
-                     OkControlID="OkButton"
-                    CancelControlID="CancelButton"
-                   >
-            </asp:ModalPopupExtender>
-
-            <asp:Panel ID="pnlActOnline" runat="server" CssClass="modalPopup" style="display:none" Width="233px">
-            <center> <img src="../Images/ActualizandoPage.gif"  alt="Actualizando"/> 
-                <asp:Label ID="lblActParam" runat="server" Text="Label"> Desea Actualizar parametros Online ?</asp:Label> </center>
-                <br />
-                <div align="center">
-                 <asp:Button ID="OkButton" runat="server" Text="Actualizar" onclick="OkButton_Click" />
-                 <asp:Button ID="CancelButton" runat="server" Text="Cancelar" />
-                 </div>
-           </asp:Panel>--%>
             </div>
 
 

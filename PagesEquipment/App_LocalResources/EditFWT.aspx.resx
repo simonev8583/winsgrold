@@ -726,4 +726,31 @@
   <data name="TextToolTipCancelarFwDevRt" xml:space="preserve">
     <value>Enviar al FWT la orden de cancelar la actualización de firmware con el proposito de repetir el envío</value>
   </data>
+  <data name="TextArixRegistrados" xml:space="preserve">
+    <value>ACCIONES ARIX REGISTRADOS</value>
+  </data>
+  <data name="TextHeaderIdentificador" xml:space="preserve">
+    <value>Identificador</value>
+  </data>
+  <data name="TextToolTipAbrirArix" xml:space="preserve">
+    <value>Click para abrir ARIX</value>
+  </data>
+  <data name="TextAbrirArixRt" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="TextHeaderAbrir" xml:space="preserve">
+    <value>Abrir ARIX</value>
+  </data>
+  <data name="TextSinArixRegistrados" xml:space="preserve">
+    <value>Sin ARIX registrados</value>
+  </data>
+  <data name="TextCerrarArixRt" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="TextHeaderCerrar" xml:space="preserve">
+    <value>Cerrar ARIX</value>
+  </data>
+  <data name="TextToolTipCerrarArix" xml:space="preserve">
+    <value>Click para cerrar ARIX</value>
+  </data>
 </root>

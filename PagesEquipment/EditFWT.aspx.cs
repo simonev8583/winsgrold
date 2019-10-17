@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Messaging;
 using System.Globalization;
+using System.Web.Razor;
 using SGR.DataAccessLayer;
 using SGR.BussinessLayer;
 using SGR.UtilityLibrary;
@@ -181,10 +182,12 @@ namespace SistemaGestionRedes
             }
         }
 
+
+
         /// <summary>
         /// Realiza el intercambio de paquetes messagequeueOnline y actualiza la interfaz GUI segun el caso .
         /// </summary>
-        private bool RealizarComunicacionMessageQueueOnline(ComandosUsuario comandoUser, byte? idFCI = null, int newAsdu = 0)
+        private bool RealizarComunicacionMessageQueueOnline(ComandosUsuario comandoUser, byte? idFCI = null, int? idArix = null, int newAsdu = 0)
         {
             bool exito = false;
             //Algunos settings..
@@ -201,6 +204,7 @@ namespace SistemaGestionRedes
             msgComando.CanalIEC104 = comandoUser == ComandosUsuario.AsignacionAsduFWT ? int.Parse(ddListCanalesIEC.SelectedValue) : 0;
             msgComando.Comando = comandoUser;
             msgComando.IdFCI = idFCI;
+            msgComando.IdARIX = idArix;
             FormatearMensajeColaRecepcion();
             mqWebToSGR.Send(msgComando);
 
@@ -306,6 +310,9 @@ namespace SistemaGestionRedes
 
                                 }
                                 break;
+                            case ComandosUsuario.OpenARIX:
+                                exito = (msgRespuesta.Respuesta == RespuestasSvrCom.OK); 
+                                    break;
 
                         } //end of switch
 
@@ -490,7 +497,7 @@ namespace SistemaGestionRedes
 
                     MostrarEstadoActualizacionFirmware(registro.EstadoProcesoActFw, registro.ContActFw, registro.Serial);
                     MostrarEstadoActualizacionFirmwareDevices(registro.EstadoActFwARIX, registro.ContaActFwARIX, registro.Serial);
-                    MostrarEstadoActualizacionFirmwareDevicesFci(registro.EstadoActFwFCI, registro.ContaActFwFCI, registro.Serial);
+                    //MostrarEstadoActualizacionFirmwareDevicesFci(registro.EstadoActFwFCI, registro.ContaActFwFCI, registro.Serial);
                     lblSerial.Text = registro.Serial; //No se permite editar                                    
 
 
@@ -2000,7 +2007,7 @@ namespace SistemaGestionRedes
                     double porcActFware;
                     ///Instancia capa datos COSOFT
                     var accesoDatosdatos = new AccesoDatos();
-                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT_ARIX(serial,4);
+                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT_ARIX(serial, 4);
                     porcActFware = ((contadorActFW / maxContador) * 100);
                     lblPorcentajeActFirmwareDev.Text = porcActFware.ToString("F") + " % ";
                     lblPorcentajeActFirmwareDev.Visible = true;
@@ -2096,6 +2103,88 @@ namespace SistemaGestionRedes
             }
         }
 
+
+        #endregion
+
+        #region Open Close ARIX
+
+        protected void ListArixByFwt_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                string idArix = DataBinder.Eval(e.Row.DataItem, "Id").ToString();
+                Button bntObjOpen = (Button)e.Row.FindControl("btnAbrirArix");
+                Button bntObj = (Button)e.Row.FindControl("btnAbrirArix");
+                bntObj.Text = (string)this.GetLocalResourceObject("TextAbrirArixRt");
+                bntObj.CommandArgument = idArix;
+                bntObj.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                //USAR ESTA LÍNEA CUANDO MANEJE EL ESTADO (PINTAR ABIERTOS Y CERRADOS)
+                //e.Row.Style.Add("background", "yellow");
+                bntObjOpen.Visible = true;
+
+                Button bntObjClose = (Button)e.Row.FindControl("btnCerrarArix");
+                Button bntObjC = (Button)e.Row.FindControl("btnCerrarArix");
+                bntObjC.Text = (string)this.GetLocalResourceObject("TextCerrarArixRt");
+                bntObjC.CommandArgument = idArix;
+                bntObjC.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjClose.Visible = true;
+
+                LabelApertura.Text = "";
+                LabelCerrado.Text = "";
+            }
+        }
+
+
+        /// <summary>
+        /// Método qué se ejecuta cuando se da click en abrir ARIX
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ListArixByFwt_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("ABRIR"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+
+                //ProgressUpdLabelApertura.FindControl("LabelApertura");
+                //ProgressUpdLabelApertura.ContentTemplateContainer.Controls.Add(lbl);
+                //ProgressUpdLabelApertura.Update();
+
+                LabelApertura.Visible = true;
+                bool isOpen = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX,null, idArix);
+                //bool isOpen = true;
+                if (isOpen)
+                {
+                    LabelApertura.Text = "ARIX abierto con éxito";
+                    LabelCerrado.Text = "";
+                }
+                else
+                {
+                    LabelApertura.Text = "Fallo la apertura del ARIX, vuelva a intentarlo";
+                    LabelCerrado.Text = "";
+                }
+                
+                //ListArixByFwt.DataBind();
+            }
+            else if (e.CommandName.Equals("CERRAR"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+
+                LabelCerrado.Visible = true;
+                bool isClose = RealizarComunicacionMessageQueueOnline(ComandosUsuario.CloseARIX, null, idArix);
+                //bool isOpen = true;
+                if (isClose)
+                {
+                    LabelCerrado.Text = "ARIX cerrado con éxito";
+                    LabelApertura.Text = "";
+                }
+                else
+                {
+                    LabelCerrado.Text = "Fallo el cerrado del ARIX, vuelva a intentarlo";
+                    LabelApertura.Text = "";
+                }
+            }
+        }
 
         #endregion
     }
