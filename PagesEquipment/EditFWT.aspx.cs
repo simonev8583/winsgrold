@@ -25,7 +25,7 @@ namespace SistemaGestionRedes
         private MessageQueue mqSGRToWeb;  // Message queue en sentido cosoft -> Web
         private int _codigoPais;
         private bool _equipoConectado;
-
+        private int stateArix = -1;
         /// <summary>
         /// Objeto que sirve para hacer un lock en el hilo actual 
         /// </summary>
@@ -207,7 +207,6 @@ namespace SistemaGestionRedes
             msgComando.IdARIX = idArix;
             FormatearMensajeColaRecepcion();
             mqWebToSGR.Send(msgComando);
-
             try
             {
                 System.Messaging.Message msg = mqSGRToWeb.Receive(new TimeSpan(0, 0, 20)); //Espera Máximo 20 segs sincronicamente para recibir respuesta
@@ -311,8 +310,37 @@ namespace SistemaGestionRedes
                                 }
                                 break;
                             case ComandosUsuario.OpenARIX:
-                                exito = (msgRespuesta.Respuesta == RespuestasSvrCom.OK); 
-                                    break;
+                                var respuesta = msgRespuesta.Respuesta;
+                                if (respuesta == RespuestasSvrCom.OK)
+                                {
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.CloseARIX:
+                                var respuestaCerrado = msgRespuesta.Respuesta;
+                                if (respuestaCerrado == RespuestasSvrCom.OK)
+                                {
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.IsOpenArix:
+                                var respuestaEstadoArix = msgRespuesta.Respuesta;
+                                if (respuestaEstadoArix == RespuestasSvrCom.SinInformacion)
+                                {
+                                    stateArix = -1;
+                                    exito = true;
+                                }
+                                else if (respuestaEstadoArix == RespuestasSvrCom.OK)
+                                {
+                                    stateArix = 1;
+                                    exito = true;
+                                }
+                                else
+                                {
+                                    stateArix = 0;
+                                    exito = true;
+                                }
+                                break;
 
                         } //end of switch
 
@@ -2151,15 +2179,30 @@ namespace SistemaGestionRedes
                 //ProgressUpdLabelApertura.Update();
 
                 LabelApertura.Visible = true;
-                bool isOpen = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX,null, idArix);
-                //bool isOpen = true;
-                if (isOpen)
+                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX,null, idArix);
+                //bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
+                if (isState)
                 {
-                    LabelApertura.Text = "ARIX abierto con éxito";
-                    LabelCerrado.Text = "";
+                    var a = stateArix;
+                    if (stateArix == -1)
+                    {
+                        LabelApertura.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
+                        LabelCerrado.Text = "";
+                    }
+                    else if (stateArix == 1)
+                    {
+                        LabelApertura.Text = "ARIX abierto con éxito";
+                        LabelCerrado.Text = "";
+                    }
+                    else if (stateArix == 0)
+                    {
+                        LabelApertura.Text = "ARIX se encuentra cerrado, fallo el intento de abrir";
+                        LabelCerrado.Text = "";
+                    }
                 }
                 else
                 {
+                    var a = stateArix;
                     LabelApertura.Text = "Fallo la apertura del ARIX, vuelva a intentarlo";
                     LabelCerrado.Text = "";
                 }
@@ -2172,14 +2215,30 @@ namespace SistemaGestionRedes
 
                 LabelCerrado.Visible = true;
                 bool isClose = RealizarComunicacionMessageQueueOnline(ComandosUsuario.CloseARIX, null, idArix);
+                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
                 //bool isOpen = true;
-                if (isClose)
+                if (isState)
                 {
-                    LabelCerrado.Text = "ARIX cerrado con éxito";
-                    LabelApertura.Text = "";
+                    if (stateArix == -1)
+                    {
+                        LabelApertura.Text = "";
+                        LabelCerrado.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
+                    }
+                    else if (stateArix == 1)
+                    {
+                        LabelCerrado.Text = "ARIX cerrado con éxito";
+                        LabelApertura.Text = "";
+                    }
+                    else if (stateArix == 0)
+                    {
+                        LabelApertura.Text = "";
+                        LabelCerrado.Text = "ARIX se encuentra abierto, falló el intento de cerrar";
+                    }
+                    var a = stateArix;
                 }
                 else
                 {
+                    var a = stateArix;
                     LabelCerrado.Text = "Fallo el cerrado del ARIX, vuelva a intentarlo";
                     LabelApertura.Text = "";
                 }
