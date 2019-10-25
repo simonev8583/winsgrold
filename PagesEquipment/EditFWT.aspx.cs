@@ -209,7 +209,7 @@ namespace SistemaGestionRedes
             mqWebToSGR.Send(msgComando);
             try
             {
-                System.Messaging.Message msg = mqSGRToWeb.Receive(new TimeSpan(0, 0, 20)); //Espera Máximo 20 segs sincronicamente para recibir respuesta
+                System.Messaging.Message msg = mqSGRToWeb.Receive(new TimeSpan(0, 0, 30)); //Espera Máximo 20 segs sincronicamente para recibir respuesta
                 MensajeRespuestasMQOnline msgRespuesta = (MensajeRespuestasMQOnline)msg.Body;
 
                 if (msgRespuesta.Respuesta == RespuestasSvrCom.NotConnected)
@@ -335,9 +335,28 @@ namespace SistemaGestionRedes
                                     stateArix = 1;
                                     exito = true;
                                 }
-                                else
+                                else if (respuestaEstadoArix == RespuestasSvrCom.FAIL)
                                 {
                                     stateArix = 0;
+                                    exito = true;
+                                }
+                                else if (respuestaEstadoArix == RespuestasSvrCom.NotRightAnswer)
+                                {
+                                    // Error enviando el comando
+                                    exito = false;
+                                    stateArix = -1;
+                                }
+                                else if (respuestaEstadoArix == RespuestasSvrCom.ErrorSendingRequest)
+                                {
+                                    // No se ejecuto el comando
+                                    exito = false;
+                                    stateArix = -2;
+                                }
+                                    break;
+                            case ComandosUsuario.ResetArix:
+                                var respuestaResetArix = msgRespuesta.Respuesta;
+                                if (respuestaResetArix == RespuestasSvrCom.OK)
+                                {
                                     exito = true;
                                 }
                                 break;
@@ -2157,6 +2176,20 @@ namespace SistemaGestionRedes
                 bntObjC.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                 bntObjClose.Visible = true;
 
+                Button bntObjState = (Button)e.Row.FindControl("btnEstadoArix");
+                Button bntObjS = (Button)e.Row.FindControl("btnEstadoArix");
+                bntObjS.Text = (string)this.GetLocalResourceObject("TextEstadoArixRt");
+                bntObjS.CommandArgument = idArix;
+                bntObjS.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjState.Visible = true;
+
+                Button bntObjReset = (Button)e.Row.FindControl("btnReinicioArix");
+                Button bntObjR = (Button)e.Row.FindControl("btnReinicioArix");
+                bntObjR.Text = (string)this.GetLocalResourceObject("TextReinicioArixRt");
+                bntObjR.CommandArgument = idArix;
+                bntObjR.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjReset.Visible = true;
+
                 LabelApertura.Text = "";
                 LabelCerrado.Text = "";
             }
@@ -2179,22 +2212,22 @@ namespace SistemaGestionRedes
                 //ProgressUpdLabelApertura.Update();
 
                 LabelApertura.Visible = true;
-                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX,null, idArix);
-                //bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
+                bool isOpen = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX,null, idArix);
+                System.Threading.Thread.Sleep(10000);
+                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
                 if (isState)
                 {
-                    var a = stateArix;
                     if (stateArix == -1)
                     {
                         LabelApertura.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
                         LabelCerrado.Text = "";
                     }
-                    else if (stateArix == 1)
+                    else if (stateArix == 0)
                     {
                         LabelApertura.Text = "ARIX abierto con éxito";
                         LabelCerrado.Text = "";
                     }
-                    else if (stateArix == 0)
+                    else if (stateArix == 1)
                     {
                         LabelApertura.Text = "ARIX se encuentra cerrado, fallo el intento de abrir";
                         LabelCerrado.Text = "";
@@ -2202,7 +2235,6 @@ namespace SistemaGestionRedes
                 }
                 else
                 {
-                    var a = stateArix;
                     LabelApertura.Text = "Fallo la apertura del ARIX, vuelva a intentarlo";
                     LabelCerrado.Text = "";
                 }
@@ -2215,6 +2247,7 @@ namespace SistemaGestionRedes
 
                 LabelCerrado.Visible = true;
                 bool isClose = RealizarComunicacionMessageQueueOnline(ComandosUsuario.CloseARIX, null, idArix);
+                System.Threading.Thread.Sleep(10000);
                 bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
                 //bool isOpen = true;
                 if (isState)
@@ -2234,12 +2267,69 @@ namespace SistemaGestionRedes
                         LabelApertura.Text = "";
                         LabelCerrado.Text = "ARIX se encuentra abierto, falló el intento de cerrar";
                     }
-                    var a = stateArix;
                 }
                 else
                 {
-                    var a = stateArix;
-                    LabelCerrado.Text = "Fallo el cerrado del ARIX, vuelva a intentarlo";
+                    if (stateArix == -1)
+                    {
+                        LabelCerrado.Text = "Error con la respuesta del FWT, click en botón validar estado";
+                        LabelApertura.Text = "";
+                    }
+                    else if (stateArix == -2)
+                    {
+                        LabelCerrado.Text = "Error al ejecutar el comando de validación, click en botón validar estado";
+                        LabelApertura.Text = "";
+                    }
+                }
+            }
+            else if (e.CommandName.Equals("ESTADO"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
+                if (isState)
+                {
+                    if (stateArix == -1)
+                    {
+                        LabelApertura.Text = "";
+                        LabelCerrado.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
+                    }
+                    else if (stateArix == 1)
+                    {
+                        LabelCerrado.Text = "ARIX se encuentra cerrado";
+                        LabelApertura.Text = "";
+                    }
+                    else if (stateArix == 0)
+                    {
+                        LabelApertura.Text = "";
+                        LabelCerrado.Text = "ARIX se encuentra abierto";
+                    }
+                }
+                else
+                {
+                    if (stateArix == -1)
+                    {
+                        LabelCerrado.Text = "Error con la respuesta del FWT, click en botón validar estado";
+                        LabelApertura.Text = "";
+                    }
+                    else if (stateArix == -2)
+                    {
+                        LabelCerrado.Text = "Error al ejecutar el comando de validación, click en botón validar estado";
+                        LabelApertura.Text = "";
+                    }
+                }
+            }
+            else if (e.CommandName.Equals("REINICIAR"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                bool isReset = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ResetArix, null, idArix);
+                if (isReset)
+                {
+                    LabelCerrado.Text = "Se reinició el ARIX correctamente.";
+                    LabelApertura.Text = "";
+                }
+                else
+                {
+                    LabelCerrado.Text = "Fallo el reinicio del ARIX, favor intente de nuevo.";
                     LabelApertura.Text = "";
                 }
             }

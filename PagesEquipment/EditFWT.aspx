@@ -259,7 +259,18 @@
                                                         CommandName="CERRAR" CssClass="TextBoton"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderEstado %>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnEstadoArix" Text="" ToolTip="<%$ Resources:TextToolTipEstadoArix %>"
+                                                        CommandName="ESTADO" CssClass="TextBoton"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderReinicio %>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnReinicioArix" Text="" ToolTip="<%$ Resources:TextToolTipReinicioArix %>"
+                                                        CommandName="REINICIAR" CssClass="TextBoton"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
 
 
                                 </Columns>
@@ -1180,7 +1191,7 @@
                             &nbsp;<asp:RangeValidator ID="RanValVoltajeMinCargador" runat="server"
                                 ControlToValidate="txtPrmVoltajeMinNivelCargador"
                                 ErrorMessage="<%$ Resources:RanValVoltajeMinCargadorMsgErr %>" ForeColor="Red"
-                                MaximumValue="16,5" MinimumValue="11" SetFocusOnError="True" Type="Currency"
+                                MaximumValue="16,5" MinimumValue="11" SetFocusOnError="True" Type="Double"
                                 ValidationGroup="edicionFWT">*</asp:RangeValidator>
                             &nbsp;<asp:RequiredFieldValidator ID="ReqValVoltajeMinCargador" runat="server"
                                 ControlToValidate="txtPrmVoltajeMinNivelCargador"

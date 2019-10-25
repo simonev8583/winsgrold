@@ -753,4 +753,22 @@
   <data name="TextToolTipCerrarArix" xml:space="preserve">
     <value>Click para cerrar ARIX</value>
   </data>
+  <data name="TextHeaderEstado" xml:space="preserve">
+    <value>Estado ARIX</value>
+  </data>
+  <data name="TextToolTipEstadoArix" xml:space="preserve">
+    <value>Estado del ARIX</value>
+  </data>
+  <data name="TextEstadoArixRt" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="TextHeaderReinicio" xml:space="preserve">
+    <value>Reiniciar ARIX</value>
+  </data>
+  <data name="TextReinicioArixRt" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="TextToolTipReinicioArix" xml:space="preserve">
+    <value>Reinicio del ARIX</value>
+  </data>
 </root>
