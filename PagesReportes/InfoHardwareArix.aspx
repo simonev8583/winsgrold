@@ -513,24 +513,24 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
 
             <asp:SqlDataSource ID="sqlDSResultadosFechaUltimo" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="SELECT [CorrActuacionAperturaMax]
-      ,[CorrActuacionCierreMax]
-      ,[TiempoActuacionAperturaMax]
-      ,[TiempoActuacionCierreMax]
-      ,[TemperaturaMax]
-      ,[TemperaturaMin]
-      ,[VelActuacionAperturaMax]
-      ,[VelActuacionCierreMax]
-      ,[DesplazamientoContactosMax]
-      ,[IdArix]
-  FROM [SGRCelsa].[dbo].[ARIX_InfoHardware]
-  WHERE 
-   Fecha = (SELECT MAX(Fecha) FROM ARIX_InfoHardware where Fecha between @Finicial and @Ffinal)
-ORDER BY Fecha ASC
+                SelectCommand="
+                Select 
+MAX([CorrActuacionAperturaMax]) as [CorrActuacionAperturaMax],
+MAX([CorrActuacionCierreMax]) as [CorrActuacionCierreMax] ,
+MAX([TiempoActuacionAperturaMax]) as [TiempoActuacionAperturaMax],
+MAX([TiempoActuacionCierreMax]) as [TiempoActuacionCierreMax],
+MAX([TemperaturaMax]) as [TemperaturaMax], 
+MIN([TemperaturaMin]) as [TemperaturaMin], 
+MAX([VelActuacionAperturaMax]) as [VelActuacionAperturaMax],
+MAX([VelActuacionCierreMax]) as [VelActuacionCierreMax],
+MAX([DesplazamientoContactosMax]) as [DesplazamientoContactosMax]
+FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] WHERE (IdArix = @SixId or @SixId = 0)
+and  Fecha between @Finicial and @Ffinal
 ">
                 <SelectParameters>
                     <asp:Parameter Name="Finicial" />
                     <asp:Parameter Name="Ffinal" />
+                    <asp:Parameter Name="SixId" />
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />

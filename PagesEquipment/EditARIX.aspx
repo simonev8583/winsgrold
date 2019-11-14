@@ -487,12 +487,12 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modTiempoMaxRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modTiempoMinRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                     </td>
                                     
                                     <td>

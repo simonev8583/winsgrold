@@ -271,6 +271,12 @@
                                                         CommandName="REINICIAR" CssClass="TextBoton"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderAskClock %>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnAskClockArix" Text="" ToolTip="<%$ Resources:TextToolTipAskClockArix %>"
+                                                        CommandName="PREGUNTARELOJ" CssClass="TextBoton"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
 
 
                                 </Columns>
@@ -357,6 +363,9 @@
                                 <tr>
                                     <td align="center" colspan="2" width="100%">
                                         <asp:Label ID="lblMsgErrSeleccionFCIClear" runat="server" Font-Size="11px" ForeColor="Red"> </asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblPrivateTypeDeviceForDelete" runat="server" Visible="false"> </asp:Label>
                                     </td>
                                 </tr>
                                 <tr>

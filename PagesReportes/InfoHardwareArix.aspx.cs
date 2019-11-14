@@ -75,9 +75,10 @@ namespace SistemaGestionRedes.PagesReportes
             }
 
             UtilitariosWebGUI.DefinirColumnasVisualizadasCel(gvResultados, _ID_REPORTE, _usuarioLogged); //Before: Membership.GetUser().UserName
-
+            
             dataSourceObj.SelectParameters["Finicial"].DefaultValue = fechaInicial;
             dataSourceObj.SelectParameters["Ffinal"].DefaultValue = fechaFinal;
+            dataSourceObj.SelectParameters["SixId"].DefaultValue = (LstBoxSixs.GetSelectedIndices().Length > 0) ? LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Value : 0.ToString(); ;
             gvResultados.DataBind();
             gvResultados.PageIndex = 0;
             GridView1.DataBind();

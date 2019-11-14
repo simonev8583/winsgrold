@@ -544,6 +544,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblMsgErrSeleccionFCIClear;
         
         /// <summary>
+        /// lblPrivateTypeDeviceForDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrivateTypeDeviceForDelete;
+        
+        /// <summary>
         /// updatePanelVerificarQtySix control.
         /// </summary>
         /// <remarks>

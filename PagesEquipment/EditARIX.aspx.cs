@@ -534,8 +534,8 @@ namespace SistemaGestionRedes
             if (listBoxmodoInrush.GetSelectedIndices()[0] != (paramArix.tipoFuncionalidadInrush ? 1 : 0)) paramArix.tipoFuncionalidadInrush = (listBoxmodoInrush.GetSelectedIndices()[0] == 1);
             if (txtOpGeneral_corrInrush.Text != paramArix.corrInrush.ToString()) paramArix.corrInrush = short.Parse(txtOpGeneral_corrInrush.Text);
             if (txtOpGeneral_porcentaje2doArmonicoInrush.Text != paramArix.porcentaje2DoArmonicoInrush.ToString()) paramArix.porcentaje2DoArmonicoInrush = short.Parse(txtOpGeneral_porcentaje2doArmonicoInrush.Text);
-            if (txtOpGeneral_tiempoDeValidacionInrush.Text != paramArix.tiempoDeValidacionInrush.ToString()) paramArix.tiempoDeValidacionInrush = short.Parse(txtOpGeneral_tiempoDeValidacionInrush.Text);
-            if (txtOpGeneral_tiempoSostenimientoInrush.Text != paramArix.tiempoSostenimientoInrush.ToString()) paramArix.tiempoSostenimientoInrush = short.Parse(txtOpGeneral_tiempoSostenimientoInrush.Text);
+            if (txtOpGeneral_tiempoDeValidacionInrush.Text != paramArix.tiempoDeValidacionInrush.ToString()) paramArix.tiempoDeValidacionInrush = int.Parse(txtOpGeneral_tiempoDeValidacionInrush.Text);
+            if (txtOpGeneral_tiempoSostenimientoInrush.Text != paramArix.tiempoSostenimientoInrush.ToString()) paramArix.tiempoSostenimientoInrush = int.Parse(txtOpGeneral_tiempoSostenimientoInrush.Text);
 
             arix.ParamARIX = paramArix;
 

@@ -771,4 +771,13 @@
   <data name="TextToolTipReinicioArix" xml:space="preserve">
     <value>Reinicio del ARIX</value>
   </data>
+<data name="TextAskClockArixRt" xml:space="preserve">
+    <value>Preguntar reloj</value>
+  </data>
+<data name="TextToolTipAskClockArix" xml:space="preserve">
+    <value>Hora actual del ARIX</value>
+  </data>
+<data name="TextHeaderAskClock" xml:space="preserve">
+    <value>Consulta hora ARIX</value>
+  </data>
 </root>

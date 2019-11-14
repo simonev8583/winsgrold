@@ -26,6 +26,7 @@ namespace SistemaGestionRedes
         private int _codigoPais;
         private bool _equipoConectado;
         private int stateArix = -1;
+        private string dataClock;
         /// <summary>
         /// Objeto que sirve para hacer un lock en el hilo actual 
         /// </summary>
@@ -263,8 +264,28 @@ namespace SistemaGestionRedes
                                 }
                                 else
                                 {
-                                    //lblEstadoActualizacionOnline.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
-                                    lblMsgErrSeleccionFCIClear.Text = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
+                                    if (lblPrivateTypeDeviceForDelete.Text.Substring(0,2).Equals("RI"))
+                                    {
+                                        lblMsgErrSeleccionFCIClear.Text = (string)this.GetLocalResourceObject("lblMsgErrSeleccionFCIClearBorradoOk"); //"Borrado permanente de Dispositivo exitoso";
+
+                                        using(var db = new SistemaGestionRemotoContainer())
+                                        {
+                                            ARIX arix = db.ARIXs.SingleOrDefault(x => x.Serial == lblPrivateTypeDeviceForDelete.Text);
+                                            if(arix != null)
+                                            {
+                                                arix.FWTId = null;
+                                                db.SaveChanges();
+                                            }
+                                        }
+                                        butRemoveFCI_Click(butRemoveFCI, null);
+                                        exito = true;
+                                    }
+                                    else
+                                    {
+                                        //lblEstadoActualizacionOnline.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
+                                        lblMsgErrSeleccionFCIClear.Text = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
+                                    }
+                                    
                                 }
                                 break;
 
@@ -313,6 +334,13 @@ namespace SistemaGestionRedes
                                 var respuesta = msgRespuesta.Respuesta;
                                 if (respuesta == RespuestasSvrCom.OK)
                                 {
+                                    stateArix = 1;
+                                    exito = true;
+                                }
+                                else if(respuesta == RespuestasSvrCom.ErrorSendingRequest)
+                                {
+                                    /*Ya estaba Abierto*/
+                                    stateArix = 0;
                                     exito = true;
                                 }
                                 break;
@@ -320,6 +348,13 @@ namespace SistemaGestionRedes
                                 var respuestaCerrado = msgRespuesta.Respuesta;
                                 if (respuestaCerrado == RespuestasSvrCom.OK)
                                 {
+                                    stateArix = 1;
+                                    exito = true;
+                                }
+                                else if (respuestaCerrado == RespuestasSvrCom.ErrorSendingRequest)
+                                {
+                                    /*Ya estaba Cerrado*/
+                                    stateArix = 0;
                                     exito = true;
                                 }
                                 break;
@@ -352,11 +387,19 @@ namespace SistemaGestionRedes
                                     exito = false;
                                     stateArix = -2;
                                 }
-                                    break;
+                                break;
                             case ComandosUsuario.ResetArix:
                                 var respuestaResetArix = msgRespuesta.Respuesta;
                                 if (respuestaResetArix == RespuestasSvrCom.OK)
                                 {
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.AskClockArix:
+                                var respuestaClockArix = msgRespuesta.Respuesta;
+                                if (msgRespuesta.Respuesta == RespuestasSvrCom.DATOS)
+                                {
+                                    dataClock = msgRespuesta.Datos.ToString();
                                     exito = true;
                                 }
                                 break;
@@ -1746,11 +1789,22 @@ namespace SistemaGestionRedes
             lblMsgErrSeleccionFCIClear.Text = "";
             string valueList = listBoxFCIsPropios.SelectedValue;
             string serialList = listBoxFCIsPropios.SelectedItem.Text;
+            lblPrivateTypeDeviceForDelete.Text = serialList;
+
+
             if (valueList != "")
             {
                 if (int.TryParse(valueList, out idInterno))
                 {
-                    byte? identificador = AccesoDatosEF.GetIdentificadorFCI(idInterno);
+                    byte? identificador;
+                    if (serialList.Substring(0, 2).Equals("RI"))
+                    {
+                        identificador = AccesoDatosEF.GetIdentificadorARIX(idInterno);
+                    }
+                    else
+                    {
+                        identificador = AccesoDatosEF.GetIdentificadorFCI(idInterno);
+                    }
                     if (identificador.HasValue)
                     {
                         bool siBorrado = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ClearFCI, identificador);
@@ -1760,6 +1814,7 @@ namespace SistemaGestionRedes
                     {
                         lblMsgErrSeleccionFCIClear.Text = (string)this.GetLocalResourceObject("lblMsgErrSeleccionFCIClearErrRecupIdEquipo"); //"Error al recuperar el Identificador del FCI dentro del FWT";
                     }
+
                 }
                 else
                 {
@@ -2190,6 +2245,13 @@ namespace SistemaGestionRedes
                 bntObjR.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                 bntObjReset.Visible = true;
 
+                Button bntObjAskClock = (Button)e.Row.FindControl("btnAskClockArix");
+                Button bntObjAc = (Button)e.Row.FindControl("btnAskClockArix");
+                bntObjAc.Text = (string)this.GetLocalResourceObject("TextAskClockArixRt");
+                bntObjAc.CommandArgument = idArix;
+                bntObjAc.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjAskClock.Visible = true;
+
                 LabelApertura.Text = "";
                 LabelCerrado.Text = "";
             }
@@ -2207,38 +2269,28 @@ namespace SistemaGestionRedes
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
 
-                //ProgressUpdLabelApertura.FindControl("LabelApertura");
-                //ProgressUpdLabelApertura.ContentTemplateContainer.Controls.Add(lbl);
-                //ProgressUpdLabelApertura.Update();
-
                 LabelApertura.Visible = true;
-                bool isOpen = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX,null, idArix);
-                System.Threading.Thread.Sleep(10000);
-                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
-                if (isState)
+                bool isOpen = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX, null, idArix);
+
+                if (isOpen)
                 {
-                    if (stateArix == -1)
+                    if (stateArix == 0)
                     {
-                        LabelApertura.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
-                        LabelCerrado.Text = "";
+                        LabelCerrado.Text = "ARIX se encuentra abierto";
+                        LabelApertura.Text = "";
                     }
-                    else if (stateArix == 0)
+                    else if(stateArix == 1)
                     {
                         LabelApertura.Text = "ARIX abierto con éxito";
                         LabelCerrado.Text = "";
-                    }
-                    else if (stateArix == 1)
-                    {
-                        LabelApertura.Text = "ARIX se encuentra cerrado, fallo el intento de abrir";
-                        LabelCerrado.Text = "";
-                    }
+                    } 
                 }
                 else
                 {
-                    LabelApertura.Text = "Fallo la apertura del ARIX, vuelva a intentarlo";
+                    LabelApertura.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
                     LabelCerrado.Text = "";
                 }
-                
+
                 //ListArixByFwt.DataBind();
             }
             else if (e.CommandName.Equals("CERRAR"))
@@ -2247,37 +2299,31 @@ namespace SistemaGestionRedes
 
                 LabelCerrado.Visible = true;
                 bool isClose = RealizarComunicacionMessageQueueOnline(ComandosUsuario.CloseARIX, null, idArix);
-                System.Threading.Thread.Sleep(10000);
-                bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
-                //bool isOpen = true;
-                if (isState)
+
+                if (isClose)
                 {
-                    if (stateArix == -1)
+                    
+                    if(stateArix == 0)
                     {
+                        LabelCerrado.Text = "ARIX se encuentra cerrado";
                         LabelApertura.Text = "";
-                        LabelCerrado.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
                     }
-                    else if (stateArix == 1)
+                    else if(stateArix == 1)
                     {
                         LabelCerrado.Text = "ARIX cerrado con éxito";
                         LabelApertura.Text = "";
-                    }
-                    else if (stateArix == 0)
-                    {
-                        LabelApertura.Text = "";
-                        LabelCerrado.Text = "ARIX se encuentra abierto, falló el intento de cerrar";
                     }
                 }
                 else
                 {
                     if (stateArix == -1)
                     {
-                        LabelCerrado.Text = "Error con la respuesta del FWT, click en botón validar estado";
+                        LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
                         LabelApertura.Text = "";
                     }
                     else if (stateArix == -2)
                     {
-                        LabelCerrado.Text = "Error al ejecutar el comando de validación, click en botón validar estado";
+                        LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
                         LabelApertura.Text = "";
                     }
                 }
@@ -2308,7 +2354,7 @@ namespace SistemaGestionRedes
                 {
                     if (stateArix == -1)
                     {
-                        LabelCerrado.Text = "Error con la respuesta del FWT, click en botón validar estado";
+                        LabelCerrado.Text = "Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado";
                         LabelApertura.Text = "";
                     }
                     else if (stateArix == -2)
@@ -2330,6 +2376,21 @@ namespace SistemaGestionRedes
                 else
                 {
                     LabelCerrado.Text = "Fallo el reinicio del ARIX, favor intente de nuevo.";
+                    LabelApertura.Text = "";
+                }
+            }
+            else if (e.CommandName.Equals("PREGUNTARELOJ"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                bool isAskClock = RealizarComunicacionMessageQueueOnline(ComandosUsuario.AskClockArix, null, idArix);
+                if (isAskClock)
+                {
+                    LabelCerrado.Text = "Fecha y hora actual del ARIX: " + dataClock;
+                    LabelApertura.Text = "";
+                }
+                else
+                {
+                    LabelCerrado.Text = "Fallo la consulta de hora del ARIX, favor intente de nuevo.";
                     LabelApertura.Text = "";
                 }
             }
