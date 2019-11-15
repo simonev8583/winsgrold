@@ -234,7 +234,7 @@ namespace SistemaGestionRedes
                         190m
                     );
 
-                    FWT fwt = FWT.CreateFWT(1, DateTime.Now, serial, true, false, paramFWT);//sin falla empieza el equipo.//Queda pendiente por recibir parametros y No queda pendiente por enviar actualización 
+                    FWT fwt = FWT.CreateFWT(1, DateTime.Now, serial, true, false, paramFWT, 0, false);//sin falla empieza el equipo.//Queda pendiente por recibir parametros y No queda pendiente por enviar actualización 
                             
                     db.FWTs.AddObject(fwt);
                     db.SaveChanges();

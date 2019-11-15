@@ -397,9 +397,16 @@ namespace SistemaGestionRedes
                                 break;
                             case ComandosUsuario.AskClockArix:
                                 var respuestaClockArix = msgRespuesta.Respuesta;
-                                if (msgRespuesta.Respuesta == RespuestasSvrCom.DATOS)
+                                if (respuestaClockArix == RespuestasSvrCom.DATOS)
                                 {
                                     dataClock = msgRespuesta.Datos.ToString();
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.SincClockArix:
+                                var respuestaUpClockArix = msgRespuesta.Respuesta;
+                                if (respuestaUpClockArix == RespuestasSvrCom.OK)
+                                {
                                     exito = true;
                                 }
                                 break;
@@ -2252,6 +2259,13 @@ namespace SistemaGestionRedes
                 bntObjAc.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                 bntObjAskClock.Visible = true;
 
+                Button bntObjUpdClock = (Button)e.Row.FindControl("btnUpdClockArix");
+                Button bntObjupd = (Button)e.Row.FindControl("btnUpdClockArix");
+                bntObjupd.Text = (string)this.GetLocalResourceObject("TextUpdClockArixRt");
+                bntObjupd.CommandArgument = idArix;
+                bntObjupd.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjUpdClock.Visible = true;
+
                 LabelApertura.Text = "";
                 LabelCerrado.Text = "";
             }
@@ -2391,6 +2405,21 @@ namespace SistemaGestionRedes
                 else
                 {
                     LabelCerrado.Text = "Fallo la consulta de hora del ARIX, favor intente de nuevo.";
+                    LabelApertura.Text = "";
+                }
+            }
+            else if (e.CommandName.Equals("ACTUALIZARELOJ"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                bool isAskClock = RealizarComunicacionMessageQueueOnline(ComandosUsuario.SincClockArix, null, idArix);
+                if (isAskClock)
+                {
+                    LabelCerrado.Text = "Se actualizó la fecha y hora del ARIX ";
+                    LabelApertura.Text = "";
+                }
+                else
+                {
+                    LabelCerrado.Text = "Fallo la actualización de hora del ARIX, favor intente de nuevo.";
                     LabelApertura.Text = "";
                 }
             }

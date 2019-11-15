@@ -277,7 +277,12 @@
                                                         CommandName="PREGUNTARELOJ" CssClass="TextBoton"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderUpdClock %>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnUpdClockArix" Text="" ToolTip="<%$ Resources:TextToolTipUpdClockArix %>"
+                                                        CommandName="ACTUALIZARELOJ" CssClass="TextBoton"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
 
                                 </Columns>
                                 <FooterStyle BackColor="#CCCC99" />

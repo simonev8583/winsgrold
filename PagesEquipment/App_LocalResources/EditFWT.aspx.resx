@@ -780,4 +780,14 @@
 <data name="TextHeaderAskClock" xml:space="preserve">
     <value>Consulta hora ARIX</value>
   </data>
+
+<data name="TextUpdClockArixRt" xml:space="preserve">
+    <value>Actualizar reloj</value>
+  </data>
+<data name="TextToolTipUpdClockArix" xml:space="preserve">
+    <value>Actualizar hora</value>
+  </data>
+<data name="TextHeaderUpdClock" xml:space="preserve">
+    <value>Actualizar hora ARIX</value>
+  </data>
 </root>

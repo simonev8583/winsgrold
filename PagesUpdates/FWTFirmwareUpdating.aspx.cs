@@ -126,14 +126,6 @@ namespace SistemaGestionRedes
                     renglonesDatos.Add(item.Substring(6, item.Length - 6));
                 }
 
-                //for (int i = 0; i < renglonesS19.Count; i++)
-                //{
-                //    Response.Write("Renglon Completo : " + renglonesS19[i] + "<br>");
-                //    Response.Write("Renglon PPageAddress : " + renglonesPPageAddress[i] + "<br>");
-                //    Response.Write("Renglon Datos : " + renglonesDatos[i] + "<br>");
-                //}
-
-
                 errProceso = TryInsertarActualizacionFW();
 
                 if (errProceso == "")
