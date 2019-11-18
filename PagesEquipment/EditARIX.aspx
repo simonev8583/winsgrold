@@ -13,14 +13,14 @@
     <form id="form1" runat="server">
         <div class="rightDiv">
             <div class=" centerDiv">
-            
-            <table style="width: 100%;" border="0">
+
+                <table style="width: 100%;" border="0">
                     <tr>
                         <td>
                             <asp:Label ID="lblId" runat="server" Visible="false" />
                         </td>
                     </tr>
-            </table>
+                </table>
 
                 <asp:ScriptManager ID="ToolkitScriptManager1" runat="server">
                 </asp:ScriptManager>
@@ -61,7 +61,7 @@
                                 <td>
                                     <asp:ListBox ID="listBoxModoOperacion" runat="server" Height="70px" Width="200px">
                                         <asp:ListItem Value="0" Text="<%$ Resources:TextoModoOperacion_Reconectador %>"></asp:ListItem>
-                                        <asp:ListItem Value="1" Text="<%$ Resources:TextoModoOperacion_Seccionalizador %>"></asp:ListItem>
+                                        <asp:ListItem Value="1" disabled="disabled" Text="<%$ Resources:TextoModoOperacion_Seccionalizador %>"></asp:ListItem>
                                         <asp:ListItem Value="2" Text="<%$ Resources:TextoModoOperacion_SinReconexion %>"></asp:ListItem>
                                     </asp:ListBox>
                                 </td>
@@ -69,11 +69,19 @@
                                 <td>
                                     <asp:TextBox ID="txtOpGeneral_porcentajeHisteresis" runat="server"
                                         CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                    <br />
+                                    <asp:rangevalidator ID="Rangevalidator1" errormessage="Favor ingrese valor entre 10-90." forecolor="Red" 
+                                    controltovalidate="txtOpGeneral_porcentajeHisteresis" minimumvalue="10" maximumvalue="90" runat="server" Type="Integer">
+                                    </asp:rangevalidator>
                                 </td>
 
                                 <td>
-                                    <asp:TextBox ID="txtOpGeneral_ciclosVerifResetDismCorrFalla" runat="server"
+                                    <asp:TextBox ID="txtOpGeneral_ciclosVerifResetDismCorrFalla" runat="server" disabled="disabled"
                                         CssClass="textInUsuario styleInput" MaxLength="2" Width="40px"></asp:TextBox>
+                                    <br />
+                                    <asp:rangevalidator ID="Rangevalidator2" errormessage="Favor ingrese valor entre 1-10." forecolor="Red" 
+                                    controltovalidate="txtOpGeneral_ciclosVerifResetDismCorrFalla" minimumvalue="1" maximumvalue="10" runat="server" Type="Integer">
+                                    </asp:rangevalidator>
                                 </td>
                             </tr>
                         </tbody>
@@ -115,7 +123,7 @@
                                     <asp:ListBox ID="listBoxmodOperacionFinVidaUtil" runat="server" Height="60px" Width="120px">
                                         <asp:ListItem Value="0" Text="<%$ Resources:TextoEstadoCerrado %>"></asp:ListItem>
                                         <asp:ListItem Value="1" Text="<%$ Resources:TextoEstadoAbierto %>"></asp:ListItem>
-                                        <asp:ListItem Value="2" Text="<%$ Resources:TextoSeccionalizador %>"></asp:ListItem>
+                                        <asp:ListItem Value="2" disabled="disabled" Text="<%$ Resources:TextoSeccionalizador %>"></asp:ListItem>
                                     </asp:ListBox>
                                 </td>
                             </tr>
@@ -153,12 +161,19 @@
 
                                 <td>
                                     <asp:TextBox ID="txtOpGeneral_corrInrush" runat="server"
-                                                 CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                 CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                    <br />
+                                    <asp:rangevalidator ID="Rangevalidator3" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                    controltovalidate="txtOpGeneral_corrInrush" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                    </asp:rangevalidator>
                                 </td>
-
                                 <td>
                                     <asp:TextBox ID="txtOpGeneral_porcentaje2doArmonicoInrush" runat="server"
-                                                 CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                 CssClass="textInUsuario styleInput" MaxLength="2" Width="50px"></asp:TextBox>
+                                    <br />
+                                    <asp:rangevalidator ID="Rangevalidator4" errormessage="Favor ingrese valor entre 10-20." forecolor="Red" 
+                                    controltovalidate="txtOpGeneral_porcentaje2doArmonicoInrush" minimumvalue="10" maximumvalue="20" runat="server" Type="Integer">
+                                    </asp:rangevalidator>
                                 </td>
                             </tr>
                         </tbody>
@@ -185,12 +200,19 @@
                             <tr>
                                 <td>
                                     <asp:TextBox ID="txtOpGeneral_tiempoDeValidacionInrush" runat="server"
-                                                 CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                                 CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                    <br />
+                                    <asp:rangevalidator ID="Rangevalidator5" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                    controltovalidate="txtOpGeneral_tiempoDeValidacionInrush" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                    </asp:rangevalidator>
                                 </td>
-
                                 <td>
                                     <asp:TextBox ID="txtOpGeneral_tiempoSostenimientoInrush" runat="server"
-                                                 CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                                 CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                    <br />
+                                    <asp:rangevalidator ID="Rangevalidator6" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                    controltovalidate="txtOpGeneral_tiempoSostenimientoInrush" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                    </asp:rangevalidator>
                                 </td>
                             </tr>
                         </tbody>
@@ -240,17 +262,28 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_numRecierres" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="2" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator7" errormessage="Favor ingrese valor entre 1-4." forecolor="Red" 
+                                            controltovalidate="txtOpReconectador_numRecierres" minimumvalue="1" maximumvalue="4" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
-
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_corrMaxAbsolutas" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator8" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                            controltovalidate="txtOpReconectador_corrMaxAbsolutas" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_tiempoDefDisparoCorrMaxAbs" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator9" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtOpReconectador_tiempoDefDisparoCorrMaxAbs" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -280,17 +313,21 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_resetTimeAfterLockout" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator10" errormessage="Favor ingrese valor entre 1-120." forecolor="Red" 
+                                            controltovalidate="txtOpReconectador_resetTimeAfterLockout" minimumvalue="1" maximumvalue="120" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_resetTimeLockout" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px" disabled="disabled"></asp:TextBox>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_corrMaxCapacidadRIX" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px" disabled="disabled"></asp:TextBox>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -410,16 +447,28 @@
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_corrArranque" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator11" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modCorrMaxActuacion" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator16" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modTd" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator21" errormessage="Favor ingrese valor entre 0,01-9." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_modTd" minimumvalue="0,01" maximumvalue="9" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -448,17 +497,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_tiempoDisparoDefinido" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator26" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_tiempoDisparoDefinido" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_tiempoResetCiclo" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator31" errormessage="Favor ingrese valor entre 1-300." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_tiempoResetCiclo" minimumvalue="1" maximumvalue="300" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_tiempoApertura" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator36" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -488,16 +549,28 @@
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modTiempoMaxRespuesta" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator41" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_modTiempoMaxRespuesta" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modTiempoMinRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator50" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_modTiempoMinRespuesta" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modTiempoDefIMaxAct" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator51" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_modTiempoDefIMaxAct" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -518,7 +591,11 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modRetardoAdicional" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator60" errormessage="Favor ingrese valor entre 0-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo1_modRetardoAdicional" minimumvalue="0" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -615,16 +692,28 @@
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_corrArranque" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator12" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modCorrMaxActuacion" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator17" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modTd" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator22" errormessage="Favor ingrese valor entre 0,01-9." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_modTd" minimumvalue="0,01" maximumvalue="9" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -653,17 +742,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_tiempoDisparoDefinido" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator27" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_tiempoDisparoDefinido" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_tiempoResetCiclo" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator32" errormessage="Favor ingrese valor entre 1-300." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_tiempoResetCiclo" minimumvalue="1" maximumvalue="300" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_tiempoApertura" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator37" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -692,17 +793,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modTiempoMaxRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator42" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_modTiempoMaxRespuesta" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modTiempoMinRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator49" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_modTiempoMinRespuesta" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modTiempoDefIMaxAct" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator52" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_modTiempoDefIMaxAct" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -723,7 +836,11 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modRetardoAdicional" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator59" errormessage="Favor ingrese valor entre 0-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo2_modRetardoAdicional" minimumvalue="0" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -820,16 +937,28 @@
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_corrArranque" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator13" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modCorrMaxActuacion" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator18" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modTd" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator23" errormessage="Favor ingrese valor entre 0,01-9." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_modTd" minimumvalue="0,01" maximumvalue="9" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -858,17 +987,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_tiempoDisparoDefinido" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator28" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_tiempoDisparoDefinido" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_tiempoResetCiclo" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator33" errormessage="Favor ingrese valor entre 1-300." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_tiempoResetCiclo" minimumvalue="1" maximumvalue="300" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_tiempoApertura" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator38" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -897,17 +1038,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modTiempoMaxRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator43" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_modTiempoMaxRespuesta" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modTiempoMinRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator48" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_modTiempoMinRespuesta" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modTiempoDefIMaxAct" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator53" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_modTiempoDefIMaxAct" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -928,7 +1081,11 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modRetardoAdicional" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator58" errormessage="Favor ingrese valor entre 0-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo3_modRetardoAdicional" minimumvalue="0" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1025,16 +1182,28 @@
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_corrArranque" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator14" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modCorrMaxActuacion" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator19" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modTd" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator24" errormessage="Favor ingrese valor entre 0,01-9." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_modTd" minimumvalue="0,01" maximumvalue="9" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1063,17 +1232,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_tiempoDisparoDefinido" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator29" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_tiempoDisparoDefinido" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_tiempoResetCiclo" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator34" errormessage="Favor ingrese valor entre 1-300." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_tiempoResetCiclo" minimumvalue="1" maximumvalue="300" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_tiempoApertura" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator39" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1102,17 +1283,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modTiempoMaxRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator44" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_modTiempoMaxRespuesta" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modTiempoMinRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator47" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_modTiempoMinRespuesta" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modTiempoDefIMaxAct" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator54" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_modTiempoDefIMaxAct" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1133,7 +1326,11 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modRetardoAdicional" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator57" errormessage="Favor ingrese valor entre 0-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo4_modRetardoAdicional" minimumvalue="0" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1230,16 +1427,28 @@
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_corrArranque" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator15" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modCorrMaxActuacion" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator20" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modTd" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator25" errormessage="Favor ingrese valor entre 0,01-9." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_modTd" minimumvalue="0,01" maximumvalue="9" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1268,17 +1477,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_tiempoDisparoDefinido" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator30" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_tiempoDisparoDefinido" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_tiempoResetCiclo" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator35" errormessage="Favor ingrese valor entre 1-300." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_tiempoResetCiclo" minimumvalue="1" maximumvalue="300" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_tiempoApertura" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator40" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1307,17 +1528,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modTiempoMaxRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator45" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_modTiempoMaxRespuesta" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modTiempoMinRespuesta" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator46" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_modTiempoMinRespuesta" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modTiempoDefIMaxAct" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator55" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_modTiempoDefIMaxAct" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1338,7 +1571,11 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modRetardoAdicional" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator56" errormessage="Favor ingrese valor entre 0-10.000." forecolor="Red" 
+                                            controltovalidate="txtDisparo5_modRetardoAdicional" minimumvalue="0" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1391,16 +1628,28 @@
                                     <td>
                                         <asp:TextBox ID="txtHardware_adcCargaLOWCapacitorDisparo" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator61" errormessage="Favor ingrese valor entre 40-69." forecolor="Red" 
+                                            controltovalidate="txtHardware_adcCargaLOWCapacitorDisparo" minimumvalue="40" maximumvalue="69" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtHardware_adcCargaOKCapacitorDisparo" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator62" errormessage="Favor ingrese valor entre 70-80." forecolor="Red" 
+                                            controltovalidate="txtHardware_adcCargaOKCapacitorDisparo" minimumvalue="70" maximumvalue="80" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtHardware_adcCargaLOWFuenteBaja" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator63" errormessage="Favor ingrese valor entre 1,8-2,5" forecolor="Red" 
+                                            controltovalidate="txtHardware_adcCargaLOWFuenteBaja" minimumvalue="1,8" maximumvalue="2,5" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1429,17 +1678,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtHardware_adcCargaOKFuenteBaja" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator64" errormessage="Favor ingrese valor entre 4,5-5,1" forecolor="Red" 
+                                            controltovalidate="txtHardware_adcCargaOKFuenteBaja" minimumvalue="4,5" maximumvalue="5,1" runat="server" Type="Double">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtHardware_numOperacionesBotellaCercanoAlMax" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator65" errormessage="Favor ingrese valor entre 1000-8000" forecolor="Red" 
+                                            controltovalidate="txtHardware_numOperacionesBotellaCercanoAlMax" minimumvalue="1000" maximumvalue="8000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtHardware_numOperacionesBotellaLlegaAlMax" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator66" errormessage="Favor ingrese valor entre 8001-10000" forecolor="Red" 
+                                            controltovalidate="txtHardware_numOperacionesBotellaLlegaAlMax" minimumvalue="8001" maximumvalue="10000" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1468,17 +1729,29 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtHardware_porcentDesgasteBotellaCercanoAlMax" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="2" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator67" errormessage="Favor ingrese valor entre 50%-80%" forecolor="Red" 
+                                            controltovalidate="txtHardware_porcentDesgasteBotellaCercanoAlMax" minimumvalue="50" maximumvalue="80" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtHardware_porcentDesgasteBotellaLlegaAlMax" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator68" errormessage="Favor ingrese valor entre 81%-100%" forecolor="Red" 
+                                            controltovalidate="txtHardware_porcentDesgasteBotellaLlegaAlMax" minimumvalue="81" maximumvalue="100" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtHardware_adcCorrMinParaAutoalimentacion50Hz" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator69" errormessage="Favor ingrese valor entre 3-100" forecolor="Red" 
+                                            controltovalidate="txtHardware_adcCorrMinParaAutoalimentacion50Hz" minimumvalue="3" maximumvalue="100" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1500,6 +1773,10 @@
                                     <td>
                                         <asp:TextBox ID="txtHardware_adcCorrMinParaAutoalimentacion60Hz" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator70" errormessage="Favor ingrese valor entre 3-100" forecolor="Red" 
+                                            controltovalidate="txtHardware_adcCorrMinParaAutoalimentacion60Hz" minimumvalue="3" maximumvalue="100" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1541,7 +1818,7 @@
                                     </th>
                                     
                                     <th>
-                                        &nbsp;<asp:Label ID="LabelComunicacion_canalRfEnMHz" runat="server" Text="<%$ Resources:lblComunicacion_canalRfEnMHz %>"></asp:Label>&nbsp;&nbsp;
+                                        &nbsp;<asp:Label ID="LabelComunicacion_canalRfEnMHz" runat="server" Visible="false" Text="<%$ Resources:lblComunicacion_canalRfEnMHz %>"></asp:Label>&nbsp;&nbsp;
                                     </th>
                                 </tr>
                                 </thead>
@@ -1549,17 +1826,25 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtComunicacion_canalComunicacionRF" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="1" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator71" errormessage="Favor ingrese valor entre 0-9" forecolor="Red" 
+                                            controltovalidate="txtComunicacion_canalComunicacionRF" minimumvalue="0" maximumvalue="9" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
 
                                     <td>
                                         <asp:TextBox ID="txtComunicacion_codigoDeGrupo" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="2" Width="50px"></asp:TextBox>
+                                        <br />
+                                        <asp:rangevalidator ID="Rangevalidator72" errormessage="Favor ingrese valor entre 1-10" forecolor="Red" 
+                                            controltovalidate="txtComunicacion_codigoDeGrupo" minimumvalue="1" maximumvalue="10" runat="server" Type="Integer">
+                                        </asp:rangevalidator>
                                     </td>
                                     
                                     <td>
                                         <asp:TextBox ID="txtComunicacion_canalRfEnMHz" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px" Visible="false"></asp:TextBox>
                                     </td>
                                 </tr>
                                 </tbody>

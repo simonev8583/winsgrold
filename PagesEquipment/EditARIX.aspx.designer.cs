@@ -139,6 +139,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_porcentajeHisteresis;
         
         /// <summary>
+        /// Rangevalidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator1;
+        
+        /// <summary>
         /// txtOpGeneral_ciclosVerifResetDismCorrFalla control.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_ciclosVerifResetDismCorrFalla;
+        
+        /// <summary>
+        /// Rangevalidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator2;
         
         /// <summary>
         /// LabelOpGeneral_frecOperacion control.
@@ -247,6 +265,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_corrInrush;
         
         /// <summary>
+        /// Rangevalidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator3;
+        
+        /// <summary>
         /// txtOpGeneral_porcentaje2doArmonicoInrush control.
         /// </summary>
         /// <remarks>
@@ -254,6 +281,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_porcentaje2doArmonicoInrush;
+        
+        /// <summary>
+        /// Rangevalidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator4;
         
         /// <summary>
         /// LabelOpGeneral_tiempoDeValidacionInrush control.
@@ -283,6 +319,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_tiempoDeValidacionInrush;
         
         /// <summary>
+        /// Rangevalidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator5;
+        
+        /// <summary>
         /// txtOpGeneral_tiempoSostenimientoInrush control.
         /// </summary>
         /// <remarks>
@@ -290,6 +335,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOpGeneral_tiempoSostenimientoInrush;
+        
+        /// <summary>
+        /// Rangevalidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator6;
         
         /// <summary>
         /// CollapsiblePanelOperacionReconectador control.
@@ -373,6 +427,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_numRecierres;
         
         /// <summary>
+        /// Rangevalidator7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator7;
+        
+        /// <summary>
         /// txtOpReconectador_corrMaxAbsolutas control.
         /// </summary>
         /// <remarks>
@@ -382,6 +445,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_corrMaxAbsolutas;
         
         /// <summary>
+        /// Rangevalidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator8;
+        
+        /// <summary>
         /// txtOpReconectador_tiempoDefDisparoCorrMaxAbs control.
         /// </summary>
         /// <remarks>
@@ -389,6 +461,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_tiempoDefDisparoCorrMaxAbs;
+        
+        /// <summary>
+        /// Rangevalidator9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator9;
         
         /// <summary>
         /// LabelOpReconectador_resetTimeAfterLockout control.
@@ -425,6 +506,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_resetTimeAfterLockout;
+        
+        /// <summary>
+        /// Rangevalidator10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator10;
         
         /// <summary>
         /// txtOpReconectador_resetTimeLockout control.
@@ -625,6 +715,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_corrArranque;
         
         /// <summary>
+        /// Rangevalidator11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator11;
+        
+        /// <summary>
         /// txtDisparo1_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
@@ -634,6 +733,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modCorrMaxActuacion;
         
         /// <summary>
+        /// Rangevalidator16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator16;
+        
+        /// <summary>
         /// txtDisparo1_modTd control.
         /// </summary>
         /// <remarks>
@@ -641,6 +749,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTd;
+        
+        /// <summary>
+        /// Rangevalidator21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator21;
         
         /// <summary>
         /// LabelDisparo1_tiempoDisparoDefinido control.
@@ -679,6 +796,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_tiempoDisparoDefinido;
         
         /// <summary>
+        /// Rangevalidator26 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator26;
+        
+        /// <summary>
         /// txtDisparo1_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
@@ -688,6 +814,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_tiempoResetCiclo;
         
         /// <summary>
+        /// Rangevalidator31 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator31;
+        
+        /// <summary>
         /// txtDisparo1_tiempoApertura control.
         /// </summary>
         /// <remarks>
@@ -695,6 +830,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_tiempoApertura;
+        
+        /// <summary>
+        /// Rangevalidator36 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator36;
         
         /// <summary>
         /// LabelDisparo1_modTiempoMaxRespuesta control.
@@ -733,6 +877,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTiempoMaxRespuesta;
         
         /// <summary>
+        /// Rangevalidator41 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator41;
+        
+        /// <summary>
         /// txtDisparo1_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
@@ -742,6 +895,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTiempoMinRespuesta;
         
         /// <summary>
+        /// Rangevalidator50 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator50;
+        
+        /// <summary>
         /// txtDisparo1_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
@@ -749,6 +911,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Rangevalidator51 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator51;
         
         /// <summary>
         /// LabelDisparo1_modRetardoAdicional control.
@@ -767,6 +938,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo1_modRetardoAdicional;
+        
+        /// <summary>
+        /// Rangevalidator60 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator60;
         
         /// <summary>
         /// CollapsiblePanelDisparo2 control.
@@ -904,6 +1084,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_corrArranque;
         
         /// <summary>
+        /// Rangevalidator12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator12;
+        
+        /// <summary>
         /// txtDisparo2_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
@@ -913,6 +1102,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modCorrMaxActuacion;
         
         /// <summary>
+        /// Rangevalidator17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator17;
+        
+        /// <summary>
         /// txtDisparo2_modTd control.
         /// </summary>
         /// <remarks>
@@ -920,6 +1118,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTd;
+        
+        /// <summary>
+        /// Rangevalidator22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator22;
         
         /// <summary>
         /// Label7 control.
@@ -958,6 +1165,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_tiempoDisparoDefinido;
         
         /// <summary>
+        /// Rangevalidator27 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator27;
+        
+        /// <summary>
         /// txtDisparo2_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
@@ -967,6 +1183,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_tiempoResetCiclo;
         
         /// <summary>
+        /// Rangevalidator32 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator32;
+        
+        /// <summary>
         /// txtDisparo2_tiempoApertura control.
         /// </summary>
         /// <remarks>
@@ -974,6 +1199,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_tiempoApertura;
+        
+        /// <summary>
+        /// Rangevalidator37 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator37;
         
         /// <summary>
         /// Label10 control.
@@ -1012,6 +1246,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTiempoMaxRespuesta;
         
         /// <summary>
+        /// Rangevalidator42 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator42;
+        
+        /// <summary>
         /// txtDisparo2_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
@@ -1021,6 +1264,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTiempoMinRespuesta;
         
         /// <summary>
+        /// Rangevalidator49 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator49;
+        
+        /// <summary>
         /// txtDisparo2_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
@@ -1028,6 +1280,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Rangevalidator52 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator52;
         
         /// <summary>
         /// Label13 control.
@@ -1046,6 +1307,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo2_modRetardoAdicional;
+        
+        /// <summary>
+        /// Rangevalidator59 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator59;
         
         /// <summary>
         /// CollapsiblePanelDisparo3 control.
@@ -1183,6 +1453,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_corrArranque;
         
         /// <summary>
+        /// Rangevalidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator13;
+        
+        /// <summary>
         /// txtDisparo3_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
@@ -1192,6 +1471,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modCorrMaxActuacion;
         
         /// <summary>
+        /// Rangevalidator18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator18;
+        
+        /// <summary>
         /// txtDisparo3_modTd control.
         /// </summary>
         /// <remarks>
@@ -1199,6 +1487,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTd;
+        
+        /// <summary>
+        /// Rangevalidator23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator23;
         
         /// <summary>
         /// Label17 control.
@@ -1237,6 +1534,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_tiempoDisparoDefinido;
         
         /// <summary>
+        /// Rangevalidator28 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator28;
+        
+        /// <summary>
         /// txtDisparo3_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
@@ -1246,6 +1552,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_tiempoResetCiclo;
         
         /// <summary>
+        /// Rangevalidator33 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator33;
+        
+        /// <summary>
         /// txtDisparo3_tiempoApertura control.
         /// </summary>
         /// <remarks>
@@ -1253,6 +1568,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_tiempoApertura;
+        
+        /// <summary>
+        /// Rangevalidator38 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator38;
         
         /// <summary>
         /// Label20 control.
@@ -1291,6 +1615,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTiempoMaxRespuesta;
         
         /// <summary>
+        /// Rangevalidator43 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator43;
+        
+        /// <summary>
         /// txtDisparo3_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
@@ -1300,6 +1633,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTiempoMinRespuesta;
         
         /// <summary>
+        /// Rangevalidator48 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator48;
+        
+        /// <summary>
         /// txtDisparo3_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
@@ -1307,6 +1649,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Rangevalidator53 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator53;
         
         /// <summary>
         /// Label23 control.
@@ -1325,6 +1676,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo3_modRetardoAdicional;
+        
+        /// <summary>
+        /// Rangevalidator58 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator58;
         
         /// <summary>
         /// CollapsiblePanelDisparo4 control.
@@ -1462,6 +1822,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_corrArranque;
         
         /// <summary>
+        /// Rangevalidator14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator14;
+        
+        /// <summary>
         /// txtDisparo4_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
@@ -1471,6 +1840,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modCorrMaxActuacion;
         
         /// <summary>
+        /// Rangevalidator19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator19;
+        
+        /// <summary>
         /// txtDisparo4_modTd control.
         /// </summary>
         /// <remarks>
@@ -1478,6 +1856,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTd;
+        
+        /// <summary>
+        /// Rangevalidator24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator24;
         
         /// <summary>
         /// Label30 control.
@@ -1516,6 +1903,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_tiempoDisparoDefinido;
         
         /// <summary>
+        /// Rangevalidator29 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator29;
+        
+        /// <summary>
         /// txtDisparo4_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
@@ -1525,6 +1921,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_tiempoResetCiclo;
         
         /// <summary>
+        /// Rangevalidator34 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator34;
+        
+        /// <summary>
         /// txtDisparo4_tiempoApertura control.
         /// </summary>
         /// <remarks>
@@ -1532,6 +1937,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_tiempoApertura;
+        
+        /// <summary>
+        /// Rangevalidator39 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator39;
         
         /// <summary>
         /// Label33 control.
@@ -1570,6 +1984,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTiempoMaxRespuesta;
         
         /// <summary>
+        /// Rangevalidator44 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator44;
+        
+        /// <summary>
         /// txtDisparo4_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
@@ -1579,6 +2002,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTiempoMinRespuesta;
         
         /// <summary>
+        /// Rangevalidator47 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator47;
+        
+        /// <summary>
         /// txtDisparo4_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
@@ -1586,6 +2018,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Rangevalidator54 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator54;
         
         /// <summary>
         /// Label36 control.
@@ -1604,6 +2045,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo4_modRetardoAdicional;
+        
+        /// <summary>
+        /// Rangevalidator57 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator57;
         
         /// <summary>
         /// CollapsiblePanelDisparo5 control.
@@ -1741,6 +2191,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_corrArranque;
         
         /// <summary>
+        /// Rangevalidator15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator15;
+        
+        /// <summary>
         /// txtDisparo5_modCorrMaxActuacion control.
         /// </summary>
         /// <remarks>
@@ -1750,6 +2209,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modCorrMaxActuacion;
         
         /// <summary>
+        /// Rangevalidator20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator20;
+        
+        /// <summary>
         /// txtDisparo5_modTd control.
         /// </summary>
         /// <remarks>
@@ -1757,6 +2225,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTd;
+        
+        /// <summary>
+        /// Rangevalidator25 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator25;
         
         /// <summary>
         /// Label43 control.
@@ -1795,6 +2272,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_tiempoDisparoDefinido;
         
         /// <summary>
+        /// Rangevalidator30 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator30;
+        
+        /// <summary>
         /// txtDisparo5_tiempoResetCiclo control.
         /// </summary>
         /// <remarks>
@@ -1804,6 +2290,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_tiempoResetCiclo;
         
         /// <summary>
+        /// Rangevalidator35 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator35;
+        
+        /// <summary>
         /// txtDisparo5_tiempoApertura control.
         /// </summary>
         /// <remarks>
@@ -1811,6 +2306,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_tiempoApertura;
+        
+        /// <summary>
+        /// Rangevalidator40 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator40;
         
         /// <summary>
         /// Label46 control.
@@ -1849,6 +2353,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTiempoMaxRespuesta;
         
         /// <summary>
+        /// Rangevalidator45 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator45;
+        
+        /// <summary>
         /// txtDisparo5_modTiempoMinRespuesta control.
         /// </summary>
         /// <remarks>
@@ -1858,6 +2371,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTiempoMinRespuesta;
         
         /// <summary>
+        /// Rangevalidator46 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator46;
+        
+        /// <summary>
         /// txtDisparo5_modTiempoDefIMaxAct control.
         /// </summary>
         /// <remarks>
@@ -1865,6 +2387,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modTiempoDefIMaxAct;
+        
+        /// <summary>
+        /// Rangevalidator55 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator55;
         
         /// <summary>
         /// Label49 control.
@@ -1883,6 +2414,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDisparo5_modRetardoAdicional;
+        
+        /// <summary>
+        /// Rangevalidator56 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator56;
         
         /// <summary>
         /// CollapsiblePanelParametrosEquipo control.
@@ -1966,6 +2506,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaLOWCapacitorDisparo;
         
         /// <summary>
+        /// Rangevalidator61 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator61;
+        
+        /// <summary>
         /// txtHardware_adcCargaOKCapacitorDisparo control.
         /// </summary>
         /// <remarks>
@@ -1975,6 +2524,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaOKCapacitorDisparo;
         
         /// <summary>
+        /// Rangevalidator62 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator62;
+        
+        /// <summary>
         /// txtHardware_adcCargaLOWFuenteBaja control.
         /// </summary>
         /// <remarks>
@@ -1982,6 +2540,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaLOWFuenteBaja;
+        
+        /// <summary>
+        /// Rangevalidator63 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator63;
         
         /// <summary>
         /// LabelHardware_adcCargaOKFuenteBaja control.
@@ -2020,6 +2587,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCargaOKFuenteBaja;
         
         /// <summary>
+        /// Rangevalidator64 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator64;
+        
+        /// <summary>
         /// txtHardware_numOperacionesBotellaCercanoAlMax control.
         /// </summary>
         /// <remarks>
@@ -2029,6 +2605,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtHardware_numOperacionesBotellaCercanoAlMax;
         
         /// <summary>
+        /// Rangevalidator65 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator65;
+        
+        /// <summary>
         /// txtHardware_numOperacionesBotellaLlegaAlMax control.
         /// </summary>
         /// <remarks>
@@ -2036,6 +2621,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHardware_numOperacionesBotellaLlegaAlMax;
+        
+        /// <summary>
+        /// Rangevalidator66 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator66;
         
         /// <summary>
         /// LabelHardware_porcentDesgasteBotellaCercanoAlMax control.
@@ -2074,6 +2668,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtHardware_porcentDesgasteBotellaCercanoAlMax;
         
         /// <summary>
+        /// Rangevalidator67 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator67;
+        
+        /// <summary>
         /// txtHardware_porcentDesgasteBotellaLlegaAlMax control.
         /// </summary>
         /// <remarks>
@@ -2083,6 +2686,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtHardware_porcentDesgasteBotellaLlegaAlMax;
         
         /// <summary>
+        /// Rangevalidator68 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator68;
+        
+        /// <summary>
         /// txtHardware_adcCorrMinParaAutoalimentacion50Hz control.
         /// </summary>
         /// <remarks>
@@ -2090,6 +2702,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCorrMinParaAutoalimentacion50Hz;
+        
+        /// <summary>
+        /// Rangevalidator69 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator69;
         
         /// <summary>
         /// LabelHardware_adcCorrMinParaAutoalimentacion60Hz control.
@@ -2108,6 +2729,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHardware_adcCorrMinParaAutoalimentacion60Hz;
+        
+        /// <summary>
+        /// Rangevalidator70 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator70;
         
         /// <summary>
         /// CollapsiblePanelComunicacion control.
@@ -2191,6 +2821,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtComunicacion_canalComunicacionRF;
         
         /// <summary>
+        /// Rangevalidator71 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator71;
+        
+        /// <summary>
         /// txtComunicacion_codigoDeGrupo control.
         /// </summary>
         /// <remarks>
@@ -2198,6 +2837,15 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtComunicacion_codigoDeGrupo;
+        
+        /// <summary>
+        /// Rangevalidator72 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator72;
         
         /// <summary>
         /// txtComunicacion_canalRfEnMHz control.
