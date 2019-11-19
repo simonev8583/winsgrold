@@ -7,6 +7,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+        function showContent(typeAnswer, message, messagePpal) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr[typeAnswer](message, messagePpal);
+
+        }
+    </script>
     <title></title>
 </head>
 <body>
@@ -28,7 +54,7 @@
                     TargetControlID="ContentOperacionGeneral"
                     ExpandControlID="TitleOperacionGeneral"
                     CollapseControlID="TitleOperacionGeneral"
-                    Collapsed="True"
+                    Collapsed="False"
                     TextLabelID="LabelMostrarActual"
                     ExpandedText="<%$ Resources:ExpandOperacionGeneral %>"
                     CollapsedText="<%$ Resources:CollapseOperacionGeneral %>"
@@ -50,9 +76,13 @@
                                 </th>
 
                                 <th>&nbsp;<asp:Label ID="LabelOpGeneral_porcentajeHisteresis" runat="server" Text="<%$ Resources:lblOpGeneral_porcentajeHisteresis %>"></asp:Label>&nbsp;&nbsp;
+                                    <br />
+                                    <span>(10% - 90%)</span>
                                 </th>
 
                                 <th>&nbsp;<asp:Label ID="LabelOpGeneral_ciclosVerifResetDismCorrFalla" runat="server" Text="<%$ Resources:lblOpGeneral_ciclosVerifResetDismCorrFalla %>"></asp:Label>&nbsp;&nbsp;
+                                    <br />
+                                    <span>(1 - 10)</span>
                                 </th>
                             </tr>
                         </thead>
@@ -120,7 +150,7 @@
                                 </td>
 
                                 <td>
-                                    <asp:ListBox ID="listBoxmodOperacionFinVidaUtil" runat="server" Height="60px" Width="120px">
+                                    <asp:ListBox ID="listBoxmodOperacionFinVidaUtil" runat="server" Height="70px" Width="130px">
                                         <asp:ListItem Value="0" Text="<%$ Resources:TextoEstadoCerrado %>"></asp:ListItem>
                                         <asp:ListItem Value="1" Text="<%$ Resources:TextoEstadoAbierto %>"></asp:ListItem>
                                         <asp:ListItem Value="2" disabled="disabled" Text="<%$ Resources:TextoSeccionalizador %>"></asp:ListItem>
@@ -143,17 +173,21 @@
 
                                 <th>
                                     &nbsp;<asp:Label ID="LabelOpGeneral_corrInrush" runat="server" Text="<%$ Resources:lblOpGeneral_corrInrush %>"></asp:Label>&nbsp;&nbsp;
+                                    <br />
+                                    <span>(10A - 6500A)</span>
                                 </th>
 
                                 <th>
                                     &nbsp;<asp:Label ID="LabelOpGeneral_porcentaje2doArmonicoInrush" runat="server" Text="<%$ Resources:lblOpGeneral_porcentaje2doArmonicoInrush %>"></asp:Label>&nbsp;&nbsp;
+                                    <br />
+                                    <span>(10% - 20%)</span>
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="itemBody">
                             <tr>
                                 <td>
-                                    <asp:ListBox ID="listBoxmodoInrush" runat="server" Height="40px" Width="140px">
+                                    <asp:ListBox ID="listBoxmodoInrush" runat="server" Height="50px" Width="150px">
                                         <asp:ListItem Value="0" Text="<%$ Resources:TextoInrush0 %>"></asp:ListItem>
                                         <asp:ListItem Value="1" Text="<%$ Resources:TextoInrush1 %>"></asp:ListItem>
                                     </asp:ListBox>
@@ -188,10 +222,14 @@
                             <tr>
                                 <th>
                                     &nbsp;<asp:Label ID="LabelOpGeneral_tiempoDeValidacionInrush" runat="server" Text="<%$ Resources:lblOpGeneral_tiempoDeValidacionInrush %>"></asp:Label>&nbsp;&nbsp;
+                                    <br />
+                                    <span>(10ms - 60.000ms)</span>
                                 </th>
 
                                 <th>
                                     &nbsp;<asp:Label ID="LabelOpGeneral_tiempoSostenimientoInrush" runat="server" Text="<%$ Resources:lblOpGeneral_tiempoSostenimientoInrush %>"></asp:Label>&nbsp;&nbsp;
+                                    <br />
+                                    <span>(10ms - 60.000ms)</span>
                                 </th>
 
                             </tr>
@@ -247,14 +285,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelOpReconectador_numRecierres" runat="server" Text="<%$ Resources:lblOpReconectador_numRecierres %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1 - 4)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelOpReconectador_corrMaxAbsoluta" runat="server" Text="<%$ Resources:lblOpReconectador_corrMaxAbsoluta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10A - 6500A)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelOpReconectador_tiempoDefDisparoCorrMaxAbs" runat="server" Text="<%$ Resources:lblOpReconectador_tiempoDefDisparoCorrMaxAbs %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -290,7 +334,6 @@
                             </table>
                         </center>
                     </fieldset>
-
                     <fieldset>
                         <center>
                             <table class="tableClass">
@@ -298,14 +341,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelOpReconectador_resetTimeAfterLockout" runat="server" Text="<%$ Resources:lblOpReconectador_resetTimeAfterLockout %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1 - 120)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelOpReconectador_resetTimeLockout" runat="server" Text="<%$ Resources:lblOpReconectador_resetTimeLockout %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span> </span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelOpReconectador_corrMaxCapacidadRIX" runat="server" Text="<%$ Resources:lblOpReconectador_corrMaxCapacidadRIX %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span> </span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -431,14 +480,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_corrArranque" runat="server" Text="<%$ Resources:lblDisparo1_corrArranque %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 6500A)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_modCorrMaxActuacion" runat="server" Text="<%$ Resources:lblDisparo1_modCorrMaxActuacion %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10A - 6500A)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_modTd" runat="server" Text="<%$ Resources:lblDisparo1_modTd %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0,01 - 9)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -446,7 +501,7 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_corrArranque" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator11" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo1_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
@@ -455,7 +510,7 @@
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_modCorrMaxActuacion" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator16" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo1_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
@@ -482,14 +537,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_tiempoDisparoDefinido" runat="server" Text="<%$ Resources:lblDisparo1_tiempoDisparoDefinido %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_tiempoResetCiclo" runat="server" Text="<%$ Resources:lblDisparo1_tiempoResetCiclo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1s - 300s)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_tiempoApertura" runat="server" Text="<%$ Resources:lblDisparo1_tiempoApertura %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(500ms - 30.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -515,7 +576,7 @@
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo1_tiempoApertura" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator36" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
                                             controltovalidate="txtDisparo1_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
@@ -533,14 +594,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_modTiempoMaxRespuesta" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMaxRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10ms - 60.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_modTiempoMinRespuesta" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMinRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_modTiempoDefIMaxAct" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoDefIMaxAct %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -584,6 +651,8 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelDisparo1_modRetardoAdicional" runat="server" Text="<%$ Resources:lblDisparo1_modRetardoAdicional %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -676,14 +745,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label4" runat="server" Text="<%$ Resources:lblDisparo1_corrArranque %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 6500A)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label5" runat="server" Text="<%$ Resources:lblDisparo1_modCorrMaxActuacion %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10A - 6500A)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label6" runat="server" Text="<%$ Resources:lblDisparo1_modTd %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0,01 - 9)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -691,7 +766,7 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_corrArranque" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator12" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo2_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
@@ -700,7 +775,7 @@
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_modCorrMaxActuacion" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator17" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo2_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
@@ -727,14 +802,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label7" runat="server" Text="<%$ Resources:lblDisparo1_tiempoDisparoDefinido %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label8" runat="server" Text="<%$ Resources:lblDisparo1_tiempoResetCiclo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1s - 300s)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label9" runat="server" Text="<%$ Resources:lblDisparo1_tiempoApertura %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(500ms - 30.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -760,7 +841,7 @@
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo2_tiempoApertura" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator37" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
                                             controltovalidate="txtDisparo2_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
@@ -778,14 +859,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label10" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMaxRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10ms - 60.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label11" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMinRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label12" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoDefIMaxAct %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -829,6 +916,8 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label13" runat="server" Text="<%$ Resources:lblDisparo1_modRetardoAdicional %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -921,14 +1010,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label14" runat="server" Text="<%$ Resources:lblDisparo1_corrArranque %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 6500A)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label15" runat="server" Text="<%$ Resources:lblDisparo1_modCorrMaxActuacion %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10A - 6500A)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label16" runat="server" Text="<%$ Resources:lblDisparo1_modTd %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0,01 - 9)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -936,7 +1031,7 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_corrArranque" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator13" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo3_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
@@ -945,7 +1040,7 @@
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_modCorrMaxActuacion" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator18" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo3_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
@@ -972,14 +1067,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label17" runat="server" Text="<%$ Resources:lblDisparo1_tiempoDisparoDefinido %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label18" runat="server" Text="<%$ Resources:lblDisparo1_tiempoResetCiclo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1s - 300s)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label19" runat="server" Text="<%$ Resources:lblDisparo1_tiempoApertura %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(500ms - 30.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1005,7 +1106,7 @@
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo3_tiempoApertura" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator38" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
                                             controltovalidate="txtDisparo3_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
@@ -1023,14 +1124,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label20" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMaxRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10ms - 60.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label21" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMinRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label22" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoDefIMaxAct %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1074,6 +1181,8 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label23" runat="server" Text="<%$ Resources:lblDisparo1_modRetardoAdicional %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1166,14 +1275,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label27" runat="server" Text="<%$ Resources:lblDisparo1_corrArranque %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 6500A)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label28" runat="server" Text="<%$ Resources:lblDisparo1_modCorrMaxActuacion %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10A - 6500A)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label29" runat="server" Text="<%$ Resources:lblDisparo1_modTd %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0,01 - 9)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1181,7 +1296,7 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_corrArranque" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator14" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo4_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
@@ -1190,7 +1305,7 @@
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_modCorrMaxActuacion" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator19" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo4_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
@@ -1217,14 +1332,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label30" runat="server" Text="<%$ Resources:lblDisparo1_tiempoDisparoDefinido %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label31" runat="server" Text="<%$ Resources:lblDisparo1_tiempoResetCiclo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1s - 300s)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label32" runat="server" Text="<%$ Resources:lblDisparo1_tiempoApertura %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(500ms - 30.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1250,7 +1371,7 @@
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo4_tiempoApertura" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator39" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
                                             controltovalidate="txtDisparo4_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
@@ -1268,14 +1389,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label33" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMaxRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10ms - 60.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label34" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMinRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label35" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoDefIMaxAct %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1318,7 +1445,10 @@
                                 <thead class="itemHeader">
                                 <tr>
                                     <th>
+
                                         &nbsp;<asp:Label ID="Label36" runat="server" Text="<%$ Resources:lblDisparo1_modRetardoAdicional %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1411,14 +1541,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label40" runat="server" Text="<%$ Resources:lblDisparo1_corrArranque %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 6500A)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label41" runat="server" Text="<%$ Resources:lblDisparo1_modCorrMaxActuacion %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10A - 6500A)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label42" runat="server" Text="<%$ Resources:lblDisparo1_modTd %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0,01 - 9)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1426,7 +1562,7 @@
                                 <tr>
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_corrArranque" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator15" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo5_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
@@ -1435,7 +1571,7 @@
 
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_modCorrMaxActuacion" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator20" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
                                             controltovalidate="txtDisparo5_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
@@ -1462,14 +1598,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label43" runat="server" Text="<%$ Resources:lblDisparo1_tiempoDisparoDefinido %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label44" runat="server" Text="<%$ Resources:lblDisparo1_tiempoResetCiclo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1s - 300s)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label45" runat="server" Text="<%$ Resources:lblDisparo1_tiempoApertura %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(500ms - 30.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1495,7 +1637,7 @@
                                     
                                     <td>
                                         <asp:TextBox ID="txtDisparo5_tiempoApertura" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator40" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
                                             controltovalidate="txtDisparo5_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
@@ -1513,14 +1655,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label46" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMaxRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(10ms - 60.000ms)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="Label47" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMinRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="Label48" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoDefIMaxAct %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(20ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1564,6 +1712,8 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="Label49" runat="server" Text="<%$ Resources:lblDisparo1_modRetardoAdicional %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0ms - 10.000ms)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1612,14 +1762,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_adcCargaLOWCapacitorDisparo" runat="server" Text="<%$ Resources:lblHardware_adcCargaLOWCapacitorDisparo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(40v - 69v)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_adcCargaOKCapacitorDisparo" runat="server" Text="<%$ Resources:lblHardware_adcCargaOKCapacitorDisparo %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(70v - 80v)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_adcCargaLOWFuenteBaja" runat="server" Text="<%$ Resources:lblHardware_adcCargaLOWFuenteBaja %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1,8v - 2,5v)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1630,7 +1786,7 @@
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator61" errormessage="Favor ingrese valor entre 40-69." forecolor="Red" 
-                                            controltovalidate="txtHardware_adcCargaLOWCapacitorDisparo" minimumvalue="40" maximumvalue="69" runat="server" Type="Integer">
+                                            controltovalidate="txtHardware_adcCargaLOWCapacitorDisparo" minimumvalue="40" maximumvalue="69" runat="server" Type="Double">
                                         </asp:rangevalidator>
                                     </td>
 
@@ -1639,7 +1795,7 @@
                                                      CssClass="textInUsuario styleInput" MaxLength="5" Width="70px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator62" errormessage="Favor ingrese valor entre 70-80." forecolor="Red" 
-                                            controltovalidate="txtHardware_adcCargaOKCapacitorDisparo" minimumvalue="70" maximumvalue="80" runat="server" Type="Integer">
+                                            controltovalidate="txtHardware_adcCargaOKCapacitorDisparo" minimumvalue="70" maximumvalue="80" runat="server" Type="Double">
                                         </asp:rangevalidator>
                                     </td>
                                     
@@ -1663,14 +1819,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_adcCargaOKFuenteBaja" runat="server" Text="<%$ Resources:lblHardware_adcCargaOKFuenteBaja %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(4,5v - 5,1v)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_numOperacionesBotellaCercanoAlMax" runat="server" Text="<%$ Resources:lblHardware_numOperacionesBotellaCercanoAlMax %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(1000 - 8000)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_numOperacionesBotellaLlegaAlMax" runat="server" Text="<%$ Resources:lblHardware_numOperacionesBotellaLlegaAlMax %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(8001 - 10.000)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1714,14 +1876,20 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_porcentDesgasteBotellaCercanoAlMax" runat="server" Text="<%$ Resources:lblHardware_porcentDesgasteBotellaCercanoAlMax %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(50% - 80%)</span>
                                     </th>
 
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_porcentDesgasteBotellaLlegaAlMax" runat="server" Text="<%$ Resources:lblHardware_porcentDesgasteBotellaLlegaAlMax %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(81% - 100%)</span>
                                     </th>
                                     
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_adcCorrMinParaAutoalimentacion50Hz" runat="server" Text="<%$ Resources:lblHardware_adcCorrMinParaAutoalimentacion50Hz %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 100A)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1765,6 +1933,8 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelHardware_adcCorrMinParaAutoalimentacion60Hz" runat="server" Text="<%$ Resources:lblHardware_adcCorrMinParaAutoalimentacion60Hz %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(3A - 100A)</span>
                                     </th>
                                 </tr>
                                 </thead>
@@ -1811,10 +1981,13 @@
                                 <tr>
                                     <th>
                                         &nbsp;<asp:Label ID="LabelComunicacion_canalComunicacionRF" runat="server" Text="<%$ Resources:lblComunicacion_canalComunicacionRF %>"></asp:Label>&nbsp;&nbsp;
+                                        <br />
+                                    <span>(0 - 9)</span>
                                     </th>
 
                                     <th>
-                                        &nbsp;<asp:Label ID="LabelComunicacion_codigoDeGrupo" runat="server" Text="<%$ Resources:lblComunicacion_codigoDeGrupo %>"></asp:Label>&nbsp;&nbsp;
+                                        &nbsp;<asp:Label ID="LabelComunicacion_codigoDeGrupo" runat="server" Text="<%$ Resources:lblComunicacion_codigoDeGrupo %>"></asp:Label>&nbsp;&nbsp;<br />
+                                    <span>(1 - 10)</span>                                    
                                     </th>
                                     
                                     <th>

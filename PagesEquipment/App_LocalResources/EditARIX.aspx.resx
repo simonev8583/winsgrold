@@ -166,10 +166,10 @@
     <value>Sin Reconexión Automática</value>
   </data>
   <data name="lblOpGeneral_porcentajeHisteresis" xml:space="preserve">
-    <value>Histeresis y Disparo</value>
+    <value>% Histeresis I Disparo </value>
   </data>
   <data name="lblOpGeneral_ciclosVerifResetDismCorrFalla" xml:space="preserve">
-    <value>Ciclos de verificación reset disminución corriente de falla</value>
+    <value>Cicl verif reset I de falla</value>
   </data>
   <data name="TextoFrecOperacion_50Hz" xml:space="preserve">
     <value>50Hz</value>
@@ -181,10 +181,10 @@
     <value>Frecuencia de operación</value>
   </data>
   <data name="lblOpGeneral_habilitarFuncionalidadInrush" xml:space="preserve">
-    <value>Habilitar funcionalidad inrush</value>
+    <value>Habilitar inrush</value>
   </data>
   <data name="lblOpGeneral_modOperacionFinVidaUtil" xml:space="preserve">
-    <value>Modo de operación al final de la vida útil</value>
+    <value>Modo fin vida útil</value>
   </data>
   <data name="TextoEstadoCerrado" xml:space="preserve">
     <value>Cerrado</value>
@@ -208,31 +208,31 @@
     <value>Corriente inrush</value>
   </data>
   <data name="lblOpGeneral_porcentaje2doArmonicoInrush" xml:space="preserve">
-    <value>Porcentaje armónico inrush</value>
+    <value>% armónico inrush</value>
   </data>
   <data name="lblOpGeneral_tiempoDeValidacionInrush" xml:space="preserve">
-    <value>Tiempo de validación inrush</value>
+    <value>T validación inrush</value>
   </data>
   <data name="lblOpGeneral_tiempoSostenimientoInrush" xml:space="preserve">
-    <value>Tiempo de sostenimiento inrush</value>
+    <value>T sostenimiento inrush</value>
   </data>
   <data name="lblOpReconectador_numRecierres" xml:space="preserve">
     <value>Número de recierres</value>
   </data>
   <data name="lblOpReconectador_corrMaxAbsoluta" xml:space="preserve">
-    <value>Corriente máxima absoluta</value>
+    <value>I max absoluta</value>
   </data>
   <data name="lblOpReconectador_tiempoDefDisparoCorrMaxAbs" xml:space="preserve">
-    <value>Tiempo de disparo corriente máxima abs</value>
+    <value>T disp I máxima abs</value>
   </data>
   <data name="lblOpReconectador_resetTimeAfterLockout" xml:space="preserve">
-    <value>Tiempo de reset después de bloqueo</value>
+    <value>T reset después de bloqueo</value>
   </data>
   <data name="lblOpReconectador_resetTimeLockout" xml:space="preserve">
-    <value>Tiempo de reset bloqueo</value>
+    <value>T de reset bloqueo</value>
   </data>
   <data name="lblOpReconectador_corrMaxCapacidadRIX" xml:space="preserve">
-    <value>Corriente máxima capacidad ARIX</value>
+    <value>I max capacidad ARIX</value>
   </data>
   <data name="TextoDisparo1_TiempoDefinido" xml:space="preserve">
     <value>Tiempo Fijo</value>
@@ -271,7 +271,7 @@
     <value>Habilitar modificadores</value>
   </data>
   <data name="lblDisparo1_modCorrMaxActuacion" xml:space="preserve">
-    <value>Corriente máxima actuación</value>
+    <value>I max actuación</value>
   </data>
   <data name="lblDisparo1_corrArranque" xml:space="preserve">
     <value>Corriente de arranque</value>
@@ -280,55 +280,55 @@
     <value>Dial</value>
   </data>
   <data name="lblDisparo1_tiempoDisparoDefinido" xml:space="preserve">
-    <value>Tiempo disparo definido</value>
+    <value>T disparo definido</value>
   </data>
   <data name="lblDisparo1_tiempoResetCiclo" xml:space="preserve">
-    <value>Tiempo reset ciclo</value>
+    <value>T reset ciclo</value>
   </data>
   <data name="lblDisparo1_tiempoApertura" xml:space="preserve">
     <value>Tiempo apertura</value>
   </data>
   <data name="lblDisparo1_modTiempoMaxRespuesta" xml:space="preserve">
-    <value>mod Tiempo máximo de respuesta</value>
+    <value>T max de respuesta</value>
   </data>
   <data name="lblDisparo1_modTiempoMinRespuesta" xml:space="preserve">
-    <value>mod Tiempo Mmínimo de respuesta</value>
+    <value>T min de respuesta</value>
   </data>
   <data name="lblDisparo1_modTiempoDefIMaxAct" xml:space="preserve">
-    <value>mod Tiempo Def corriente máxima actuación</value>
+    <value>T Def I max actuación</value>
   </data>
   <data name="lblDisparo1_modRetardoAdicional" xml:space="preserve">
-    <value>mod Retardo adicional</value>
+    <value>Retardo adicional</value>
   </data>
   <data name="lblHardware_adcCargaLOWCapacitorDisparo" xml:space="preserve">
-    <value>adc Carga baja capacitor disparo</value>
+    <value>Carga baja capacitor disparo</value>
   </data>
   <data name="lblHardware_adcCargaOKCapacitorDisparo" xml:space="preserve">
-    <value>adc Carga capacitor disparo</value>
+    <value>Carga capacitor disparo</value>
   </data>
   <data name="lblHardware_adcCargaLOWFuenteBaja" xml:space="preserve">
-    <value>adc Carga baja de fuente </value>
+    <value>Carga baja de fuente </value>
   </data>
   <data name="lblHardware_adcCargaOKFuenteBaja" xml:space="preserve">
-    <value>adc Carga fuente</value>
+    <value>Carga fuente</value>
   </data>
   <data name="lblHardware_numOperacionesBotellaCercanoAlMax" xml:space="preserve">
-    <value>Número operaciones botella cerca Max</value>
+    <value># oper botella cerca Max</value>
   </data>
   <data name="lblHardware_numOperacionesBotellaLlegaAlMax" xml:space="preserve">
-    <value>Número operaciones botella llega Max</value>
+    <value># opér botella llega Max</value>
   </data>
   <data name="lblHardware_porcentDesgasteBotellaCercanoAlMax" xml:space="preserve">
-    <value>Porcentaje desgaste botella cerca Max</value>
+    <value>% desgaste botella cerca Max</value>
   </data>
   <data name="lblHardware_porcentDesgasteBotellaLlegaAlMax" xml:space="preserve">
-    <value>Porcentaje desgaste botella Max</value>
+    <value>% desgaste botella Max</value>
   </data>
   <data name="lblHardware_adcCorrMinParaAutoalimentacion50Hz" xml:space="preserve">
-    <value>adc Corriente mínima autoalimentación 50Hz</value>
+    <value>I min autoalimentación 50Hz</value>
   </data>
   <data name="lblHardware_adcCorrMinParaAutoalimentacion60Hz" xml:space="preserve">
-    <value>adc Corr mínima autoalimentación 60Hz</value>
+    <value>I min autoalimentación 60Hz</value>
   </data>
   <data name="lblComunicacion_canalComunicacionRF" xml:space="preserve">
     <value>Canal de comunicación RF</value>
@@ -342,4 +342,5 @@
   <data name="TextBotonLeerPrmOnline" xml:space="preserve">
     <value>Enviar parámetros</value>
   </data>
+  
 </root>

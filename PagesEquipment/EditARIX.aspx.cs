@@ -57,12 +57,12 @@ namespace SistemaGestionRedes
                     txtOpGeneral_tiempoSostenimientoInrush.Text = paramArix.tiempoSostenimientoInrush.ToString();
 
                     ///OPERACIÓN RECONECTADOR
-
+                    const int MIL = 1000;
                     txtOpReconectador_numRecierres.Text = paramArix.numRecierres.ToString();
                     txtOpReconectador_corrMaxAbsolutas.Text = paramArix.corrMaxAbsoluta.ToString();
                     txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text = paramArix.tiempoDefDisparoCorrMaxAbs.ToString();
-                    txtOpReconectador_resetTimeAfterLockout.Text = paramArix.resetTimeAfterLockout.ToString();
-                    txtOpReconectador_resetTimeLockout.Text = paramArix.resetTimeLockout.ToString();
+                    txtOpReconectador_resetTimeAfterLockout.Text = (paramArix.resetTimeAfterLockout/MIL).ToString();
+                    txtOpReconectador_resetTimeLockout.Text = (paramArix.resetTimeLockout/MIL).ToString();
                     txtOpReconectador_corrMaxCapacidadRIX.Text = paramArix.corrMaxCapacidadRIX.ToString();
 
                     /// DISPAROS
@@ -188,12 +188,13 @@ namespace SistemaGestionRedes
 
         protected void butActualizarParams_Click(object sender, EventArgs e)
         {
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','mensaje de error');", true);
             // validar campos antes de actualizar... 
             using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
             {
                 /// EL id esta en cero ... OJO o esta estatico....
                 int id = int.Parse(lblId.Text);
-                var arix = db.ARIXs.FirstOrDefault(x => x.Id == id );
+                var arix = db.ARIXs.FirstOrDefault(x => x.Id == id);
                 if (arix.FWTId != null)
                 {
                     bool hayCambiosOpGeneral = HayModificacionOperacionGeneral(arix);
@@ -206,59 +207,372 @@ namespace SistemaGestionRedes
                     bool hayCambiosDisparo4 = HayModificacionDisparo4(arix);
                     bool hayCambiosDisparo5 = HayModificacionDisparo5(arix);
 
+                    bool datosEnRangoOpGeneral = validarRangoOperacionGeneral();
+                    if (!datosEnRangoOpGeneral)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de OPERACIÓN GENERAL');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de operación general')</script>");
+
+                    bool datosEnRangoOpReconectador = validarRangoOperacionReconectador();
+                    if (!datosEnRangoOpReconectador)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de OPERACIÓN RECONECTADOR');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de operación reconectador')</script>");
+                                        
+                    bool datosEnRangoDisparo1 = validarRangoDisparo(1);
+                    if (!datosEnRangoDisparo1)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 1');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 1')</script>");
+
+                    bool datosEnRangoDisparo2 = validarRangoDisparo(2);
+                    if (!datosEnRangoDisparo2)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 2');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 2')</script>");
+
+                    bool datosEnRangoDisparo3 = validarRangoDisparo(3);
+                    if (!datosEnRangoDisparo3)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 3');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 3')</script>");
+
+                    bool datosEnRangoDisparo4 = validarRangoDisparo(4);
+                    if (!datosEnRangoDisparo4)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 4');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 4')</script>");
+
+                    bool datosEnRangoDisparo5 = validarRangoDisparo(5);
+                    if (!datosEnRangoDisparo5)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 5');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 5')</script>");
+
+                    bool datosEnRangoHardware = validarRangoHardware();
+                    if (!datosEnRangoHardware)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de HARDWARE');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros del hardware')</script>");
+
+                    bool datosEnRangoComunicacion = validarRangoComunicacion();
+                    if (!datosEnRangoComunicacion)
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de COMUNICACIÓN');", true);
+                    //Response.Write("<script>alert('Revisar los rangos en parámetros de comunicación')</script>");
+
                     if (hayCambiosOpGeneral || hayCambiosOpReconectador || hayCambiosHardware ||
                         hayCambiosComunicaciones || hayCambiosDisparo1 || hayCambiosDisparo2 ||
-                        hayCambiosDisparo3 || hayCambiosDisparo4 || hayCambiosDisparo5)
+                        hayCambiosDisparo3 || hayCambiosDisparo4 || hayCambiosDisparo5
+                        )
                     {
-                        if (hayCambiosOpGeneral)
+                        if(datosEnRangoDisparo5 && datosEnRangoDisparo4 && datosEnRangoDisparo3 && datosEnRangoDisparo2 && datosEnRangoDisparo1
+                        && datosEnRangoComunicacion && datosEnRangoHardware && datosEnRangoOpReconectador && datosEnRangoOpGeneral)
                         {
-                            arix = ModificarOperacionGeneral(arix);
+                            if (hayCambiosOpGeneral)
+                            {
+                                arix = ModificarOperacionGeneral(arix);
+                            }
+                            if (hayCambiosOpReconectador)
+                            {
+                                const int MIL = 1000;
+                                arix = ModificarOperacionReconectador(arix);
+                                arix.ParamARIX.resetTimeAfterLockout = int.Parse(txtOpReconectador_resetTimeAfterLockout.Text) * MIL;
+                                //arix.ParamARIX.resetTimeLockout = (short)(arix.ParamARIX.resetTimeLockout * 1000);
+                            }
+                            if (hayCambiosHardware)
+                            {
+                                arix = ModificarHardware(arix);
+                            }
+                            if (hayCambiosComunicaciones)
+                            {
+                                arix = ModificarComunicaciones(arix);
+                            }
+                            if (hayCambiosDisparo1)
+                            {
+                                arix = ModificarDisparo1(arix);
+                            }
+                            if (hayCambiosDisparo2)
+                            {
+                                arix = ModificarDisparo2(arix);
+                            }
+                            if (hayCambiosDisparo3)
+                            {
+                                arix = ModificarDisparo3(arix);
+                            }
+                            if (hayCambiosDisparo4)
+                            {
+                                arix = ModificarDisparo4(arix);
+                            }
+                            if (hayCambiosDisparo5)
+                            {
+                                arix = ModificarDisparo5(arix);
+                            }
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Pronto se van a actualizar los parámetros del ARIX', 'Guardando cambios');", true);
+                            //Response.Write("<script>alert('Hay cambios por subir')</script>");
+                            arix.PendienteEnviarParametros = true;
+                            arix.PendienteConfirmarActualizacionParametros = false;
                         }
-                        if (hayCambiosOpReconectador)
-                        {
-                            arix = ModificarOperacionReconectador(arix);
-                        }
-                        if (hayCambiosHardware)
-                        {
-                            arix = ModificarHardware(arix);
-                        }
-                        if (hayCambiosComunicaciones)
-                        {
-                            arix = ModificarComunicaciones(arix);
-                        }
-                        if (hayCambiosDisparo1)
-                        {
-                            arix = ModificarDisparo1(arix);
-                        }
-                        if (hayCambiosDisparo2)
-                        {
-                            arix = ModificarDisparo2(arix);
-                        }
-                        if (hayCambiosDisparo3)
-                        {
-                            arix = ModificarDisparo3(arix);
-                        }
-                        if (hayCambiosDisparo4)
-                        {
-                            arix = ModificarDisparo4(arix);
-                        }
-                        if (hayCambiosDisparo5)
-                        {
-                            arix = ModificarDisparo5(arix);
-                        }
-
-                        Response.Write("<script>alert('Hay cambios por subir')</script>");
-                        arix.PendienteEnviarParametros = true;
-                        arix.PendienteConfirmarActualizacionParametros = false;
-
                         db.SaveChanges();
                     }
                     else
                     {
-                        Response.Write("<script>alert('Sin cambios')</script>");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','No se realizaron cambios en los parámetros', 'No hubieron cambios');", true);
+                        //Response.Write("<script>alert('Sin cambios')</script>");
                     }
                 }
             }
+        }
+
+        private bool validarRangoOperacionGeneral()
+        {
+            bool respuesta = true;
+
+            int porHisteresis = int.Parse(txtOpGeneral_porcentajeHisteresis.Text);
+            const int minPorHisteresis = 10;
+            const int maxPorHisteresis = 90;
+
+            if (porHisteresis < minPorHisteresis || porHisteresis > maxPorHisteresis) respuesta = false;
+
+            //int ciclosVerif = int.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
+            //const int minpCiclosVerif = 1;
+            //const int maxCiclosVerif = 10;
+
+            //if (ciclosVerif < minpCiclosVerif || ciclosVerif > maxCiclosVerif) respuesta = false;
+
+            int corrInrush = int.Parse(txtOpGeneral_corrInrush.Text);
+            const int minCorrInrush = 10;
+            const int maxCorrInrush = 6500;
+
+            if (corrInrush < minCorrInrush || corrInrush > maxCorrInrush) respuesta = false;
+
+            int porcentaje2doArmonicoInrush = int.Parse(txtOpGeneral_porcentaje2doArmonicoInrush.Text);
+            const int minPorcentaje2doArmonicoInrush = 10;
+            const int maxPorcentaje2doArmonicoInrush = 20;
+
+            if (porcentaje2doArmonicoInrush < minPorcentaje2doArmonicoInrush || porcentaje2doArmonicoInrush > maxPorcentaje2doArmonicoInrush) respuesta = false;
+
+            int tiempoDeValidacionInrush = int.Parse(txtOpGeneral_tiempoDeValidacionInrush.Text);
+            const int minTiempoDeValidacionInrush = 10;
+            const int maxTtiempoDeValidacionInrush = 60000;
+
+            if (tiempoDeValidacionInrush < minTiempoDeValidacionInrush || tiempoDeValidacionInrush > maxTtiempoDeValidacionInrush) respuesta = false;
+
+            int tiempoSostenimientoInrush = int.Parse(txtOpGeneral_tiempoSostenimientoInrush.Text);
+            const int minTiempoSostenimientoInrush = 10;
+            const int maxTiempoSostenimientoInrush = 60000;
+
+            if (tiempoSostenimientoInrush < minTiempoSostenimientoInrush || tiempoSostenimientoInrush > maxTiempoSostenimientoInrush) respuesta = false;
+
+            return respuesta;
+        }
+
+        private bool validarRangoOperacionReconectador()
+        {
+            bool respuesta = true;
+
+            int numRecierres = int.Parse(txtOpReconectador_numRecierres.Text);
+            const int minNumRecierres = 1;
+            const int maxNumRecierres = 4;
+
+            if (numRecierres < minNumRecierres || numRecierres > maxNumRecierres) respuesta = false;
+
+            int corrMaxAbsolutas = int.Parse(txtOpReconectador_corrMaxAbsolutas.Text);
+            const int minCorrMaxAbsolutas = 10;
+            const int maxCorrMaxAbsolutas = 6500;
+
+            if (corrMaxAbsolutas < minCorrMaxAbsolutas || corrMaxAbsolutas > maxCorrMaxAbsolutas) respuesta = false;
+
+            int tiempoDefDisparoCorrMaxAbs = int.Parse(txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text);
+            const int minTiempoDefDisparoCorrMaxAbs = 20;
+            const int maxTiempoDefDisparoCorrMaxAbs = 10000;
+
+            if (tiempoDefDisparoCorrMaxAbs < minTiempoDefDisparoCorrMaxAbs || tiempoDefDisparoCorrMaxAbs > maxTiempoDefDisparoCorrMaxAbs) respuesta = false;
+
+            int resetTimeAfterLockout = int.Parse(txtOpReconectador_resetTimeAfterLockout.Text);
+            const int minResetTimeAfterLockout = 1;
+            const int maxResetTimeAfterLockout = 120;
+
+            if (resetTimeAfterLockout < minResetTimeAfterLockout || resetTimeAfterLockout > maxResetTimeAfterLockout) respuesta = false;
+
+            return respuesta;
+        }
+
+        private bool validarRangoHardware()
+        {
+            bool respuesta = true;
+
+            double cargaLOWCapacitorDisparo = double.Parse(txtHardware_adcCargaLOWCapacitorDisparo.Text);
+            const double minCargaLOWCapacitorDisparo = 40;
+            const double maxCargaLOWCapacitorDisparo = 69;
+            if (cargaLOWCapacitorDisparo < minCargaLOWCapacitorDisparo || cargaLOWCapacitorDisparo > maxCargaLOWCapacitorDisparo) respuesta = false;
+
+            double cargaOKCapacitorDisparo = double.Parse(txtHardware_adcCargaOKCapacitorDisparo.Text);
+            const double minCargaOKCapacitorDisparo = 70;
+            const double maxCargaOKCapacitorDisparo = 80;
+            if (cargaOKCapacitorDisparo < minCargaOKCapacitorDisparo || cargaOKCapacitorDisparo > maxCargaOKCapacitorDisparo) respuesta = false;
+
+            double cargaLOWFuenteBaja = double.Parse(txtHardware_adcCargaLOWFuenteBaja.Text);
+            const double minCargaLOWFuenteBaja = 1.8;
+            const double maxCargaLOWFuenteBaja = 2.5;
+            if (cargaLOWFuenteBaja < minCargaLOWFuenteBaja || cargaLOWFuenteBaja > maxCargaLOWFuenteBaja) respuesta = false;
+
+            double cargaOKFuenteBaja = double.Parse(txtHardware_adcCargaOKFuenteBaja.Text);
+            const double minCargaOKFuenteBaja = 4.5;
+            const double maxCargaOKFuenteBaja = 5.1;
+            if (cargaOKFuenteBaja < minCargaOKFuenteBaja || cargaOKFuenteBaja > maxCargaOKFuenteBaja) respuesta = false;
+
+            int operacionesBotellaCercanoAlMax = int.Parse(txtHardware_numOperacionesBotellaCercanoAlMax.Text);
+            const int minOperacionesBotellaCercanoAlMax = 1000;
+            const int maxOperacionesBotellaCercanoAlMax = 8000;
+            if (operacionesBotellaCercanoAlMax < minOperacionesBotellaCercanoAlMax || operacionesBotellaCercanoAlMax > maxOperacionesBotellaCercanoAlMax) respuesta = false;
+
+            int operacionesBotellaLlegaAlMax = int.Parse(txtHardware_numOperacionesBotellaLlegaAlMax.Text);
+            const int minOperacionesBotellaLlegaAlMax = 8001;
+            const int maxOperacionesBotellaLlegaAlMax = 10000;
+            if (operacionesBotellaLlegaAlMax < minOperacionesBotellaLlegaAlMax || operacionesBotellaLlegaAlMax > maxOperacionesBotellaLlegaAlMax) respuesta = false;
+
+            int porcentDesgasteBotellaCercanoAlMax = int.Parse(txtHardware_porcentDesgasteBotellaCercanoAlMax.Text);
+            const int minPorcentDesgasteBotellaCercanoAlMax = 50;
+            const int maxPorcentDesgasteBotellaCercanoAlMax = 80;
+            if (porcentDesgasteBotellaCercanoAlMax < minPorcentDesgasteBotellaCercanoAlMax || porcentDesgasteBotellaCercanoAlMax > maxPorcentDesgasteBotellaCercanoAlMax) respuesta = false;
+
+            int porcentDesgasteBotellaLlegaAlMax = int.Parse(txtHardware_porcentDesgasteBotellaLlegaAlMax.Text);
+            const int minPorcentDesgasteBotellaLlegaAlMax = 81;
+            const int maxPorcentDesgasteBotellaLlegaAlMax = 100;
+            if (porcentDesgasteBotellaLlegaAlMax < minPorcentDesgasteBotellaLlegaAlMax || porcentDesgasteBotellaLlegaAlMax > maxPorcentDesgasteBotellaLlegaAlMax) respuesta = false;
+
+            int corrMinParaAutoalimentacion50Hz = int.Parse(txtHardware_adcCorrMinParaAutoalimentacion50Hz.Text);
+            const int minCorrMinParaAutoalimentacion50Hz = 3;
+            const int maxCorrMinParaAutoalimentacion50Hz = 100;
+            if (corrMinParaAutoalimentacion50Hz < minCorrMinParaAutoalimentacion50Hz || corrMinParaAutoalimentacion50Hz > maxCorrMinParaAutoalimentacion50Hz) respuesta = false;
+
+            int corrMinParaAutoalimentacion60Hz = int.Parse(txtHardware_adcCorrMinParaAutoalimentacion60Hz.Text);
+            const int minCorrMinParaAutoalimentacion60Hz = 3;
+            const int maxCorrMinParaAutoalimentacion60Hz = 100;
+            if (corrMinParaAutoalimentacion60Hz < minCorrMinParaAutoalimentacion60Hz || corrMinParaAutoalimentacion60Hz > maxCorrMinParaAutoalimentacion60Hz) respuesta = false;
+
+            return respuesta;
+        }
+
+        private bool validarRangoComunicacion()
+        {
+            bool respuesta = true;
+
+            int canal = int.Parse(txtComunicacion_canalComunicacionRF.Text);
+            const int minCanal = 0;
+            const int maxCanal = 9;
+            if (canal < minCanal || canal > maxCanal) respuesta = false;
+
+            int grupo = int.Parse(txtComunicacion_codigoDeGrupo.Text);
+            const int minGrupo = 0;
+            const int maxGrupo = 9;
+            if (grupo < minGrupo || grupo > maxGrupo) respuesta = false;
+
+            return respuesta;
+        }
+
+        private bool validarRangoDisparo(int numeroDisparo)
+        {
+            bool respuesta = true;
+
+
+            /*RANGOS*/
+
+            const int minIArranque = 3;
+            const int maxIArranque = 6500;
+            const int minIMaxActu = 10;
+            const int maxIMaxActu = 6500;
+            const double minDial = 0.01;
+            const double maxDial = 9;
+            const int minTDispDef = 20;
+            const int maxTDispDef = 10000;
+            const int minTReset = 1;
+            const int maxTReset = 300;
+            const int minTMuerto = 500;
+            const int maxTMuerto = 30000;
+            const int minTMaxResp = 10;
+            const int maxTMaxResp = 60000;
+            const int minTMinResp = 20;
+            const int maxTMinResp = 10000;
+            const int minTDefIMax = 20;
+            const int maxTDefIMax = 10000;
+            const int minRetAdic = 0;
+            const int maxRetAdic = 10000;
+
+            /*DEFINICIONES*/
+            int iArranque = 0, iMaxAct = 0, tiempoDisparoDefinido = 0, tiempoResetCiclo = 0,
+                tiempoApertura = 0, modTiempoMaxRespuesta = 0, modTiempoMinRespuesta = 0,
+                modTiempoDefIMaxAct = 0, modRetardoAdicional = 0;
+            double modTd = 0;
+
+            switch (numeroDisparo)
+            {
+                case (1):
+                    iArranque = int.Parse(txtDisparo1_corrArranque.Text);
+                    iMaxAct = int.Parse(txtDisparo1_modCorrMaxActuacion.Text);
+                    modTd = double.Parse(txtDisparo1_modTd.Text);
+                    tiempoDisparoDefinido = int.Parse(txtDisparo1_tiempoDisparoDefinido.Text);
+                    tiempoResetCiclo = int.Parse(txtDisparo1_tiempoResetCiclo.Text);
+                    tiempoApertura = int.Parse(txtDisparo1_tiempoApertura.Text);
+                    modTiempoMaxRespuesta = int.Parse(txtDisparo1_modTiempoMaxRespuesta.Text);
+                    modTiempoMinRespuesta = int.Parse(txtDisparo1_modTiempoMinRespuesta.Text);
+                    modTiempoDefIMaxAct = int.Parse(txtDisparo1_modTiempoDefIMaxAct.Text);
+                    modRetardoAdicional = int.Parse(txtDisparo1_modRetardoAdicional.Text);
+                    break;
+                case (2):
+                    iArranque = int.Parse(txtDisparo2_corrArranque.Text);
+                    iMaxAct = int.Parse(txtDisparo2_modCorrMaxActuacion.Text);
+                    modTd = double.Parse(txtDisparo2_modTd.Text);
+                    tiempoDisparoDefinido = int.Parse(txtDisparo2_tiempoDisparoDefinido.Text);
+                    tiempoResetCiclo = int.Parse(txtDisparo2_tiempoResetCiclo.Text);
+                    tiempoApertura = int.Parse(txtDisparo2_tiempoApertura.Text);
+                    modTiempoMaxRespuesta = int.Parse(txtDisparo2_modTiempoMaxRespuesta.Text);
+                    modTiempoMinRespuesta = int.Parse(txtDisparo2_modTiempoMinRespuesta.Text);
+                    modTiempoDefIMaxAct = int.Parse(txtDisparo2_modTiempoDefIMaxAct.Text);
+                    modRetardoAdicional = int.Parse(txtDisparo2_modRetardoAdicional.Text);
+                    break;
+                case (3):
+                    iArranque = int.Parse(txtDisparo3_corrArranque.Text);
+                    iMaxAct = int.Parse(txtDisparo3_modCorrMaxActuacion.Text);
+                    modTd = double.Parse(txtDisparo3_modTd.Text);
+                    tiempoDisparoDefinido = int.Parse(txtDisparo3_tiempoDisparoDefinido.Text);
+                    tiempoResetCiclo = int.Parse(txtDisparo3_tiempoResetCiclo.Text);
+                    tiempoApertura = int.Parse(txtDisparo3_tiempoApertura.Text);
+                    modTiempoMaxRespuesta = int.Parse(txtDisparo3_modTiempoMaxRespuesta.Text);
+                    modTiempoMinRespuesta = int.Parse(txtDisparo3_modTiempoMinRespuesta.Text);
+                    modTiempoDefIMaxAct = int.Parse(txtDisparo3_modTiempoDefIMaxAct.Text);
+                    modRetardoAdicional = int.Parse(txtDisparo3_modRetardoAdicional.Text);
+                    break;
+                case (4):
+                    iArranque = int.Parse(txtDisparo4_corrArranque.Text);
+                    iMaxAct = int.Parse(txtDisparo4_modCorrMaxActuacion.Text);
+                    modTd = double.Parse(txtDisparo4_modTd.Text);
+                    tiempoDisparoDefinido = int.Parse(txtDisparo4_tiempoDisparoDefinido.Text);
+                    tiempoResetCiclo = int.Parse(txtDisparo4_tiempoResetCiclo.Text);
+                    tiempoApertura = int.Parse(txtDisparo4_tiempoApertura.Text);
+                    modTiempoMaxRespuesta = int.Parse(txtDisparo4_modTiempoMaxRespuesta.Text);
+                    modTiempoMinRespuesta = int.Parse(txtDisparo4_modTiempoMinRespuesta.Text);
+                    modTiempoDefIMaxAct = int.Parse(txtDisparo4_modTiempoDefIMaxAct.Text);
+                    modRetardoAdicional = int.Parse(txtDisparo4_modRetardoAdicional.Text);
+                    break;
+                case (5):
+                    iArranque = int.Parse(txtDisparo5_corrArranque.Text);
+                    iMaxAct = int.Parse(txtDisparo5_modCorrMaxActuacion.Text);
+                    modTd = double.Parse(txtDisparo5_modTd.Text);
+                    tiempoDisparoDefinido = int.Parse(txtDisparo5_tiempoDisparoDefinido.Text);
+                    tiempoResetCiclo = int.Parse(txtDisparo5_tiempoResetCiclo.Text);
+                    tiempoApertura = int.Parse(txtDisparo5_tiempoApertura.Text);
+                    modTiempoMaxRespuesta = int.Parse(txtDisparo5_modTiempoMaxRespuesta.Text);
+                    modTiempoMinRespuesta = int.Parse(txtDisparo5_modTiempoMinRespuesta.Text);
+                    modTiempoDefIMaxAct = int.Parse(txtDisparo5_modTiempoDefIMaxAct.Text);
+                    modRetardoAdicional = int.Parse(txtDisparo5_modRetardoAdicional.Text);
+                    break;
+            }
+
+            if (iArranque < minIArranque || iArranque > maxIArranque) respuesta = false;
+            if (iMaxAct < minIMaxActu || iMaxAct > maxIMaxActu) respuesta = false;
+            if (modTd < minDial || modTd > maxDial) respuesta = false;
+            if (tiempoDisparoDefinido < minTDispDef || tiempoDisparoDefinido > maxTDispDef) respuesta = false;
+            if (tiempoResetCiclo < minTReset || tiempoResetCiclo > maxTReset) respuesta = false;
+            if (tiempoApertura < minTMuerto || tiempoApertura > maxTMuerto) respuesta = false;
+            if (modTiempoMaxRespuesta < minTMaxResp || modTiempoMaxRespuesta > maxTMaxResp) respuesta = false;
+            if (modTiempoMinRespuesta < minTMinResp || modTiempoMinRespuesta > maxTMinResp) respuesta = false;
+            if (modTiempoDefIMaxAct < minTDefIMax || modTiempoDefIMaxAct > maxTDefIMax) respuesta = false;
+            if (modRetardoAdicional < minRetAdic || modRetardoAdicional > maxRetAdic) respuesta = false;
+
+            return respuesta;
         }
 
         private bool HayModificacionOperacionGeneral(ARIX arix)
@@ -270,7 +584,7 @@ namespace SistemaGestionRedes
 
             if (listBoxModoOperacion.GetSelectedIndices()[0] != paramArix.modoOperacion) contador++;
             if (txtOpGeneral_porcentajeHisteresis.Text != paramArix.porcentajeHisteresisDisparo.ToString()) contador++;
-            if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) contador++;
+            //if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) contador++;
             int frecOperacion = paramArix.fciaOperacion ? 1 : 0;
             if (listBoxFrecOperacion.GetSelectedIndices()[0] != frecOperacion) contador++;
             if (chkBoxOpGeneral_habilitarInrush.Checked != paramArix.habilitarFuncionalidadInrush) contador++;
@@ -280,6 +594,8 @@ namespace SistemaGestionRedes
             if (txtOpGeneral_porcentaje2doArmonicoInrush.Text != paramArix.porcentaje2DoArmonicoInrush.ToString()) contador++;
             if (txtOpGeneral_tiempoDeValidacionInrush.Text != paramArix.tiempoDeValidacionInrush.ToString()) contador++;
             if (txtOpGeneral_tiempoSostenimientoInrush.Text != paramArix.tiempoSostenimientoInrush.ToString()) contador++;
+
+            txtOpGeneral_ciclosVerifResetDismCorrFalla.Text = paramArix.ciclosVerifResetDismCorrFalla.ToString();
 
             if (contador > 0)
             {
@@ -293,15 +609,19 @@ namespace SistemaGestionRedes
         {
             bool respuesta = false;
             int contador = 0;
+            const int MIL = 1000;
 
             var paramArix = arix.ParamARIX;
 
             if (txtOpReconectador_numRecierres.Text != paramArix.numRecierres.ToString()) contador++;
             if (txtOpReconectador_corrMaxAbsolutas.Text != paramArix.corrMaxAbsoluta.ToString()) contador++;
             if (txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text != paramArix.tiempoDefDisparoCorrMaxAbs.ToString()) contador++;
-            if (txtOpReconectador_resetTimeAfterLockout.Text != paramArix.resetTimeAfterLockout.ToString()) contador++;
-            if (txtOpReconectador_resetTimeLockout.Text != paramArix.resetTimeLockout.ToString()) contador++;
-            if (txtOpReconectador_corrMaxCapacidadRIX.Text != paramArix.corrMaxCapacidadRIX.ToString()) contador++;
+            if (txtOpReconectador_resetTimeAfterLockout.Text != (paramArix.resetTimeAfterLockout / MIL).ToString()) contador++;
+            //if (txtOpReconectador_resetTimeLockout.Text != paramArix.resetTimeLockout.ToString()) contador++;
+            //if (txtOpReconectador_corrMaxCapacidadRIX.Text != paramArix.corrMaxCapacidadRIX.ToString()) contador++;
+
+            txtOpReconectador_resetTimeLockout.Text = (paramArix.resetTimeLockout / MIL).ToString();
+            txtOpReconectador_corrMaxCapacidadRIX.Text = paramArix.corrMaxCapacidadRIX.ToString();
 
             if (contador > 0)
             {
@@ -352,7 +672,7 @@ namespace SistemaGestionRedes
 
             if (txtComunicacion_canalComunicacionRF.Text != paramArix.canalComunicacionRF.ToString()) contador++;
             if (txtComunicacion_codigoDeGrupo.Text != paramArix.codigoDelGrupo.ToString()) contador++;
-            if (txtComunicacion_canalRfEnMHz.Text != paramArix.canalRfEnMHz.ToString()) contador++;
+            //if (txtComunicacion_canalRfEnMHz.Text != paramArix.canalRfEnMHz.ToString()) contador++;
 
             if (contador > 0)
             {
@@ -526,7 +846,7 @@ namespace SistemaGestionRedes
 
             if (listBoxModoOperacion.GetSelectedIndices()[0] != paramArix.modoOperacion) paramArix.modoOperacion = listBoxModoOperacion.GetSelectedIndices()[0];
             if (txtOpGeneral_porcentajeHisteresis.Text != paramArix.porcentajeHisteresisDisparo.ToString()) paramArix.porcentajeHisteresisDisparo = Byte.Parse(txtOpGeneral_porcentajeHisteresis.Text);
-            if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) paramArix.ciclosVerifResetDismCorrFalla = Byte.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
+            //if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) paramArix.ciclosVerifResetDismCorrFalla = Byte.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
             int frecOperacion = paramArix.fciaOperacion ? 1 : 0;
             if (listBoxFrecOperacion.GetSelectedIndices()[0] != frecOperacion) paramArix.fciaOperacion = (listBoxFrecOperacion.GetSelectedIndices()[0] == 1);
             if (chkBoxOpGeneral_habilitarInrush.Checked != paramArix.habilitarFuncionalidadInrush) paramArix.habilitarFuncionalidadInrush = chkBoxOpGeneral_habilitarInrush.Checked;
@@ -550,8 +870,8 @@ namespace SistemaGestionRedes
             if (txtOpReconectador_corrMaxAbsolutas.Text != paramArix.corrMaxAbsoluta.ToString()) paramArix.corrMaxAbsoluta = short.Parse(txtOpReconectador_corrMaxAbsolutas.Text);
             if (txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text != paramArix.tiempoDefDisparoCorrMaxAbs.ToString()) paramArix.tiempoDefDisparoCorrMaxAbs = short.Parse(txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text);
             if (txtOpReconectador_resetTimeAfterLockout.Text != paramArix.resetTimeAfterLockout.ToString()) paramArix.resetTimeAfterLockout = short.Parse(txtOpReconectador_resetTimeAfterLockout.Text);
-            if (txtOpReconectador_resetTimeLockout.Text != paramArix.resetTimeLockout.ToString()) paramArix.resetTimeLockout = short.Parse(txtOpReconectador_resetTimeLockout.Text);
-            if (txtOpReconectador_corrMaxCapacidadRIX.Text != paramArix.corrMaxCapacidadRIX.ToString()) paramArix.corrMaxCapacidadRIX = short.Parse(txtOpReconectador_corrMaxCapacidadRIX.Text);
+            //if (txtOpReconectador_resetTimeLockout.Text != paramArix.resetTimeLockout.ToString()) paramArix.resetTimeLockout = short.Parse(txtOpReconectador_resetTimeLockout.Text);
+            //if (txtOpReconectador_corrMaxCapacidadRIX.Text != paramArix.corrMaxCapacidadRIX.ToString()) paramArix.corrMaxCapacidadRIX = short.Parse(txtOpReconectador_corrMaxCapacidadRIX.Text);
 
             arix.ParamARIX = paramArix;
 
@@ -564,12 +884,20 @@ namespace SistemaGestionRedes
 
             if (txtHardware_adcCargaLOWCapacitorDisparo.Text != paramArix.adcCargaLOWCapacitorDisparo.ToString()) paramArix.adcCargaLOWCapacitorDisparo = short.Parse(txtHardware_adcCargaLOWCapacitorDisparo.Text);
             if (txtHardware_adcCargaOKCapacitorDisparo.Text != paramArix.adcCargaOKCapacitorDisparo.ToString()) paramArix.adcCargaOKCapacitorDisparo = short.Parse(txtHardware_adcCargaOKCapacitorDisparo.Text);
-            if (txtHardware_adcCargaLOWFuenteBaja.Text != paramArix.adcCargaLOWFuenteBaja.ToString()) paramArix.adcCargaLOWFuenteBaja = short.Parse(txtHardware_adcCargaLOWFuenteBaja.Text);
-            if (txtHardware_adcCargaOKFuenteBaja.Text != paramArix.adcCargaOKFuenteBaja.ToString()) paramArix.adcCargaOKFuenteBaja = short.Parse(txtHardware_adcCargaOKFuenteBaja.Text);
+            if (txtHardware_adcCargaLOWFuenteBaja.Text != paramArix.adcCargaLOWFuenteBaja.ToString())
+            {
+                var cargaLOWFuenteBaja = decimal.Parse(txtHardware_adcCargaLOWFuenteBaja.Text);
+                paramArix.adcCargaLOWFuenteBaja = cargaLOWFuenteBaja;
+            }
+            if (txtHardware_adcCargaOKFuenteBaja.Text != paramArix.adcCargaOKFuenteBaja.ToString())
+            {
+                var cargaOkFuenteBaja = decimal.Parse(txtHardware_adcCargaOKFuenteBaja.Text);
+                paramArix.adcCargaOKFuenteBaja = cargaOkFuenteBaja;
+            }
             if (txtHardware_numOperacionesBotellaCercanoAlMax.Text !=
                 paramArix.numOperacionesBotellaCercanoAlMax.ToString()) paramArix.numOperacionesBotellaCercanoAlMax = short.Parse(txtHardware_numOperacionesBotellaCercanoAlMax.Text);
             if (txtHardware_numOperacionesBotellaLlegaAlMax.Text !=
-                paramArix.numOperacionesBotellaLlegaAlMax.ToString()) paramArix.numOperacionesBotellaLlegaAlMax  = short.Parse(txtHardware_numOperacionesBotellaLlegaAlMax.Text);
+                paramArix.numOperacionesBotellaLlegaAlMax.ToString()) paramArix.numOperacionesBotellaLlegaAlMax = short.Parse(txtHardware_numOperacionesBotellaLlegaAlMax.Text);
             if (txtHardware_porcentDesgasteBotellaCercanoAlMax.Text !=
                 paramArix.porcentDesgasteBotellaCercanoAlMax.ToString()) paramArix.porcentDesgasteBotellaCercanoAlMax = short.Parse(txtHardware_porcentDesgasteBotellaCercanoAlMax.Text);
             if (txtHardware_porcentDesgasteBotellaLlegaAlMax.Text !=
@@ -577,7 +905,7 @@ namespace SistemaGestionRedes
             if (txtHardware_adcCorrMinParaAutoalimentacion50Hz.Text !=
                 paramArix.adcCorrMinParaAutoalimentacion50Hz.ToString()) paramArix.adcCorrMinParaAutoalimentacion50Hz = short.Parse(txtHardware_adcCorrMinParaAutoalimentacion50Hz.Text);
             if (txtHardware_adcCorrMinParaAutoalimentacion60Hz.Text !=
-                paramArix.adcCorrMinParaAutoalimentacion60Hz.ToString()) paramArix.adcCorrMinParaAutoalimentacion60Hz  = short.Parse(txtHardware_adcCorrMinParaAutoalimentacion60Hz.Text);
+                paramArix.adcCorrMinParaAutoalimentacion60Hz.ToString()) paramArix.adcCorrMinParaAutoalimentacion60Hz = short.Parse(txtHardware_adcCorrMinParaAutoalimentacion60Hz.Text);
 
             arix.ParamARIX = paramArix;
 
@@ -601,9 +929,9 @@ namespace SistemaGestionRedes
         {
             var disparo1Arix = arix.ARIX_Disparos.ToList()[0];
             if (listBoxDisparo1_tipoOperacion.GetSelectedIndices()[0] != disparo1Arix.TipoOperacion) disparo1Arix.TipoOperacion = listBoxDisparo1_tipoOperacion.GetSelectedIndices()[0];
-            if (listBoxDisparo1_tipoReset.GetSelectedIndices()[0] != disparo1Arix.TipoReset) disparo1Arix.TipoReset = (byte) listBoxDisparo1_tipoReset.GetSelectedIndices()[0];
+            if (listBoxDisparo1_tipoReset.GetSelectedIndices()[0] != disparo1Arix.TipoReset) disparo1Arix.TipoReset = (byte)listBoxDisparo1_tipoReset.GetSelectedIndices()[0];
             if (checkDisparo1_habilitaModificadores.Checked != disparo1Arix.HabilitaModificadores) disparo1Arix.HabilitaModificadores = checkDisparo1_habilitaModificadores.Checked;
-            if (txtDisparo1_corrArranque.Text != disparo1Arix.CorrArranque.ToString()) disparo1Arix.CorrArranque =int.Parse(txtDisparo1_corrArranque.Text);
+            if (txtDisparo1_corrArranque.Text != disparo1Arix.CorrArranque.ToString()) disparo1Arix.CorrArranque = int.Parse(txtDisparo1_corrArranque.Text);
             if (txtDisparo1_modCorrMaxActuacion.Text != disparo1Arix.ModCorrMaxActuacion.ToString()) disparo1Arix.ModCorrMaxActuacion = int.Parse(txtDisparo1_modCorrMaxActuacion.Text);
             var modTd = txtDisparo1_modTd.Text.Replace(".", ",");
             if (modTd != disparo1Arix.ModTd.ToString()) disparo1Arix.ModTd = decimal.Parse(modTd);
