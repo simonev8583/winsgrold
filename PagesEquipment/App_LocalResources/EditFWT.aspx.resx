@@ -139,7 +139,7 @@
     <value>Nro. Max FCIs</value>
   </data>
   <data name="TextCantidadSIXs" xml:space="preserve">
-    <value>Nro. Max SIXs</value>
+    <value>Nro. Max SIXs / ARIXs</value>
   </data>
   <data name="TextDirIp" xml:space="preserve">
     <value>IP</value>
@@ -235,7 +235,7 @@
     <value>Los valores de password son distintos</value>
   </data>
   <data name="CusValMaxSixsMsgErr" xml:space="preserve">
-    <value>Cantidad de FCIs y SIXs no debe superar 9 equipos</value>
+    <value>Cantidad de FCIs y SIXs no debe superar 6 equipos</value>
   </data>
   <data name="lblEstadoActualizacionOnlineOtroSerial" xml:space="preserve">
     <value>Se recibió otro Serial  </value>

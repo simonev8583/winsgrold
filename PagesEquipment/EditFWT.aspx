@@ -9,6 +9,31 @@
     <title></title>
     <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+        function showContent(typeAnswer, message, messagePpal) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "preventDuplicates": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+            toastr[typeAnswer](message, messagePpal);
+
+        }
+    </script>
 
     <style type="text/css">
         .style3 {
@@ -1055,7 +1080,7 @@
                                 ForeColor="Red" SetFocusOnError="True" ValidationExpression="[0-9]{1,2}" ErrorMessage="<%$ Resources:RegExValQtySixMsgErr %>"
                                 ValidationGroup="edicionFWT">*</asp:RegularExpressionValidator>
                             &nbsp;<asp:RangeValidator ID="RanValQtySix" runat="server" ControlToValidate="txtNumeroMaximoSIX"
-                                ForeColor="Red" MaximumValue="9" MinimumValue="0" SetFocusOnError="True" Type="Integer"
+                                ForeColor="Red" MaximumValue="6" MinimumValue="0" SetFocusOnError="True" Type="Integer"
                                 ErrorMessage="<%$ Resources:RanValQtySixMsgErr %>"
                                 ValidationGroup="edicionFWT">*</asp:RangeValidator>
                             &nbsp;<asp:CustomValidator ID="CusValMaxSixs" runat="server"

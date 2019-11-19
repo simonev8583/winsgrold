@@ -1265,7 +1265,23 @@ namespace SistemaGestionRedes
                                     fwt.ParamFWT.NumeroMaximoFCIs = byte.Parse(txtNumeroMaximoFCI.Text);
                                     break;
                                 case "txtNumeroMaximoSIX":
-                                    fwt.ParamFWT.NumeroMaximoSIXs = byte.Parse(txtNumeroMaximoSIX.Text);
+                                    var listArixByFWT = bDatos.ARIXs.Where(x => x.FWTId == fwt.Id);
+                                    if(listArixByFWT.Count() > 0)
+                                    {
+                                        if(int.Parse(txtNumeroMaximoSIX.Text) <= 3 && int.Parse(txtNumeroMaximoSIX.Text) >= 0)
+                                        {
+                                            fwt.ParamFWT.NumeroMaximoSIXs = byte.Parse(txtNumeroMaximoSIX.Text);
+                                        }
+                                        else
+                                        {
+                                            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Se detectaron ARIX dentro del FWT, el máximo permitido son 3 ARIX', 'Número máximo SIX / ARIX');", true);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        fwt.ParamFWT.NumeroMaximoSIXs = byte.Parse(txtNumeroMaximoSIX.Text);
+                                    }
+                                    
                                     break;
                                 case "listBoxFCIsPropios":
                                     ActualizarFCIsParaConcentrador();
@@ -1890,7 +1906,7 @@ namespace SistemaGestionRedes
                     byte nroFcis = byte.Parse(txtNumeroMaximoFCI.Text);
                     byte nroSixs = byte.Parse(txtNumeroMaximoSIX.Text);
 
-                    if ((nroFcis + nroSixs) > 9)
+                    if ((nroFcis + nroSixs) > 6)
                     {
                         args.IsValid = false;
                     }

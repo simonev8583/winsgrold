@@ -10,6 +10,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <title></title>
 
 </head>
@@ -130,31 +133,31 @@
                             DataSourceID="sqlDSResultadosFechaUltimo">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="CorrActuacionAperturaMax"
+                                <asp:BoundField DataField="CorrActuacionAperturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionAperturaMax %>"
                                     SortExpression="CorrActuacionAperturaMax" Visible="True" />
-                                <asp:BoundField DataField="CorrActuacionCierreMax"
+                                <asp:BoundField DataField="CorrActuacionCierreMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionCierreMax %>"
                                                 SortExpression="CorrActuacionCierreMax" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionAperturaMax"
+                                <asp:BoundField DataField="TiempoActuacionAperturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionAperturaMax %>"
                                                 SortExpression="TiempoActuacionAperturaMax" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionCierreMax"
+                                <asp:BoundField DataField="TiempoActuacionCierreMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionCierreMax %>"
                                                 SortExpression="TiempoActuacionCierreMax" Visible="True" />
-                                <asp:BoundField DataField="TemperaturaMax"
+                                <asp:BoundField DataField="TemperaturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMax %>"
                                                 SortExpression="TemperaturaMax" Visible="True" />
-                                <asp:BoundField DataField="TemperaturaMin"
+                                <asp:BoundField DataField="TemperaturaMin" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMin %>"
                                                 SortExpression="TemperaturaMin" Visible="True" />
-                                <asp:BoundField DataField="VelActuacionAperturaMax"
+                                <asp:BoundField DataField="VelActuacionAperturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionAperturaMax %>"
                                                 SortExpression="VelActuacionAperturaMax" Visible="True" />
-                                <asp:BoundField DataField="VelActuacionCierreMax"
+                                <asp:BoundField DataField="VelActuacionCierreMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionCierreMax %>"
                                                 SortExpression="VelActuacionCierreMax" Visible="True" />
-                                <asp:BoundField DataField="DesplazamientoContactosMax"
+                                <asp:BoundField DataField="DesplazamientoContactosMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                                 HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosMax %>"
                                                 SortExpression="DesplazamientoContactosMax" Visible="True" />
                             </Columns>
@@ -193,43 +196,43 @@
                                         <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="VoltActualCapDisparo"
+                                <asp:BoundField DataField="VoltActualCapDisparo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoVoltActualCapDisparo %>"
                                     SortExpression="VoltActualCapDisparo" Visible="True" />
-                                <asp:BoundField DataField="VoltActualSuperCapacitor"
+                                <asp:BoundField DataField="VoltActualSuperCapacitor" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoVoltActualSuperCapacitor %>"
                                     SortExpression="VoltActualSuperCapacitor" Visible="True" />
-                                <asp:BoundField DataField="TemperaturaActual"
+                                <asp:BoundField DataField="TemperaturaActual" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaActual %>"
                                     SortExpression="TemperaturaActual" Visible="True" />
-                                <asp:BoundField DataField="FrecuenciaActual"
+                                <asp:BoundField DataField="FrecuenciaActual" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActual %>" SortExpression="FrecuenciaActual"
                                     Visible="True" />
-                                <asp:BoundField DataField="AdcTension"
+                                <asp:BoundField DataField="AdcTension" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoAdcTension %>" SortExpression="AdcTension"
                                     Visible="True" />
-                                <asp:BoundField DataField="FrecuenciaActualSenalVoltaje"
+                                <asp:BoundField DataField="FrecuenciaActualSenalVoltaje" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActualSenalVoltaje %>" SortExpression="FrecuenciaActualSenalVoltaje"
                                     Visible="True" />
-                                <asp:BoundField DataField="CorrActuacionAperturaUltima"
+                                <asp:BoundField DataField="CorrActuacionAperturaUltima" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionAperturaUltima %>"
                                     SortExpression="CorrActuacionAperturaUltima" Visible="True" />
-                                <asp:BoundField DataField="CorrActuacionCierreUltimo"
+                                <asp:BoundField DataField="CorrActuacionCierreUltimo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionCierreUltimo %>"
                                     SortExpression="CorrActuacionCierreUltimo" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionAperturaUltima"
+                                <asp:BoundField DataField="TiempoActuacionAperturaUltima" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionAperturaUltima %>"
                                     SortExpression="TiempoActuacionAperturaUltima" Visible="True" />
-                                <asp:BoundField DataField="TiempoActuacionCierreUltimo"
+                                <asp:BoundField DataField="TiempoActuacionCierreUltimo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionCierreUltimo %>"
                                     SortExpression="TiempoActuacionCierreUltimo" Visible="True" />
-                                <asp:BoundField DataField="VelActuacionAperturaUltima"
+                                <asp:BoundField DataField="VelActuacionAperturaUltima" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionAperturaUltima %>" SortExpression="VelActuacionAperturaUltima"
                                     Visible="True" />
-                                <asp:BoundField DataField="VelActuacionCierreUltimo"
+                                <asp:BoundField DataField="VelActuacionCierreUltimo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionCierreUltimo %>" SortExpression="VelActuacionCierreUltimo"
                                     Visible="True" />
-                                <asp:BoundField DataField="DesplazamientoContactosUltimo"
+                                <asp:BoundField DataField="DesplazamientoContactosUltimo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosUltimo %>" SortExpression="DesplazamientoContactosUltimo"
                                     Visible="True" />
 
@@ -325,7 +328,7 @@
             <asp:SqlDataSource ID="sqlDSResultadosFecha" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="SELECT info.Id
-      ,[VoltActualCapDisparo]
+	  , CONVERT(DECIMAL(16,2), [VoltActualCapDisparo]/10.0) as [VoltActualCapDisparo]
       ,[VoltActualSuperCapacitor] 
       ,[CorrActuacionAperturaMax]
       ,[CorrActuacionAperturaUltima]
@@ -364,7 +367,7 @@ ORDER BY info.Fecha DESC">
             <asp:SqlDataSource ID="sqlDSResultadosConSix" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="SELECT info.Id
-      ,[VoltActualCapDisparo]
+      , CONVERT(DECIMAL(16,2), [VoltActualCapDisparo]/10.0) as [VoltActualCapDisparo]
       ,[VoltActualSuperCapacitor]
       ,[CorrActuacionAperturaMax]
       ,[CorrActuacionAperturaUltima]

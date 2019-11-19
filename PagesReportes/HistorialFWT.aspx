@@ -8,6 +8,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <title></title>
 
     <script language="javascript" type="text/javascript">
