@@ -2299,26 +2299,29 @@ namespace SistemaGestionRedes
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
 
-                LabelApertura.Visible = true;
+                //LabelApertura.Visible = true;
                 bool isOpen = RealizarComunicacionMessageQueueOnline(ComandosUsuario.OpenARIX, null, idArix);
 
                 if (isOpen)
                 {
                     if (stateArix == 0)
                     {
-                        LabelCerrado.Text = "ARIX se encuentra abierto";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "ARIX se encuentra abierto";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','ARIX se encuentra abierto', 'Abrir ARIX');", true);
                     }
                     else if(stateArix == 1)
                     {
-                        LabelApertura.Text = "ARIX abierto con éxito";
-                        LabelCerrado.Text = "";
+                        //LabelApertura.Text = "ARIX abierto con éxito";
+                        //LabelCerrado.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','ARIX abierto con éxito', 'Abrir ARIX');", true);
                     } 
                 }
                 else
                 {
-                    LabelApertura.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
-                    LabelCerrado.Text = "";
+                    //LabelApertura.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
+                    //LabelCerrado.Text = "";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Abrir ARIX');", true);
                 }
 
                 //ListArixByFwt.DataBind();
@@ -2327,7 +2330,7 @@ namespace SistemaGestionRedes
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
 
-                LabelCerrado.Visible = true;
+                //LabelCerrado.Visible = true;
                 bool isClose = RealizarComunicacionMessageQueueOnline(ComandosUsuario.CloseARIX, null, idArix);
 
                 if (isClose)
@@ -2335,26 +2338,30 @@ namespace SistemaGestionRedes
                     
                     if(stateArix == 0)
                     {
-                        LabelCerrado.Text = "ARIX se encuentra cerrado";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "ARIX se encuentra cerrado";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','ARIX se encuentra cerrado', 'Cerrar ARIX');", true);
                     }
                     else if(stateArix == 1)
                     {
-                        LabelCerrado.Text = "ARIX cerrado con éxito";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "ARIX cerrado con éxito";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','ARIX cerrado con éxito', 'Cerrar ARIX');", true);
                     }
                 }
                 else
                 {
                     if (stateArix == -1)
                     {
-                        LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Abrir ARIX');", true);
                     }
                     else if (stateArix == -2)
                     {
-                        LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Abrir ARIX');", true);
                     }
                 }
             }
@@ -2366,31 +2373,36 @@ namespace SistemaGestionRedes
                 {
                     if (stateArix == -1)
                     {
-                        LabelApertura.Text = "";
-                        LabelCerrado.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
+                        //LabelApertura.Text = "";
+                        //LabelCerrado.Text = "Fallo en el envío, intentar de nuevo para verificar estado";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Fallo en el envío, intentar de nuevo para verificar estado', 'Consultar estado ARIX');", true);
                     }
                     else if (stateArix == 1)
                     {
-                        LabelCerrado.Text = "ARIX se encuentra cerrado";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "ARIX se encuentra cerrado";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','ARIX se encuentra cerrado', 'Consultar estado ARIX');", true);
                     }
                     else if (stateArix == 0)
                     {
-                        LabelApertura.Text = "";
-                        LabelCerrado.Text = "ARIX se encuentra abierto";
+                        //LabelApertura.Text = "";
+                        //LabelCerrado.Text = "ARIX se encuentra abierto";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','ARIX se encuentra abierto', 'Consultar estado ARIX');", true);
                     }
                 }
                 else
                 {
                     if (stateArix == -1)
                     {
-                        LabelCerrado.Text = "Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado', 'Abrir ARIX');", true);
                     }
                     else if (stateArix == -2)
                     {
-                        LabelCerrado.Text = "Error al ejecutar el comando de validación, click en botón validar estado";
-                        LabelApertura.Text = "";
+                        //LabelCerrado.Text = "Error al ejecutar el comando de validación, click en botón validar estado";
+                        //LabelApertura.Text = "";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de validación, click en botón validar estado', 'Abrir ARIX');", true);
                     }
                 }
             }
@@ -2400,13 +2412,15 @@ namespace SistemaGestionRedes
                 bool isReset = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ResetArix, null, idArix);
                 if (isReset)
                 {
-                    LabelCerrado.Text = "Se reinició el ARIX correctamente.";
-                    LabelApertura.Text = "";
+                    //LabelCerrado.Text = "Se reinició el ARIX correctamente.";
+                    //LabelApertura.Text = "";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Se reinició el ARIX correctamente.', 'Reiniciar ARIX');", true);
                 }
                 else
                 {
-                    LabelCerrado.Text = "Fallo el reinicio del ARIX, favor intente de nuevo.";
-                    LabelApertura.Text = "";
+                    //LabelCerrado.Text = "Fallo el reinicio del ARIX, favor intente de nuevo.";
+                    //LabelApertura.Text = "";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Fallo el reinicio del ARIX, favor intente de nuevo.', 'Reiniciar ARIX');", true);
                 }
             }
             else if (e.CommandName.Equals("PREGUNTARELOJ"))
@@ -2415,13 +2429,16 @@ namespace SistemaGestionRedes
                 bool isAskClock = RealizarComunicacionMessageQueueOnline(ComandosUsuario.AskClockArix, null, idArix);
                 if (isAskClock)
                 {
-                    LabelCerrado.Text = "Fecha y hora actual del ARIX: " + dataClock;
-                    LabelApertura.Text = "";
+                    //LabelCerrado.Text = "Fecha y hora actual del ARIX: " + dataClock;
+                    //LabelApertura.Text = "";
+                    string mensaje = "Fecha y hora actual del ARIX: " + dataClock;
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", $"showContent('success','Fecha y hora actual del ARIX: {dataClock}' , 'Fecha y hora ARIX');", true);
                 }
                 else
                 {
-                    LabelCerrado.Text = "Fallo la consulta de hora del ARIX, favor intente de nuevo.";
-                    LabelApertura.Text = "";
+                    //LabelCerrado.Text = "Fallo la consulta de hora del ARIX, favor intente de nuevo.";
+                    //LabelApertura.Text = "";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Fallo la consulta de hora del ARIX, favor intente de nuevo.', 'Fecha y hora ARIX');", true);
                 }
             }
             else if (e.CommandName.Equals("ACTUALIZARELOJ"))
@@ -2430,13 +2447,15 @@ namespace SistemaGestionRedes
                 bool isAskClock = RealizarComunicacionMessageQueueOnline(ComandosUsuario.SincClockArix, null, idArix);
                 if (isAskClock)
                 {
-                    LabelCerrado.Text = "Se actualizó la fecha y hora del ARIX ";
-                    LabelApertura.Text = "";
+                    //LabelCerrado.Text = "Se actualizó la fecha y hora del ARIX ";
+                    //LabelApertura.Text = "";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Se actualizó la fecha y hora del ARIX', 'Actualizar fecha y hora ARIX');", true);
                 }
                 else
                 {
-                    LabelCerrado.Text = "Fallo la actualización de hora del ARIX, favor intente de nuevo.";
-                    LabelApertura.Text = "";
+                    //LabelCerrado.Text = "Fallo la actualización de hora del ARIX, favor intente de nuevo.";
+                    //LabelApertura.Text = "";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Fallo la actualización de hora del ARIX, favor intente de nuevo.', 'Actualizar fecha y hora ARIX');", true);
                 }
             }
         }
