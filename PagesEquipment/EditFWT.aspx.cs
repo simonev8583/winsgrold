@@ -2355,13 +2355,13 @@ namespace SistemaGestionRedes
                     {
                         //LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
                         //LabelApertura.Text = "";
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Abrir ARIX');", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Cerrar ARIX');", true);
                     }
                     else if (stateArix == -2)
                     {
                         //LabelCerrado.Text = "El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando";
                         //LabelApertura.Text = "";
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Abrir ARIX');", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','El FWT no respondío de forma esperada. favor consulte el estado del ARIX o vuelva a ejecutar el comando', 'Cerrar ARIX');", true);
                     }
                 }
             }
@@ -2396,13 +2396,13 @@ namespace SistemaGestionRedes
                     {
                         //LabelCerrado.Text = "Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado";
                         //LabelApertura.Text = "";
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado', 'Abrir ARIX');", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado', 'Consultar estado ARIX');", true);
                     }
                     else if (stateArix == -2)
                     {
                         //LabelCerrado.Text = "Error al ejecutar el comando de validación, click en botón validar estado";
                         //LabelApertura.Text = "";
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de validación, click en botón validar estado', 'Abrir ARIX');", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de validación, click en botón validar estado', 'Consultar estado ARIX');", true);
                     }
                 }
             }

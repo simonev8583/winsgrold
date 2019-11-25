@@ -569,15 +569,15 @@
 
                 <br />
                 <section class="col-md-12 row">
-                    <div class="card bg-light col-md-4 text-black  centerDiv" style="background: #F8F9FA; text-align: right; padding: 0px 15px; border-bottom: 0px; border-right: 0px; border-left: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
+                    <div class="card bg-light col-md-3 text-black  centerDiv" style="background: #F8F9FA; text-align: right; padding: 0px 15px; border-bottom: 0px; border-right: 0px; border-left: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
                         <div class="card bg-light  text-black centerDiv" style="border-bottom: 0px; border-right: 0px; border-left: 0px;">
                             <div class="card-header" align="center">
                                 <font><strong>
                                 <asp:Literal ID="Literal8" Text="<%$ Resources:TextTittleUbicacion %>" runat="server"></asp:Literal></strong></font>
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <asp:Label ID="Label8" runat="server" Text="<%$ Resources:TextosGlobales,TextoCalleKra %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label8" runat="server" Text="<%$ Resources:TextosGlobales,TextoCalleKra %>" CssClass="col-form-label col-sm-3"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtCalle"
                                         CssClass="form-control" Height="30px" Width="80px"></asp:TextBox>
@@ -586,8 +586,8 @@
                             ForeColor="Red" SetFocusOnError="True" ErrorMessage="<%$ Resources:ReqValCalleMsgErr %>"
                             ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label9" runat="server" Text="<%$ Resources:TextosGlobales,TextoNumeroDireccion %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label9" runat="server" Text="<%$ Resources:TextosGlobales,TextoNumeroDireccion %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtNumero"
                                         CssClass="form-control" Height="30px" Width="80px"></asp:TextBox>
@@ -596,16 +596,16 @@
                             ForeColor="Red" SetFocusOnError="True"
                             ErrorMessage="<%$ Resources:ReqValNumeroMsgErr %>" ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label13" runat="server" Text="<%$ Resources:TextosGlobales,TextoLatitud %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label13" runat="server" Text="<%$ Resources:TextosGlobales,TextoLatitud %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtLatitud" CssClass="form-control"
-                                        MaxLength="6" Height="30px" Width="80px"></asp:TextBox>°
+                                        MaxLength="6" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label14" runat="server" Text="<%$ Resources:TextosGlobales,TextoLongitud %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label14" runat="server" Text="<%$ Resources:TextosGlobales,TextoLongitud %>" CssClass="col-form-label col-sm-4"></asp:Label>
                                     <asp:TextBox runat="server" ID="txtLongitud"
-                                        CssClass="form-control" MaxLength="6" Height="30px" Width="80px"></asp:TextBox>°
+                                        CssClass="form-control" MaxLength="6" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
                                 <div class="form-group row">
                                     <asp:Label ID="Label54" runat="server" Text="<%$ Resources:TextosGlobales,TextCiudad %>"
@@ -616,14 +616,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card bg-light  text-black  centerDiv" style="border-bottom: 0px; border-right: 0px;  border-left: 0px;">
+                        <div class="card bg-light  text-black  centerDiv" style="border-bottom: 0px; border-right: 0px; border-left: 0px;">
                             <div class="card-header" align="center">
                                 <font><strong>
                                 <asp:Literal ID="Literal5" Text="<%$ Resources:TextGestionElectrica %>" runat="server"></asp:Literal></strong></font>
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <asp:Label ID="Label11" runat="server" Text="<%$ Resources:TextosGlobales,TextoCircuito %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label11" runat="server" Text="<%$ Resources:TextosGlobales,TextoCircuito %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtCircuito"
                                         CssClass="form-control" Height="30px" Width="80px"></asp:TextBox>
@@ -631,9 +631,9 @@
                                         ForeColor="Red" SetFocusOnError="True" ErrorMessage="<%$ Resources:ReqValCircuitoMsgErr %>"
                                         ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group row">
                                     <asp:Label ID="Label12" runat="server" Text="<%$ Resources:TextosGlobales,TextoSeccionTramo %>"
-                                        CssClass="col-form-label col-sm-2"></asp:Label>
+                                        CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtTramo"
                                         CssClass="form-control" Height="30px" Width="80px"></asp:TextBox>
@@ -641,14 +641,14 @@
                                         ForeColor="Red" SetFocusOnError="True" ErrorMessage="<%$ Resources:ReqValTramoMsgErr %>"
                                         ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label72" runat="server" Text="<%$ Resources:TextosGlobales,TextoNodo %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label72" runat="server" Text="<%$ Resources:TextosGlobales,TextoNodo %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtNodo"
                                         CssClass="form-control" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label74" runat="server" Text="<%$ Resources:TextosGlobales,TextoCodigoFWT %>" CssClass="col-form-label col-sm-2"></asp:Label>
+                                <div class="form-group row">
+                                    <asp:Label ID="Label74" runat="server" Text="<%$ Resources:TextosGlobales,TextoCodigoFWT %>" CssClass="col-form-label col-sm-5"></asp:Label>
 
                                     <asp:TextBox ID="txtCodigoCorporativo" runat="server" CssClass="form-control"
                                         MaxLength="50" Height="30px" Width="80px"></asp:TextBox>
@@ -665,7 +665,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card bg-light col-md-8 text-black  centerDiv" style="border-bottom: 0px solid rgba(0,0,0,.125);">
+                    <div class="card bg-light col-md-9 text-black  centerDiv" style="border-bottom: 0px solid rgba(0,0,0,.125);">
                         <div class="card-header" align="center">
                             <font><strong>
                                 <asp:Literal ID="Literal7" Text="<%$ Resources:TextTittleConectividad %>" runat="server"></asp:Literal></strong></font>
@@ -716,7 +716,7 @@
                                     <asp:Label ID="Label76" runat="server" Text="<%$ Resources:TextDirIpAlternativa %>"
                                         CssClass="col-form-label col-sm-2"></asp:Label>
                                     <asp:TextBox ID="txtIpGestionAlternativa" runat="server" CssClass="form-control"
-                                        MaxLength="15" OnTextChanged="TextBox_TextChanged" Height="30px" Width="80px" ToolTip="<%$ Resources:ToolTipGestionAlternativa %>"></asp:TextBox>
+                                        MaxLength="15" OnTextChanged="TextBox_TextChanged" Height="30px" Width="120px" ToolTip="<%$ Resources:ToolTipGestionAlternativa %>"></asp:TextBox>
 
                                     &nbsp;<asp:RegularExpressionValidator ID="RegExValIPGestionAlternativa" runat="server"
                                         ControlToValidate="txtIpGestionAlternativa" ErrorMessage="<%$ Resources:RegExValIPGestionMsgErr1 %>"
@@ -724,9 +724,9 @@
                                         ValidationExpression="\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"
                                         ValidationGroup="edicionFWT">*</asp:RegularExpressionValidator>&nbsp;
                                 </div>
-                                                               
+
                             </div>
-                            <div class="form-group row">                                
+                            <div class="form-group row">
                                 <div class="col-md-4">
                                     <asp:Label ID="Label4" runat="server" Text="<%$ Resources:TextPuertoAlternativo %>"
                                         CssClass="col-form-label col-sm-2"></asp:Label>
@@ -741,13 +741,13 @@
                                 <div class="col-md-4">
                                     <asp:Label ID="Label19" runat="server" Text="APN" CssClass="col-form-label col-sm-2"></asp:Label>
                                     <asp:TextBox ID="txtAPN" runat="server" CssClass="form-control"
-                                        OnTextChanged="TextBox_TextChanged" Height="30px" Width="200px"></asp:TextBox>
+                                        OnTextChanged="TextBox_TextChanged" Height="30px" Width="160px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="ReqValAPN" runat="server"
                                         ControlToValidate="txtAPN" ErrorMessage="<%$ Resources:ReqValAPNMsgErr %>" ForeColor="Red"
                                         SetFocusOnError="True" ValidationGroup="edicionFWT">*</asp:RequiredFieldValidator>
                                 </div>
-                                
-                            </div>                            
+
+                            </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     <asp:Label ID="Label21" runat="server" Text="Password" CssClass="col-form-label col-sm-2"></asp:Label>
@@ -774,7 +774,7 @@
                                         <asp:ListItem Value="4">GSM850_PCS_MODE</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                                
+
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
@@ -851,7 +851,7 @@
                                         ForeColor="Red" MaximumValue="520" MinimumValue="1" SetFocusOnError="True"
                                         ErrorMessage="<%$ Resources:RanValtxtTiempoEsperaPaqueteDeSGRMsgErr %>"
                                         ValidationGroup="edicionFWT" Type="Integer">*</asp:RangeValidator>
-                                </div>                                 
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
@@ -859,6 +859,7 @@
                                         Text="<%$ Resources:TextPeriodoReporte %>" CssClass="col-form-label col-sm-2"></asp:Label>
                                     <asp:TextBox ID="txtPeriodoReporteSeg" runat="server" CssClass="form-control"
                                         MaxLength="5" OnTextChanged="TextBox_TextChanged" Height="30px" Width="80px"></asp:TextBox>
+                                    <br />
                                     <asp:Label ID="Label53" runat="server" Font-Size="12px" Text="(60-86400)s"
                                         CssClass="col-form-label col-sm-2" Style="bottom: 15px; color: #808080"></asp:Label>
                                     &nbsp;<asp:RequiredFieldValidator ID="ReqValtxtPeriodoReporteSeg" runat="server"
@@ -914,7 +915,7 @@
                                     &nbsp;<asp:RangeValidator ID="RanValCanal" runat="server" ControlToValidate="txtCanalRF"
                                         ForeColor="Red" MaximumValue="9" MinimumValue="0" SetFocusOnError="True" Type="Integer"
                                         ErrorMessage="<%$ Resources:RanValCanalMsgErr %>" ValidationGroup="edicionFWT">*</asp:RangeValidator>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-4">
@@ -1028,7 +1029,7 @@
                     </div>
                 </section>
                 <br />
-                <section class="col-md-12 row">                    
+                <section class="col-md-12 row">
                     <div class="card bg-light  text-black col-md-4 centerDiv">
                         <div class="card-header" align="center">
                             <font><strong>
