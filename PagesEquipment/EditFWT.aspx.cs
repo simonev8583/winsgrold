@@ -2034,12 +2034,14 @@ namespace SistemaGestionRedes
                     {
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
                         GVEquiposRemotos.DataBind();
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Pronto se inicia la actualización.', 'Activar actualización FCI');", true);
                     }
                     //Identificar si el serial del dispositivo pertenece a un SIX 
                     else if (serialDevRT.Substring(0, 1).Equals("C"))
                     {
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
                         GVEquiposRemotos.DataBind();
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Pronto se inicia la actualización.', 'Activar actualización SIX');", true);
                     }
                     //Identificar si el serial del dispositivo pertenece a un ARIX 
                     else if (serialDevRT.Substring(0, 2).Equals("RI"))
@@ -2047,6 +2049,7 @@ namespace SistemaGestionRedes
                         //Crear servicio en cosoft que soporte la actualización del ARIX
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT_ARIX(serialDevRT);
                         GVEquiposRemotos.DataBind();
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Si el ARIX cuenta con más de 4.5v en el supercapacitor, se inicia la actualización.', 'Activar actualización ARIX');", true);
                     }
                 }
             }
@@ -2096,6 +2099,7 @@ namespace SistemaGestionRedes
                             db.SaveChanges();
                         }
                         GVEquiposRemotos.DataBind();
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Se habilitó de nuevo el botón para intentar de nuevo la actualización.', 'Cancelar actualización ARIX');", true);
                     }
                 }
             }

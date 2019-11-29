@@ -576,7 +576,7 @@
                                 <asp:Literal ID="Literal8" Text="<%$ Resources:TextTittleUbicacion %>" runat="server"></asp:Literal></strong></font>
                             </div>
                             <div class="card-body">
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label8" runat="server" Text="<%$ Resources:TextosGlobales,TextoCalleKra %>" CssClass="col-form-label col-sm-3"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtCalle"
@@ -586,7 +586,7 @@
                             ForeColor="Red" SetFocusOnError="True" ErrorMessage="<%$ Resources:ReqValCalleMsgErr %>"
                             ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label9" runat="server" Text="<%$ Resources:TextosGlobales,TextoNumeroDireccion %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtNumero"
@@ -596,18 +596,18 @@
                             ForeColor="Red" SetFocusOnError="True"
                             ErrorMessage="<%$ Resources:ReqValNumeroMsgErr %>" ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label13" runat="server" Text="<%$ Resources:TextosGlobales,TextoLatitud %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtLatitud" CssClass="form-control"
                                         MaxLength="6" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label14" runat="server" Text="<%$ Resources:TextosGlobales,TextoLongitud %>" CssClass="col-form-label col-sm-4"></asp:Label>
                                     <asp:TextBox runat="server" ID="txtLongitud"
                                         CssClass="form-control" MaxLength="6" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label54" runat="server" Text="<%$ Resources:TextosGlobales,TextCiudad %>"
                                         CssClass="col-form-label col-sm-4"></asp:Label>
                                     <asp:DropDownList ID="txtCiudad" runat="server" Width="120px"
@@ -622,7 +622,7 @@
                                 <asp:Literal ID="Literal5" Text="<%$ Resources:TextGestionElectrica %>" runat="server"></asp:Literal></strong></font>
                             </div>
                             <div class="card-body">
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label11" runat="server" Text="<%$ Resources:TextosGlobales,TextoCircuito %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtCircuito"
@@ -631,7 +631,7 @@
                                         ForeColor="Red" SetFocusOnError="True" ErrorMessage="<%$ Resources:ReqValCircuitoMsgErr %>"
                                         ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label12" runat="server" Text="<%$ Resources:TextosGlobales,TextoSeccionTramo %>"
                                         CssClass="col-form-label col-sm-4"></asp:Label>
 
@@ -641,21 +641,21 @@
                                         ForeColor="Red" SetFocusOnError="True" ErrorMessage="<%$ Resources:ReqValTramoMsgErr %>"
                                         ValidationGroup="datosBasicos">*</asp:RequiredFieldValidator>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label72" runat="server" Text="<%$ Resources:TextosGlobales,TextoNodo %>" CssClass="col-form-label col-sm-4"></asp:Label>
 
                                     <asp:TextBox runat="server" ID="txtNodo"
                                         CssClass="form-control" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left">
                                     <asp:Label ID="Label74" runat="server" Text="<%$ Resources:TextosGlobales,TextoCodigoFWT %>" CssClass="col-form-label col-sm-5"></asp:Label>
 
                                     <asp:TextBox ID="txtCodigoCorporativo" runat="server" CssClass="form-control"
                                         MaxLength="50" Height="30px" Width="80px"></asp:TextBox>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group pull-left row">
                                     <asp:Label ID="Label10" runat="server" Text="<%$ Resources:TextosGlobales,TextoSubestacion %>"
-                                        CssClass="col-form-label col-sm-5"></asp:Label>
+                                        CssClass="col-form-label"></asp:Label>
                                     <asp:TextBox runat="server" ID="txtSubEstacion" Height="30px"
                                         CssClass="form-control col-sm-7" TextMode="MultiLine"></asp:TextBox>
                                     &nbsp;<asp:RequiredFieldValidator ID="ReqValSubEsta" runat="server" ControlToValidate="txtSubEstacion"

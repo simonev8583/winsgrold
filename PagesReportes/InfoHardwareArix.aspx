@@ -256,7 +256,7 @@
                         <br />
                         <RK:ExportToExcel ID="ExportToExcel1" runat="server" ApplyStyleInExcel="True"
                             Charset="utf-8" ContentEncoding="windows-1250" CssClass="TextBoton"
-                            EnableHyperLinks="True" ExportFileName="Infohardware.xls"
+                            EnableHyperLinks="True" ExportFileName="Infohardware.xls" GridViewID="gvResultados"
                             IncludeTimeStamp="True" PageSize="All" Text="<%$ Resources:TextosGlobales,TextBotonExpoExcel %>" />
                         &nbsp;<asp:Button ID="btnGraficar" runat="server" CssClass="TextBoton"
                             OnClick="btnGraficar_Click" Text="<%$ Resources:TextBotonGraficar%>"
