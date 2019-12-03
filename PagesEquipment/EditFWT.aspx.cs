@@ -264,14 +264,14 @@ namespace SistemaGestionRedes
                                 }
                                 else
                                 {
-                                    if (lblPrivateTypeDeviceForDelete.Text.Substring(0,2).Equals("RI"))
+                                    if (lblPrivateTypeDeviceForDelete.Text.Substring(0, 2).Equals("RI"))
                                     {
                                         lblMsgErrSeleccionFCIClear.Text = (string)this.GetLocalResourceObject("lblMsgErrSeleccionFCIClearBorradoOk"); //"Borrado permanente de Dispositivo exitoso";
 
-                                        using(var db = new SistemaGestionRemotoContainer())
+                                        using (var db = new SistemaGestionRemotoContainer())
                                         {
                                             ARIX arix = db.ARIXs.SingleOrDefault(x => x.Serial == lblPrivateTypeDeviceForDelete.Text);
-                                            if(arix != null)
+                                            if (arix != null)
                                             {
                                                 arix.FWTId = null;
                                                 db.SaveChanges();
@@ -285,7 +285,7 @@ namespace SistemaGestionRedes
                                         //lblEstadoActualizacionOnline.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
                                         lblMsgErrSeleccionFCIClear.Text = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
                                     }
-                                    
+
                                 }
                                 break;
 
@@ -337,7 +337,7 @@ namespace SistemaGestionRedes
                                     stateArix = 1;
                                     exito = true;
                                 }
-                                else if(respuesta == RespuestasSvrCom.ErrorSendingRequest)
+                                else if (respuesta == RespuestasSvrCom.ErrorSendingRequest)
                                 {
                                     /*Ya estaba Abierto*/
                                     stateArix = 0;
@@ -1266,9 +1266,9 @@ namespace SistemaGestionRedes
                                     break;
                                 case "txtNumeroMaximoSIX":
                                     var listArixByFWT = bDatos.ARIXs.Where(x => x.FWTId == fwt.Id);
-                                    if(listArixByFWT.Count() > 0)
+                                    if (listArixByFWT.Count() > 0)
                                     {
-                                        if(int.Parse(txtNumeroMaximoSIX.Text) <= 3 && int.Parse(txtNumeroMaximoSIX.Text) >= 0)
+                                        if (int.Parse(txtNumeroMaximoSIX.Text) <= 3 && int.Parse(txtNumeroMaximoSIX.Text) >= 0)
                                         {
                                             fwt.ParamFWT.NumeroMaximoSIXs = byte.Parse(txtNumeroMaximoSIX.Text);
                                         }
@@ -1281,7 +1281,7 @@ namespace SistemaGestionRedes
                                     {
                                         fwt.ParamFWT.NumeroMaximoSIXs = byte.Parse(txtNumeroMaximoSIX.Text);
                                     }
-                                    
+
                                     break;
                                 case "listBoxFCIsPropios":
                                     ActualizarFCIsParaConcentrador();
@@ -2049,7 +2049,7 @@ namespace SistemaGestionRedes
                         //Crear servicio en cosoft que soporte la actualización del ARIX
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT_ARIX(serialDevRT);
                         GVEquiposRemotos.DataBind();
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Si el ARIX cuenta con más de 4.5v en el supercapacitor, se inicia la actualización.', 'Activar actualización ARIX');", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Si el ARIX cuenta con más de 4.0v en el supercapacitor, se inicia la actualización.', 'Activar actualización ARIX');", true);
                     }
                 }
             }
@@ -2314,12 +2314,12 @@ namespace SistemaGestionRedes
                         //LabelApertura.Text = "";
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','ARIX se encuentra abierto', 'Abrir ARIX');", true);
                     }
-                    else if(stateArix == 1)
+                    else if (stateArix == 1)
                     {
                         //LabelApertura.Text = "ARIX abierto con éxito";
                         //LabelCerrado.Text = "";
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','ARIX abierto con éxito', 'Abrir ARIX');", true);
-                    } 
+                    }
                 }
                 else
                 {
@@ -2339,14 +2339,14 @@ namespace SistemaGestionRedes
 
                 if (isClose)
                 {
-                    
-                    if(stateArix == 0)
+
+                    if (stateArix == 0)
                     {
                         //LabelCerrado.Text = "ARIX se encuentra cerrado";
                         //LabelApertura.Text = "";
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','ARIX se encuentra cerrado', 'Cerrar ARIX');", true);
                     }
-                    else if(stateArix == 1)
+                    else if (stateArix == 1)
                     {
                         //LabelCerrado.Text = "ARIX cerrado con éxito";
                         //LabelApertura.Text = "";
@@ -2465,5 +2465,55 @@ namespace SistemaGestionRedes
         }
 
         #endregion
+        /*CAMBIAR NOMBRE DEL TICK => ESTE TICK REFRESCA EL ESTADO DEL FWT 
+         ENCENDIDO O APAGADO
+             */
+        #region TimerFwtOnline
+        protected void tmrComAct_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(lblId.Text);
+                using (SistemaGestionRemotoContainer context = new SistemaGestionRemotoContainer())
+                {
+                    var registro = from conexionesFWT in context.ConexionesFWTs
+                                   join fwt in context.FWTs on conexionesFWT.FWTId equals fwt.Id
+                                   where fwt.Id == id
+                                   select fwt.Serial;
+
+                    if (registro.Count() > 0)
+                    {
+                        fwtIsOn.Text = "Conectado";
+                        fwtIsOn.Style.Remove("color");
+                        fwtIsOn.Style.Add("color", "green");
+                        PowerOff.Style.Remove("color");
+                        PowerOff.Style.Add("color", "green");
+                        /*Pintar encendido*/
+                    }
+                    else
+                    {
+                        /*pintar apagado */
+                        fwtIsOn.Text = "Desconectado";
+                        fwtIsOn.Style.Remove("color");
+                        fwtIsOn.Style.Add("color", "red");
+                        PowerOff.Style.Remove("color");
+                        PowerOff.Style.Add("color", "red");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PowerOff.Style.Remove("color");
+                PowerOff.Style.Add("color", "gray");
+            }
+        }
+        #endregion
+
+        
+        protected void btnChange_Click(object sender, EventArgs e)
+        {
+            Response.Write("Button Clicked");
+        }
     }
 }

@@ -97,6 +97,7 @@
                 <asp:BoundField DataField="Ciudad" HeaderText="<%$ Resources:TextosGlobales,TextCiudad %>" SortExpression="Ciudad" />
                 <asp:BoundField DataField="Version_Fw" HeaderText="<%$ Resources:TextosGlobales,TextoVersionFw %>" SortExpression="Version_Fw" />
                 <asp:BoundField DataField="VersionEquipoRT" HeaderText="<%$ Resources:TextosGlobales,TextoVersionFwERT %>" SortExpression="VersionEquipoRT" />
+                <asp:BoundField DataField="VersionEquipoArix" HeaderText="Firmware ARIX" SortExpression="VersionEquipoArix" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

@@ -682,6 +682,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Firmware ARIX.
+        /// </summary>
+        internal static string TextoVersionFwArix {
+            get {
+                return ResourceManager.GetString("TextoVersionFwArix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FirmwareEquipo.
         /// </summary>
         internal static string TextoVersionFwERT {

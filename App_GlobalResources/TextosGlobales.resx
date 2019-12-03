@@ -255,6 +255,9 @@
   <data name="TextoVersionFwERT" xml:space="preserve">
     <value>FirmwareEquipo</value>
   </data>
+  <data name="TextoVersionFwArix" xml:space="preserve">
+    <value>Firmware ARIX</value>
+  </data>
   <data name="TextoWordVersion" xml:space="preserve">
     <value>Versión</value>
   </data>

@@ -9,11 +9,17 @@
     <title></title>
     <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+
     <script>
         function showContent(typeAnswer, message, messagePpal) {
             toastr.options = {
@@ -35,18 +41,61 @@
 
         }
     </script>
-
     <style type="text/css">
         .style3 {
             width: 4%;
         }
-    </style>
 
+        .turnOnLight {
+            animation: blink 1s linear infinite;
+        }
+
+        .turnOffLight {
+            animation: blink 1s linear infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: .5;
+            }
+
+            75% {
+                opacity: .75;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .withoutColor {
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+        }
+
+        .modal-backdrop.fade.in {
+            opacity: 0.5;
+        }
+
+        .modal {
+            position: relative;
+            width: auto;
+            margin-left: auto;
+        }
+        .centrar {
+            position:relative;
+            margin-left: 30%;
+            margin-right:30%;
+        }
+    </style>
     <script type="text/javascript">
         function fnClickOK(sender, e) {
             __doPostBack(sender, e);
         }
-
         function OcultarLabelLecturaOnline() {
 
             var etiqueta = document.getElementById('lblLecturaOnlineEstadoFWT');
@@ -58,8 +107,6 @@
             //javascript: window.open("http://www.microsoft.com");
 
         }
-
-
         function VerProcesamientoParametrosFWT() {
 
             var imagen = document.getElementById('imgEstadoFWT');
@@ -69,7 +116,6 @@
 
 
         }
-
         function flasher() {
 
             if (document.getElementById("lblMsgErrQtySixIncompatibles")) {
@@ -91,10 +137,6 @@
     </script>
 
 
-
-
-
-
 </head>
 <body onload="flasher();">
     <form id="form1" runat="server">
@@ -102,9 +144,49 @@
             <asp:ScriptManager ID="ToolkitScriptManager1" runat="server">
             </asp:ScriptManager>
             <div class="centerDiv">
+                <!-- Modal con info del FWT fechas .... -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 id="exampleModalLongTitle">Información extra concentrador:
+                                    <asp:Label ID="Label6" runat="server" /></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="card-body centrar">                               
+                                    <div class="row">
+                                        <strong><asp:Label ID="Label7" runat="server" Text="<%$ Resources:TextFechaMatriculaGestion %>"></asp:Label>:</strong>
+                                        <asp:Label ID="lblFechaRegistroGestion" runat="server"></asp:Label>
+                                    </div>
+                                    <div class="row">
+                                        <strong><asp:Label ID="Label29" runat="server" Text="<%$ Resources:TextFechaInstalacion %>"></asp:Label>:</strong>
+                                        <asp:Label ID="lblFechaInstalacion" runat="server"></asp:Label>
+                                    </div>
+                                    <div class="row">
+                                        <strong><asp:Label ID="Label43" runat="server" Text="<%$ Resources:TextFechaUltimaConeccion %>"></asp:Label>:</strong>
+                                        <asp:Label ID="lblFechaUltimaComunicacion" runat="server"></asp:Label>
+                                    </div>
+                                    <div class="row">
+                                       <strong> <asp:Label ID="Label17" runat="server" Text="<%$ Resources:TextFechaUltimoEnvio %>"></asp:Label>:</strong>
+                                        <asp:Label ID="lblFechaUltimoEnvio" runat="server"></asp:Label>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-info" data-dismiss="modal">Listo</button>
+                            </div>
+                        </div>
+                    
+                </div>
+
+
                 <table style="width: 100%;" border="0">
                     <tr>
                         <td align="center" bgcolor="#eeeeee">
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalCenter" data-placement="top" title="Click para ver información extra del concentrador">
+                                <i class="fa fa-info fa-1x" runat="server"></i>
+                            </button>
                             <font><strong>
                                 <asp:Literal ID="Literal1" Text="<%$ Resources:TextosGlobales,TextoSerialFWT %>" runat="server"></asp:Literal></strong></font>:
                         <asp:Label ID="lblId" runat="server" Visible="false" />
@@ -114,90 +196,95 @@
                         </td>
                     </tr>
                 </table>
-                <table style="width: 100%;" border="0">
-                    <tr>
-                        <td align="right" width="50%">
-                            <asp:Label ID="Label7" runat="server" Text="<%$ Resources:TextFechaMatriculaGestion %>"></asp:Label>:
-                        <br />
-                            <asp:Label ID="Label29" runat="server" Text="<%$ Resources:TextFechaInstalacion %>"></asp:Label>:
-                        <br />
-                            <asp:Label ID="Label43" runat="server" Text="<%$ Resources:TextFechaUltimaConeccion %>"></asp:Label>:
-                        <br />
-                            <asp:Label ID="Label17" runat="server" Text="<%$ Resources:TextFechaUltimoEnvio %>"></asp:Label>:
-                        </td>
+                <br />
 
-                        <td width="50%">
-                            <asp:Label ID="lblFechaRegistroGestion" runat="server"></asp:Label>
-                            <br />
-                            <asp:Label ID="lblFechaInstalacion" runat="server"></asp:Label>
-                            <br />
-                            <asp:Label ID="lblFechaUltimaComunicacion" runat="server"></asp:Label>
-                            <br />
-                            <asp:Label ID="lblFechaUltimoEnvio" runat="server"></asp:Label>
-                        </td>
-                    </tr>
-                </table>
                 <table style="width: 100%;" border="0">
                     <tr>
                         <td align="center" bgcolor="#eeeeee">
-                            <font><strong>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="tmrComAct" EventName="Tick" />
+                                </Triggers>
+                                <ContentTemplate>
+                                    <!--<i class="fa fa-power-off fa-1x turnOnLight" ID="PowerOff" runat="server"></i>-->
+                                    <font><strong>
                                 <asp:Literal ID="Literal2" Text="<%$ Resources:TextTittleEstadoConcentrador %>" runat="server"></asp:Literal></strong></font>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <asp:Timer ID="tmrComAct" runat="server" Interval="2000" OnTick="tmrComAct_Tick">
+                            </asp:Timer>
 
                         </td>
                     </tr>
                 </table>
                 <asp:UpdatePanel ID="upPanelLeerEstadoOnline" runat="server">
                     <ContentTemplate>
-                        <table style="width: 100%;" border="0">
-                            <tr>
-                                <td align="right" style="width: 12%;" valign="top">
+                        <div class="col-md-12 row">
+                            <div class="card card-body col-md-4">
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Labe140" runat="server" Text="Comunicación : "></asp:Label></strong>
+                                    <asp:Label ID="fwtIsOn" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label33" runat="server" Text="IMEI : "></asp:Label></strong>
+                                    <asp:Label ID="lblIMEI" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label39" runat="server" Text="IMSI : "></asp:Label></strong>
+                                    <asp:Label ID="lblIMSI" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label36" runat="server" Text="<%$ Resources:TextNivelSenal %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblNivelSenal" runat="server"></asp:Label>
+                                    <div class="col-12">
+                                    </div>
+                                    <div>
+                                        <table style="background-color: #1C5E55;">
+                                            <tr>
+                                                <td width="100">
+                                                    <asp:Image ID="ImgNivelSenal" src="../Images/barGreen.GIF" Width="50%"
+                                                        Height="10px" runat="server" Visible="False" /></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
 
-                                    <asp:Label ID="Label33" runat="server" Text="IMEI : "></asp:Label><br />
-                                    <asp:Label ID="Label39" runat="server" Text="IMSI : "></asp:Label><br />
-                                    <asp:Label ID="Label36" runat="server" Text="<%$ Resources:TextNivelSenal %>"></asp:Label>:
-                                </td>
-                                <td align="left" style="width: 12%;" valign="top">
-
-                                    <asp:Label ID="lblIMEI" runat="server"></asp:Label><br />
-                                    <asp:Label ID="lblIMSI" runat="server"></asp:Label><br />
-                                    <asp:Label ID="lblNivelSenal" runat="server"></asp:Label><br />
-                                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: #1C5E55;">
-                                        <tr>
-                                            <td width="100" align="left">
-                                                <asp:Image ID="ImgNivelSenal" src="../Images/barGreen.GIF" Width="50%"
-                                                    Height="10px" runat="server" Visible="False" /></td>
-                                        </tr>
-                                    </table>
-
-                                </td>
-                                <td align="right" style="width: 17%;" valign="top">
-                                    <asp:Label ID="Label34" runat="server" Text="<%$ Resources:TextVoltajeBateria %>"></asp:Label>:<br />
-                                    <asp:Label ID="Label37" runat="server" Text="<%$ Resources:TextVoltajeCargador %>"></asp:Label>:<br />
-                                    <asp:Label ID="Label38" runat="server" Text="<%$ Resources:TextVoltagePanel %>"></asp:Label>:<br />
-                                    <asp:Label ID="Label42" runat="server" Text="<%$ Resources:TextTemperatura %>"></asp:Label>
-
-                                </td>
-                                <td align="left" style="width: 12%;" valign="top">
-                                    <asp:Label ID="lblVoltBatt" runat="server"></asp:Label><br />
-                                    <asp:Label ID="lblVoltCargador" runat="server"></asp:Label><br />
-                                    <asp:Label ID="lblVoltPanel" runat="server"></asp:Label><br />
+                            <div class="card card-body col-md-4">
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label34" runat="server" Text="<%$ Resources:TextVoltajeBateria %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblVoltBatt" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label37" runat="server" Text="<%$ Resources:TextVoltajeCargador %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblVoltCargador" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label38" runat="server" Text="<%$ Resources:TextVoltagePanel %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblVoltPanel" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label42" runat="server" Text="<%$ Resources:TextTemperatura %>"></asp:Label></strong>
                                     <asp:Label ID="lblTemperatura" runat="server"></asp:Label>
-                                </td>
-                                <td align="right" style="width: 17%;" valign="top">
-                                    <asp:Label ID="Label35" runat="server" Text="<%$ Resources:TextVersionPrograma %>"></asp:Label>:<br />
-                                    <asp:Label ID="Label40" runat="server" Text="<%$ Resources:TextVersionMonitor %>"></asp:Label>:<br />
-                                    <asp:Label ID="Label41" runat="server" Text="<%$ Resources:TextVersionFwModulo %>"></asp:Label>:
-                        
-                                </td>
-                                <td align="left" style="width: 29%;" valign="top">
-                                    <asp:Label ID="lblVerPrograma" runat="server"></asp:Label><br />
-                                    <asp:Label ID="lblVerMonitor" runat="server"></asp:Label><br />
+                                </div>
+                            </div>
+
+                            <div class="card card-body col-md-4">
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label35" runat="server" Text="<%$ Resources:TextVersionPrograma %>"></asp:Label>:</strong>
+                                    <asp:Label ID="lblVerPrograma" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label40" runat="server" Text="<%$ Resources:TextVersionMonitor %>"></asp:Label>:</strong>
+                                    <asp:Label ID="lblVerMonitor" runat="server"></asp:Label>
+                                </div>
+                                <div class="row" style="padding-left:20px">
+                                    <strong><asp:Label ID="Label41" runat="server" Text="<%$ Resources:TextVersionFwModulo %>"></asp:Label>:</strong>
                                     <asp:Label ID="lblVerFirmwModulo" runat="server"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
 
-                                </td>
-                            </tr>
-
-                        </table>
                         <table style="width: 100%;" border="0">
                             <tr>
                                 <td align="right" width="36%" bgcolor="#CCCCCC">
@@ -1394,7 +1481,6 @@
                         </td>
                     </tr>
                 </table>
-
             </div>
         </div>
     </form>

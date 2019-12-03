@@ -258,4 +258,7 @@
   <data name="TextoWordVersion" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="TextoVersionFwArix" xml:space="preserve">
+    <value>Firmware ARIX</value>
+  </data>  
 </root>
