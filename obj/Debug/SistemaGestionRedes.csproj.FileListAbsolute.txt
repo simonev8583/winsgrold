@@ -202,6 +202,6 @@ C:\Software\winsgr1.0\SistemaGestionRedes\bin\System.Web.WebPages.Deployment.xml
 C:\Software\winsgr1.0\SistemaGestionRedes\bin\System.Web.WebPages.Razor.xml
 C:\Software\winsgr1.0\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.dll
 C:\Software\winsgr1.0\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.pdb
+C:\Software\winsgr1.0\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache
 C:\Software\winsgr1.0\SistemaGestionRedes\bin\SGR.BussinessLayer.pdb
 C:\Software\winsgr1.0\SistemaGestionRedes\bin\SGR.DataAccessLayer.pdb
-C:\Software\winsgr1.0\SistemaGestionRedes\obj\Debug\SistemaGestionRedes.csprojResolveAssemblyReference.cache
