@@ -2372,6 +2372,7 @@ namespace SistemaGestionRedes
             else if (e.CommandName.Equals("ESTADO"))
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
+                //this.ClientScript.RegisterStartupScript(this.GetType(), "SweetAlert", "swal('Oops!', 'Something went wrong on the page!', 'error');", true);
                 bool isState = RealizarComunicacionMessageQueueOnline(ComandosUsuario.IsOpenArix, null, idArix);
                 if (isState)
                 {

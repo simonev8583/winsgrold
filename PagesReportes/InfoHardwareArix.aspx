@@ -137,29 +137,29 @@
                                     HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionAperturaMax %>"
                                     SortExpression="CorrActuacionAperturaMax" Visible="True" />
                                 <asp:BoundField DataField="CorrActuacionCierreMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionCierreMax %>"
-                                                SortExpression="CorrActuacionCierreMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoCorrActuacionCierreMax %>"
+                                    SortExpression="CorrActuacionCierreMax" Visible="True" />
                                 <asp:BoundField DataField="TiempoActuacionAperturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionAperturaMax %>"
-                                                SortExpression="TiempoActuacionAperturaMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionAperturaMax %>"
+                                    SortExpression="TiempoActuacionAperturaMax" Visible="True" />
                                 <asp:BoundField DataField="TiempoActuacionCierreMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionCierreMax %>"
-                                                SortExpression="TiempoActuacionCierreMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoTiempoActuacionCierreMax %>"
+                                    SortExpression="TiempoActuacionCierreMax" Visible="True" />
                                 <asp:BoundField DataField="TemperaturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMax %>"
-                                                SortExpression="TemperaturaMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMax %>"
+                                    SortExpression="TemperaturaMax" Visible="True" />
                                 <asp:BoundField DataField="TemperaturaMin" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMin %>"
-                                                SortExpression="TemperaturaMin" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaMin %>"
+                                    SortExpression="TemperaturaMin" Visible="True" />
                                 <asp:BoundField DataField="VelActuacionAperturaMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionAperturaMax %>"
-                                                SortExpression="VelActuacionAperturaMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionAperturaMax %>"
+                                    SortExpression="VelActuacionAperturaMax" Visible="True" />
                                 <asp:BoundField DataField="VelActuacionCierreMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionCierreMax %>"
-                                                SortExpression="VelActuacionCierreMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoVelActuacionCierreMax %>"
+                                    SortExpression="VelActuacionCierreMax" Visible="True" />
                                 <asp:BoundField DataField="DesplazamientoContactosMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                                HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosMax %>"
-                                                SortExpression="DesplazamientoContactosMax" Visible="True" />
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosMax %>"
+                                    SortExpression="DesplazamientoContactosMax" Visible="True" />
                             </Columns>
                             <EditRowStyle BackColor="#7C6F57" />
                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -328,36 +328,29 @@
             <asp:SqlDataSource ID="sqlDSResultadosFecha" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="SELECT info.Id
-	  , CONVERT(DECIMAL(16,2), [VoltActualCapDisparo]/10.0) as [VoltActualCapDisparo]
-      ,[VoltActualSuperCapacitor] 
-      ,[CorrActuacionAperturaMax]
-      ,[CorrActuacionAperturaUltima]
-      ,[CorrActuacionCierreMax]
-      ,[CorrActuacionCierreUltimo]
-      ,[TiempoActuacionAperturaMax]
-      ,[TiempoActuacionAperturaUltima]
-      ,[TiempoActuacionCierreMax]
-      ,[TiempoActuacionCierreUltimo]
-      ,[TemperaturaMax]
-      ,[TemperaturaMin]
-      ,[TemperaturaActual]
-      ,[FrecuenciaActual]
-      ,[VelActuacionAperturaMax]
-      ,[VelActuacionAperturaUltima]
-      ,[VelActuacionCierreMax]
-      ,[VelActuacionCierreUltimo]
-      ,[DesplazamientoContactosMax]
-      ,[DesplazamientoContactosUltimo]
+      ,CONCAT(CONVERT(DECIMAL(16,1), ([VoltActualCapDisparo]/10.0) * 100 / 83.5),'%') AS [VoltActualCapDisparo]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [VoltActualSuperCapacitor] * 100 / 5.1),'%') AS [VoltActualSuperCapacitor]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [CorrActuacionAperturaUltima] / 10.0) ,'A' ) AS [CorrActuacionAperturaUltima]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [CorrActuacionCierreUltimo] / 10.0), 'A') AS [CorrActuacionCierreUltimo]
+      ,CONCAT([TiempoActuacionAperturaUltima], 'ms') AS [TiempoActuacionAperturaUltima]
+      ,CONCAT([TiempoActuacionCierreUltimo], 'ms') AS [TiempoActuacionCierreUltimo]
+      ,CONCAT([TemperaturaActual],'°') AS [TemperaturaActual]
+      ,CONVERT(DECIMAL(16,1), [FrecuenciaActual] / 10.0) AS [FrecuenciaActual]
+      ,CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionAperturaUltima] / 100.0), 'm/s') AS [VelActuacionAperturaUltima]
+      ,CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionCierreUltimo] / 100.0), 'm/s') AS [VelActuacionCierreUltimo]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosUltimo] / 10.0), 'mm') AS [DesplazamientoContactosUltimo]
       ,[AdcTension]
-      ,[FrecuenciaActualSenalVoltaje]
+      ,CONVERT(DECIMAL(16,1),[FrecuenciaActualSenalVoltaje] / 10.0 ) AS [FrecuenciaActualSenalVoltaje]
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
   FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] as info inner join
   [SGRCelsa].[dbo].[ARIXs] arixs on info.IdArix = arixs.Id
   inner JOIN FWTs on (arixs.FWTId = FWTs.Id)
-  WHERE (info.Fecha between @Finicial and @Ffinal)
-ORDER BY info.Fecha DESC">
+  Order by VoltActualCapDisparo desc
+
+ -- WHERE (info.Fecha between @Finicial and @Ffinal)
+--  ORDER BY info.Fecha DESC">
                 <SelectParameters>
                     <asp:Parameter Name="fechai" />
                     <asp:Parameter Name="fechaf" />
@@ -367,28 +360,19 @@ ORDER BY info.Fecha DESC">
             <asp:SqlDataSource ID="sqlDSResultadosConSix" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="SELECT info.Id
-      , CONVERT(DECIMAL(16,2), [VoltActualCapDisparo]/10.0) as [VoltActualCapDisparo]
-      ,[VoltActualSuperCapacitor]
-      ,[CorrActuacionAperturaMax]
-      ,[CorrActuacionAperturaUltima]
-      ,[CorrActuacionCierreMax]
-      ,[CorrActuacionCierreUltimo]
-      ,[TiempoActuacionAperturaMax]
-      ,[TiempoActuacionAperturaUltima]
-      ,[TiempoActuacionCierreMax]
-      ,[TiempoActuacionCierreUltimo]
-      ,[TemperaturaMax]
-      ,[TemperaturaMin]
-      ,[TemperaturaActual]
-      ,[FrecuenciaActual]
-      ,[VelActuacionAperturaMax]
-      ,[VelActuacionAperturaUltima]
-      ,[VelActuacionCierreMax]
-      ,[VelActuacionCierreUltimo]
-      ,[DesplazamientoContactosMax]
-      ,[DesplazamientoContactosUltimo]
+      ,CONCAT(CONVERT(DECIMAL(16,1), ([VoltActualCapDisparo]/10.0) * 100 / 83.5),'%') AS [VoltActualCapDisparo]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [VoltActualSuperCapacitor] * 100 / 5.1),'%') AS [VoltActualSuperCapacitor]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [CorrActuacionAperturaUltima] / 10.0) ,'A' ) AS [CorrActuacionAperturaUltima]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [CorrActuacionCierreUltimo] / 10.0), 'A') AS [CorrActuacionCierreUltimo]
+      ,CONCAT([TiempoActuacionAperturaUltima], 'ms') AS [TiempoActuacionAperturaUltima]
+      ,CONCAT([TiempoActuacionCierreUltimo], 'ms') AS [TiempoActuacionCierreUltimo]
+      ,CONCAT([TemperaturaActual],'°') AS [TemperaturaActual]
+      ,CONVERT(DECIMAL(16,1), [FrecuenciaActual] / 10.0) AS [FrecuenciaActual]
+      ,CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionAperturaUltima] / 100.0), 'm/s') AS [VelActuacionAperturaUltima]
+      ,CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionCierreUltimo] / 100.0), 'm/s') AS [VelActuacionCierreUltimo]
+      ,CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosUltimo] / 10.0), 'mm') AS [DesplazamientoContactosUltimo]
       ,[AdcTension]
-      ,[FrecuenciaActualSenalVoltaje]
+      ,CONVERT(DECIMAL(16,1),[FrecuenciaActualSenalVoltaje] / 10.0 ) AS [FrecuenciaActualSenalVoltaje]
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
@@ -449,7 +433,7 @@ ORDER BY info.Fecha DESC"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select 
 ARIX_InfoHardware.Fecha as [Fecha],
-ARIX_InfoHardware.VoltActualSuperCapacitor as [ValorCorriente]
+CONVERT(DECIMAL(16,1), [VoltActualSuperCapacitor] * 100 / 5.1) AS [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
 and ARIX_InfoHardware.IdArix = @SixId
@@ -466,7 +450,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select 
 ARIX_InfoHardware.Fecha as [Fecha],
-CONVERT(decimal(15,1), ARIX_InfoHardware.VoltActualCapDisparo/10.0) as [ValorCorriente]
+CONVERT(DECIMAL(16,1), ([VoltActualCapDisparo]/10.0) * 100 / 83.5) as [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
 and ARIX_InfoHardware.IdArix = @SixId
@@ -483,7 +467,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select 
 ARIX_InfoHardware.Fecha as [Fecha],
-CONVERT(decimal(15,1), ARIX_InfoHardware.FrecuenciaActual) as [ValorCorriente]
+CONVERT(DECIMAL(16,1), [FrecuenciaActual] / 10.0) as [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
 and ARIX_InfoHardware.IdArix = @SixId
@@ -518,15 +502,15 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="
                 Select 
-MAX([CorrActuacionAperturaMax]) as [CorrActuacionAperturaMax],
-MAX([CorrActuacionCierreMax]) as [CorrActuacionCierreMax] ,
-MAX([TiempoActuacionAperturaMax]) as [TiempoActuacionAperturaMax],
-MAX([TiempoActuacionCierreMax]) as [TiempoActuacionCierreMax],
-MAX([TemperaturaMax]) as [TemperaturaMax], 
-MIN([TemperaturaMin]) as [TemperaturaMin], 
-MAX([VelActuacionAperturaMax]) as [VelActuacionAperturaMax],
-MAX([VelActuacionCierreMax]) as [VelActuacionCierreMax],
-MAX([DesplazamientoContactosMax]) as [DesplazamientoContactosMax]
+MAX(CONCAT(CONVERT(DECIMAL(16,1), [CorrActuacionAperturaMax] / 10.0) ,'A' )) as [CorrActuacionAperturaMax],
+MAX(CONCAT(CONVERT(DECIMAL(16,1), [CorrActuacionCierreMax] / 10.0) ,'A' )) as [CorrActuacionCierreMax] ,
+MAX(CONCAT([TiempoActuacionAperturaMax], 'ms')) as [TiempoActuacionAperturaMax],
+MAX(CONCAT([TiempoActuacionCierreMax], 'ms')) as [TiempoActuacionCierreMax],
+MAX(CONCAT([TemperaturaMax], '°')) as [TemperaturaMax], 
+MIN(CONCAT([TemperaturaMin], '°')) as [TemperaturaMin], 
+MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionAperturaMax] / 100.0), 'm/s')) as [VelActuacionAperturaMax],
+MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionCierreMax] / 100.0), 'm/s')) as [VelActuacionCierreMax],
+MAX(CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosMax] / 10.0), 'mm')) as [DesplazamientoContactosMax]
 FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] WHERE (IdArix = @SixId or @SixId = 0)
 and  Fecha between @Finicial and @Ffinal
 ">

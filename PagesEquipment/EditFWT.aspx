@@ -17,9 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
-
     <script>
         function showContent(typeAnswer, message, messagePpal) {
             toastr.options = {
@@ -136,7 +133,18 @@
 
     </script>
 
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css"
+        rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function successalert() {
+            swal({
+                title: 'Congratulations!',
+                text: 'Your message has been succesfully sent',
+                type: 'success'
+            });
+        }
+    </script>
 </head>
 <body onload="flasher();">
     <form id="form1" runat="server">
