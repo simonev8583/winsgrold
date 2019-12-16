@@ -2401,7 +2401,7 @@ namespace SistemaGestionRedes
                     {
                         //LabelCerrado.Text = "Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado";
                         //LabelApertura.Text = "";
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de aperturacon la respuesta del FWT, revisa que el FWT este conectado', 'Consultar estado ARIX');", true);
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','Error al ejecutar el comando de apertura con la respuesta del FWT, revisa que el FWT este conectado', 'Consultar estado ARIX');", true);
                     }
                     else if (stateArix == -2)
                     {

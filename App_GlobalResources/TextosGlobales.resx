@@ -262,61 +262,61 @@
     <value>Versión</value>
   </data>
   <data name="TextoVoltActualSuperCapacitor" xml:space="preserve">
-    <value>VSuperCapacitor</value>
+    <value>V Sup Capacitor</value>
   </data>
   <data name="TextoFrecuenciaActual" xml:space="preserve">
     <value>Frecuencia</value>
   </data>
   <data name="TextoVelActuacionAperturaMax" xml:space="preserve">
-    <value>VelActAperturaMax</value>
+    <value>Vel Max Apertura</value>
   </data>
   <data name="TextoVelActuacionAperturaUltima" xml:space="preserve">
-    <value>VelActApertura</value>
+    <value>Vel Apertura</value>
   </data>
   <data name="TextoVelActuacionCierreMax" xml:space="preserve">
-    <value>VelActCierreMax</value>
+    <value>Vel Max Cierre</value>
   </data>
   <data name="TextoVelActuacionCierreUltimo" xml:space="preserve">
-    <value>VelActCierre</value>
+    <value>Vel Cierre</value>
   </data>
   <data name="TextoDesplazamientoContactosMax" xml:space="preserve">
-    <value>DespContactosMax</value>
+    <value>Desp Max Contactos</value>
   </data>
   <data name="TextoDesplazamientoContactosUltimo" xml:space="preserve">
-    <value>DespContactos</value>
+    <value>Desp Contactos</value>
   </data>
   <data name="TextoAdcTension" xml:space="preserve">
-    <value>Adc Tensión</value>
+    <value>Tensión</value>
   </data>
   <data name="TextoFrecuenciaActualSenalVoltaje" xml:space="preserve">
-    <value>FrecuenciaVolt</value>
+    <value>Frec Señal Volt</value>
   </data>
   <data name="TextoVoltActualCapDisparo" xml:space="preserve">
-    <value>VCapDisparo</value>
+    <value>V Capacitor</value>
   </data>
   <data name="TextoCorrActuacionAperturaMax" xml:space="preserve">
-    <value>CorrActAperturaMax</value>
+    <value>I Max Apertura</value>
   </data>
   <data name="TextoCorrActuacionAperturaUltima" xml:space="preserve">
-    <value>CorrActApertura</value>
+    <value>I Apertura</value>
   </data>
   <data name="TextoCorrActuacionCierreMax" xml:space="preserve">
-    <value>CorrActCierreMax</value>
+    <value>I Max Cierre</value>
   </data>
   <data name="TextoCorrActuacionCierreUltimo" xml:space="preserve">
-    <value>CorrActCierre</value>
+    <value>I Cierre</value>
   </data>
   <data name="TextoTiempoActuacionAperturaMax" xml:space="preserve">
-    <value>TActAperturaMax</value>
+    <value>T Max Apertura</value>
   </data>
   <data name="TextoTiempoActuacionAperturaUltima" xml:space="preserve">
-    <value>TActApertura</value>
+    <value>T Apertura</value>
   </data>
   <data name="TextoTiempoActuacionCierreMax" xml:space="preserve">
-    <value>TActCierreMax</value>
+    <value>T Max Cierre</value>
   </data>
   <data name="TextoTiempoActuacionCierreUltimo" xml:space="preserve">
-    <value>TActCierre</value>
+    <value>T Cierre</value>
   </data>
   <data name="TextoTemperaturaMax" xml:space="preserve">
     <value>Temp max</value>

@@ -205,7 +205,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adc Tensión.
+        ///   Looks up a localized string similar to Tensión.
         /// </summary>
         internal static string TextoAdcTension {
             get {
@@ -268,7 +268,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CorrActAperturaMax.
+        ///   Looks up a localized string similar to I Max Apertura.
         /// </summary>
         internal static string TextoCorrActuacionAperturaMax {
             get {
@@ -277,7 +277,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CorrActApertura.
+        ///   Looks up a localized string similar to I Apertura.
         /// </summary>
         internal static string TextoCorrActuacionAperturaUltima {
             get {
@@ -286,7 +286,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CorrActCierreMax.
+        ///   Looks up a localized string similar to I Max Cierre.
         /// </summary>
         internal static string TextoCorrActuacionCierreMax {
             get {
@@ -295,7 +295,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CorrActCierre.
+        ///   Looks up a localized string similar to I Cierre.
         /// </summary>
         internal static string TextoCorrActuacionCierreUltimo {
             get {
@@ -313,7 +313,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DespContactosMax.
+        ///   Looks up a localized string similar to Desp Max Contactos.
         /// </summary>
         internal static string TextoDesplazamientoContactosMax {
             get {
@@ -322,7 +322,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DespContactos.
+        ///   Looks up a localized string similar to Desp Contactos.
         /// </summary>
         internal static string TextoDesplazamientoContactosUltimo {
             get {
@@ -394,7 +394,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FrecuenciaVolt.
+        ///   Looks up a localized string similar to Frec Señal Volt.
         /// </summary>
         internal static string TextoFrecuenciaActualSenalVoltaje {
             get {
@@ -565,7 +565,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TActAperturaMax.
+        ///   Looks up a localized string similar to T Max Apertura.
         /// </summary>
         internal static string TextoTiempoActuacionAperturaMax {
             get {
@@ -574,7 +574,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TActApertura.
+        ///   Looks up a localized string similar to T Apertura.
         /// </summary>
         internal static string TextoTiempoActuacionAperturaUltima {
             get {
@@ -583,7 +583,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TActCierreMax.
+        ///   Looks up a localized string similar to T Max Cierre.
         /// </summary>
         internal static string TextoTiempoActuacionCierreMax {
             get {
@@ -592,7 +592,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TActCierre.
+        ///   Looks up a localized string similar to T Cierre.
         /// </summary>
         internal static string TextoTiempoActuacionCierreUltimo {
             get {
@@ -637,7 +637,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VelActAperturaMax.
+        ///   Looks up a localized string similar to Vel Max Apertura.
         /// </summary>
         internal static string TextoVelActuacionAperturaMax {
             get {
@@ -646,7 +646,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VelActApertura.
+        ///   Looks up a localized string similar to Vel Apertura.
         /// </summary>
         internal static string TextoVelActuacionAperturaUltima {
             get {
@@ -655,7 +655,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VelActCierreMax.
+        ///   Looks up a localized string similar to Vel Max Cierre.
         /// </summary>
         internal static string TextoVelActuacionCierreMax {
             get {
@@ -664,7 +664,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VelActCierre.
+        ///   Looks up a localized string similar to Vel Cierre.
         /// </summary>
         internal static string TextoVelActuacionCierreUltimo {
             get {
@@ -700,7 +700,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VCapDisparo.
+        ///   Looks up a localized string similar to V Capacitor.
         /// </summary>
         internal static string TextoVoltActualCapDisparo {
             get {
@@ -709,7 +709,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VSuperCapacitor.
+        ///   Looks up a localized string similar to V Sup Capacitor.
         /// </summary>
         internal static string TextoVoltActualSuperCapacitor {
             get {

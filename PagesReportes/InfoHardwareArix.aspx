@@ -205,12 +205,12 @@
                                 <asp:BoundField DataField="TemperaturaActual" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoTemperaturaActual %>"
                                     SortExpression="TemperaturaActual" Visible="True" />
-                                <asp:BoundField DataField="FrecuenciaActual" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
-                                    HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActual %>" SortExpression="FrecuenciaActual"
-                                    Visible="True" />
                                 <asp:BoundField DataField="AdcTension" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoAdcTension %>" SortExpression="AdcTension"
                                     Visible="True" />
+                                <asp:BoundField DataField="FrecuenciaActual" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActual %>" SortExpression="FrecuenciaActual"
+                                    Visible="True" />                                
                                 <asp:BoundField DataField="FrecuenciaActualSenalVoltaje" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoFrecuenciaActualSenalVoltaje %>" SortExpression="FrecuenciaActualSenalVoltaje"
                                     Visible="True" />
