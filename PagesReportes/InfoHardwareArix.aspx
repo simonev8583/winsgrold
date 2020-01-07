@@ -344,8 +344,8 @@
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
-  FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] as info inner join
-  [SGRCelsa].[dbo].[ARIXs] arixs on info.IdArix = arixs.Id
+  FROM [ARIX_InfoHardware] as info inner join
+  [ARIXs] arixs on info.IdArix = arixs.Id
   inner JOIN FWTs on (arixs.FWTId = FWTs.Id)
   Order by VoltActualCapDisparo desc
 
@@ -376,8 +376,8 @@
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
-  FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] as info inner join
-  [SGRCelsa].[dbo].[ARIXs] arixs on info.IdArix = arixs.Id
+  FROM [ARIX_InfoHardware] as info inner join
+  [ARIXs] arixs on info.IdArix = arixs.Id
   inner JOIN FWTs on (arixs.FWTId = FWTs.Id)
   WHERE (info.Fecha between @Finicial and @Ffinal)
   AND ((@idfwt is null) or (FWTs.Id = @idfwt) )
@@ -511,7 +511,7 @@ MIN(CONCAT([TemperaturaMin], '°')) as [TemperaturaMin],
 MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionAperturaMax] / 100.0), 'm/s')) as [VelActuacionAperturaMax],
 MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionCierreMax] / 100.0), 'm/s')) as [VelActuacionCierreMax],
 MAX(CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosMax] / 10.0), 'mm')) as [DesplazamientoContactosMax]
-FROM [SGRCelsa].[dbo].[ARIX_InfoHardware] WHERE (IdArix = @SixId or @SixId = 0)
+FROM [ARIX_InfoHardware] WHERE (IdArix = @SixId or @SixId = 0)
 and  Fecha between @Finicial and @Ffinal
 ">
                 <SelectParameters>

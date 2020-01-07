@@ -13,7 +13,7 @@ using SGR.BussinessLayer;
 using SGR.UtilityLibrary;
 using SCADA104.Definiciones;
 using Celsa.ConexionMensajeria;
-
+using System.Threading;
 
 namespace SistemaGestionRedes
 {
@@ -2291,7 +2291,6 @@ namespace SistemaGestionRedes
             }
         }
 
-
         /// <summary>
         /// Método qué se ejecuta cuando se da click en abrir ARIX
         /// </summary>
@@ -2511,7 +2510,7 @@ namespace SistemaGestionRedes
         }
         #endregion
 
-        
+
         protected void btnChange_Click(object sender, EventArgs e)
         {
             Response.Write("Button Clicked");

@@ -337,7 +337,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
       ,[VelActuacionCierreMax]
       ,[DesplazamientoContactosMax]
       ,[IdArix]
-  FROM [SGRCelsa].[dbo].[ARIX_InfoHardware]
+  FROM [ARIX_InfoHardware]
   WHERE 
    Fecha = (SELECT MAX(Fecha) FROM ARIX_InfoHardware where Fecha between @Finicial and @Ffinal)
 ORDER BY Fecha ASC
