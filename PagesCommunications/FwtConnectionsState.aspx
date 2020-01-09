@@ -47,9 +47,9 @@
                     HeaderText="<%$ Resources:TextosGlobales,TextCiudad %>" SortExpression="Ciudad" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <FooterStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#0b304f" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#E3EAEB" />
             <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#F8FAFA" />
@@ -83,9 +83,9 @@
                         HeaderText="<%$ Resources:TextosGlobales,TextCiudad %>" SortExpression="Ciudad" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
-                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <FooterStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#0b304f" ForeColor="White" HorizontalAlign="Center" />
                 <RowStyle BackColor="#E3EAEB" />
                 <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
                 <SortedAscendingCellStyle BackColor="#F8FAFA" />

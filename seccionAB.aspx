@@ -10,12 +10,17 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title></title>
-    
- </head>
+
+</head>
 <body class="bodyColorSeccionAB">
     <form id="form1" runat="server">
-    <div class ="centerDivHeader">
+           <div class ="centerDivHeader">
       <!-- Seccion B Menu Primer Nivel -->
         <div class="leftColumn">
             <asp:Menu ID="menuPrimerNivel" runat="server" 
@@ -47,8 +52,7 @@
              <tr>
                  <td valign="middle" >
                      <asp:LoginStatus ID="LoginStSalir" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="Small" Font-Underline="False" 
-                         LogoutAction="RedirectToLoginPage" LogoutText="<%$ Resources:TextCerrarSesion %>"
-                         Font-Bold="True" ForeColor="Black" />
+                         LogoutAction="RedirectToLoginPage" LogoutText="<%$ Resources:TextCerrarSesion %>" CssClass ="logoutclass" />
                  </td>
              </tr>
          </table>

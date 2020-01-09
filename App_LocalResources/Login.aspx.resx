@@ -124,7 +124,7 @@
     <value>Iniciar</value>
   </data>
   <data name="LoginControl.PasswordLabelText" xml:space="preserve">
-    <value>Contraseña:</value>
+    <value>Contraseña </value>
   </data>
   <data name="LoginControl.PasswordRequiredErrorMessage" xml:space="preserve">
     <value>La contraseña es obligatoria.</value>
@@ -133,10 +133,10 @@
     <value>Recordármelo la próxima vez.</value>
   </data>
   <data name="LoginControl.TitleText" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value></value>
   </data>
   <data name="LoginControl.UserNameLabelText" xml:space="preserve">
-    <value>Usuario:</value>
+    <value>Usuario </value>
   </data>
   <data name="LoginControl.UserNameRequiredErrorMessage" xml:space="preserve">
     <value>El nombre de usuario es obligatorio.</value>

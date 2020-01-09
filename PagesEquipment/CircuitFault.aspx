@@ -326,9 +326,9 @@ MtLenguajes.Cod = @IdLang">
 
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <FooterStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#0b304f" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
             <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#F8FAFA" />
@@ -504,9 +504,9 @@ ORDER BY Fecha DESC">
 
             </Columns>
             <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <FooterStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#0b304f" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#F7F6F3" HorizontalAlign="Center" ForeColor="#333333" />
             <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#E9E7E2" />

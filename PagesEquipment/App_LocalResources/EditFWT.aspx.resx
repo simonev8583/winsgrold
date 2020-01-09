@@ -739,7 +739,7 @@
     <value>Abrir</value>
   </data>
   <data name="TextHeaderAbrir" xml:space="preserve">
-    <value>Abrir ARIX</value>
+    <value>Abrir</value>
   </data>
   <data name="TextSinArixRegistrados" xml:space="preserve">
     <value>Sin ARIX registrados</value>
@@ -748,13 +748,13 @@
     <value>Cerrar</value>
   </data>
   <data name="TextHeaderCerrar" xml:space="preserve">
-    <value>Cerrar ARIX</value>
+    <value>Cerrar</value>
   </data>
   <data name="TextToolTipCerrarArix" xml:space="preserve">
     <value>Click para cerrar ARIX</value>
   </data>
   <data name="TextHeaderEstado" xml:space="preserve">
-    <value>Estado ARIX</value>
+    <value>Estado</value>
   </data>
   <data name="TextToolTipEstadoArix" xml:space="preserve">
     <value>Estado del ARIX</value>
@@ -763,7 +763,7 @@
     <value>Estado</value>
   </data>
   <data name="TextHeaderReinicio" xml:space="preserve">
-    <value>Reiniciar ARIX</value>
+    <value>Reiniciar</value>
   </data>
   <data name="TextReinicioArixRt" xml:space="preserve">
     <value>Reiniciar</value>
@@ -778,7 +778,7 @@
     <value>Hora actual del ARIX</value>
   </data>
 <data name="TextHeaderAskClock" xml:space="preserve">
-    <value>Consulta hora ARIX</value>
+    <value>Consulta hora </value>
   </data>
 
 <data name="TextUpdClockArixRt" xml:space="preserve">
@@ -788,6 +788,6 @@
     <value>Actualizar hora</value>
   </data>
 <data name="TextHeaderUpdClock" xml:space="preserve">
-    <value>Actualizar hora ARIX</value>
+    <value>Actualizar hora</value>
   </data>
 </root>

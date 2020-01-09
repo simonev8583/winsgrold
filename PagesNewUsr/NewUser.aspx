@@ -38,18 +38,18 @@
                         UserNameLabelText="<%$ Resources:TextUserNameLabelText %>" LoginCreatedUser="False">
                         <ContinueButtonStyle BackColor="White" BorderColor="#C5BBAF" 
                             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-                            ForeColor="#1C5E55" />
+                            ForeColor="#0b304f" />
                         <CreateUserButtonStyle BackColor="White" BorderColor="#C5BBAF" 
                             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-                            ForeColor="#1C5E55" />
-                        <TitleTextStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            ForeColor="#0b304f" />
+                        <TitleTextStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
                         <WizardSteps>
                             <asp:CreateUserWizardStep runat="server" Title="<%$ Resources:TextTitle %>" >
                                 <ContentTemplate>
                                     <table style="font-family:Verdana;font-size:100%;">
                                         <tr>
                                             <td align="center" colspan="2" 
-                                                style="color:White;background-color:#1C5E55;font-weight:bold;">
+                                                style="color:White;background-color:#0b304f;font-weight:bold;">
                                                 <asp:Literal ID="Literal1" Text="<%$ Resources:TextTitleTable %>" runat="server"></asp:Literal></td>
                                         </tr>
                                         <tr>
@@ -146,14 +146,14 @@
                             </asp:CreateUserWizardStep>
                             <asp:CompleteWizardStep runat="server" />
                         </WizardSteps>
-                        <HeaderStyle BackColor="#666666" BorderColor="#E6E2D8" BorderStyle="Solid" 
+                        <HeaderStyle BackColor="#0b304f" BorderColor="#E6E2D8" BorderStyle="Solid" 
                             BorderWidth="2px" Font-Bold="True" Font-Size="0.9em" ForeColor="White" 
                             HorizontalAlign="Center" />
                         <NavigationButtonStyle BackColor="White" BorderColor="#C5BBAF" 
                             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-                            ForeColor="#1C5E55" />
+                            ForeColor="#0b304f" />
                         <SideBarButtonStyle ForeColor="White" />
-                        <SideBarStyle BackColor="#1C5E55" Font-Size="0.9em" VerticalAlign="Top" />
+                        <SideBarStyle BackColor="#0b304f" Font-Size="0.9em" VerticalAlign="Top" />
                         <StepStyle BorderWidth="0px" />
                     </asp:CreateUserWizard>
                     <br />

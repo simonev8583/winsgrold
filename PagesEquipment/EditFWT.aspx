@@ -247,7 +247,7 @@
                                     <div class="col-12">
                                     </div>
                                     <div>
-                                        <table style="background-color: #1C5E55;">
+                                        <table style="background-color: #0b304f;">
                                             <tr>
                                                 <td width="100">
                                                     <asp:Image ID="ImgNivelSenal" src="../Images/barGreen.GIF" Width="50%"
@@ -403,8 +403,8 @@
                                     </asp:TemplateField>
 
                                 </Columns>
-                                <FooterStyle BackColor="#CCCC99" />
-                                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                                <FooterStyle BackColor="#0b304f" />
+                                <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
                                 <RowStyle BackColor="#F7F7DE" />
                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
@@ -635,8 +635,8 @@
                                     </asp:TemplateField>
 
                                 </Columns>
-                                <FooterStyle BackColor="#CCCC99" />
-                                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                                <FooterStyle BackColor="#0b304f" />
+                                <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
                                 <RowStyle BackColor="#F7F7DE" />
                                 <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />

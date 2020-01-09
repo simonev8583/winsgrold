@@ -21,17 +21,17 @@
                 BorderPadding="5" CancelButtonText="" CancelButtonType="Link" 
                 ChangePasswordButtonType="Link">
                 <CancelButtonStyle BackColor="White" BorderColor="#C5BBAF" BorderStyle="Solid" BorderWidth="1px"
-                    Font-Names="Verdana" Font-Size="0.8em" ForeColor="#1C5E55" />
+                    Font-Names="Verdana" Font-Size="0.8em" ForeColor="#0b304f" />
                 <ChangePasswordButtonStyle BackColor="White" BorderColor="#C5BBAF" BorderStyle="Solid"
                     BorderWidth="1px" Font-Names="Verdana" Font-Size="0.9em" 
-                    ForeColor="#1C5E55" Font-Bold="True" />
+                    ForeColor="#0b304f" Font-Bold="True" />
                 <ContinueButtonStyle BackColor="White" BorderColor="#C5BBAF" BorderStyle="Solid"
-                    BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#1C5E55" />
+                    BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#0b304f" />
                 <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
                 <LabelStyle Font-Bold="True" />
-                <PasswordHintStyle Font-Italic="True" ForeColor="#1C5E55" />
+                <PasswordHintStyle Font-Italic="True" ForeColor="#0b304f" />
                 <TextBoxStyle Font-Size="0.8em" />
-                <TitleTextStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="#FFFFFF" Font-Size="0.9em" />
+                <TitleTextStyle BackColor="#0b304f" Font-Bold="True" ForeColor="#FFFFFF" Font-Size="0.9em" />
             </asp:ChangePassword>
             <br />
         </center>
