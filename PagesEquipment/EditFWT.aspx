@@ -132,19 +132,48 @@
         }
 
     </script>
+    <script>
+        function validateSerialArix(idArix, command) {
+            sweetAlert({
+                title: command + " ARIX",
+                text: "Escriba el serial del ARIX para activar comando:",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "Serial",
+            },
+            function (inputValue) {
+                if (inputValue === false) return false;
+
+                if (inputValue === "") {
+                    swal.showInputError("Debes escribir el serial");
+                    return false
+                }
+                if (inputValue !== "") {
+                    document.getElementById('<%=labelIdArix.ClientID %>').value = idArix;
+                    document.getElementById('<%=labelText.ClientID %>').value = inputValue;
+                    document.getElementById('<%=labelCommand.ClientID %>').value = command;                       
+                    if (inputValue.substring(0, 2).toLocaleLowerCase() == "RI".toLocaleLowerCase() && inputValue.length == 8) {
+                        setTimeout(sweetAlert('Datos confirmados', 'Comando en ejecución...', 'success'), 500)                        
+                    }
+                    document.getElementById("ButtonCommands").click();
+                }
+                
+            })
+        }
+
+        function validateSerialArixWithoutParams(idArix, command) {
+            document.getElementById('<%=labelIdArix.ClientID %>').value = idArix;
+            document.getElementById('<%=labelCommand.ClientID %>').value = command; 
+            setTimeout(sweetAlert('Enviando comando', 'Comando en ejecución...', 'success'), 500)
+            document.getElementById("ButtonCommandsWithoutParams").click();
+        }
+    </script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css"
         rel="stylesheet" type="text/css" />
-    <script type="text/javascript">
-        function successalert() {
-            swal({
-                title: 'Congratulations!',
-                text: 'Your message has been succesfully sent',
-                type: 'success'
-            });
-        }
-    </script>
 </head>
 <body onload="flasher();">
     <form id="form1" runat="server">
@@ -345,6 +374,14 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
+                <div >
+                    <asp:HiddenField ID="labelIdArix" runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="labelText" runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="labelCommand" runat="server"></asp:HiddenField>
+                    <asp:Button ID="ButtonCommands" runat="server" OnClick="ExecCommandWithParams" CssClass="hide" />
+                    <asp:Button ID="ButtonCommandsWithoutParams" runat="server" OnClick="ExecCommandWithoutParams" CssClass="hide" />
+                </div>
+
                 <table style="width: 100%;" border="0">
                     <tr>
                         <td align="center" bgcolor="#eeeeee">
@@ -392,13 +429,13 @@
                                     <asp:TemplateField HeaderText="<%$ Resources:TextHeaderAskClock %>">
                                         <ItemTemplate>
                                             <asp:Button runat="server" ID="btnAskClockArix" Text="" ToolTip="<%$ Resources:TextToolTipAskClockArix %>"
-                                                CommandName="PREGUNTARELOJ" CssClass="TextBoton" />
+                                                CommandName="PREGUNTAR RELOJ" CssClass="TextBoton" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="<%$ Resources:TextHeaderUpdClock %>">
                                         <ItemTemplate>
                                             <asp:Button runat="server" ID="btnUpdClockArix" Text="" ToolTip="<%$ Resources:TextToolTipUpdClockArix %>"
-                                                CommandName="ACTUALIZARELOJ" CssClass="TextBoton" />
+                                                CommandName="ACTUALIZAR RELOJ" CssClass="TextBoton" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
 

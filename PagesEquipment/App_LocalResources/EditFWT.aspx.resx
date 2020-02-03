@@ -790,4 +790,10 @@
 <data name="TextHeaderUpdClock" xml:space="preserve">
     <value>Actualizar hora</value>
   </data>
+  <data name="TextIdArixCommand" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TextSerialArixCommand" xml:space="preserve">
+    <value></value>
+  </data>
 </root>

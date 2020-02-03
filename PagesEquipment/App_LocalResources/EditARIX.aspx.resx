@@ -229,7 +229,7 @@
     <value>T reset después de bloqueo</value>
   </data>
   <data name="lblOpReconectador_resetTimeLockout" xml:space="preserve">
-    <value>T de reset bloqueo</value>
+    <value>T bloqueado</value>
   </data>
   <data name="lblOpReconectador_corrMaxCapacidadRIX" xml:space="preserve">
     <value>I max capacidad ARIX</value>
@@ -286,7 +286,7 @@
     <value>T reset ciclo</value>
   </data>
   <data name="lblDisparo1_tiempoApertura" xml:space="preserve">
-    <value>Tiempo apertura</value>
+    <value>Tiempo muerto</value>
   </data>
   <data name="lblDisparo1_modTiempoMaxRespuesta" xml:space="preserve">
     <value>T max de respuesta</value>

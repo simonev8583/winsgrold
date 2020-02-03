@@ -8,7 +8,8 @@
     <link href="Styles/stylesLogin.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <title></title>
+    <title>SGR Management System </title>
+      <link rel="icon" href="Styles/Images/Celsalogopng.png">
 </head>
 <script language="javascript" type="text/javascript">
 
@@ -42,6 +43,9 @@
                         <TextBoxStyle />
                         <TitleTextStyle />
                     </asp:Login>
+                    <div class="logo">
+                        <img class="img-responsive" src="Styles/Images/LOGO-CELSA-2018.SVG" alt="Celsa">
+                    </div>
                 </div>
             </div>
             <!-- 

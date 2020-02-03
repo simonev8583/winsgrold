@@ -288,6 +288,15 @@
     <Content Include="PagesEquipment\StateDescription.aspx" />
     <Content Include="PagesReportes\Statistics.aspx" />
     <Content Include="SeguridadFrames.htm" />
+    <Content Include="Styles\Images\Celsalogopng.png" />
+    <Content Include="Styles\Images\ICON-CELSA-2018-WHITE.svg" />
+    <Content Include="Styles\Images\iconLogo-v1.0\demo-files\demo.css" />
+    <Content Include="Styles\Images\iconLogo-v1.0\demo-files\demo.js" />
+    <Content Include="Styles\Images\iconLogo-v1.0\demo.html" />
+    <Content Include="Styles\Images\iconLogo-v1.0\fonts\iconLogo.svg" />
+    <Content Include="Styles\Images\iconLogo-v1.0\Read Me.txt" />
+    <Content Include="Styles\Images\iconLogo-v1.0\style.css" />
+    <Content Include="Styles\Images\LOGO-CELSA-2018.svg" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -1052,6 +1061,10 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
     <Content Include="Styles\stylesLogin.css" />
+    <Content Include="Styles\Images\iconLogo-v1.0\fonts\iconLogo.eot" />
+    <Content Include="Styles\Images\iconLogo-v1.0\fonts\iconLogo.ttf" />
+    <Content Include="Styles\Images\iconLogo-v1.0\fonts\iconLogo.woff" />
+    <Content Include="Styles\Images\iconLogo-v1.0\selection.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="PagesEquipment\App_LocalResources\EditARIX.aspx.resx">

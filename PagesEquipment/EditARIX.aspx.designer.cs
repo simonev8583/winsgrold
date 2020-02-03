@@ -40,6 +40,15 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblId;
         
         /// <summary>
+        /// serialARIX control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serialARIX;
+        
+        /// <summary>
         /// ToolkitScriptManager1 control.
         /// </summary>
         /// <remarks>

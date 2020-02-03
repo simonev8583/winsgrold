@@ -31,6 +31,7 @@ namespace SistemaGestionRedes
                 var arix = db.ARIXs.FirstOrDefault(x => x.Id == Id);
                 if (arix.FWTId != null)
                 {
+                    serialARIX.Text = arix.Serial;
                     var paramArix = arix.ParamARIX;
                     var disparo1Arix = arix.ARIX_Disparos.ToList()[0];
                     var disparo2Arix = arix.ARIX_Disparos.ToList()[1];
@@ -268,7 +269,7 @@ namespace SistemaGestionRedes
                             {
                                 const int MIL = 1000;
                                 arix = ModificarOperacionReconectador(arix);
-                                arix.ParamARIX.resetTimeAfterLockout = int.Parse(txtOpReconectador_resetTimeAfterLockout.Text) * MIL;
+                                //arix.ParamARIX.resetTimeAfterLockout = int.Parse(txtOpReconectador_resetTimeAfterLockout.Text) * MIL;
                                 //arix.ParamARIX.resetTimeLockout = (short)(arix.ParamARIX.resetTimeLockout * 1000);
                             }
                             if (hayCambiosHardware)
@@ -299,7 +300,7 @@ namespace SistemaGestionRedes
                             {
                                 arix = ModificarDisparo5(arix);
                             }
-                            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Pronto se van a actualizar los parámetros del ARIX', 'Guardando cambios');", true);
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX se actualizarán en el próximo reporte periódico', 'Guardando cambios');", true);
                             //Response.Write("<script>alert('Hay cambios por subir')</script>");
                             arix.PendienteEnviarParametros = true;
                             arix.PendienteConfirmarActualizacionParametros = false;
@@ -325,11 +326,11 @@ namespace SistemaGestionRedes
 
             if (porHisteresis < minPorHisteresis || porHisteresis > maxPorHisteresis) respuesta = false;
 
-            //int ciclosVerif = int.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
-            //const int minpCiclosVerif = 1;
-            //const int maxCiclosVerif = 10;
+            int ciclosVerif = int.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
+            const int minpCiclosVerif = 1;
+            const int maxCiclosVerif = 10;
 
-            //if (ciclosVerif < minpCiclosVerif || ciclosVerif > maxCiclosVerif) respuesta = false;
+            if (ciclosVerif < minpCiclosVerif || ciclosVerif > maxCiclosVerif) respuesta = false;
 
             int corrInrush = int.Parse(txtOpGeneral_corrInrush.Text);
             const int minCorrInrush = 10;
@@ -380,11 +381,11 @@ namespace SistemaGestionRedes
 
             if (tiempoDefDisparoCorrMaxAbs < minTiempoDefDisparoCorrMaxAbs || tiempoDefDisparoCorrMaxAbs > maxTiempoDefDisparoCorrMaxAbs) respuesta = false;
 
-            int resetTimeAfterLockout = int.Parse(txtOpReconectador_resetTimeAfterLockout.Text);
-            const int minResetTimeAfterLockout = 1;
-            const int maxResetTimeAfterLockout = 120;
+            //int resetTimeAfterLockout = int.Parse(txtOpReconectador_resetTimeAfterLockout.Text);
+            //const int minResetTimeAfterLockout = 1;
+            //const int maxResetTimeAfterLockout = 120;
 
-            if (resetTimeAfterLockout < minResetTimeAfterLockout || resetTimeAfterLockout > maxResetTimeAfterLockout) respuesta = false;
+            //if (resetTimeAfterLockout < minResetTimeAfterLockout || resetTimeAfterLockout > maxResetTimeAfterLockout) respuesta = false;
 
             return respuesta;
         }
@@ -846,7 +847,7 @@ namespace SistemaGestionRedes
 
             if (listBoxModoOperacion.GetSelectedIndices()[0] != paramArix.modoOperacion) paramArix.modoOperacion = listBoxModoOperacion.GetSelectedIndices()[0];
             if (txtOpGeneral_porcentajeHisteresis.Text != paramArix.porcentajeHisteresisDisparo.ToString()) paramArix.porcentajeHisteresisDisparo = Byte.Parse(txtOpGeneral_porcentajeHisteresis.Text);
-            //if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) paramArix.ciclosVerifResetDismCorrFalla = Byte.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
+            if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) paramArix.ciclosVerifResetDismCorrFalla = Byte.Parse(txtOpGeneral_ciclosVerifResetDismCorrFalla.Text);
             int frecOperacion = paramArix.fciaOperacion ? 1 : 0;
             if (listBoxFrecOperacion.GetSelectedIndices()[0] != frecOperacion) paramArix.fciaOperacion = (listBoxFrecOperacion.GetSelectedIndices()[0] == 1);
             if (chkBoxOpGeneral_habilitarInrush.Checked != paramArix.habilitarFuncionalidadInrush) paramArix.habilitarFuncionalidadInrush = chkBoxOpGeneral_habilitarInrush.Checked;
@@ -869,7 +870,7 @@ namespace SistemaGestionRedes
             if (txtOpReconectador_numRecierres.Text != paramArix.numRecierres.ToString()) paramArix.numRecierres = int.Parse(txtOpReconectador_numRecierres.Text);
             if (txtOpReconectador_corrMaxAbsolutas.Text != paramArix.corrMaxAbsoluta.ToString()) paramArix.corrMaxAbsoluta = short.Parse(txtOpReconectador_corrMaxAbsolutas.Text);
             if (txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text != paramArix.tiempoDefDisparoCorrMaxAbs.ToString()) paramArix.tiempoDefDisparoCorrMaxAbs = short.Parse(txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text);
-            if (txtOpReconectador_resetTimeAfterLockout.Text != paramArix.resetTimeAfterLockout.ToString()) paramArix.resetTimeAfterLockout = short.Parse(txtOpReconectador_resetTimeAfterLockout.Text);
+            //if (txtOpReconectador_resetTimeAfterLockout.Text != paramArix.resetTimeAfterLockout.ToString()) paramArix.resetTimeAfterLockout = short.Parse(txtOpReconectador_resetTimeAfterLockout.Text);
             //if (txtOpReconectador_resetTimeLockout.Text != paramArix.resetTimeLockout.ToString()) paramArix.resetTimeLockout = short.Parse(txtOpReconectador_resetTimeLockout.Text);
             //if (txtOpReconectador_corrMaxCapacidadRIX.Text != paramArix.corrMaxCapacidadRIX.ToString()) paramArix.corrMaxCapacidadRIX = short.Parse(txtOpReconectador_corrMaxCapacidadRIX.Text);
 

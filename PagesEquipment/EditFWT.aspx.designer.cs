@@ -463,6 +463,51 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblResetOnLineFWT;
         
         /// <summary>
+        /// labelIdArix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField labelIdArix;
+        
+        /// <summary>
+        /// labelText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField labelText;
+        
+        /// <summary>
+        /// labelCommand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField labelCommand;
+        
+        /// <summary>
+        /// ButtonCommands control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCommands;
+        
+        /// <summary>
+        /// ButtonCommandsWithoutParams control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCommandsWithoutParams;
+        
+        /// <summary>
         /// Literal11 control.
         /// </summary>
         /// <remarks>
