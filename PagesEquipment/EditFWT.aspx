@@ -155,7 +155,7 @@
                     document.getElementById('<%=labelText.ClientID %>').value = inputValue;
                     document.getElementById('<%=labelCommand.ClientID %>').value = command;                       
                     if (inputValue.substring(0, 2).toLocaleLowerCase() == "RI".toLocaleLowerCase() && inputValue.length == 8) {
-                        setTimeout(sweetAlert('Datos confirmados', 'Comando en ejecución...', 'success'), 500)                        
+                        setTimeout(sweetAlert('Datos confirmados', 'Comando en ejecución...', 'info'), 500)                        
                     }
                     document.getElementById("ButtonCommands").click();
                 }
@@ -166,7 +166,7 @@
         function validateSerialArixWithoutParams(idArix, command) {
             document.getElementById('<%=labelIdArix.ClientID %>').value = idArix;
             document.getElementById('<%=labelCommand.ClientID %>').value = command; 
-            setTimeout(sweetAlert('Enviando comando', 'Comando en ejecución...', 'success'), 500)
+            setTimeout(sweetAlert('Enviando comando', 'Comando en ejecución...', 'info'), 500)
             document.getElementById("ButtonCommandsWithoutParams").click();
         }
     </script>

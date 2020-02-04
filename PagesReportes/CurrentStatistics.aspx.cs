@@ -60,8 +60,8 @@ namespace SistemaGestionRedes.PagesReportes
         {
             if (_verCodificacionEquipos)
             {
-                DDListCntrs.DataTextField = "Codigo";
-                LstBoxFcis.DataTextField = "Codigo";
+                DDListCntrs.DataTextField = "Serial";
+                LstBoxFcis.DataTextField = "Serial";
             }
         }
 
