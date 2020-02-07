@@ -585,7 +585,7 @@ namespace SistemaGestionRedes
 
             if (listBoxModoOperacion.GetSelectedIndices()[0] != paramArix.modoOperacion) contador++;
             if (txtOpGeneral_porcentajeHisteresis.Text != paramArix.porcentajeHisteresisDisparo.ToString()) contador++;
-            //if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) contador++;
+            if (txtOpGeneral_ciclosVerifResetDismCorrFalla.Text != paramArix.ciclosVerifResetDismCorrFalla.ToString()) contador++;
             int frecOperacion = paramArix.fciaOperacion ? 1 : 0;
             if (listBoxFrecOperacion.GetSelectedIndices()[0] != frecOperacion) contador++;
             if (chkBoxOpGeneral_habilitarInrush.Checked != paramArix.habilitarFuncionalidadInrush) contador++;
@@ -596,7 +596,7 @@ namespace SistemaGestionRedes
             if (txtOpGeneral_tiempoDeValidacionInrush.Text != paramArix.tiempoDeValidacionInrush.ToString()) contador++;
             if (txtOpGeneral_tiempoSostenimientoInrush.Text != paramArix.tiempoSostenimientoInrush.ToString()) contador++;
 
-            txtOpGeneral_ciclosVerifResetDismCorrFalla.Text = paramArix.ciclosVerifResetDismCorrFalla.ToString();
+            //txtOpGeneral_ciclosVerifResetDismCorrFalla.Text = paramArix.ciclosVerifResetDismCorrFalla.ToString();
 
             if (contador > 0)
             {
@@ -617,7 +617,7 @@ namespace SistemaGestionRedes
             if (txtOpReconectador_numRecierres.Text != paramArix.numRecierres.ToString()) contador++;
             if (txtOpReconectador_corrMaxAbsolutas.Text != paramArix.corrMaxAbsoluta.ToString()) contador++;
             if (txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text != paramArix.tiempoDefDisparoCorrMaxAbs.ToString()) contador++;
-            if (txtOpReconectador_resetTimeAfterLockout.Text != (paramArix.resetTimeAfterLockout / MIL).ToString()) contador++;
+            //if (txtOpReconectador_resetTimeAfterLockout.Text != (paramArix.resetTimeAfterLockout / MIL).ToString()) contador++;
             //if (txtOpReconectador_resetTimeLockout.Text != paramArix.resetTimeLockout.ToString()) contador++;
             //if (txtOpReconectador_corrMaxCapacidadRIX.Text != paramArix.corrMaxCapacidadRIX.ToString()) contador++;
 

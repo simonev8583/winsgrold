@@ -32,7 +32,7 @@
            
                         </td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <td colspan="2" width="20%">
                             <asp:CheckBox ID="chkVisualizarCodigosCorporativos" runat="server" 
                                 AutoPostBack="True" 
@@ -41,7 +41,7 @@
                                 ToolTip="<%$ Resources:TextVerCodigosToolTip %>" 
                                 Font-Size="10px" ForeColor="Black" />
                         </td>
-                    </tr>
+                    </tr>-->
                 </table>
            
                 <!-- Representa la sección C Arbol de Navegación-->

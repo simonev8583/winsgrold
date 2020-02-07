@@ -517,15 +517,6 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.TextBox txtOpReconectador_resetTimeAfterLockout;
         
         /// <summary>
-        /// Rangevalidator10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator Rangevalidator10;
-        
-        /// <summary>
         /// txtOpReconectador_resetTimeLockout control.
         /// </summary>
         /// <remarks>

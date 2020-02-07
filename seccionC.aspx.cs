@@ -259,13 +259,15 @@ namespace SistemaGestionRedes
 
             if (verCodificacion)
             {
-                if (datos.DatoString2.Trim() == "")
+                //if (datos.DatoString2.Trim() == "")
+                if (datos.DatoString1.Trim() == "")
                 {
                     strFinal = (string)this.GetLocalResourceObject("TextWordVacio");
                 }
                 else
                 {
-                    strFinal = datos.DatoString2.Trim();
+                    //strFinal = datos.DatoString2.Trim();
+                    strFinal = datos.DatoString1.Trim();
                 }
             }
             else
@@ -283,13 +285,13 @@ namespace SistemaGestionRedes
 
             if (!verCodificacion)
             {
-                if (datos.DatoString2.Trim() == "")
+                if (datos.DatoString1.Trim() == "")
                 {
                     strFinal = (string)this.GetLocalResourceObject("TextNoCodigo");
                 }
                 else
                 {
-                    strFinal = datos.DatoString2.Trim();
+                    strFinal = datos.DatoString1.Trim();
                 }
             }
             else

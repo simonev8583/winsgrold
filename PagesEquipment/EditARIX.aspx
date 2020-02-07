@@ -369,10 +369,6 @@
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_resetTimeAfterLockout" runat="server"
                                                      CssClass="textInUsuario styleInput" MaxLength="3" Width="50px" disabled="disabled"></asp:TextBox>
-                                        <!--<br />
-                                        <asp:rangevalidator ID="Rangevalidator10" errormessage="Favor ingrese valor entre 1-120." forecolor="Red" 
-                                            controltovalidate="txtOpReconectador_resetTimeAfterLockout" minimumvalue="1" maximumvalue="120" runat="server" Type="Integer">
-                                        </asp:rangevalidator>-->
                                     </td>
 
                                     <td>

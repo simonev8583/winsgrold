@@ -370,7 +370,7 @@ namespace SistemaGestionRedes
             {
                 SqlConnectionStringBuilder strConBuilder = new SqlConnectionStringBuilder(((SqlDataSource)GVReporteCorriente.DataSourceObject).ConnectionString);
                 string nmDataBase = strConBuilder.InitialCatalog;
-                if (!nmDataBase.ToUpper().StartsWith("SGRCELSA"))
+                if (!nmDataBase.ToUpper().StartsWith("SGRCelsa"))
                 {
                     GVReporteCorriente.Columns[GVReporteCorriente.Columns.Count - 1].Visible = false;
                 }
