@@ -2354,8 +2354,8 @@ namespace SistemaGestionRedes
                         fwtIsOn.Text = "Conectado";
                         fwtIsOn.Style.Remove("color");
                         fwtIsOn.Style.Add("color", "green");
-                        PowerOff.Style.Remove("color");
-                        PowerOff.Style.Add("color", "green");
+                        //PowerOff.Style.Remove("color");
+                        //PowerOff.Style.Add("color", "green");
                         /*Pintar encendido*/
                     }
                     else
@@ -2364,16 +2364,16 @@ namespace SistemaGestionRedes
                         fwtIsOn.Text = "Desconectado";
                         fwtIsOn.Style.Remove("color");
                         fwtIsOn.Style.Add("color", "red");
-                        PowerOff.Style.Remove("color");
-                        PowerOff.Style.Add("color", "red");
+                        //PowerOff.Style.Remove("color");
+                        //PowerOff.Style.Add("color", "red");
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                PowerOff.Style.Remove("color");
-                PowerOff.Style.Add("color", "gray");
+                //PowerOff.Style.Remove("color");
+                //PowerOff.Style.Add("color", "gray");
             }
         }
         #endregion

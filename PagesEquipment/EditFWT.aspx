@@ -236,14 +236,13 @@
                 <br />
 
                 <table style="width: 100%;" border="0">
-                    <tr>
+                    <!--<tr>
                         <td align="center" bgcolor="#eeeeee">
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <Triggers>
                                     <asp:AsyncPostBackTrigger ControlID="tmrComAct" EventName="Tick" />
                                 </Triggers>
                                 <ContentTemplate>
-                                    <!--<i class="fa fa-power-off fa-1x turnOnLight" ID="PowerOff" runat="server"></i>-->
                                     <font><strong>
                                 <asp:Literal ID="Literal2" Text="<%$ Resources:TextTittleEstadoConcentrador %>" runat="server"></asp:Literal></strong></font>
                                 </ContentTemplate>
@@ -252,7 +251,7 @@
                             </asp:Timer>
 
                         </td>
-                    </tr>
+                    </tr>-->
                 </table>
                 <asp:UpdatePanel ID="upPanelLeerEstadoOnline" runat="server">
                     <ContentTemplate>

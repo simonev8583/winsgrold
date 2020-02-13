@@ -329,7 +329,7 @@
                                     
                                     <td>
                                         <asp:TextBox ID="txtOpReconectador_tiempoDefDisparoCorrMaxAbs" runat="server"
-                                                     CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                                     CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
                                         <br />
                                         <asp:rangevalidator ID="Rangevalidator9" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
                                             controltovalidate="txtOpReconectador_tiempoDefDisparoCorrMaxAbs" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
