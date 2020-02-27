@@ -137,12 +137,14 @@ namespace SistemaGestionRedes
 
         protected void tmrTimeActual_Tick(object sender, EventArgs e)
         {
-            lblTimeActual.Text = DateTime.Now.ToLongTimeString();
+            //lblTimeActual.Text = DateTime.Now.ToLongTimeString();
+            lblTimeActual.Text = string.Format("{0:HH:mm:ss}", Convert.ToDateTime(DateTime.Now.ToLongTimeString()).AddHours(2));
         }
 
         protected void lblTimeActual_Load(object sender, EventArgs e)
         {
-            lblTimeActual.Text = DateTime.Now.ToLongTimeString(); //Tiempo inicial antes del primer tick
+            //lblTimeActual.Text = DateTime.Now.ToLongTimeString(); //Tiempo inicial antes del primer tick
+            lblTimeActual.Text = string.Format("{0:HH:mm:ss}", Convert.ToDateTime(DateTime.Now.ToLongTimeString()).AddHours(2));
         }
 
         protected void GVFallasCtos_RowDataBound(object sender, GridViewRowEventArgs e)

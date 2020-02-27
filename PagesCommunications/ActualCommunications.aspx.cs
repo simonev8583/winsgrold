@@ -9,9 +9,9 @@ namespace SistemaGestionRedes
 {
     public partial class ActualCommunications : System.Web.UI.Page
     {
+        private static bool isActive = false;
         protected void Page_Load(object sender, EventArgs e)
-        {
-
+        {            
         }
 
         protected void tmrComAct_Tick(object sender, EventArgs e)

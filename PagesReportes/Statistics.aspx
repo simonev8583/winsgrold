@@ -457,7 +457,12 @@ ORDER BY EstadisticasFCIs.Fecha DESC">
 
                 <asp:BoundFieldCel DataField="Asdu" HeaderText="<%$ Resources:TextosGlobales,TextoASDU %>" SortExpression="Asdu" Visible="false" Name="ASDU" />
 
-                <asp:BoundFieldCel DataField="Fecha" HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>" SortExpression="Fecha" Name="Fecha" />
+                <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                 
                 <asp:BoundFieldCel DataField="ValPromIL" HeaderText="<%$ Resources:TextColValorPrmCte %>" SortExpression="ValPromIL" Name="Valor Promedio Corriente" />
 

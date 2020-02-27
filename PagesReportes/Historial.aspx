@@ -214,9 +214,20 @@
                     <ItemTemplate> <%# Eval("Nombre") %> </ItemTemplate>
                 </asp:TemplateFieldCel>
 
-                <asp:BoundFieldCel DataField="Fecha" HeaderText="<%$ Resources:TextColFechaInicio %>" SortExpression="Fecha" Name="Fecha Inicio" />
+                <asp:TemplateField HeaderText="<%$ Resources:TextColFechaInicio %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
 
-                <asp:BoundFieldCel DataField="ClearAlarma" HeaderText="<%$ Resources:TextColFechaClear %>" SortExpression="ClearAlarma" Name="Fecha Clear" />
+                <asp:TemplateField  HeaderText="<%$ Resources:TextColFechaClear %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFechaClear" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
 
                 <asp:BoundFieldCel DataField="DuracionTime" HeaderText="<%$ Resources:TextColDuracion %>" SortExpression="DuracionTime" Name="Duración" />
 

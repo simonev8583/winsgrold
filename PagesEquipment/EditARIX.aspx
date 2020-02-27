@@ -51,6 +51,7 @@
                  <div>
                      <h3 style="text-align:center">
                         <asp:Label ID="serialARIX" runat="server"></asp:Label>
+                         <asp:Label ID="serialFWT" runat="server" Visible="false"></asp:Label>
                       </h3>                     
                  </div>
 
@@ -2034,6 +2035,17 @@
             <div class="styleButton">
                 <asp:Button ID="butActualizarParams" runat="server" Text="<%$ Resources:TextBotonLeerPrmOnline %>"
                     Enabled="False" OnClick="butActualizarParams_Click" />
+            </div>
+            <div class="centerDiv" align="center">
+                <asp:Button ID="butUpdate" runat="server" Text="Enviar" OnClick="butUpdate_Click"
+                    ValidationGroup="editARIX"
+                    ToolTip="Envía todos los parametros configurados en esta pantalla al ARIX la proxima vez que su FWT respectivo se conecté ."
+                    Visible="False" />
+                <asp:Button ID="butUpdateOnline" runat="server" Text="Actualizar Online"
+                    ValidationGroup="editARIX" Style="height: 26px"
+                    OnClick="butUpdateOnline_Click" Enabled="False" Visible="false"
+                    ToolTip="Actualiza los parámetros online del ARIX" />&nbsp;&nbsp;<!--Solo se debe activar el visible para este botón  -->
+            &nbsp;&nbsp;
             </div>
         </div>
     </form>

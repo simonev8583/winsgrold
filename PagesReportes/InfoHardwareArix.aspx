@@ -193,7 +193,7 @@
                                 <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>"
                                     SortExpression="Fecha">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="VoltActualCapDisparo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
@@ -431,8 +431,8 @@ ORDER BY info.Fecha DESC"
 
             <asp:SqlDataSource ID="SqlDataGrafOneSixCte" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
+                SelectCommand="select
+                dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
 CONVERT(DECIMAL(16,1), [VoltActualSuperCapacitor] * 100 / 5.1) AS [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
@@ -449,7 +449,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
             <asp:SqlDataSource ID="SqlDataCapacitor" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
+dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
 CONVERT(DECIMAL(16,1), ([VoltActualCapDisparo]/10.0) * 100 / 83.5) as [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
@@ -466,7 +466,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
             <asp:SqlDataSource ID="SqlDataFrecuencia" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
+dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
 CONVERT(DECIMAL(16,1), [FrecuenciaActual] / 10.0) as [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
@@ -484,7 +484,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
             <asp:SqlDataSource ID="SqlDataTemperatura" runat="server"
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select 
-ARIX_InfoHardware.Fecha as [Fecha],
+dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
 CONVERT(decimal(15,1), ARIX_InfoHardware.TemperaturaActual) as [ValorCorriente]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal

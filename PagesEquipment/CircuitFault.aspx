@@ -316,7 +316,12 @@ MtLenguajes.Cod = @IdLang">
                     </ItemTemplate>
                 </asp:TemplateFieldCel>
 
-                <asp:BoundFieldCel DataField="Fecha" HeaderText="<%$ Resources:GVFallasCtosCol4Header %>" SortExpression="Fecha" Name="FechaAlarma" />
+                <asp:TemplateField HeaderText="<%$ Resources:GVFallasCtosCol4Header %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
 
                 <asp:TemplateFieldCel HeaderText="<%$ Resources:GVFallasCtosCol5Header %>" Name="BajarManual">
                     <ItemTemplate>
@@ -496,7 +501,12 @@ ORDER BY Fecha DESC">
                     </ItemTemplate>
                 </asp:TemplateFieldCel>
 
-                <asp:BoundFieldCel DataField="Fecha" HeaderText="<%$ Resources:GridViewHistoricoCol4Header %>" SortExpression="Fecha" Name="FechaAlarma" />
+                <asp:TemplateField HeaderText="<%$ Resources:GridViewHistoricoCol4Header %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
 
                 <asp:BoundFieldCel DataField="ClearAlarma" HeaderText="<%$ Resources:GridViewHistoricoCol5Header %>" SortExpression="ClearAlarma" Name="FechaClear" />
 

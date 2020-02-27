@@ -197,7 +197,12 @@
 
                 <asp:BoundFieldCel DataField="Asdu" HeaderText="<%$ Resources:TextosGlobales,TextoASDU %>" SortExpression="Asdu" Visible="false" Name="ASDU" />
 
-                <asp:BoundFieldCel DataField="Fecha" HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>" SortExpression="Fecha" Name="Fecha" />
+                <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
 
                 <asp:BoundFieldCel DataField="ValorCorriente" HeaderText="<%$ Resources:TextosGlobales,TextoValorCorriente %>" SortExpression="ValorCorriente" Name="ValorCorriente" />
             </Columns>
@@ -404,7 +409,7 @@ ORDER BY LogCorrienteFCIs.Fecha DESC" ViewStateMode="Enabled">
             &nbsp;<asp:SqlDataSource ID="SqlDataGrafOneFci" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>" 
                     SelectCommand="select 
-LogCorrienteFCIs.Fecha as [Fecha],
+dateadd(HOUR, 0, LogCorrienteFCIs.Fecha) as Fecha,
 LogCorrienteFCIs.ValorIL as [ValorCorriente]
 FROM LogCorrienteFCIs
 WHERE LogCorrienteFCIs.Fecha between @Finicial and @Ffinal
@@ -421,7 +426,7 @@ ORDER BY LogCorrienteFCIs.Fecha ASC
                 &nbsp;<asp:SqlDataSource ID="SqlDataGrafOneFciCteProm" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>" 
                     SelectCommand="select 
-EstadisticasFCIs.Fecha as [Fecha],
+dateadd(HOUR, 0, EstadisticasFCIs.Fecha) as Fecha,
 EstadisticasFCIs.ValorPromedioIL as [ValorCorriente]
 FROM EstadisticasFCIs
 WHERE EstadisticasFCIs.Fecha between @Finicial and @Ffinal

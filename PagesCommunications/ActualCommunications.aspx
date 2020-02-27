@@ -34,7 +34,12 @@
                     <asp:BoundField DataField="EndPointConexion" HeaderText="<%$ Resources:TextColumnaDirIP %>" SortExpression="EndPointConexion" />
                     <asp:HyperLinkField DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/PagesEquipment/EditFWT.aspx?Id={0}"
                         DataTextField="Serial" HeaderText="<%$ Resources:TextosGlobales,TextoSerialFWT %>" Target="_self" />
-                    <asp:BoundField DataField="Fecha" HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>" SortExpression="Fecha" />
+                    <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>"
+                                    SortExpression="Fecha">
+                                    <ItemTemplate>                                        
+                                        <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                     <asp:BoundField DataField="Direccion" HeaderText="<%$ Resources:TextosGlobales,TextoNumeroDireccion %>"
                         SortExpression="Direccion" />
                     <asp:BoundField DataField="ParamFWT_DireccionNomenclatura_Ciudad" 

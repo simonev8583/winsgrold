@@ -235,24 +235,6 @@
                 </table>
                 <br />
 
-                <table style="width: 100%;" border="0">
-                    <!--<tr>
-                        <td align="center" bgcolor="#eeeeee">
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                <Triggers>
-                                    <asp:AsyncPostBackTrigger ControlID="tmrComAct" EventName="Tick" />
-                                </Triggers>
-                                <ContentTemplate>
-                                    <font><strong>
-                                <asp:Literal ID="Literal2" Text="<%$ Resources:TextTittleEstadoConcentrador %>" runat="server"></asp:Literal></strong></font>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                            <asp:Timer ID="tmrComAct" runat="server" Interval="2000" OnTick="tmrComAct_Tick">
-                            </asp:Timer>
-
-                        </td>
-                    </tr>-->
-                </table>
                 <asp:UpdatePanel ID="upPanelLeerEstadoOnline" runat="server">
                     <ContentTemplate>
                         <div class="col-md-12 row">

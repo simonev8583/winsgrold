@@ -190,7 +190,7 @@
                             <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoFecha %>" 
                                 SortExpression="Fecha">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>
+                                    <asp:Label ID="lblFecha" runat="server" Text='<%# string.Format("{0:dd-MM-yyyy HH:mm:ss}",Convert.ToDateTime(Eval("Fecha")).AddHours(0))%>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="<%$ Resources:TextosGlobales,TextoValorCorriente %>" 
@@ -229,10 +229,10 @@
                         onclick="btnGraficar_Click" Text="<%$ Resources:TextBotonGraficarUnSIX %>" 
                         ToolTip="<%$ Resources:TextToolTipGraficarUnSIX %>" />
 
-                &nbsp;<asp:Button ID="btnManualPoints" runat="server" CssClass="TextBoton" 
+                <!--&nbsp;<asp:Button ID="btnManualPoints" runat="server" CssClass="TextBoton" 
                     Text="<%$ Resources:TextBotonGraficaComparativa %>" 
                     ToolTip="<%$ Resources:TextToolTipGrafComparativa %>" 
-                        onclick="btnManualPoints_Click" />
+                        onclick="btnManualPoints_Click" />-->
                 </td>
             </tr>
             <tr>
@@ -386,7 +386,7 @@ ORDER BY LogCorrienteARIXs.Fecha DESC" CancelSelectOnNullParameter="False">
 <asp:SqlDataSource ID="SqlDataGrafOneSixCte" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>" 
                     SelectCommand="select 
-LogCorrienteARIXs.Fecha as [Fecha],
+dateadd(HOUR, 0, LogCorrienteARIXs.Fecha) as Fecha,
 CONVERT(decimal(15,1), LogCorrienteARIXs.ValorIL/10.0) as [ValorCorriente]
 FROM LogCorrienteARIXs
 WHERE LogCorrienteARIXs.Fecha between @Finicial and @Ffinal

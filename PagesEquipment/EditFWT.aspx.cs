@@ -53,7 +53,7 @@ namespace SistemaGestionRedes
                 //  OkButton.OnClientClick = String.Format("fnClickOK('{0}','{1}')", OkButton.UniqueID, "");   //Necesario para que el boton OK del modalpopup haga postBack (llamando a updateonclick())
                 _verSix = ConfigApp.VerSix;
                 ConfigurarVisibilidadElementosSix();
-                ControlarAutorizacionControles();
+                ControlarAutorizacionControles();                
             }
             //else
             //{
@@ -2336,47 +2336,7 @@ namespace SistemaGestionRedes
         /*CAMBIAR NOMBRE DEL TICK => ESTE TICK REFRESCA EL ESTADO DEL FWT 
          ENCENDIDO O APAGADO
              */
-        #region TimerFwtOnline
-        protected void tmrComAct_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = int.Parse(lblId.Text);
-                using (SistemaGestionRemotoContainer context = new SistemaGestionRemotoContainer())
-                {
-                    var registro = from conexionesFWT in context.ConexionesFWTs
-                                   join fwt in context.FWTs on conexionesFWT.FWTId equals fwt.Id
-                                   where fwt.Id == id
-                                   select fwt.Serial;
 
-                    if (registro.Count() > 0)
-                    {
-                        fwtIsOn.Text = "Conectado";
-                        fwtIsOn.Style.Remove("color");
-                        fwtIsOn.Style.Add("color", "green");
-                        //PowerOff.Style.Remove("color");
-                        //PowerOff.Style.Add("color", "green");
-                        /*Pintar encendido*/
-                    }
-                    else
-                    {
-                        /*pintar apagado */
-                        fwtIsOn.Text = "Desconectado";
-                        fwtIsOn.Style.Remove("color");
-                        fwtIsOn.Style.Add("color", "red");
-                        //PowerOff.Style.Remove("color");
-                        //PowerOff.Style.Add("color", "red");
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                //PowerOff.Style.Remove("color");
-                //PowerOff.Style.Add("color", "gray");
-            }
-        }
-        #endregion
 
 
         protected void btnChange_Click(object sender, EventArgs e)
@@ -2552,8 +2512,8 @@ namespace SistemaGestionRedes
         {
             bool isAskClock = RealizarComunicacionMessageQueueOnline(ComandosUsuario.AskClockArix, null, idArix);
             if (isAskClock)
-            {
-                string mensaje = "Fecha y hora actual del ARIX: " + dataClock;
+            {                
+                string mensaje = "Fecha y hora actual del ARIX: " + string.Format("{0:dd-MM-yyyy HH:mm:ss}", Convert.ToDateTime(dataClock).AddHours(0));
                 this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Fecha y hora ARIX','Fecha y hora actual del ARIX: {dataClock}', 'success');", true);
             }
             else

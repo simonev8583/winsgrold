@@ -5,11 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SGR.DataAccessLayer;
+using SGR.BussinessLayer;
+using System.Messaging;
 
 namespace SistemaGestionRedes
 {
     public partial class EditARIX : System.Web.UI.Page
     {
+        private MessageQueue mqWebToSGR;
+        private MessageQueue mqSGRToWeb;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -20,9 +24,11 @@ namespace SistemaGestionRedes
                 //_fwtIsConnected = AccesoDatosEF.ExisteConexionFWT(lblTxtSerialFWT.Text);
                 ActivarBotones();
                 //LlenarComboFechasHistoricasParametros(int.Parse(strId));
-                //ControlarAutorizacionControles();
+                ControlarAutorizacionControles();
             }
         }
+
+        #region paramsArix
 
         private void LlenarValoresARIX(int Id)
         {
@@ -32,6 +38,7 @@ namespace SistemaGestionRedes
                 if (arix.FWTId != null)
                 {
                     serialARIX.Text = arix.Serial;
+                    serialFWT.Text = db.FWTs.FirstOrDefault(x => x.Id == arix.FWTId).Serial;
                     var paramArix = arix.ParamARIX;
                     var disparo1Arix = arix.ARIX_Disparos.ToList()[0];
                     var disparo2Arix = arix.ARIX_Disparos.ToList()[1];
@@ -189,6 +196,11 @@ namespace SistemaGestionRedes
 
         protected void butActualizarParams_Click(object sender, EventArgs e)
         {
+            this.ActualizarParametrosArix(false);
+        }
+
+        private void ActualizarParametrosArix(bool isOnline = false)
+        {
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','mensaje de error');", true);
             // validar campos antes de actualizar... 
             using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
@@ -217,7 +229,7 @@ namespace SistemaGestionRedes
                     if (!datosEnRangoOpReconectador)
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de OPERACIÓN RECONECTADOR');", true);
                     //Response.Write("<script>alert('Revisar los rangos en parámetros de operación reconectador')</script>");
-                                        
+
                     bool datosEnRangoDisparo1 = validarRangoDisparo(1);
                     if (!datosEnRangoDisparo1)
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 1');", true);
@@ -258,7 +270,7 @@ namespace SistemaGestionRedes
                         hayCambiosDisparo3 || hayCambiosDisparo4 || hayCambiosDisparo5
                         )
                     {
-                        if(datosEnRangoDisparo5 && datosEnRangoDisparo4 && datosEnRangoDisparo3 && datosEnRangoDisparo2 && datosEnRangoDisparo1
+                        if (datosEnRangoDisparo5 && datosEnRangoDisparo4 && datosEnRangoDisparo3 && datosEnRangoDisparo2 && datosEnRangoDisparo1
                         && datosEnRangoComunicacion && datosEnRangoHardware && datosEnRangoOpReconectador && datosEnRangoOpGeneral)
                         {
                             if (hayCambiosOpGeneral)
@@ -300,12 +312,20 @@ namespace SistemaGestionRedes
                             {
                                 arix = ModificarDisparo5(arix);
                             }
-                            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX se actualizarán en el próximo reporte periódico', 'Guardando cambios');", true);
+                            if (isOnline)
+                            {
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX han sido actualizados', 'Guardando cambios');", true);
+                            }
+                            else
+                            {
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX se actualizarán en el próximo reporte periódico', 'Guardando cambios');", true);
+                            }                            
                             //Response.Write("<script>alert('Hay cambios por subir')</script>");
                             arix.PendienteEnviarParametros = true;
                             arix.PendienteConfirmarActualizacionParametros = false;
                         }
                         db.SaveChanges();
+                        ViewState["ActualizadoOffline"] = true;
                     }
                     else
                     {
@@ -1040,5 +1060,136 @@ namespace SistemaGestionRedes
 
             return arix;
         }
+
+        #endregion
+
+        #region ONLINE
+        protected void butUpdate_Click(object sender, EventArgs e)
+        {
+            using (SistemaGestionRemotoContainer bDatos = new SistemaGestionRemotoContainer())
+            {
+                int idArix = Convert.ToInt32(lblId.Text);
+                ARIX arix = bDatos.ARIXs.SingleOrDefault(a => a.Id == idArix);
+                if (arix != null)
+                {
+                    butActualizarParams_Click(sender, e);
+                }
+            }
+        }
+
+        protected void butUpdateOnline_Click(object sender, EventArgs e)
+        {
+            this.Validate("editARIX");
+            if (this.IsValid)
+            {
+                ViewState["ActualizadoOffline"] = false;  //antes de actualizar Online , se hace todo el proceso de Actualizar OffLine
+                this.ActualizarParametrosArix(true);
+                if ((bool)ViewState["ActualizadoOffline"])
+                {
+                    //RealizarComunicacionOnlineYMSMQ(ComandosUsuario.UpdateParamsARIX);
+                    RealizarComunicacionOnlineYMSMQ(ComandosUsuario.UpdateParamsARIX);
+                }
+            }
+
+
+        }
+
+        private void RealizarComunicacionOnlineYMSMQ(ComandosUsuario comandoUser)
+        {
+            InicializarMessageQueues();
+            var respuesta = "";
+            MensajeComandoMQOnline msgComando = new MensajeComandoMQOnline();
+
+            msgComando.SerialFWT = serialFWT.Text;
+            msgComando.IdFCI = byte.Parse(lblId.Text);
+            msgComando.SerialFCI = serialARIX.Text;
+            msgComando.Comando = comandoUser;
+            mqWebToSGR.Send(msgComando);
+
+            //Formato de mensaje de recepcion MensajeRespuestasMQOnline
+            ((XmlMessageFormatter)mqSGRToWeb.Formatter).TargetTypes = new Type[1];
+            ((XmlMessageFormatter)mqSGRToWeb.Formatter).TargetTypes[0] = (new MensajeRespuestasMQOnline()).GetType();
+
+            try
+            {
+                System.Messaging.Message msg = mqSGRToWeb.Receive(new TimeSpan(0, 0, 45)); //Espera Máximo 45 segs sincronicamente para recibir respuesta
+                MensajeRespuestasMQOnline msgRespuesta = (MensajeRespuestasMQOnline)msg.Body;
+
+                if (msgRespuesta.Respuesta == RespuestasSvrCom.NotConnected)
+                {
+                    respuesta = DescripcionEnumeraciones.GetRespuestasSvrComSpa(RespuestasSvrCom.NotConnected);
+                }
+                else if (msgRespuesta.Respuesta == RespuestasSvrCom.MsgQueueExceptionComunicaciones)
+                {
+
+                    //lblEstadoActualizacionOnline.Text = "MessageQueueException en servidor comunicaciones  : " + (string)msgRespuesta.Datos;
+                    respuesta = DescripcionEnumeraciones.GetRespuestasSvrComSpa(RespuestasSvrCom.MsgQueueExceptionComunicaciones);
+                }
+                else
+                {
+                    if (msgRespuesta.SerialFWT == serialFWT.Text)
+                    {
+                        switch (comandoUser)
+                        {
+                            case ComandosUsuario.UpdateParamsARIX:
+                                if (msgRespuesta.Respuesta == RespuestasSvrCom.OK)
+                                {
+                                    respuesta = "Correcto, si funciona, buena crack!!!!!";
+                                }
+                                else
+                                {
+                                    //lblEstadoActualizacionOnline.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
+                                    respuesta = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
+                                }
+                                break;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        private void InicializarMessageQueues()
+        {
+            //string queueName = @".\private$\WEbToSGRServer";  //Queue de Envío
+            string queueName = ConfigApp.QueueToCosoft;  //Queue de Envío
+
+            if (MessageQueue.Exists(queueName))
+            {
+                mqWebToSGR = new MessageQueue(queueName);
+            }
+            else
+            {
+                mqWebToSGR = MessageQueue.Create(queueName);
+            }
+
+            //string queuePath = ".\\private$\\SGRServerToWeb";  //Queue de Recepción  
+            string queuePath = ConfigApp.QueueFromCosoft;  //Queue de Recepción
+
+            if (MessageQueue.Exists(queuePath))
+            {
+                mqSGRToWeb = new MessageQueue(queuePath);
+            }
+            else
+            {
+                mqSGRToWeb = MessageQueue.Create(queuePath);
+            }
+            mqWebToSGR.Purge(); //Importante que NO existan mensajes en la cola anteriormente . Verificar si se cambia esta politica        
+            mqSGRToWeb.Purge();
+        }
+
+
+        protected void ControlarAutorizacionControles()
+        {
+            //ATENCIÓN: Cada vez que se adicione un control en esta lista, se debe buscar o controlar en el resto del
+            //código que no se haga una habilitación directa en otro sitio sin pasar por la función de control
+            //de autorización UtilitariosWebGUI.HasAuthorization().
+            butUpdate.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+            //butUpdateOnline.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+        }
+        #endregion
     }
 }
