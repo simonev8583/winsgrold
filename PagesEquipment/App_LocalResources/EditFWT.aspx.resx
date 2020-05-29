@@ -796,4 +796,7 @@
   <data name="TextSerialArixCommand" xml:space="preserve">
     <value></value>
   </data>
+  <data name="TextHeaderModeOperation" xml:space="preserve">
+    <value>Modo operación</value>
+  </data>
 </root>

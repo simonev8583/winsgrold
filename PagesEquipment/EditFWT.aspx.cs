@@ -190,7 +190,7 @@ namespace SistemaGestionRedes
         /// <summary>
         /// Realiza el intercambio de paquetes messagequeueOnline y actualiza la interfaz GUI segun el caso .
         /// </summary>
-        private bool RealizarComunicacionMessageQueueOnline(ComandosUsuario comandoUser, byte? idFCI = null, int? idArix = null, int newAsdu = 0)
+        private bool RealizarComunicacionMessageQueueOnline(ComandosUsuario comandoUser, byte? idFCI = null, int? idArix = null, string param = null, int newAsdu = 0)
         {
             bool exito = false;
             //Algunos settings..
@@ -208,6 +208,7 @@ namespace SistemaGestionRedes
             msgComando.Comando = comandoUser;
             msgComando.IdFCI = idFCI;
             msgComando.IdARIX = idArix;
+            msgComando.Param = param;
             FormatearMensajeColaRecepcion();
             mqWebToSGR.Send(msgComando);
             try
@@ -408,6 +409,13 @@ namespace SistemaGestionRedes
                             case ComandosUsuario.SincClockArix:
                                 var respuestaUpClockArix = msgRespuesta.Respuesta;
                                 if (respuestaUpClockArix == RespuestasSvrCom.OK)
+                                {
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.ModeOperation:
+                                var responseModeOperation = msgRespuesta.Respuesta;
+                                if(responseModeOperation == RespuestasSvrCom.OK)
                                 {
                                     exito = true;
                                 }
@@ -2288,6 +2296,30 @@ namespace SistemaGestionRedes
                 bntObjupd.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                 bntObjUpdClock.Visible = true;
 
+                RadioButton checkModeAutomatic = (RadioButton)e.Row.FindControl("checkModeAutomatic");
+                RadioButton checkObjModeAutomatic = (RadioButton)e.Row.FindControl("checkModeAutomatic");
+                checkObjModeAutomatic.GroupName = idArix;
+                checkObjModeAutomatic.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                checkModeAutomatic.Visible = true;
+
+                RadioButton checkModeWithouReconect = (RadioButton)e.Row.FindControl("checkModeWithouReconect");
+                RadioButton checkObjModeWithouReconect = (RadioButton)e.Row.FindControl("checkModeWithouReconect");
+                checkObjModeWithouReconect.GroupName = idArix;
+                checkObjModeWithouReconect.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                checkModeWithouReconect.Visible = true;
+
+                RadioButton checkModeMaintenance = (RadioButton)e.Row.FindControl("checkModeMaintenance");
+                RadioButton checkObjModeMaintenance = (RadioButton)e.Row.FindControl("checkModeMaintenance");
+                checkObjModeMaintenance.GroupName = idArix;
+                checkObjModeMaintenance.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                checkModeMaintenance.Visible = true;
+
+                RadioButton checkCleanAll = (RadioButton)e.Row.FindControl("checkCleanAll");
+                RadioButton checkObjCleanAll = (RadioButton)e.Row.FindControl("checkCleanAll");
+                checkObjCleanAll.GroupName = idArix;
+                checkObjCleanAll.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                checkCleanAll.Visible = true;
+
                 LabelApertura.Text = "";
                 LabelCerrado.Text = "";
             }
@@ -2299,7 +2331,7 @@ namespace SistemaGestionRedes
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void ListArixByFwt_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
+        {            
             if (e.CommandName.Equals("ABRIR"))
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
@@ -2312,7 +2344,7 @@ namespace SistemaGestionRedes
             }            
             else if (e.CommandName.Equals("REINICIAR"))
             {
-                int idArix = int.Parse(e.CommandArgument.ToString());            
+                int idArix = int.Parse(e.CommandArgument.ToString());
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, e.CommandName), true);
             }
             else if (e.CommandName.Equals("ACTUALIZAR RELOJ"))
@@ -2332,13 +2364,40 @@ namespace SistemaGestionRedes
             }
         }
 
+        protected void btnCheckModeOperation(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+            int idArix = int.Parse(radioButton.GroupName); /*ListArixByFwt_RowDataBound se hace encapsulamiento del Id del ARIX en el grupo del RadioButton*/
+            string idMode = radioButton.ID;
+            bool isCheck = radioButton.Checked;
+            string text = "MODO " + radioButton.Text.ToUpper();
+            if (isCheck)
+            {
+                if (idMode == "checkModeAutomatic")
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, text), true);
+                }
+                else if (idMode == "checkModeWithouReconect")
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, text), true);
+                }
+                else if (idMode == "checkModeMaintenance")
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, text), true);
+                }
+                else /*No reconocio el modo de operación...*/
+                {
+                    this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Error ','No se reconoce el modo de operación que desea activar','error');", true);
+                }
+            }
+            else
+            {
+                /*No esta check*/
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Error seleccionando opción','Debe escoger un modo de operación para ejecutar la acción','error');", true);
+            }           
+        }
+
         #endregion
-        /*CAMBIAR NOMBRE DEL TICK => ESTE TICK REFRESCA EL ESTADO DEL FWT 
-         ENCENDIDO O APAGADO
-             */
-
-
-
         protected void btnChange_Click(object sender, EventArgs e)
         {
             Response.Write("Button Clicked");
@@ -2378,7 +2437,6 @@ namespace SistemaGestionRedes
             }
              if (serial.ToLower() == serialArix.ToLower())
              {
-                //this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Datos confirmados','Pronto se va a ejecutar el comando seleccionado','success');", true);
                 switch (command)
                  {
                      case "REINICIAR":
@@ -2393,7 +2451,16 @@ namespace SistemaGestionRedes
                     case "ACTUALIZAR RELOJ":
                         CommandUpdClock(idArix);
                         break;
-                 }
+                    case "MODO AUTOMÁTICO":
+                        CommandCheckModeAutomatic(idArix);
+                        break;
+                    case "MODO SIN RECONEXIÓN":
+                        CommandCheckModeWithoutReconect(idArix);
+                        break;
+                    case "MODO MANTENIMIENTO":
+                        CommandCheckModeMaintenance(idArix);
+                        break;
+                }
              }
              else
              {
@@ -2519,6 +2586,46 @@ namespace SistemaGestionRedes
             else
             {
                 this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Fecha y hora ARIX','Falló la consulta de hora del ARIX, favor intente de nuevo.', 'warning');", true);
+            }
+        }
+
+        private void CommandCheckModeAutomatic(int idArix)
+        {
+            bool isModeAuto = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ModeOperation, null, idArix, "Automatico");
+            if (isModeAuto)
+            {
+                string mensaje = "Fecha y hora actual del ARIX: " + string.Format("{0:dd-MM-yyyy HH:mm:ss}", Convert.ToDateTime(dataClock).AddHours(0));
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Modo operación Automático','El ARIX se encuentra operando en modo AUTOMÁTICO', 'success');", true);
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Modo operación Automático','Falló la actualización del modo de operación del ARIX', 'error');", true);
+            }
+        }
+        private void CommandCheckModeWithoutReconect(int idArix)
+        {
+            bool isModeAuto = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ModeOperation, null, idArix, "Sin reconexión");
+            if (isModeAuto)
+            {
+                string mensaje = "Fecha y hora actual del ARIX: " + string.Format("{0:dd-MM-yyyy HH:mm:ss}", Convert.ToDateTime(dataClock).AddHours(0));
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Modo operación sin reconexión','El ARIX se encuentra operando en modo SIN RECONEXIÓN', 'success');", true);
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Modo operación sin reconexión','Falló la actualización del modo de operación del ARIX', 'error');", true);
+            }
+        }
+        private void CommandCheckModeMaintenance(int idArix)
+        {
+            bool isModeAuto = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ModeOperation, null, idArix, "Mantenimiento");
+            if (isModeAuto)
+            {
+                string mensaje = "Fecha y hora actual del ARIX: " + string.Format("{0:dd-MM-yyyy HH:mm:ss}", Convert.ToDateTime(dataClock).AddHours(0));
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Modo operación Mantenimiento','El ARIX se encuentra operando en modo MANTENIMIENTO', 'success');", true);
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Modo operación Mantenimiento','Falló la actualización del modo de operación del ARIX', 'error');", true);
             }
         }
     }

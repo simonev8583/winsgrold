@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -26,8 +27,18 @@ namespace SistemaGestionRedes
             {
                 menuSegundoNivel.Items[0].Text = (string)this.GetLocalResourceObject("TextHistorialAlarmasBoth");
             }
+            this.validateUsername();
 
+        }
 
+        private void validateUsername()
+        {
+            var username = Membership.GetUser().UserName;
+            if(!username.Equals("celsa"))
+            {
+                menuSegundoNivel.Items.RemoveAt(8);
+            }
+            
         }
     }
 }

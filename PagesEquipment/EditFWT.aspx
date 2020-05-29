@@ -419,7 +419,15 @@
                                                 CommandName="ACTUALIZAR RELOJ" CssClass="TextBoton" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderModeOperation %>">
+                                        <ItemTemplate>
+                                            <asp:RadioButton ID="checkModeAutomatic" runat="server" Text="Automático" OnCheckedChanged="btnCheckModeOperation"/><br />
+                                            <asp:RadioButton ID="checkModeWithouReconect" runat="server" Text="Sin reconexión" OnCheckedChanged="btnCheckModeOperation" /><br />
+                                            <asp:RadioButton ID="checkModeMaintenance" runat="server" Text="Mantenimiento" OnCheckedChanged="btnCheckModeOperation" />
+                                            <asp:RadioButton ID="checkCleanAll" runat="server" Text="Restaurar"/>
+                                        </ItemTemplate>
 
+                                    </asp:TemplateField>
                                 </Columns>
                                 <FooterStyle BackColor="#0b304f" />
                                 <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
