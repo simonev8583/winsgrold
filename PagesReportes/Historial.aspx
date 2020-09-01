@@ -91,43 +91,39 @@
                 
                 <rjs:PopCalendarMessageContainer ID="PopCalendarMessageContainer2" 
                         runat="server" Calendar="PopCalFf" CenterText="True" />
-                   
-                
-            
-        
-      
-
                             </td>
                         </tr>
-                        <tr>
-                            <td align="right" width="50%">
-            <asp:Label ID="Label9" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="Small"
-                Text="<%$ Resources:TextLblFalla %>"></asp:Label>
-                            </td>
-                            <td align="left" width="50%">
-                                <asp:DropDownList ID="DDListFallas" runat="server" AppendDataBoundItems="True"
-                DataSourceID="SqDSFallas" DataTextField="Nombre" DataValueField="Id" Font-Names="Microsoft Sans Serif"
-                Font-Size="12px">
-                <asp:ListItem Selected="True" Text="<%$ Resources:TextTodasFallas %>" Value="0"></asp:ListItem>
-            </asp:DropDownList>
-                            </td>
-                        </tr>
+                        
                         <tr>
                             <td align="center" colspan="2" width="100%">
                                 <asp:UpdatePanel ID="UpPanelEquipos" runat="server">
                                     <ContentTemplate>
                                         <table width="100%">
+                                            
                                             <tr>
-                                                <td colspan="2" width="50%" align="right">
+                                                <td width="50%" align="right">
                                                     <asp:Label ID="Label10" runat="server" Font-Names="Microsoft Sans Serif" 
                                                         Font-Size="12px" Text="<%$ Resources:TextLblEquipo %>"></asp:Label>
                                                 </td>
-                                                <td colspan="2" width="50%" align="left">
+                                                <td width="50%" align="left">
                                                     <asp:DropDownList ID="DDListEquipos" runat="server" AutoPostBack="True" 
                                                         Font-Names="Microsoft Sans Serif" Font-Size="12px" 
                                                         onselectedindexchanged="DDListEquipos_SelectedIndexChanged">
                                                     </asp:DropDownList>
                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" width="50%">
+                                                <asp:Label ID="Label9" runat="server" Font-Names="Microsoft Sans Serif" Font-Size="Small"
+                                                    Text="<%$ Resources:TextLblFalla %>"></asp:Label>
+                                                </td>
+                                                 <td align="left" width="50%">
+                                                    <asp:DropDownList ID="DDListFallas" runat="server" AppendDataBoundItems="True"
+                                                        DataSourceID="SqDSFallas" DataTextField="Nombre" DataValueField="Id" Font-Names="Microsoft Sans Serif"
+                                                        Font-Size="12px">
+                                                    <asp:ListItem Selected="True" Text="<%$ Resources:TextTodasFallas %>" Value="0"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                  </td>
                                             </tr>
                                             <tr>
                                                 <td align="right" width="40%">
@@ -141,6 +137,9 @@
                                                         DataSourceID="SqlDSFwts" DataTextField="Serial" DataValueField="Id">
                                                     </asp:DropDownList>
                                                 </td>
+                                                
+                                            </tr>
+                                            <tr>
                                                 <td align="right" width="7%">
                                                     <asp:Label ID="lblDescTipoEquipo" runat="server" Font-Names="Microsoft Sans Serif" 
                                                         Font-Size="12px" Text="FCI/SIX:"></asp:Label>

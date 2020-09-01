@@ -209,8 +209,8 @@ namespace SistemaGestionRedes
                                             WHERE MtAlarmas.Id = MtAlarmas_Lenguaje.Id 
                                             and CHARINDEX('Clear', MtAlarmas.Nombre, 1) = 0 AND MtAlarmas.TipoEquipo = 'A'
                                             and MtAlarmas_Lenguaje.Lang = MtLenguajes.Id
-                                            and MtLenguajes.Cod = @IdLang 
-                                            and MtAlarmas.id in (178,179,180) ";
+                                            and MtLenguajes.Cod = @IdLang
+                                            and MtAlarmas.id in (165, 178,179,180) ";
             }
             else if (tipoEquipo == TipoEquipoRed.FCI)
             {
@@ -227,7 +227,8 @@ namespace SistemaGestionRedes
             DDListFallas.Items.Add(itemTodos);
             DDListFallas.DataBind();
 
-            DDListCntrs_SelectedIndexChanged(sender, e);
+
+            GVFCIData.DataBind();
         }
 
         protected void TryMostrarMensajeNoData()

@@ -14,6 +14,7 @@ namespace SistemaGestionRedes
     {
         private MessageQueue mqWebToSGR;
         private MessageQueue mqSGRToWeb;
+        public int numeroDisparos = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -39,12 +40,14 @@ namespace SistemaGestionRedes
                 {
                     serialARIX.Text = arix.Serial;
                     serialFWT.Text = db.FWTs.FirstOrDefault(x => x.Id == arix.FWTId).Serial;
+                    numeroDisparos = arix.ARIX_Disparos.Count;
                     var paramArix = arix.ParamARIX;
                     var disparo1Arix = arix.ARIX_Disparos.ToList()[0];
                     var disparo2Arix = arix.ARIX_Disparos.ToList()[1];
                     var disparo3Arix = arix.ARIX_Disparos.ToList()[2];
                     var disparo4Arix = arix.ARIX_Disparos.ToList()[3];
                     var disparo5Arix = arix.ARIX_Disparos.ToList()[4];
+                    var disparo6Arix = arix.ARIX_Disparos.Count == 6 ? arix.ARIX_Disparos.ToList()[5] : null;
 
                     ///DATOS ARIX FALTA IMPLEMENTAR
 
@@ -153,6 +156,25 @@ namespace SistemaGestionRedes
                     txtDisparo5_modTiempoDefIMaxAct.Text = disparo5Arix.ModTiempoDefIMaxAct.ToString();
                     txtDisparo5_modRetardoAdicional.Text = disparo5Arix.ModRetardoAdicional.ToString();
 
+                    /// DISPARO6
+                    
+                    if(disparo6Arix != null)
+                    {
+                        ObtenerValorSelect(disparo6Arix.TipoOperacion.ToString(), listBoxDisparo6_tipoOperacion);
+                        ObtenerValorSelect(disparo6Arix.TipoReset.ToString(), listBoxDisparo6_tipoReset);
+                        checkDisparo6_habilitaModificadores.Checked = (bool)disparo6Arix.HabilitaModificadores;
+                        txtDisparo6_corrArranque.Text = disparo6Arix.CorrArranque.ToString();
+                        txtDisparo6_modCorrMaxActuacion.Text = disparo6Arix.ModCorrMaxActuacion.ToString();
+                        txtDisparo6_modTd.Text = disparo6Arix.ModTd.ToString();
+                        txtDisparo6_tiempoDisparoDefinido.Text = disparo6Arix.TiempoDisparoDefinido.ToString();
+                        txtDisparo6_tiempoResetCiclo.Text = disparo6Arix.TiempoResetCiclo.ToString();
+                        txtDisparo6_tiempoApertura.Text = disparo6Arix.TiempoApertura.ToString();
+                        txtDisparo6_modTiempoMaxRespuesta.Text = disparo6Arix.ModTiempoMaxRespuesta.ToString();
+                        txtDisparo6_modTiempoMinRespuesta.Text = disparo6Arix.ModTiempoMinRespuesta.ToString();
+                        txtDisparo6_modTiempoDefIMaxAct.Text = disparo6Arix.ModTiempoDefIMaxAct.ToString();
+                        txtDisparo6_modRetardoAdicional.Text = disparo6Arix.ModRetardoAdicional.ToString();
+                    }
+
                     ///HARDWARE
 
                     txtHardware_adcCargaLOWCapacitorDisparo.Text = paramArix.adcCargaLOWCapacitorDisparo.ToString();
@@ -219,6 +241,7 @@ namespace SistemaGestionRedes
                     bool hayCambiosDisparo3 = HayModificacionDisparo3(arix);
                     bool hayCambiosDisparo4 = HayModificacionDisparo4(arix);
                     bool hayCambiosDisparo5 = HayModificacionDisparo5(arix);
+                    bool hayCambiosDisparo6 = HayModificacionDisparo6(arix);
 
                     bool datosEnRangoOpGeneral = validarRangoOperacionGeneral();
                     if (!datosEnRangoOpGeneral)
@@ -255,6 +278,14 @@ namespace SistemaGestionRedes
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 5');", true);
                     //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 5')</script>");
 
+                    bool datosEnRangoDisparo6 = true;
+                    if (hayCambiosDisparo6)
+                    {
+                        datosEnRangoDisparo6 = validarRangoDisparo(6);
+                        if (!datosEnRangoDisparo6)
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 6');", true);
+                    }                    
+
                     bool datosEnRangoHardware = validarRangoHardware();
                     if (!datosEnRangoHardware)
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de HARDWARE');", true);
@@ -267,7 +298,7 @@ namespace SistemaGestionRedes
 
                     if (hayCambiosOpGeneral || hayCambiosOpReconectador || hayCambiosHardware ||
                         hayCambiosComunicaciones || hayCambiosDisparo1 || hayCambiosDisparo2 ||
-                        hayCambiosDisparo3 || hayCambiosDisparo4 || hayCambiosDisparo5
+                        hayCambiosDisparo3 || hayCambiosDisparo4 || hayCambiosDisparo5 || hayCambiosDisparo6
                         )
                     {
                         if (datosEnRangoDisparo5 && datosEnRangoDisparo4 && datosEnRangoDisparo3 && datosEnRangoDisparo2 && datosEnRangoDisparo1
@@ -311,6 +342,10 @@ namespace SistemaGestionRedes
                             if (hayCambiosDisparo5)
                             {
                                 arix = ModificarDisparo5(arix);
+                            }
+                            if (hayCambiosDisparo6)
+                            {
+                                arix = ModificarDisparo6(arix);
                             }
                             if (isOnline)
                             {
@@ -579,6 +614,18 @@ namespace SistemaGestionRedes
                     modTiempoMinRespuesta = int.Parse(txtDisparo5_modTiempoMinRespuesta.Text);
                     modTiempoDefIMaxAct = int.Parse(txtDisparo5_modTiempoDefIMaxAct.Text);
                     modRetardoAdicional = int.Parse(txtDisparo5_modRetardoAdicional.Text);
+                    break;
+                case (6):
+                    iArranque = int.Parse(txtDisparo6_corrArranque.Text);
+                    iMaxAct = int.Parse(txtDisparo6_modCorrMaxActuacion.Text);
+                    modTd = double.Parse(txtDisparo6_modTd.Text);
+                    tiempoDisparoDefinido = int.Parse(txtDisparo6_tiempoDisparoDefinido.Text);
+                    tiempoResetCiclo = int.Parse(txtDisparo6_tiempoResetCiclo.Text);
+                    tiempoApertura = int.Parse(txtDisparo6_tiempoApertura.Text);
+                    modTiempoMaxRespuesta = int.Parse(txtDisparo6_modTiempoMaxRespuesta.Text);
+                    modTiempoMinRespuesta = int.Parse(txtDisparo6_modTiempoMinRespuesta.Text);
+                    modTiempoDefIMaxAct = int.Parse(txtDisparo6_modTiempoDefIMaxAct.Text);
+                    modRetardoAdicional = int.Parse(txtDisparo6_modRetardoAdicional.Text);
                     break;
             }
 
@@ -852,6 +899,39 @@ namespace SistemaGestionRedes
             }
             return respuesta;
         }
+
+        private bool HayModificacionDisparo6(ARIX arix)
+        {
+            bool respuesta = false;
+            int contador = 0;
+
+            var disparo6Arix = arix.ARIX_Disparos.Count == 6? arix.ARIX_Disparos.ToList()[5]: null;
+            if(disparo6Arix != null)
+            {
+                if (listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0] != disparo6Arix.TipoOperacion) contador++;
+                if (listBoxDisparo6_tipoReset.GetSelectedIndices()[0] != disparo6Arix.TipoReset) contador++;
+                if (checkDisparo6_habilitaModificadores.Checked != disparo6Arix.HabilitaModificadores) contador++;
+                if (txtDisparo6_corrArranque.Text != disparo6Arix.CorrArranque.ToString()) contador++;
+                if (txtDisparo6_modCorrMaxActuacion.Text != disparo6Arix.ModCorrMaxActuacion.ToString()) contador++;
+                var modTd = txtDisparo6_modTd.Text.Replace(".", ",");
+                if (modTd != disparo6Arix.ModTd.ToString()) contador++;
+                if (txtDisparo6_tiempoDisparoDefinido.Text != disparo6Arix.TiempoDisparoDefinido.ToString()) contador++;
+                if (txtDisparo6_tiempoResetCiclo.Text != disparo6Arix.TiempoResetCiclo.ToString()) contador++;
+                if (txtDisparo6_tiempoApertura.Text != disparo6Arix.TiempoApertura.ToString()) contador++;
+                if (txtDisparo6_modTiempoMaxRespuesta.Text != disparo6Arix.ModTiempoMaxRespuesta.ToString()) contador++;
+                if (txtDisparo6_modTiempoMinRespuesta.Text != disparo6Arix.ModTiempoMinRespuesta.ToString()) contador++;
+                if (txtDisparo6_modTiempoDefIMaxAct.Text != disparo6Arix.ModTiempoDefIMaxAct.ToString()) contador++;
+                if (txtDisparo6_modRetardoAdicional.Text != disparo6Arix.ModRetardoAdicional.ToString()) contador++;
+            }
+            
+            if (contador > 0)
+            {
+                respuesta = true;
+
+            }
+            return respuesta;
+        }
+
         private void ActivarBotones()
         {
             butActualizarParams.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
@@ -1057,6 +1137,34 @@ namespace SistemaGestionRedes
             if (txtDisparo5_modRetardoAdicional.Text != disparo5Arix.ModRetardoAdicional.ToString()) disparo5Arix.ModRetardoAdicional = int.Parse(txtDisparo5_modRetardoAdicional.Text);
 
             arix.ARIX_Disparos.ToList()[4] = disparo5Arix;
+
+            return arix;
+        }
+
+        private ARIX ModificarDisparo6(ARIX arix)
+        {
+            var disparo6Arix = arix.ARIX_Disparos.Count == 6? arix.ARIX_Disparos.ToList()[5]: null;
+            if (disparo6Arix != null)
+            {
+                if (listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0] != disparo6Arix.TipoOperacion) disparo6Arix.TipoOperacion = listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0];
+                if (listBoxDisparo6_tipoReset.GetSelectedIndices()[0] != disparo6Arix.TipoReset) disparo6Arix.TipoReset = (byte)listBoxDisparo6_tipoReset.GetSelectedIndices()[0];
+                if (checkDisparo6_habilitaModificadores.Checked != disparo6Arix.HabilitaModificadores) disparo6Arix.HabilitaModificadores = checkDisparo6_habilitaModificadores.Checked;
+                if (txtDisparo6_corrArranque.Text != disparo6Arix.CorrArranque.ToString()) disparo6Arix.CorrArranque = int.Parse(txtDisparo6_corrArranque.Text);
+                if (txtDisparo6_modCorrMaxActuacion.Text != disparo6Arix.ModCorrMaxActuacion.ToString()) disparo6Arix.ModCorrMaxActuacion = int.Parse(txtDisparo6_modCorrMaxActuacion.Text);
+                var modTd = txtDisparo6_modTd.Text.Replace(".", ",");
+                if (modTd != disparo6Arix.ModTd.ToString()) disparo6Arix.ModTd = decimal.Parse(modTd);
+                if (txtDisparo6_tiempoDisparoDefinido.Text != disparo6Arix.TiempoDisparoDefinido.ToString()) disparo6Arix.TiempoDisparoDefinido = int.Parse(txtDisparo6_tiempoDisparoDefinido.Text);
+                if (txtDisparo6_tiempoResetCiclo.Text != disparo6Arix.TiempoResetCiclo.ToString()) disparo6Arix.TiempoResetCiclo = int.Parse(txtDisparo6_tiempoResetCiclo.Text);
+                if (txtDisparo6_tiempoApertura.Text != disparo6Arix.TiempoApertura.ToString()) disparo6Arix.TiempoApertura = int.Parse(txtDisparo6_tiempoApertura.Text);
+                if (txtDisparo6_modTiempoMaxRespuesta.Text != disparo6Arix.ModTiempoMaxRespuesta.ToString()) disparo6Arix.ModTiempoMaxRespuesta = int.Parse(txtDisparo6_modTiempoMaxRespuesta.Text);
+                if (txtDisparo6_modTiempoMinRespuesta.Text != disparo6Arix.ModTiempoMinRespuesta.ToString()) disparo6Arix.ModTiempoMinRespuesta = int.Parse(txtDisparo6_modTiempoMinRespuesta.Text);
+                if (txtDisparo6_modTiempoDefIMaxAct.Text != disparo6Arix.ModTiempoDefIMaxAct.ToString()) disparo6Arix.ModTiempoDefIMaxAct = int.Parse(txtDisparo6_modTiempoDefIMaxAct.Text);
+                if (txtDisparo6_modRetardoAdicional.Text != disparo6Arix.ModRetardoAdicional.ToString()) disparo6Arix.ModRetardoAdicional = int.Parse(txtDisparo6_modRetardoAdicional.Text);
+            }            
+            if(disparo6Arix != null)
+            {
+                arix.ARIX_Disparos.ToList()[5] = disparo6Arix;
+            }            
 
             return arix;
         }

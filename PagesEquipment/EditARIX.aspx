@@ -1737,6 +1737,274 @@
                         </fieldset>
                     </asp:Panel>
 
+                    
+                    <% if(numeroDisparos == 6) { %>
+                        <asp:CollapsiblePanelExtender ID="CollapsiblePanelDisparo6" runat="server"
+                            TargetControlID="ContentOperacionDisparo6"
+                            ExpandControlID="TitleOperacionDisparo6"
+                            CollapseControlID="TitleOperacionDisparo6"
+                            Collapsed="True"
+                            TextLabelID="LabelMostrarActual"
+                            ExpandedText="<%$ Resources:ExpandOperacionGeneral %>"
+                            CollapsedText="<%$ Resources:CollapseOperacionGeneral %>"
+                            ImageControlID="ImageDisparo6"
+                            ExpandedImage="~/Images/collapse.jpg"
+                            CollapsedImage="~/Images/expand.jpg"
+                            SuppressPostBack="true"></asp:CollapsiblePanelExtender>
+                        <asp:Panel ID="TitleOperacionDisparo6" runat="server" CssClass="collapsePanelHeader styleCollapseDisparo">
+                            <asp:Image ID="ImageDisparo6" runat="server" ImageUrl="~/Images/expand.jpg" />
+                            &nbsp;<asp:Label ID="lblTextTitleOperacionDisparo6" runat="server" Text="<%$ Resources:lblTextTitleOperacionDisparo6 %>"></asp:Label>&nbsp;&nbsp;
+                        </asp:Panel>
+                        <asp:Panel ID="ContentOperacionDisparo6" runat="server">
+                            <fieldset>
+                                <center>
+                                <table class="tableClass">
+                                    <thead class="itemHeader">
+                                    <tr>
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label50" runat="server" Text="<%$ Resources:lblOpGeneral_modoOperacion %>"></asp:Label>&nbsp;&nbsp;
+                                        </th>
+
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label51" runat="server" Text="<%$ Resources:lblDisp1_tipoReset %>"></asp:Label>&nbsp;&nbsp;
+                                        </th>
+                                    
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label52" runat="server" Text="<%$ Resources:lblDisparo1_habilitaModificadores %>"></asp:Label>&nbsp;&nbsp;
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="itemBody">
+                                    <tr>
+                                        <td>
+                                            <asp:ListBox ID="listBoxDisparo6_tipoOperacion" runat="server" Height="70px" Width="100px">
+                                                <asp:ListItem Value="0" Text="<%$ Resources:TextoDisparo1_TiempoDefinido %>"></asp:ListItem>
+                                                <asp:ListItem Value="1" Text="<%$ Resources:TextoDisparo1_IECNI %>"></asp:ListItem>
+                                                <asp:ListItem Value="2" Text="<%$ Resources:TextoDisparo1_IECVI %>"></asp:ListItem>
+                                                <asp:ListItem Value="3" Text="<%$ Resources:TextoDisparo1_IECEI %>"></asp:ListItem>
+                                                <asp:ListItem Value="4" Text="<%$ Resources:TextoDisparo1_IECLTI %>"></asp:ListItem>
+                                                <asp:ListItem Value="5" Text="<%$ Resources:TextoDisparo1_ANSIMI %>"></asp:ListItem>
+                                                <asp:ListItem Value="6" Text="<%$ Resources:TextoDisparo1_ANSIVI %>"></asp:ListItem>
+                                                <asp:ListItem Value="7" Text="<%$ Resources:TextoDisparo1_ANSIEI %>"></asp:ListItem>
+                                            </asp:ListBox>
+                                        </td>
+
+                                        <td>
+                                            <asp:ListBox ID="listBoxDisparo6_tipoReset" runat="server" Height="40px" Width="100px">
+                                                <asp:ListItem Value="0" Text="<%$ Resources:TextoDisparo1_TiempoFijo %>"></asp:ListItem>
+                                                <asp:ListItem Value="1" Text="<%$ Resources:TextoDisparo1_Curva %>"></asp:ListItem>
+                                            </asp:ListBox>
+                                        </td>
+                                    
+                                        <td>
+                                            <asp:CheckBox ID="checkDisparo6_habilitaModificadores" runat="server" />
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            </fieldset>
+                            <fieldset>
+                                <center>
+                                <table class="tableClass">
+                                    <thead class="itemHeader">
+                                    <tr>
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label53" runat="server" Text="<%$ Resources:lblDisparo1_corrArranque %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(3A - 6500A)</span>
+                                        </th>
+
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label54" runat="server" Text="<%$ Resources:lblDisparo1_modCorrMaxActuacion %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(10A - 6500A)</span>
+                                        </th>
+                                    
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label55" runat="server" Text="<%$ Resources:lblDisparo1_modTd %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(0,01 - 9)</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="itemBody">
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_corrArranque" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator10" errormessage="Favor ingrese valor entre 3-6500." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_corrArranque" minimumvalue="3" maximumvalue="6500" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_modCorrMaxActuacion" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator73" errormessage="Favor ingrese valor entre 10-6500." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_modCorrMaxActuacion" minimumvalue="10" maximumvalue="6500" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_modTd" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="4" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator74" errormessage="Favor ingrese valor entre 0,01-9." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_modTd" minimumvalue="0,01" maximumvalue="9" runat="server" Type="Double">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            </fieldset>
+                            <fieldset>
+                                <center>
+                                <table class="tableClass">
+                                    <thead class="itemHeader">
+                                    <tr>
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label56" runat="server" Text="<%$ Resources:lblDisparo1_tiempoDisparoDefinido %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(20ms - 10.000ms)</span>
+                                        </th>
+
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label57" runat="server" Text="<%$ Resources:lblDisparo1_tiempoResetCiclo %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(1s - 300s)</span>
+                                        </th>
+                                    
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label58" runat="server" Text="<%$ Resources:lblDisparo1_tiempoApertura %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(500ms - 30.000ms)</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="itemBody">
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_tiempoDisparoDefinido" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator75" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_tiempoDisparoDefinido" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_tiempoResetCiclo" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="3" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator76" errormessage="Favor ingrese valor entre 1-300." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_tiempoResetCiclo" minimumvalue="1" maximumvalue="300" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_tiempoApertura" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator77" errormessage="Favor ingrese valor entre 500-30.000." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_tiempoApertura" minimumvalue="500" maximumvalue="30000" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            </fieldset>
+                            <fieldset>
+                                <center>
+                                <table class="tableClass">
+                                    <thead class="itemHeader">
+                                    <tr>
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label59" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMaxRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(10ms - 60.000ms)</span>
+                                        </th>
+
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label60" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoMinRespuesta %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(20ms - 10.000ms)</span>
+                                        </th>
+                                    
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label61" runat="server" Text="<%$ Resources:lblDisparo1_modTiempoDefIMaxAct %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(20ms - 10.000ms)</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="itemBody">
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_modTiempoMaxRespuesta" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator78" errormessage="Favor ingrese valor entre 10-60.000." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_modTiempoMaxRespuesta" minimumvalue="10" maximumvalue="60000" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_modTiempoMinRespuesta" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator79" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_modTiempoMinRespuesta" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_modTiempoDefIMaxAct" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator80" errormessage="Favor ingrese valor entre 20-10.000." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_modTiempoDefIMaxAct" minimumvalue="20" maximumvalue="10000" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            </fieldset>
+                            <fieldset>
+                                <center>
+                                <table class="tableClass">
+                                    <thead class="itemHeader">
+                                    <tr>
+                                        <th>
+                                            &nbsp;<asp:Label ID="Label62" runat="server" Text="<%$ Resources:lblDisparo1_modRetardoAdicional %>"></asp:Label>&nbsp;&nbsp;
+                                            <br />
+                                        <span>(0ms - 10.000ms)</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="itemBody">
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtDisparo6_modRetardoAdicional" runat="server"
+                                                         CssClass="textInUsuario styleInput" MaxLength="5" Width="50px"></asp:TextBox>
+                                            <br />
+                                            <asp:rangevalidator ID="Rangevalidator81" errormessage="Favor ingrese valor entre 0-10.000." forecolor="Red" 
+                                                controltovalidate="txtDisparo6_modRetardoAdicional" minimumvalue="0" maximumvalue="10000" runat="server" Type="Integer">
+                                            </asp:rangevalidator>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                            </fieldset>
+                        </asp:Panel>
+                    <% } %>                    
+
                 </asp:Panel>
 
                 <br />

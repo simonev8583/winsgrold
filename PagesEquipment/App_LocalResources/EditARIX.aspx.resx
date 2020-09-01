@@ -147,6 +147,9 @@
   <data name="lblTextTitleOperacionDisparo5" xml:space="preserve">
     <value>Parámetros de disparo número 5</value>
   </data>
+  <data name="lblTextTitleOperacionDisparo6" xml:space="preserve">
+    <value>Parámetros de disparo número 6</value>
+  </data>
   <data name="lblTextTitleParametrosEquipo" xml:space="preserve">
     <value>Parámetros de hardware</value>
   </data>
