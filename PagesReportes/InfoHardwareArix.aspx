@@ -160,6 +160,12 @@
                                 <asp:BoundField DataField="DesplazamientoContactosMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosMax %>"
                                     SortExpression="DesplazamientoContactosMax" Visible="True" />
+                                <asp:BoundField DataField="VoltPanelMax" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoVoltPanelMax %>"
+                                    SortExpression="VoltPanelMax" Visible="True" />
+                                <asp:BoundField DataField="VoltPanelMin" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoVoltPanelMin %>"
+                                    SortExpression="VoltPanelMin" Visible="True" />
                             </Columns>
                             <EditRowStyle BackColor="#7C6F57" />
                             <FooterStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
@@ -234,6 +240,9 @@
                                     Visible="True" />
                                 <asp:BoundField DataField="DesplazamientoContactosUltimo" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
                                     HeaderText="<%$ Resources:TextosGlobales,TextoDesplazamientoContactosUltimo %>" SortExpression="DesplazamientoContactosUltimo"
+                                    Visible="True" />
+                                <asp:BoundField DataField="VoltPanel" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center"
+                                    HeaderText="<%$ Resources:TextosGlobales,TextoVoltPanel %>" SortExpression="VoltPanel"
                                     Visible="True" />
 
                             </Columns>
@@ -341,6 +350,7 @@
       ,CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosUltimo] / 10.0), 'mm') AS [DesplazamientoContactosUltimo]
       ,[AdcTension]
       ,CONVERT(DECIMAL(16,1),[FrecuenciaActualSenalVoltaje] / 10.0 ) AS [FrecuenciaActualSenalVoltaje]
+      ,CONCAT(CONVERT(DECIMAL(16,2),[VoltPanel] * 9 / 255), 'v') as [VoltPanel]
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
@@ -373,6 +383,7 @@
       ,CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosUltimo] / 10.0), 'mm') AS [DesplazamientoContactosUltimo]
       ,[AdcTension]
       ,CONVERT(DECIMAL(16,1),[FrecuenciaActualSenalVoltaje] / 10.0 ) AS [FrecuenciaActualSenalVoltaje]
+      ,CONCAT(CONVERT(DECIMAL(16,2),[VoltPanel] * 9 / 255), 'v') as [VoltPanel]
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
@@ -510,7 +521,9 @@ MAX(CONCAT([TemperaturaMax], '°')) as [TemperaturaMax],
 MIN(CONCAT([TemperaturaMin], '°')) as [TemperaturaMin], 
 MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionAperturaMax] / 100.0), 'm/s')) as [VelActuacionAperturaMax],
 MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionCierreMax] / 100.0), 'm/s')) as [VelActuacionCierreMax],
-MAX(CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosMax] / 10.0), 'mm')) as [DesplazamientoContactosMax]
+MAX(CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosMax] / 10.0), 'mm')) as [DesplazamientoContactosMax],
+MAX(CONCAT(CONVERT(DECIMAL(16,2), [VoltPanel] * 9 / 255), 'v')) as [VoltPanelMax],
+MIN(CONCAT(CONVERT(DECIMAL(16,2), [VoltPanel] * 9 / 255), 'v')) as [VoltPanelMin]
 FROM [ARIX_InfoHardware] WHERE (IdArix = @SixId or @SixId = 0)
 and  Fecha between @Finicial and @Ffinal
 ">

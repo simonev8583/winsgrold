@@ -908,7 +908,8 @@ namespace SistemaGestionRedes
             var disparo6Arix = arix.ARIX_Disparos.Count == 6? arix.ARIX_Disparos.ToList()[5]: null;
             if(disparo6Arix != null)
             {
-                if (listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0] != disparo6Arix.TipoOperacion) contador++;
+                var tipoOperacion = listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0];
+                if (tipoOperacion != disparo6Arix.TipoOperacion) contador++;
                 if (listBoxDisparo6_tipoReset.GetSelectedIndices()[0] != disparo6Arix.TipoReset) contador++;
                 if (checkDisparo6_habilitaModificadores.Checked != disparo6Arix.HabilitaModificadores) contador++;
                 if (txtDisparo6_corrArranque.Text != disparo6Arix.CorrArranque.ToString()) contador++;

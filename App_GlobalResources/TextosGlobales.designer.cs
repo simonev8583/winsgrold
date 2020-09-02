@@ -718,6 +718,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Volt Panel.
+        /// </summary>
+        internal static string TextoVoltPanel {
+            get {
+                return ResourceManager.GetString("TextoVoltPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volt Panel Max.
+        /// </summary>
+        internal static string TextoVoltPanelMax {
+            get {
+                return ResourceManager.GetString("TextoVoltPanelMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volt Panel Min.
+        /// </summary>
+        internal static string TextoVoltPanelMin {
+            get {
+                return ResourceManager.GetString("TextoVoltPanelMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Versión.
         /// </summary>
         internal static string TextoWordVersion {

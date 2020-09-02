@@ -285,6 +285,15 @@
   <data name="TextoDesplazamientoContactosUltimo" xml:space="preserve">
     <value>Desp Contactos</value>
   </data>
+  <data name="TextoVoltPanelMax" xml:space="preserve">
+    <value>Volt Panel Max</value>
+  </data>
+  <data name="TextoVoltPanelMin" xml:space="preserve">
+    <value>Volt Panel Min</value>
+  </data>
+  <data name="TextoVoltPanel" xml:space="preserve">
+    <value>Volt Panel</value>
+  </data>
   <data name="TextoAdcTension" xml:space="preserve">
     <value>Tensión</value>
   </data>

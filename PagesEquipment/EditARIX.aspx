@@ -2311,7 +2311,7 @@
                     Visible="False" />
                 <asp:Button ID="butUpdateOnline" runat="server" Text="Actualizar Online"
                     ValidationGroup="editARIX" Style="height: 26px"
-                    OnClick="butUpdateOnline_Click" Enabled="False" Visible="false"
+                    OnClick="butUpdateOnline_Click" Enabled="true" Visible="true"
                     ToolTip="Actualiza los parámetros online del ARIX" />&nbsp;&nbsp;<!--Solo se debe activar el visible para este botón  -->
             &nbsp;&nbsp;
             </div>
