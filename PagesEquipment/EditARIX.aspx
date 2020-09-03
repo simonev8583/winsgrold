@@ -1738,7 +1738,7 @@
                     </asp:Panel>
 
                     
-                    <% if(numeroDisparos == 6) { %>
+                    <% if(CalcularDisparos() == 6) { %>
                         <asp:CollapsiblePanelExtender ID="CollapsiblePanelDisparo6" runat="server"
                             TargetControlID="ContentOperacionDisparo6"
                             ExpandControlID="TitleOperacionDisparo6"
@@ -2312,6 +2312,10 @@
                 <asp:Button ID="butUpdateOnline" runat="server" Text="Actualizar Online"
                     ValidationGroup="editARIX" Style="height: 26px"
                     OnClick="butUpdateOnline_Click" Enabled="true" Visible="true"
+                    ToolTip="Actualiza los parámetros online del ARIX" />
+                <asp:Button ID="butRead" runat="server" Text="Leer Online"
+                    ValidationGroup="readARIX" Style="height: 26px"
+                    OnClick="butReadOnline_Click" Enabled="true" Visible="true"
                     ToolTip="Actualiza los parámetros online del ARIX" />&nbsp;&nbsp;<!--Solo se debe activar el visible para este botón  -->
             &nbsp;&nbsp;
             </div>

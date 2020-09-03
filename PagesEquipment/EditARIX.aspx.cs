@@ -14,7 +14,7 @@ namespace SistemaGestionRedes
     {
         private MessageQueue mqWebToSGR;
         private MessageQueue mqSGRToWeb;
-        public int numeroDisparos = 0;
+        public string respuestaOnline = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -31,6 +31,17 @@ namespace SistemaGestionRedes
 
         #region paramsArix
 
+        public int CalcularDisparos()
+        {
+            string strId = Request.QueryString["Id"];
+            int id = int.Parse(strId);
+            using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
+            {
+                var arix = db.ARIXs.FirstOrDefault(x => x.Id == id);
+                return arix.ARIX_Disparos.Count;
+            }
+        }
+
         private void LlenarValoresARIX(int Id)
         {
             using (SistemaGestionRemotoContainer db = new SistemaGestionRemotoContainer())
@@ -40,7 +51,6 @@ namespace SistemaGestionRedes
                 {
                     serialARIX.Text = arix.Serial;
                     serialFWT.Text = db.FWTs.FirstOrDefault(x => x.Id == arix.FWTId).Serial;
-                    numeroDisparos = arix.ARIX_Disparos.Count;
                     var paramArix = arix.ParamARIX;
                     var disparo1Arix = arix.ARIX_Disparos.ToList()[0];
                     var disparo2Arix = arix.ARIX_Disparos.ToList()[1];
@@ -72,8 +82,8 @@ namespace SistemaGestionRedes
                     txtOpReconectador_numRecierres.Text = paramArix.numRecierres.ToString();
                     txtOpReconectador_corrMaxAbsolutas.Text = paramArix.corrMaxAbsoluta.ToString();
                     txtOpReconectador_tiempoDefDisparoCorrMaxAbs.Text = paramArix.tiempoDefDisparoCorrMaxAbs.ToString();
-                    txtOpReconectador_resetTimeAfterLockout.Text = (paramArix.resetTimeAfterLockout/MIL).ToString();
-                    txtOpReconectador_resetTimeLockout.Text = (paramArix.resetTimeLockout/MIL).ToString();
+                    txtOpReconectador_resetTimeAfterLockout.Text = (paramArix.resetTimeAfterLockout / MIL).ToString();
+                    txtOpReconectador_resetTimeLockout.Text = (paramArix.resetTimeLockout / MIL).ToString();
                     txtOpReconectador_corrMaxCapacidadRIX.Text = paramArix.corrMaxCapacidadRIX.ToString();
 
                     /// DISPAROS
@@ -157,8 +167,8 @@ namespace SistemaGestionRedes
                     txtDisparo5_modRetardoAdicional.Text = disparo5Arix.ModRetardoAdicional.ToString();
 
                     /// DISPARO6
-                    
-                    if(disparo6Arix != null)
+
+                    if (disparo6Arix != null)
                     {
                         ObtenerValorSelect(disparo6Arix.TipoOperacion.ToString(), listBoxDisparo6_tipoOperacion);
                         ObtenerValorSelect(disparo6Arix.TipoReset.ToString(), listBoxDisparo6_tipoReset);
@@ -221,7 +231,7 @@ namespace SistemaGestionRedes
             this.ActualizarParametrosArix(false);
         }
 
-        private void ActualizarParametrosArix(bool isOnline = false)
+        private bool ActualizarParametrosArix(bool isOnline = false)
         {
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','mensaje de error');", true);
             // validar campos antes de actualizar... 
@@ -245,38 +255,52 @@ namespace SistemaGestionRedes
 
                     bool datosEnRangoOpGeneral = validarRangoOperacionGeneral();
                     if (!datosEnRangoOpGeneral)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de OPERACIÓN GENERAL');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de operación general')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoOpReconectador = validarRangoOperacionReconectador();
                     if (!datosEnRangoOpReconectador)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de OPERACIÓN RECONECTADOR');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de operación reconectador')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoDisparo1 = validarRangoDisparo(1);
                     if (!datosEnRangoDisparo1)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 1');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 1')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoDisparo2 = validarRangoDisparo(2);
                     if (!datosEnRangoDisparo2)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 2');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 2')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoDisparo3 = validarRangoDisparo(3);
                     if (!datosEnRangoDisparo3)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 3');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 3')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoDisparo4 = validarRangoDisparo(4);
                     if (!datosEnRangoDisparo4)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 4');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 4')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoDisparo5 = validarRangoDisparo(5);
                     if (!datosEnRangoDisparo5)
+                    {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 5');", true);
-                    //Response.Write("<script>alert('Revisar los rangos en parámetros de disparo 5')</script>");
+                        return false;
+                    }
 
                     bool datosEnRangoDisparo6 = true;
                     if (hayCambiosDisparo6)
@@ -284,7 +308,7 @@ namespace SistemaGestionRedes
                         datosEnRangoDisparo6 = validarRangoDisparo(6);
                         if (!datosEnRangoDisparo6)
                             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('warning','Revisar campos', 'Parámetros de DISPARO 6');", true);
-                    }                    
+                    }
 
                     bool datosEnRangoHardware = validarRangoHardware();
                     if (!datosEnRangoHardware)
@@ -347,27 +371,26 @@ namespace SistemaGestionRedes
                             {
                                 arix = ModificarDisparo6(arix);
                             }
-                            if (isOnline)
-                            {
-                                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX han sido actualizados', 'Guardando cambios');", true);
-                            }
-                            else
+                            if (!isOnline)
                             {
                                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX se actualizarán en el próximo reporte periódico', 'Guardando cambios');", true);
-                            }                            
+                            }
                             //Response.Write("<script>alert('Hay cambios por subir')</script>");
                             arix.PendienteEnviarParametros = true;
                             arix.PendienteConfirmarActualizacionParametros = false;
                         }
                         db.SaveChanges();
                         ViewState["ActualizadoOffline"] = true;
+                        return true;
                     }
                     else
                     {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('error','No se realizaron cambios en los parámetros', 'No hubieron cambios');", true);
+                        return false;
                         //Response.Write("<script>alert('Sin cambios')</script>");
                     }
                 }
+                return false;
             }
         }
 
@@ -905,9 +928,10 @@ namespace SistemaGestionRedes
             bool respuesta = false;
             int contador = 0;
 
-            var disparo6Arix = arix.ARIX_Disparos.Count == 6? arix.ARIX_Disparos.ToList()[5]: null;
-            if(disparo6Arix != null)
+            var disparo6Arix = arix.ARIX_Disparos.Count == 6 ? arix.ARIX_Disparos.ToList()[5] : null;
+            if (disparo6Arix != null)
             {
+                var tip = listBoxDisparo6_tipoOperacion.GetSelectedIndices();
                 var tipoOperacion = listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0];
                 if (tipoOperacion != disparo6Arix.TipoOperacion) contador++;
                 if (listBoxDisparo6_tipoReset.GetSelectedIndices()[0] != disparo6Arix.TipoReset) contador++;
@@ -924,7 +948,7 @@ namespace SistemaGestionRedes
                 if (txtDisparo6_modTiempoDefIMaxAct.Text != disparo6Arix.ModTiempoDefIMaxAct.ToString()) contador++;
                 if (txtDisparo6_modRetardoAdicional.Text != disparo6Arix.ModRetardoAdicional.ToString()) contador++;
             }
-            
+
             if (contador > 0)
             {
                 respuesta = true;
@@ -1144,7 +1168,7 @@ namespace SistemaGestionRedes
 
         private ARIX ModificarDisparo6(ARIX arix)
         {
-            var disparo6Arix = arix.ARIX_Disparos.Count == 6? arix.ARIX_Disparos.ToList()[5]: null;
+            var disparo6Arix = arix.ARIX_Disparos.Count == 6 ? arix.ARIX_Disparos.ToList()[5] : null;
             if (disparo6Arix != null)
             {
                 if (listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0] != disparo6Arix.TipoOperacion) disparo6Arix.TipoOperacion = listBoxDisparo6_tipoOperacion.GetSelectedIndices()[0];
@@ -1161,11 +1185,11 @@ namespace SistemaGestionRedes
                 if (txtDisparo6_modTiempoMinRespuesta.Text != disparo6Arix.ModTiempoMinRespuesta.ToString()) disparo6Arix.ModTiempoMinRespuesta = int.Parse(txtDisparo6_modTiempoMinRespuesta.Text);
                 if (txtDisparo6_modTiempoDefIMaxAct.Text != disparo6Arix.ModTiempoDefIMaxAct.ToString()) disparo6Arix.ModTiempoDefIMaxAct = int.Parse(txtDisparo6_modTiempoDefIMaxAct.Text);
                 if (txtDisparo6_modRetardoAdicional.Text != disparo6Arix.ModRetardoAdicional.ToString()) disparo6Arix.ModRetardoAdicional = int.Parse(txtDisparo6_modRetardoAdicional.Text);
-            }            
-            if(disparo6Arix != null)
+            }
+            if (disparo6Arix != null)
             {
                 arix.ARIX_Disparos.ToList()[5] = disparo6Arix;
-            }            
+            }
 
             return arix;
         }
@@ -1192,14 +1216,40 @@ namespace SistemaGestionRedes
             if (this.IsValid)
             {
                 ViewState["ActualizadoOffline"] = false;  //antes de actualizar Online , se hace todo el proceso de Actualizar OffLine
-                this.ActualizarParametrosArix(true);
-                if ((bool)ViewState["ActualizadoOffline"])
+                bool dataUpdated = this.ActualizarParametrosArix(true);
+                if ((bool)ViewState["ActualizadoOffline"] && dataUpdated)
                 {
                     //RealizarComunicacionOnlineYMSMQ(ComandosUsuario.UpdateParamsARIX);
                     RealizarComunicacionOnlineYMSMQ(ComandosUsuario.UpdateParamsARIX);
+                    if (respuestaOnline == "")
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','No se ha tenido respuesta del FWT, pronto se van a actualizar los parámetros', 'Guardando cambios');", true);
+                    }
+                    else
+                    {
+                        respuestaOnline = "";
+                    }
                 }
             }
+        }
 
+
+            protected void butReadOnline_Click(object sender, EventArgs e)
+        {
+            this.Validate("readARIX");
+            if (this.IsValid)
+            {
+                //RealizarComunicacionOnlineYMSMQ(ComandosUsuario.UpdateParamsARIX);
+                RealizarComunicacionOnlineYMSMQ(ComandosUsuario.ReadParamARIX);
+                if (respuestaOnline == "")
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','No se ha tenido respuesta del FWT, intente más tarde', 'Lectura de parámetros');", true);
+                }
+                else
+                {
+                    respuestaOnline = "";
+                }
+            }
 
         }
 
@@ -1243,11 +1293,31 @@ namespace SistemaGestionRedes
                             case ComandosUsuario.UpdateParamsARIX:
                                 if (msgRespuesta.Respuesta == RespuestasSvrCom.OK)
                                 {
-                                    respuesta = "Correcto, si funciona, buena crack!!!!!";
+                                    respuestaOnline = "OK";
+                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Los parámetros en el ARIX han sido actualizados', 'Guardando cambios');", true);
                                 }
                                 else
                                 {
                                     //lblEstadoActualizacionOnline.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
+                                    respuestaOnline = "FAIL";
+                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','No se ha tenido respuesta del FWT, pronto se van a actualizar los parámetros', 'Guardando cambios');", true);
+                                    respuesta = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
+                                }
+                                break;
+                            case ComandosUsuario.ReadParamARIX:
+                                if (msgRespuesta.Respuesta == RespuestasSvrCom.OK)
+                                {
+                                    respuestaOnline = "OK";
+                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('success','Cargando los parámetros actualizado del ARIX ', 'Lectura de parámetros');", true);
+                                    string strId = Request.QueryString["Id"];
+                                    int id = int.Parse(strId);
+                                    LlenarValoresARIX(id);
+                                }
+                                else
+                                {
+                                    //lblEstadoActualizacionOnline.Text = "Se recibió otra respuesta para este serial :  " + msgRespuesta.Respuesta.ToString();
+                                    respuestaOnline = "FAIL";
+                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','No se ha tenido respuesta del FWT, intente más tarde', 'Lectura de parámetros');", true);
                                     respuesta = DescripcionEnumeraciones.GetRespuestasSvrComSpa(msgRespuesta.Respuesta);
                                 }
                                 break;
