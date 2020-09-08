@@ -1260,7 +1260,7 @@ namespace SistemaGestionRedes
             MensajeComandoMQOnline msgComando = new MensajeComandoMQOnline();
 
             msgComando.SerialFWT = serialFWT.Text;
-            msgComando.IdFCI = byte.Parse(lblId.Text);
+            msgComando.IdFCI = byte.Parse("0");//byte.Parse(lblId.Text);
             msgComando.SerialFCI = serialARIX.Text;
             msgComando.Comando = comandoUser;
             mqWebToSGR.Send(msgComando);

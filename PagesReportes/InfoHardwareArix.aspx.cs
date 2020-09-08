@@ -132,6 +132,38 @@ namespace SistemaGestionRedes.PagesReportes
 
         #region Manejo de Graficas
 
+        protected void btnGraficarVoltPanel_Click(object sender, EventArgs e)
+        {
+            if (LstBoxSixs.GetSelectedIndices().Length == 1) //Esta opción de gráfica solo permite un equipo FCI.
+            {
+                chartCorriente.Series.Clear();
+                chartCorriente.Visible = true;
+                string finicial = txtFechaInicial.Text.Replace("-", "") + " 00:00:00";
+                string ffinal = txtFechaFinal.Text.Replace("-", "") + " 23:59:59";
+
+                SqlDataSource dataSourceObj = SqlDataGrafVoltPanel;
+                chartCorriente.DataSourceID = "SqlDataGrafVoltPanel";
+
+                dataSourceObj.SelectParameters["Finicial"].DefaultValue = finicial;
+                dataSourceObj.SelectParameters["Ffinal"].DefaultValue = ffinal;
+                dataSourceObj.SelectParameters["SixId"].DefaultValue = LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Value;
+                chartCorriente.Series.Add("SIX_Corrientes");
+                chartCorriente.Series["SIX_Corrientes"].ChartType = System.Web.UI.DataVisualization.Charting.SeriesChartType.Line;
+                chartCorriente.Series["SIX_Corrientes"].XValueMember = "Fecha";
+                chartCorriente.Series["SIX_Corrientes"].XValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.DateTime;
+                chartCorriente.Series["SIX_Corrientes"].YValueMembers = "VoltPanel";
+                chartCorriente.Series["SIX_Corrientes"].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
+                chartCorriente.Series["SIX_Corrientes"].Legend = "EquipoIndividual";
+                chartCorriente.Series["SIX_Corrientes"].LegendText = "SIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
+                chartCorriente.DataBind();
+            }
+            else
+            {
+                chartCorriente.Visible = false;
+                lblMsgGeneracionGrafica.Visible = true;
+            }
+        }
+
         protected void btnGraficar_Click(object sender, EventArgs e)
         {
             if (LstBoxSixs.GetSelectedIndices().Length == 1) //Esta opción de gráfica solo permite un equipo FCI.

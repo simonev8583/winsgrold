@@ -171,6 +171,12 @@
   <data name="TextToolTipGrafTemperatura" xml:space="preserve">
     <value>Gráfica de temperatura</value>
   </data>
+  <data name="TextBotonGraficaVoltPanel" xml:space="preserve">
+    <value>Graficar Volt Panel</value>
+  </data>
+  <data name="TextToolTipGrafVoltPanel" xml:space="preserve">
+    <value>Gráfica de voltaje de panel</value>
+  </data>
   <data name="TempMax" xml:space="preserve">
     <value>TempMax</value>
   </data>

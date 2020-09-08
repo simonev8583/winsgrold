@@ -285,6 +285,11 @@
                             Text="<%$ Resources:TextBotonGraficaTemperatura %>"
                             ToolTip="<%$ Resources:TextToolTipGrafTemperatura %>"
                             OnClick="btnGraficarTemp_Click" />
+
+                        &nbsp;<asp:Button ID="btnGrafVoltPanel" runat="server" CssClass="TextBoton"
+                            Text="<%$ Resources:TextBotonGraficaVoltPanel %>"
+                            ToolTip="<%$ Resources:TextToolTipGrafVoltPanel %>"
+                            OnClick="btnGraficarVoltPanel_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -445,6 +450,22 @@ ORDER BY info.Fecha DESC"
                 SelectCommand="select
                 dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
 CONVERT(DECIMAL(16,1), [VoltActualSuperCapacitor] * 100 / 5.1) AS [ValorCorriente]
+FROM ARIX_InfoHardware
+WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
+and ARIX_InfoHardware.IdArix = @SixId
+ORDER BY ARIX_InfoHardware.Fecha ASC
+">
+                <SelectParameters>
+                    <asp:Parameter Name="Finicial" />
+                    <asp:Parameter Name="Ffinal" />
+                    <asp:Parameter Name="SixId" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataGrafVoltPanel" runat="server"
+                ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
+                SelectCommand="select
+                dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
+CONVERT(DECIMAL(16,1), [VoltPanel] * 9 / 255) AS [VoltPanel]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
 and ARIX_InfoHardware.IdArix = @SixId
