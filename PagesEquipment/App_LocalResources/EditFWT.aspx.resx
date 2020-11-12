@@ -709,10 +709,13 @@
     <value>Activar la orden de actualizar firmware al dispositivo remoto?</value>
   </data>
   <data name="TextTittleFirmwareCargadoDEVRT" xml:space="preserve">
-    <value>Firmware de Equipos Cargado en FWT: </value>
+    <value>Firmware de FCI Cargado en FWT: </value>
   </data>
   <data name="TextTittleFirmwareCargadoDEVRT_ARIX" xml:space="preserve">
-    <value>Firmware de ARIXs Cargado en FWT: </value>
+    <value>Firmware de ARIX Cargado en FWT: </value>
+  </data>
+  <data name="TextTittleFirmwareCargadoDEVRT_SIX" xml:space="preserve">
+    <value>Firmware de SIX Cargado en FWT: </value>
   </data>
   <data name="TextToolTipActivarFwDevRt" xml:space="preserve">
     <value>Enviar al FWT la orden de actualizar el firmware del dispositivo por el cargado</value>
@@ -797,6 +800,12 @@
     <value></value>
   </data>
   <data name="TextHeaderModeOperation" xml:space="preserve">
+    <value>Modo operación</value>
+  </data>
+  <data name="TextToolTipUpdModeOperationArix" xml:space="preserve">
+    <value>Actualizar modo de operación</value>
+  </data>
+  <data name="TextModeOperation" xml:space="preserve">
     <value>Modo operación</value>
   </data>
 </root>

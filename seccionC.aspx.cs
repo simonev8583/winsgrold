@@ -223,11 +223,11 @@ namespace SistemaGestionRedes
         private string GetNmEquipo(string serialEquipo)
         {
             string valNm = "";
-            if (serialEquipo.Substring(0, 2).ToUpper().Equals("FI"))
+            if (TypeOfDevice.IsFci(serialEquipo))
             {
                 valNm = ConstsTreeView.NOMBRE_EQU_FCI;
             }
-            else if (serialEquipo.Substring(0, 1).ToUpper().Equals("C"))
+            else if (TypeOfDevice.IsSix(serialEquipo))
             {
                 valNm = ConstsTreeView.NOMBRE_EQU_SIX;
             }
@@ -238,15 +238,15 @@ namespace SistemaGestionRedes
         private string GetURLEquipo(string serialEquipo, string idTxt)
         {
             string valUrl = "";
-            if (serialEquipo.Substring(0, 2).ToUpper().Equals("FI"))
+            if (TypeOfDevice.IsFci(serialEquipo))
             {
                 valUrl = "~/PagesEquipment/EditFCI.aspx?Id=" + idTxt;
             }
-            else if (serialEquipo.Substring(0, 1).ToUpper().Equals("C"))
+            else if (TypeOfDevice.IsSix(serialEquipo))
             {
                 valUrl = "~/PagesEquipment/EditSIX.aspx?Id=" + idTxt;
             }
-            else if (serialEquipo.Substring(0, 2).ToUpper().Equals("RI"))
+            else if (TypeOfDevice.IsArix(serialEquipo))
             {
                 valUrl = "~/PagesEquipment/EditARIX.aspx?Id=" + idTxt;
             }
@@ -374,8 +374,12 @@ namespace SistemaGestionRedes
         private TreeNode MakeEquiposARIX(AccesoDatos baseDatos)
         {
             TreeNode nodoPpalARIX = new TreeNode((string)this.GetLocalResourceObject("TextTittleAllARIXs"));
+            //nodoPpalARIX.NavigateUrl = "http://localhost:3000/devices/arix";
             nodoPpalARIX.NavigateUrl = "~/PagesEquipment/ARIXsAll.aspx";
+
             nodoPpalARIX.Target = "content";
+            //nodoPpalARIX.Target = "browser";
+
             PasteAllARIXsToNodoPpal(ref nodoPpalARIX, baseDatos);
             return nodoPpalARIX;
         }

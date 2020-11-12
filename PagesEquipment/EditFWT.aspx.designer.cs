@@ -670,6 +670,60 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargado;
         
         /// <summary>
+        /// Label18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label18;
+        
+        /// <summary>
+        /// lblVersionFwDevRTCargadoARIX control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargadoARIX;
+        
+        /// <summary>
+        /// Label26 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label26;
+        
+        /// <summary>
+        /// lblVersionFwDevRTCargadoSIX control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargadoSIX;
+        
+        /// <summary>
+        /// GVEquiposRemotos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVEquiposRemotos;
+        
+        /// <summary>
+        /// SqlDSDevsRT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSDevsRT;
+        
+        /// <summary>
         /// upPanelActFirmwareDevicesFci control.
         /// </summary>
         /// <remarks>
@@ -724,24 +778,6 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.UpdateProgress upProgActParametrosOnlineDevFci;
         
         /// <summary>
-        /// Label18 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
-        
-        /// <summary>
-        /// lblVersionFwDevRTCargadoARIX control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersionFwDevRTCargadoARIX;
-        
-        /// <summary>
         /// upPanelActFirmwareDevices control.
         /// </summary>
         /// <remarks>
@@ -794,24 +830,6 @@ namespace SistemaGestionRedes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdateProgress upProgActParametrosOnlineDev;
-        
-        /// <summary>
-        /// GVEquiposRemotos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVEquiposRemotos;
-        
-        /// <summary>
-        /// SqlDSDevsRT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDSDevsRT;
         
         /// <summary>
         /// Literal8 control.

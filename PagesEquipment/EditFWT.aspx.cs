@@ -267,7 +267,7 @@ namespace SistemaGestionRedes
                                 }
                                 else
                                 {
-                                    if (lblPrivateTypeDeviceForDelete.Text.Substring(0, 2).Equals("RI"))
+                                    if (TypeOfDevice.IsArix(lblPrivateTypeDeviceForDelete.Text))
                                     {
                                         lblMsgErrSeleccionFCIClear.Text = (string)this.GetLocalResourceObject("lblMsgErrSeleccionFCIClearBorradoOk"); //"Borrado permanente de Dispositivo exitoso";
 
@@ -825,6 +825,14 @@ namespace SistemaGestionRedes
                     else
                     {
                         lblVersionFwDevRTCargadoARIX.Text = registro.VersionProgramaARIXUploaded;
+                    }
+                    if(registro.VersionProgramaSIXUploaded == null)
+                    {
+                        lblVersionFwDevRTCargadoSIX.Text = "";
+                    }
+                    else
+                    {
+                        lblVersionFwDevRTCargadoSIX.Text = registro.VersionProgramaSIXUploaded;
                     }
 
 
@@ -1830,7 +1838,7 @@ namespace SistemaGestionRedes
                 if (int.TryParse(valueList, out idInterno))
                 {
                     byte? identificador;
-                    if (serialList.Substring(0, 2).Equals("RI"))
+                    if (TypeOfDevice.IsArix(serialList))
                     {
                         identificador = AccesoDatosEF.GetIdentificadorARIX(idInterno);
                     }
@@ -2040,21 +2048,21 @@ namespace SistemaGestionRedes
                 if (!serialDevRT.Equals(""))
                 {
                     //Identificar si el serial del dispositivo pertenece a un FCI 
-                    if (serialDevRT.Substring(0, 2).Equals("FI"))
+                    if (TypeOfDevice.IsFci(serialDevRT))
                     {
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
                         GVEquiposRemotos.DataBind();
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Pronto se inicia la actualización.', 'Activar actualización FCI');", true);
                     }
                     //Identificar si el serial del dispositivo pertenece a un SIX 
-                    else if (serialDevRT.Substring(0, 1).Equals("C"))
+                    else if (TypeOfDevice.IsSix(serialDevRT))
                     {
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
                         GVEquiposRemotos.DataBind();
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Pronto se inicia la actualización.', 'Activar actualización SIX');", true);
                     }
                     //Identificar si el serial del dispositivo pertenece a un ARIX 
-                    else if (serialDevRT.Substring(0, 2).Equals("RI"))
+                    else if (TypeOfDevice.IsArix(serialDevRT))
                     {
                         //Crear servicio en cosoft que soporte la actualización del ARIX
                         dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT_ARIX(serialDevRT);
@@ -2072,7 +2080,7 @@ namespace SistemaGestionRedes
 
                 if (!serialDevRT.Equals(""))
                 {
-                    if (serialDevRT.Substring(0, 2).Equals("FI"))
+                    if (TypeOfDevice.IsFci(serialDevRT))
                     {
                         using (var db = new SistemaGestionRemotoContainer())
                         {
@@ -2085,7 +2093,7 @@ namespace SistemaGestionRedes
                         }
                         GVEquiposRemotos.DataBind();
                     }
-                    else if (serialDevRT.Substring(0, 1).Equals("C"))
+                    else if (TypeOfDevice.IsSix(serialDevRT))
                     {
                         using (var db = new SistemaGestionRemotoContainer())
                         {
@@ -2097,7 +2105,7 @@ namespace SistemaGestionRedes
                             db.SaveChanges();
                         }
                     }
-                    else if (serialDevRT.Substring(0, 2).Equals("RI"))
+                    else if (TypeOfDevice.IsArix(serialDevRT))
                     {
                         using (var db = new SistemaGestionRemotoContainer())
                         {
@@ -2208,7 +2216,7 @@ namespace SistemaGestionRedes
                     var accesoDatosdatos = new AccesoDatos();
                     const byte tipoFci = 1;
                     const byte tipoSix = 2;
-                    byte tipoEquipo = (serial.Substring(2) == "FI") ? tipoFci : tipoSix; //
+                    byte tipoEquipo = TypeOfDevice.IsFci(serial) ? tipoFci : tipoSix; //
                     short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT(serial, tipoEquipo);
                     porcActFware = ((contadorActFW / maxContador) * 100);
                     lblPorcentajeActFirmwareDevFci.Text = porcActFware.ToString("F") + " % ";
@@ -2296,29 +2304,11 @@ namespace SistemaGestionRedes
                 bntObjupd.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
                 bntObjUpdClock.Visible = true;
 
-                RadioButton checkModeAutomatic = (RadioButton)e.Row.FindControl("checkModeAutomatic");
-                RadioButton checkObjModeAutomatic = (RadioButton)e.Row.FindControl("checkModeAutomatic");
-                checkObjModeAutomatic.GroupName = idArix;
-                checkObjModeAutomatic.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
-                checkModeAutomatic.Visible = true;
-
-                RadioButton checkModeWithouReconect = (RadioButton)e.Row.FindControl("checkModeWithouReconect");
-                RadioButton checkObjModeWithouReconect = (RadioButton)e.Row.FindControl("checkModeWithouReconect");
-                checkObjModeWithouReconect.GroupName = idArix;
-                checkObjModeWithouReconect.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
-                checkModeWithouReconect.Visible = true;
-
-                RadioButton checkModeMaintenance = (RadioButton)e.Row.FindControl("checkModeMaintenance");
-                RadioButton checkObjModeMaintenance = (RadioButton)e.Row.FindControl("checkModeMaintenance");
-                checkObjModeMaintenance.GroupName = idArix;
-                checkObjModeMaintenance.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
-                checkModeMaintenance.Visible = true;
-
-                RadioButton checkCleanAll = (RadioButton)e.Row.FindControl("checkCleanAll");
-                RadioButton checkObjCleanAll = (RadioButton)e.Row.FindControl("checkCleanAll");
-                checkObjCleanAll.GroupName = idArix;
-                checkObjCleanAll.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
-                checkCleanAll.Visible = true;
+                Button btnUpdModeOperationArix = (Button)e.Row.FindControl("btnUpdModeOperationArix");
+                Button btnUpdMOpe = (Button)e.Row.FindControl("btnUpdModeOperationArix");
+                btnUpdMOpe.Text = (string)this.GetLocalResourceObject("TextModeOperation");
+                btnUpdMOpe.CommandArgument = idArix;
+                btnUpdMOpe.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
 
                 LabelApertura.Text = "";
                 LabelCerrado.Text = "";
@@ -2361,6 +2351,11 @@ namespace SistemaGestionRedes
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArixWithoutParams({0},'{1}'); ", idArix, e.CommandName), true);                
+            }
+            else if (e.CommandName.Equals("MODO OPERACION"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("chooseOperationModeArix({0})", idArix), true);
             }
         }
 
@@ -2451,14 +2446,14 @@ namespace SistemaGestionRedes
                     case "ACTUALIZAR RELOJ":
                         CommandUpdClock(idArix);
                         break;
-                    case "MODO AUTOMÁTICO":
+                    case "MODO RECONECTADOR":
                         CommandCheckModeAutomatic(idArix);
                         break;
                     case "MODO SIN RECONEXIÓN":
                         CommandCheckModeWithoutReconect(idArix);
                         break;
                     case "MODO MANTENIMIENTO":
-                        CommandCheckModeMaintenance(idArix);
+                        CommandCheckModeMaintenance(idArix); 
                         break;
                 }
              }
@@ -2595,11 +2590,11 @@ namespace SistemaGestionRedes
             if (isModeAuto)
             {
                 string mensaje = "Fecha y hora actual del ARIX: " + string.Format("{0:dd-MM-yyyy HH:mm:ss}", Convert.ToDateTime(dataClock).AddHours(0));
-                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Modo operación Automático','El ARIX se encuentra operando en modo AUTOMÁTICO', 'success');", true);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Modo operación Reaconectador','El ARIX se encuentra operando en modo RECONECTADOR', 'success');", true);
             }
             else
             {
-                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Modo operación Automático','Falló la actualización del modo de operación del ARIX', 'error');", true);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Modo operación Reconectador','Falló la actualización del modo de operación del ARIX', 'error');", true);
             }
         }
         private void CommandCheckModeWithoutReconect(int idArix)

@@ -756,6 +756,7 @@
     <Compile Include="TestWinIdentity.aspx.designer.cs">
       <DependentUpon>TestWinIdentity.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TypeOfDevice.cs" />
     <Compile Include="UtilitariosWebGUI.cs" />
     <Compile Include="UtilsScada.cs" />
   </ItemGroup>

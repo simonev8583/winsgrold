@@ -359,11 +359,11 @@ namespace SistemaGestionRedes
 
             try
             {
-                if (serialEquipo.Substring(0, 2).ToUpper().Equals("FI"))
+                if (TypeOfDevice.IsFci(serialEquipo))
                 {
                     valTipo = (byte)TipoEquipoRed.FCI;
                 }
-                else if (serialEquipo.Substring(0, 1).ToUpper().Equals("C"))
+                else if (TypeOfDevice.IsSix(serialEquipo))
                 {
                     valTipo = (byte)TipoEquipoRed.SIXDG;
                 }

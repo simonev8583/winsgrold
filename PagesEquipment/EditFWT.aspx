@@ -83,10 +83,11 @@
             width: auto;
             margin-left: auto;
         }
+
         .centrar {
-            position:relative;
+            position: relative;
             margin-left: 30%;
-            margin-right:30%;
+            margin-right: 30%;
         }
     </style>
     <script type="text/javascript">
@@ -137,13 +138,12 @@
             sweetAlert({
                 title: command + " ARIX",
                 text: "Escriba el serial del ARIX para activar comando:",
-                type: "input",
+                input: "text",
                 showCancelButton: true,
                 closeOnConfirm: false,
                 animation: "slide-from-top",
                 inputPlaceholder: "Serial",
-            },
-            function (inputValue) {
+            }).then(function (inputValue) {
                 if (inputValue === false) return false;
 
                 if (inputValue === "") {
@@ -153,27 +153,71 @@
                 if (inputValue !== "") {
                     document.getElementById('<%=labelIdArix.ClientID %>').value = idArix;
                     document.getElementById('<%=labelText.ClientID %>').value = inputValue;
-                    document.getElementById('<%=labelCommand.ClientID %>').value = command;                       
-                    if (inputValue.substring(0, 2).toLocaleLowerCase() == "RI".toLocaleLowerCase() && inputValue.length == 8) {
-                        setTimeout(sweetAlert('Datos confirmados', 'Comando en ejecución...', 'info'), 500)                        
+                    document.getElementById('<%=labelCommand.ClientID %>').value = command;
+                    if (inputValue.substring(0, 1).toLocaleLowerCase() == "R".toLocaleLowerCase() && inputValue.length == 8) {
+                        setTimeout(sweetAlert('Datos confirmados', 'Comando en ejecución...', 'info'), 500)
                     }
                     document.getElementById("ButtonCommands").click();
                 }
-                
+
             })
         }
 
         function validateSerialArixWithoutParams(idArix, command) {
             document.getElementById('<%=labelIdArix.ClientID %>').value = idArix;
-            document.getElementById('<%=labelCommand.ClientID %>').value = command; 
+            document.getElementById('<%=labelCommand.ClientID %>').value = command;
             setTimeout(sweetAlert('Enviando comando', 'Comando en ejecución...', 'info'), 500)
             document.getElementById("ButtonCommandsWithoutParams").click();
         }
+
+        function chooseOperationModeArix(idArix) {
+            sweetAlert({
+                title: "Modo operación ARIX",
+                text: "Seleccione el tipo de operación que desea activar",
+                input: 'select',
+                inputOptions: {
+                    '1': 'Reconectador',
+                    '2': 'Sin reconexión',
+                    '3': 'Mantenimiento'
+                },
+                inputPlaceholder: 'Campo requerido',
+                showCancelButton: true,
+                inputValidator: function (value) {
+                    return new Promise(function (resolve, reject) {
+                        if (value !== '') {
+                            resolve();
+                        }
+                        else {
+                            reject('Debe seleccionar un modo de operación')
+                        }
+                    });
+                }
+            }).then(function (result) {
+                switch (result) {
+                    case '1':
+                        validateSerialArix(idArix, 'MODO RECONECTADOR');
+                        break;
+                    case '2':
+                        validateSerialArix(idArix, 'MODO SIN RECONEXIÓN');
+                        break;
+                    case '3':
+                        validateSerialArix(idArix, 'MODO MANTENIMIENTO');
+                        break;
+                }                
+            })
+        }
     </script>
 
+    <!-- SweetAlert version 1.1 -->
+    <!-- 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css"
         rel="stylesheet" type="text/css" />
+    -->
+    <link rel="stylesheet" href="https://npmcdn.com/sweetalert2@4.0.15/dist/sweetalert2.min.css">
+    <script src="https://npmcdn.com/sweetalert2@4.0.15/dist/sweetalert2.min.js"></script>
+
+
 </head>
 <body onload="flasher();">
     <form id="form1" runat="server">
@@ -183,38 +227,42 @@
             <div class="centerDiv">
                 <!-- Modal con info del FWT fechas .... -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 id="exampleModalLongTitle">Información extra concentrador:
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 id="exampleModalLongTitle">Información extra concentrador:
                                     <asp:Label ID="Label6" runat="server" /></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="card-body centrar">
+                            <div class="row">
+                                <strong>
+                                    <asp:Label ID="Label7" runat="server" Text="<%$ Resources:TextFechaMatriculaGestion %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblFechaRegistroGestion" runat="server"></asp:Label>
                             </div>
-                            <div class="card-body centrar">                               
-                                    <div class="row">
-                                        <strong><asp:Label ID="Label7" runat="server" Text="<%$ Resources:TextFechaMatriculaGestion %>"></asp:Label>:</strong>
-                                        <asp:Label ID="lblFechaRegistroGestion" runat="server"></asp:Label>
-                                    </div>
-                                    <div class="row">
-                                        <strong><asp:Label ID="Label29" runat="server" Text="<%$ Resources:TextFechaInstalacion %>"></asp:Label>:</strong>
-                                        <asp:Label ID="lblFechaInstalacion" runat="server"></asp:Label>
-                                    </div>
-                                    <div class="row">
-                                        <strong><asp:Label ID="Label43" runat="server" Text="<%$ Resources:TextFechaUltimaConeccion %>"></asp:Label>:</strong>
-                                        <asp:Label ID="lblFechaUltimaComunicacion" runat="server"></asp:Label>
-                                    </div>
-                                    <div class="row">
-                                       <strong> <asp:Label ID="Label17" runat="server" Text="<%$ Resources:TextFechaUltimoEnvio %>"></asp:Label>:</strong>
-                                        <asp:Label ID="lblFechaUltimoEnvio" runat="server"></asp:Label>
-                                    </div>
+                            <div class="row">
+                                <strong>
+                                    <asp:Label ID="Label29" runat="server" Text="<%$ Resources:TextFechaInstalacion %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblFechaInstalacion" runat="server"></asp:Label>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-info" data-dismiss="modal">Listo</button>
+                            <div class="row">
+                                <strong>
+                                    <asp:Label ID="Label43" runat="server" Text="<%$ Resources:TextFechaUltimaConeccion %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblFechaUltimaComunicacion" runat="server"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <strong>
+                                    <asp:Label ID="Label17" runat="server" Text="<%$ Resources:TextFechaUltimoEnvio %>"></asp:Label>:</strong>
+                                <asp:Label ID="lblFechaUltimoEnvio" runat="server"></asp:Label>
                             </div>
                         </div>
-                    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-info" data-dismiss="modal">Listo</button>
+                        </div>
+                    </div>
+
                 </div>
 
 
@@ -239,21 +287,25 @@
                     <ContentTemplate>
                         <div class="col-md-12 row">
                             <div class="card card-body col-md-4">
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Labe140" runat="server" Text="Comunicación : "></asp:Label></strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Labe140" runat="server" Text="Comunicación : "></asp:Label></strong>
                                     <asp:Label ID="fwtIsOn" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label33" runat="server" Text="IMEI : "></asp:Label></strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label33" runat="server" Text="IMEI : "></asp:Label></strong>
                                     <asp:Label ID="lblIMEI" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label39" runat="server" Text="IMSI : "></asp:Label></strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label39" runat="server" Text="IMSI : "></asp:Label></strong>
                                     <asp:Label ID="lblIMSI" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label36" runat="server" Text="<%$ Resources:TextNivelSenal %>"></asp:Label>:</strong>
-                                <asp:Label ID="lblNivelSenal" runat="server"></asp:Label>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label36" runat="server" Text="<%$ Resources:TextNivelSenal %>"></asp:Label>:</strong>
+                                    <asp:Label ID="lblNivelSenal" runat="server"></asp:Label>
                                     <div class="col-12">
                                     </div>
                                     <div>
@@ -269,35 +321,42 @@
                             </div>
 
                             <div class="card card-body col-md-4">
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label34" runat="server" Text="<%$ Resources:TextVoltajeBateria %>"></asp:Label>:</strong>
-                                <asp:Label ID="lblVoltBatt" runat="server"></asp:Label>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label34" runat="server" Text="<%$ Resources:TextVoltajeBateria %>"></asp:Label>:</strong>
+                                    <asp:Label ID="lblVoltBatt" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label37" runat="server" Text="<%$ Resources:TextVoltajeCargador %>"></asp:Label>:</strong>
-                                <asp:Label ID="lblVoltCargador" runat="server"></asp:Label>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label37" runat="server" Text="<%$ Resources:TextVoltajeCargador %>"></asp:Label>:</strong>
+                                    <asp:Label ID="lblVoltCargador" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label38" runat="server" Text="<%$ Resources:TextVoltagePanel %>"></asp:Label>:</strong>
-                                <asp:Label ID="lblVoltPanel" runat="server"></asp:Label>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label38" runat="server" Text="<%$ Resources:TextVoltagePanel %>"></asp:Label>:</strong>
+                                    <asp:Label ID="lblVoltPanel" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label42" runat="server" Text="<%$ Resources:TextTemperatura %>"></asp:Label></strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label42" runat="server" Text="<%$ Resources:TextTemperatura %>"></asp:Label></strong>
                                     <asp:Label ID="lblTemperatura" runat="server"></asp:Label>
                                 </div>
                             </div>
 
                             <div class="card card-body col-md-4">
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label35" runat="server" Text="<%$ Resources:TextVersionPrograma %>"></asp:Label>:</strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label35" runat="server" Text="<%$ Resources:TextVersionPrograma %>"></asp:Label>:</strong>
                                     <asp:Label ID="lblVerPrograma" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label40" runat="server" Text="<%$ Resources:TextVersionMonitor %>"></asp:Label>:</strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label40" runat="server" Text="<%$ Resources:TextVersionMonitor %>"></asp:Label>:</strong>
                                     <asp:Label ID="lblVerMonitor" runat="server"></asp:Label>
                                 </div>
-                                <div class="row" style="padding-left:20px">
-                                    <strong><asp:Label ID="Label41" runat="server" Text="<%$ Resources:TextVersionFwModulo %>"></asp:Label>:</strong>
+                                <div class="row" style="padding-left: 20px">
+                                    <strong>
+                                        <asp:Label ID="Label41" runat="server" Text="<%$ Resources:TextVersionFwModulo %>"></asp:Label>:</strong>
                                     <asp:Label ID="lblVerFirmwModulo" runat="server"></asp:Label>
                                 </div>
                             </div>
@@ -355,7 +414,7 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
-                <div >
+                <div>
                     <asp:HiddenField ID="labelIdArix" runat="server"></asp:HiddenField>
                     <asp:HiddenField ID="labelText" runat="server"></asp:HiddenField>
                     <asp:HiddenField ID="labelCommand" runat="server"></asp:HiddenField>
@@ -419,14 +478,12 @@
                                                 CommandName="ACTUALIZAR RELOJ" CssClass="TextBoton" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
+
                                     <asp:TemplateField HeaderText="<%$ Resources:TextHeaderModeOperation %>">
                                         <ItemTemplate>
-                                            <asp:RadioButton ID="checkModeAutomatic" runat="server" Text="Automático" OnCheckedChanged="btnCheckModeOperation"/><br />
-                                            <asp:RadioButton ID="checkModeWithouReconect" runat="server" Text="Sin reconexión" OnCheckedChanged="btnCheckModeOperation" /><br />
-                                            <asp:RadioButton ID="checkModeMaintenance" runat="server" Text="Mantenimiento" OnCheckedChanged="btnCheckModeOperation" />
-                                            <asp:RadioButton ID="checkCleanAll" runat="server" Text="Restaurar"/>
+                                            <asp:Button runat="server" ID="btnUpdModeOperationArix" Text="" ToolTip="<%$ Resources:TextToolTipUpdModeOperationArix %>"
+                                                CommandName="MODO OPERACION" CssClass="TextBoton" />
                                         </ItemTemplate>
-
                                     </asp:TemplateField>
                                 </Columns>
                                 <FooterStyle BackColor="#0b304f" />
@@ -536,88 +593,35 @@
                     </tr>
                 </table>
 
-                <table border="0" width="100%">
-                    <tr>
-                        <td align="center" bgcolor="#eeeeee" width="100%">
-                            <font><strong>
+                <div class="col-md-12 row">
+                    <div class="col-md-12 card card-header" align="center">
+                        <font><strong>
                                 <asp:Literal ID="Literal10" Text="<%$ Resources:TextTittleAdminFirmwareDevRt %>" runat="server"></asp:Literal></strong></font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" width="100%">
-                            <asp:Label ID="Label5" runat="server"
-                                Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT %>" Font-Bold="True"
-                                Font-Italic="False" Font-Size="11px"></asp:Label>
-                            <asp:Label ID="lblVersionFwDevRTCargado" runat="server" Text="" Font-Bold="True" Font-Italic="False" Font-Size="11px"></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
+                    </div>
+                    <div class="card card-body col-md-4">
+                        <div class="row" style="padding-left: 20px">
+                            <strong>
+                                <asp:Label ID="Label5" runat="server"
+                                Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT %>"></asp:Label> 
+                            </strong>
+                            <asp:Label ID="lblVersionFwDevRTCargado" runat="server" Text="" ></asp:Label>
+                        </div>
+                        <div class="row" style="padding-left: 20px">
+                            <strong>
+                                <asp:Label ID="Label18" runat="server"
+                                    Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT_ARIX %>"></asp:Label></strong>
+                            <asp:Label ID="lblVersionFwDevRTCargadoARIX" runat="server" Text="" ></asp:Label>
+                        </div>
+                        <div class="row" style="padding-left: 20px">
+                            <strong>
+                                <asp:Label ID="Label26" runat="server"
+                                    Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT_SIX %>"></asp:Label></strong>
+                            <asp:Label ID="lblVersionFwDevRTCargadoSIX" runat="server" Text="" ></asp:Label>
+                        </div>
+                    </div>
+                    <div class="card card-body col-md-8">
+                        <table border="0" width="100%">
 
-                        <td align="center" valign="top" style="width: 50%;">
-                            <asp:UpdatePanel ID="upPanelActFirmwareDevicesFci" runat="server">
-                                <ContentTemplate>
-                                    <asp:Timer ID="tmrActFirmwareDevFci" runat="server" Enabled="false" Interval="1000"
-                                        OnTick="tmrActFirmware_TickFci">
-                                    </asp:Timer>
-                                    <asp:Label ID="lblEstadoACTFirmwareDevFci" runat="server" /><br />
-                                    <asp:Label ID="lblPorcentajeActFirmwareDevFci" runat="server" Visible="False" /><br />
-                                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: #B5CCFF;">
-                                        <tr>
-                                            <td width="100" align="left">
-                                                <asp:Image ID="ImgPorcActFirmwareDevFci" src="../Images/bar.GIF" Width="50%"
-                                                    Height="10px" runat="server" Visible="False" /></td>
-                                        </tr>
-                                    </table>
-
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                            <asp:UpdateProgress ID="upProgActParametrosOnlineDevFci" AssociatedUpdatePanelID="upPanelActFirmwareDevicesFci" runat="server">
-                                <ProgressTemplate>
-                                    <asp:Label ID="lblEnviandoFirmwareDevFci" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
-                                    <asp:Image ID="imgEnviandoDevFci" runat="server" ImageUrl="~/Images/roller.gif" />
-                                </ProgressTemplate>
-                            </asp:UpdateProgress>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" width="100%">
-                            <asp:Label ID="Label18" runat="server"
-                                Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT_ARIX %>" Font-Bold="True"
-                                Font-Italic="False" Font-Size="11px"></asp:Label>
-                            <asp:Label ID="lblVersionFwDevRTCargadoARIX" runat="server" Text="" Font-Bold="True" Font-Italic="False" Font-Size="11px"></asp:Label>
-
-
-                        </td>
-
-                    </tr>
-                    <tr>
-
-                        <td align="center" valign="top" style="width: 50%;">
-                            <asp:UpdatePanel ID="upPanelActFirmwareDevices" runat="server">
-                                <ContentTemplate>
-                                    <asp:Timer ID="tmrActFirmwareDev" runat="server" Enabled="false" Interval="1000"
-                                        OnTick="tmrActFirmware_TickArix">
-                                    </asp:Timer>
-                                    <asp:Label ID="lblEstadoACTFirmwareDev" runat="server" /><br />
-                                    <asp:Label ID="lblPorcentajeActFirmwareDev" runat="server" Visible="False" /><br />
-                                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: #B5CCFF;">
-                                        <tr>
-                                            <td width="100" align="left">
-                                                <asp:Image ID="ImgPorcActFirmwareDev" src="../Images/bar.GIF" Width="50%"
-                                                    Height="10px" runat="server" Visible="False" /></td>
-                                        </tr>
-                                    </table>
-
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                            <asp:UpdateProgress ID="upProgActParametrosOnlineDev" AssociatedUpdatePanelID="upPanelActFirmwareDevices" runat="server">
-                                <ProgressTemplate>
-                                    <asp:Label ID="lblEnviandoFirmwareDev" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
-                                    <asp:Image ID="imgEnviandoDev" runat="server" ImageUrl="~/Images/roller.gif" />
-                                </ProgressTemplate>
-                            </asp:UpdateProgress>
-                        </td>
-                    </tr>
                     <tr>
                         <td align="center" width="100%">
                             <asp:GridView ID="GVEquiposRemotos" runat="server" AutoGenerateColumns="False"
@@ -687,7 +691,54 @@
                         </td>
                     </tr>
                 </table>
+                    </div>
+                    <div class="col-md-12 card card-footer">
+                        <div class="row" aling="center">
+                            <div class="col-md-6">
+                                <asp:UpdatePanel ID="upPanelActFirmwareDevicesFci" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Timer ID="tmrActFirmwareDevFci" runat="server" Enabled="False" Interval="1000"
+                                            OnTick="tmrActFirmware_TickFci">
+                                        </asp:Timer>
+                                        <asp:Label ID="lblEstadoACTFirmwareDevFci" runat="server" />
+                                        <asp:Label ID="lblPorcentajeActFirmwareDevFci" runat="server" Visible="False" />
+                                        <asp:Image ID="ImgPorcActFirmwareDevFci" src="../Images/bar.GIF" Width="50%"
+                                            Height="10px" runat="server" Visible="False" />
 
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                                <asp:UpdateProgress ID="upProgActParametrosOnlineDevFci" AssociatedUpdatePanelID="upPanelActFirmwareDevicesFci" runat="server">
+                                    <ProgressTemplate>
+                                        <asp:Label ID="lblEnviandoFirmwareDevFci" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
+                                        <asp:Image ID="imgEnviandoDevFci" runat="server" ImageUrl="~/Images/roller.gif" />
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                                </div>
+
+                                <asp:UpdatePanel ID="upPanelActFirmwareDevices" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Timer ID="tmrActFirmwareDev" runat="server" Enabled="False" Interval="1000"
+                                            OnTick="tmrActFirmware_TickArix">
+                                        </asp:Timer>
+                                            <asp:Label ID="lblEstadoACTFirmwareDev" runat="server" />
+                                            <strong><asp:Label ID="lblPorcentajeActFirmwareDev" runat="server" Visible="False" /></strong>
+                                                <asp:Image ID="ImgPorcActFirmwareDev" src="../Images/bar.GIF" Width="50%"
+                                                    Height="10px" runat="server" Visible="False" />
+                                        
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                                <asp:UpdateProgress ID="upProgActParametrosOnlineDev" AssociatedUpdatePanelID="upPanelActFirmwareDevices" runat="server">
+                                    <ProgressTemplate>
+                                            <asp:Label ID="lblEnviandoFirmwareDev" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
+                                        <asp:Image ID="imgEnviandoDev" runat="server" ImageUrl="~/Images/roller.gif" />
+                                        
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                                </div>
+                            </div>
+                        </div>
+
+                
                 <br />
                 <section class="col-md-12 row">
                     <div class="card bg-light col-md-3 text-black  centerDiv" style="background: #F8F9FA; text-align: right; padding: 0px 15px; border-bottom: 0px; border-right: 0px; border-left: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
@@ -1394,7 +1445,7 @@
                 </table>
 
             </div>
-
+            
             <div class="centerDiv" align="center">
                 <table style="width: 100%;">
                     <tr>
