@@ -522,6 +522,9 @@
   <data name="lblEstadoACTFirmwareActualizandoArix" xml:space="preserve">
     <value>ACTUALIZANDO FIRMWARE ARIX.</value>
   </data>
+  <data name="lblEstadoACTFirmwareActualizandoSix" xml:space="preserve">
+    <value>ACTUALIZANDO FIRMWARE SIX.</value>
+  </data>
   <data name="lblEstadoACTFirmwareActualizandoFci" xml:space="preserve">
     <value>ACTUALIZANDO FIRMWARE FCI.</value>
   </data>
@@ -530,6 +533,9 @@
   </data>
   <data name="lblEstadoACTFirmwarePendienteIniciarArix" xml:space="preserve">
     <value>PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE ARIX.</value>
+  </data>
+  <data name="lblEstadoACTFirmwarePendienteIniciarSix" xml:space="preserve">
+    <value>PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE SIX.</value>
   </data>
   <data name="lblEstadoACTFirmwarePendienteIniciarFci" xml:space="preserve">
     <value>PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE FCI.</value>

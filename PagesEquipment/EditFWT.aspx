@@ -203,7 +203,7 @@
                     case '3':
                         validateSerialArix(idArix, 'MODO MANTENIMIENTO');
                         break;
-                }                
+                }
             })
         }
     </script>
@@ -602,95 +602,95 @@
                         <div class="row" style="padding-left: 20px">
                             <strong>
                                 <asp:Label ID="Label5" runat="server"
-                                Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT %>"></asp:Label> 
+                                    Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT %>"></asp:Label>
                             </strong>
-                            <asp:Label ID="lblVersionFwDevRTCargado" runat="server" Text="" ></asp:Label>
+                            <asp:Label ID="lblVersionFwDevRTCargado" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="row" style="padding-left: 20px">
                             <strong>
                                 <asp:Label ID="Label18" runat="server"
                                     Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT_ARIX %>"></asp:Label></strong>
-                            <asp:Label ID="lblVersionFwDevRTCargadoARIX" runat="server" Text="" ></asp:Label>
+                            <asp:Label ID="lblVersionFwDevRTCargadoARIX" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="row" style="padding-left: 20px">
                             <strong>
                                 <asp:Label ID="Label26" runat="server"
                                     Text="<%$ Resources:TextTittleFirmwareCargadoDEVRT_SIX %>"></asp:Label></strong>
-                            <asp:Label ID="lblVersionFwDevRTCargadoSIX" runat="server" Text="" ></asp:Label>
+                            <asp:Label ID="lblVersionFwDevRTCargadoSIX" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                     <div class="card card-body col-md-8">
                         <table border="0" width="100%">
 
-                    <tr>
-                        <td align="center" width="100%">
-                            <asp:GridView ID="GVEquiposRemotos" runat="server" AutoGenerateColumns="False"
-                                BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
-                                CellPadding="4" DataSourceID="SqlDSDevsRT" ForeColor="Black"
-                                GridLines="Vertical" OnRowDataBound="GVEquiposRemotos_RowDataBound"
-                                OnRowCommand="GVEquiposRemotos_RowCommand">
-                                <AlternatingRowStyle BackColor="White" />
-                                <Columns>
-                                    <asp:BoundField DataField="Serial" HeaderText="<%$ Resources:TextHeaderSerialDevRt %>"
-                                        SortExpression="Serial" />
-                                    <asp:BoundField DataField="VersionFw" HeaderText="<%$ Resources:TextHeaderVersionFw %>"
-                                        SortExpression="VersionFw" />
-                                    <asp:BoundField DataField="Portje" HeaderText="<%$ Resources:TextHeaderPorcentajeUpgrade %>"
-                                        SortExpression="Portje" />
-                                    <asp:BoundField DataField="FechaSolicitudToProxVersionFW"
-                                        HeaderText="<%$ Resources:TextHeaderFechaSolicitud %>"
-                                        SortExpression="FechaSolicitudToProxVersionFW" />
+                            <tr>
+                                <td align="center" width="100%">
+                                    <asp:GridView ID="GVEquiposRemotos" runat="server" AutoGenerateColumns="False"
+                                        BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
+                                        CellPadding="4" DataSourceID="SqlDSDevsRT" ForeColor="Black"
+                                        GridLines="Vertical" OnRowDataBound="GVEquiposRemotos_RowDataBound"
+                                        OnRowCommand="GVEquiposRemotos_RowCommand">
+                                        <AlternatingRowStyle BackColor="White" />
+                                        <Columns>
+                                            <asp:BoundField DataField="Serial" HeaderText="<%$ Resources:TextHeaderSerialDevRt %>"
+                                                SortExpression="Serial" />
+                                            <asp:BoundField DataField="VersionFw" HeaderText="<%$ Resources:TextHeaderVersionFw %>"
+                                                SortExpression="VersionFw" />
+                                            <asp:BoundField DataField="Portje" HeaderText="<%$ Resources:TextHeaderPorcentajeUpgrade %>"
+                                                SortExpression="Portje" />
+                                            <asp:BoundField DataField="FechaSolicitudToProxVersionFW"
+                                                HeaderText="<%$ Resources:TextHeaderFechaSolicitud %>"
+                                                SortExpression="FechaSolicitudToProxVersionFW" />
 
-                                    <%--                                <asp:BoundField DataField="Activar" HeaderText="<%$ Resources:TextHeaderActivar %>" ReadOnly="True" 
+                                            <%--                                <asp:BoundField DataField="Activar" HeaderText="<%$ Resources:TextHeaderActivar %>" ReadOnly="True" 
                                     SortExpression="Activar" />--%>
 
-                                    <%--<asp:ButtonField DataTextField="Activar" SortExpression="Activar" HeaderText="<%$ Resources:TextHeaderActivar %>" 
+                                            <%--<asp:ButtonField DataTextField="Activar" SortExpression="Activar" HeaderText="<%$ Resources:TextHeaderActivar %>" 
                                     Text="Activar" />--%>
 
-                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderActivar %>">
-                                        <ItemTemplate>
-                                            <%--<asp:HyperLink ID="lnkActivar" runat="server" ToolTip="<%$ Resources:TextToolTipActivarFwDevRt %>">[Activar]</asp:HyperLink>
+                                            <asp:TemplateField HeaderText="<%$ Resources:TextHeaderActivar %>">
+                                                <ItemTemplate>
+                                                    <%--<asp:HyperLink ID="lnkActivar" runat="server" ToolTip="<%$ Resources:TextToolTipActivarFwDevRt %>">[Activar]</asp:HyperLink>
                                         <asp:LinkButton ID="lnkActivar" runat="server" ToolTip="<%$ Resources:TextToolTipActivarFwDevRt %>" OnClientClick="return showalert();">[Activar]</asp:LinkButton>
                                         <asp:LinkButton ID="lnkActivar" runat="server" ToolTip="<%$ Resources:TextToolTipActivarFwDevRt %>">[Activar]</asp:LinkButton>--%>
-                                            <asp:Button runat="server" ID="btnActivar" Text="" ToolTip="<%$ Resources:TextToolTipActivarFwDevRt %>"
-                                                CommandName="Activar" CssClass="TextBoton" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                                    <asp:Button runat="server" ID="btnActivar" Text="" ToolTip="<%$ Resources:TextToolTipActivarFwDevRt %>"
+                                                        CommandName="Activar" CssClass="TextBoton" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
 
-                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderCancelar %>">
-                                        <ItemTemplate>
-                                            <asp:Button runat="server" ID="btnCancelar" Text="" ToolTip="<%$ Resources:TextToolTipCancelarFwDevRt %>"
-                                                CommandName="Cancelar" CssClass="TextBoton" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="<%$ Resources:TextHeaderCancelar %>">
+                                                <ItemTemplate>
+                                                    <asp:Button runat="server" ID="btnCancelar" Text="" ToolTip="<%$ Resources:TextToolTipCancelarFwDevRt %>"
+                                                        CommandName="Cancelar" CssClass="TextBoton" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
 
-                                </Columns>
-                                <FooterStyle BackColor="#0b304f" />
-                                <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
-                                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                                <RowStyle BackColor="#F7F7DE" />
-                                <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                                <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                                <SortedAscendingHeaderStyle BackColor="#848384" />
-                                <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                                <SortedDescendingHeaderStyle BackColor="#575357" />
-                                <SortedAscendingCellStyle BackColor="#FBFBF2"></SortedAscendingCellStyle>
-                                <SortedAscendingHeaderStyle BackColor="#848384"></SortedAscendingHeaderStyle>
-                                <SortedDescendingCellStyle BackColor="#EAEAD3"></SortedDescendingCellStyle>
-                                <SortedDescendingHeaderStyle BackColor="#575357"></SortedDescendingHeaderStyle>
-                            </asp:GridView>
-                            <asp:SqlDataSource ID="SqlDSDevsRT" runat="server"
-                                ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
-                                SelectCommand="pa_consultar_DEVsRT_admin_firmware"
-                                SelectCommandType="StoredProcedure">
-                                <SelectParameters>
-                                    <asp:ControlParameter ControlID="lblSerial" Name="serialFwt"
-                                        PropertyName="Text" Type="String" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
-                        </td>
-                    </tr>
-                </table>
+                                        </Columns>
+                                        <FooterStyle BackColor="#0b304f" />
+                                        <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                                        <RowStyle BackColor="#F7F7DE" />
+                                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                                        <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                                        <SortedAscendingHeaderStyle BackColor="#848384" />
+                                        <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                                        <SortedDescendingHeaderStyle BackColor="#575357" />
+                                        <SortedAscendingCellStyle BackColor="#FBFBF2"></SortedAscendingCellStyle>
+                                        <SortedAscendingHeaderStyle BackColor="#848384"></SortedAscendingHeaderStyle>
+                                        <SortedDescendingCellStyle BackColor="#EAEAD3"></SortedDescendingCellStyle>
+                                        <SortedDescendingHeaderStyle BackColor="#575357"></SortedDescendingHeaderStyle>
+                                    </asp:GridView>
+                                    <asp:SqlDataSource ID="SqlDSDevsRT" runat="server"
+                                        ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
+                                        SelectCommand="pa_consultar_DEVsRT_admin_firmware"
+                                        SelectCommandType="StoredProcedure">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="lblSerial" Name="serialFwt"
+                                                PropertyName="Text" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-md-12 card card-footer">
                         <div class="row" aling="center">
@@ -701,9 +701,12 @@
                                             OnTick="tmrActFirmware_TickFci">
                                         </asp:Timer>
                                         <asp:Label ID="lblEstadoACTFirmwareDevFci" runat="server" />
-                                        <asp:Label ID="lblPorcentajeActFirmwareDevFci" runat="server" Visible="False" />
+                                        <strong>
+                                        <asp:Label ID="lblPorcentajeActFirmwareDevFci" runat="server" Visible="False" /></strong>
+                                        <div style="background-color: #B5CCFF; width: 100px">
                                         <asp:Image ID="ImgPorcActFirmwareDevFci" src="../Images/bar.GIF" Width="50%"
                                             Height="10px" runat="server" Visible="False" />
+                                            </div>
 
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -713,32 +716,58 @@
                                         <asp:Image ID="imgEnviandoDevFci" runat="server" ImageUrl="~/Images/roller.gif" />
                                     </ProgressTemplate>
                                 </asp:UpdateProgress>
-                                </div>
-
-                                <asp:UpdatePanel ID="upPanelActFirmwareDevices" runat="server">
-                                    <ContentTemplate>
-                                        <asp:Timer ID="tmrActFirmwareDev" runat="server" Enabled="False" Interval="1000"
-                                            OnTick="tmrActFirmware_TickArix">
-                                        </asp:Timer>
-                                            <asp:Label ID="lblEstadoACTFirmwareDev" runat="server" />
-                                            <strong><asp:Label ID="lblPorcentajeActFirmwareDev" runat="server" Visible="False" /></strong>
-                                                <asp:Image ID="ImgPorcActFirmwareDev" src="../Images/bar.GIF" Width="50%"
-                                                    Height="10px" runat="server" Visible="False" />
-                                        
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                                <asp:UpdateProgress ID="upProgActParametrosOnlineDev" AssociatedUpdatePanelID="upPanelActFirmwareDevices" runat="server">
-                                    <ProgressTemplate>
-                                            <asp:Label ID="lblEnviandoFirmwareDev" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
-                                        <asp:Image ID="imgEnviandoDev" runat="server" ImageUrl="~/Images/roller.gif" />
-                                        
-                                    </ProgressTemplate>
-                                </asp:UpdateProgress>
-                                </div>
                             </div>
-                        </div>
 
-                
+                            <asp:UpdatePanel ID="upPanelActFirmwareDevices" runat="server">
+                                <ContentTemplate>
+                                    <asp:Timer ID="tmrActFirmwareDev" runat="server" Enabled="False" Interval="1000"
+                                        OnTick="tmrActFirmware_TickArix">
+                                    </asp:Timer>
+                                    <asp:Label ID="lblEstadoACTFirmwareDev" runat="server" />
+                                    <strong>
+                                        <asp:Label ID="lblPorcentajeActFirmwareDev" runat="server" Visible="False" /></strong>
+                                    <div style="background-color: #B5CCFF; width: 100px">
+                                        <asp:Image ID="ImgPorcActFirmwareDev" src="../Images/bar.GIF" Width="50%"
+                                            Height="10px" runat="server" Visible="False" />
+                                    </div>
+
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <asp:UpdateProgress ID="upProgActParametrosOnlineDev" AssociatedUpdatePanelID="upPanelActFirmwareDevices" runat="server">
+                                <ProgressTemplate>
+                                    <asp:Label ID="lblEnviandoFirmwareDev" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
+                                    <asp:Image ID="imgEnviandoDev" runat="server" ImageUrl="~/Images/roller.gif" />
+
+                                </ProgressTemplate>
+                            </asp:UpdateProgress>
+
+                            <asp:UpdatePanel ID="upPanelActFirmwareDeviceSix" runat="server">
+                                <ContentTemplate>
+                                    <asp:Timer ID="tmrActFirmwareDevSix" runat="server" Enabled="False" Interval="1000"
+                                        OnTick="tmrActFirmware_TickSix">
+                                    </asp:Timer>
+                                    <asp:Label ID="lblEstadoACTFirmwareDevSix" runat="server" />
+                                    <strong>
+                                        <asp:Label ID="lblPorcentajeActFirmwareDevSix" runat="server" Visible="False" /></strong>
+                                    <div style="background-color: #B5CCFF; width: 100px">
+                                        <asp:Image ID="ImgPorcActFirmwareDevSix" src="../Images/bar.GIF" Width="50%"
+                                            Height="10px" runat="server" Visible="False" />
+                                    </div>
+
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <asp:UpdateProgress ID="upProgActParametrosOnlineDevSix" AssociatedUpdatePanelID="upPanelActFirmwareDeviceSix" runat="server">
+                                <ProgressTemplate>
+                                    <asp:Label ID="lblEnviandoFirmwareDevSix" runat="server" Text="<%$ Resources:TextEnviandoFirmware %>"></asp:Label>
+                                    <asp:Image ID="imgEnviandoDevSix" runat="server" ImageUrl="~/Images/roller.gif" />
+
+                                </ProgressTemplate>
+                            </asp:UpdateProgress>
+                        </div>
+                    </div>
+                </div>
+
+
                 <br />
                 <section class="col-md-12 row">
                     <div class="card bg-light col-md-3 text-black  centerDiv" style="background: #F8F9FA; text-align: right; padding: 0px 15px; border-bottom: 0px; border-right: 0px; border-left: 1px solid rgba(0,0,0,.125); border-radius: .25rem;">
@@ -1445,7 +1474,7 @@
                 </table>
 
             </div>
-            
+
             <div class="centerDiv" align="center">
                 <table style="width: 100%;">
                     <tr>

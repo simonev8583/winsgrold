@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Messaging;
 using System.Globalization;
-using System.Web.Razor;
 using SGR.DataAccessLayer;
 using SGR.BussinessLayer;
 using SGR.UtilityLibrary;
 using SCADA104.Definiciones;
 using Celsa.ConexionMensajeria;
-using System.Threading;
-using System.Web.Services;
 
 namespace SistemaGestionRedes
 {
@@ -604,6 +598,7 @@ namespace SistemaGestionRedes
 
                     MostrarEstadoActualizacionFirmware(registro.EstadoProcesoActFw, registro.ContActFw, registro.Serial);
                     MostrarEstadoActualizacionFirmwareDevices(registro.EstadoActFwARIX, registro.ContaActFwARIX, registro.Serial);
+                    MostrarEstadoActualizacionFirmwareDevicesSix(registro.EstadoActFwSIX, registro.ContaActFwSIX, registro.Serial);
                     //MostrarEstadoActualizacionFirmwareDevicesFci(registro.EstadoActFwFCI, registro.ContaActFwFCI, registro.Serial);
                     lblSerial.Text = registro.Serial; //No se permite editar                                    
 
@@ -2187,6 +2182,66 @@ namespace SistemaGestionRedes
             }
         }
 
+        protected void tmrActFirmware_TickSix(object sender, EventArgs e)
+        {
+            using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
+            {
+                FWT fwt = bData.FWTs.SingleOrDefault(f => f.Serial == lblSerial.Text);
+                if (fwt != null)
+                {
+                    MostrarEstadoActualizacionFirmwareDevicesSix(fwt.EstadoActFwSIX, fwt.ContaActFwSIX, fwt.Serial);
+                }
+            }
+        }
+
+        private void MostrarEstadoActualizacionFirmwareDevicesSix(byte? estadoActFW, short? ContActFw, string serial)
+        {
+            EstadoActualizacionFirmware estado = (estadoActFW == null) ? EstadoActualizacionFirmware.SinProceso : (EstadoActualizacionFirmware)estadoActFW;
+            double contadorActFW = (ContActFw == null) ? 0 : (double)ContActFw;
+            switch (estado)
+            {
+                case EstadoActualizacionFirmware.Inicio:
+                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwarePendienteIniciarSix"); //"PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE.";
+                        tmrActFirmwareDevSix.Enabled = true;
+                    break;
+                case EstadoActualizacionFirmware.Procesando:
+                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizandoSix"); //"ACTUALIZANDO FIRMWARE.";
+                    double porcActFware;
+                    ///Instancia capa datos COSOFT
+                    var accesoDatosdatos = new AccesoDatos();
+                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT_SIX(serial, 4);
+                    porcActFware = ((contadorActFW / maxContador) * 100);
+                    lblPorcentajeActFirmwareDevSix.Text = porcActFware.ToString("F") + " % ";
+                    lblPorcentajeActFirmwareDevSix.Visible = true;
+                    if ((porcActFware >= 0) && (porcActFware <= 100)) //ProgressBar
+                    {
+                        ImgPorcActFirmwareDevSix.Width = Unit.Percentage(porcActFware);
+                    }
+                    else
+                    {   //Para que la barra no se salga del tamanio 
+                        ImgPorcActFirmwareDevSix.Width = Unit.Percentage(100);
+                    }
+
+                    ImgPorcActFirmwareDevSix.ToolTip = contadorActFW.ToString() + "/" + maxContador.ToString() + " " + (string)this.GetLocalResourceObject("imgPorcActFirmwarePcksActualizados"); //" paquetes actualizados.";
+                    ImgPorcActFirmwareDevSix.Visible = true;
+                    tmrActFirmwareDevSix.Enabled = true;
+                    break;
+
+                case EstadoActualizacionFirmware.Terminado:
+                    lblEstadoACTFirmwareDevSix.Visible = false;
+                    lblPorcentajeActFirmwareDevSix.Visible = false;
+                    ImgPorcActFirmwareDevSix.Visible = false;
+                    tmrActFirmwareDevSix.Enabled = true;
+                    break;
+                case EstadoActualizacionFirmware.SinProceso:
+                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizado"); //"FIRMWARE ACTUALIZADO.";
+                    lblPorcentajeActFirmwareDevSix.Visible = false;
+                    ImgPorcActFirmwareDevSix.Visible = false;
+                    tmrActFirmwareDevSix.Enabled = false;
+                    break;
+            }
+        }
+
         protected void tmrActFirmware_TickFci(object sender, EventArgs e)
         {
             using (SistemaGestionRemotoContainer bData = new SistemaGestionRemotoContainer())
@@ -2198,7 +2253,7 @@ namespace SistemaGestionRedes
                 }
             }
         }
-        /*FALTA PROBAR*/
+
         private void MostrarEstadoActualizacionFirmwareDevicesFci(byte? estadoActFW, short? ContActFw, string serial)
         {
             EstadoActualizacionFirmware estado = (estadoActFW == null) ? EstadoActualizacionFirmware.SinProceso : (EstadoActualizacionFirmware)estadoActFW;
@@ -2253,6 +2308,7 @@ namespace SistemaGestionRedes
 
         #endregion
 
+        #region Commands online
         #region Open Close ARIX
 
         protected void ListArixByFwt_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -2397,7 +2453,6 @@ namespace SistemaGestionRedes
         {
             Response.Write("Button Clicked");
         }
-
 
         public void ExecCommandWithoutParams(object sender, EventArgs e)
         {
@@ -2623,5 +2678,7 @@ namespace SistemaGestionRedes
                 this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Modo operación Mantenimiento','Falló la actualización del modo de operación del ARIX', 'error');", true);
             }
         }
+
+#endregion
     }
 }

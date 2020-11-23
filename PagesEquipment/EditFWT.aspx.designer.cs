@@ -832,6 +832,60 @@ namespace SistemaGestionRedes {
         protected global::System.Web.UI.UpdateProgress upProgActParametrosOnlineDev;
         
         /// <summary>
+        /// upPanelActFirmwareDeviceSix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upPanelActFirmwareDeviceSix;
+        
+        /// <summary>
+        /// tmrActFirmwareDevSix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer tmrActFirmwareDevSix;
+        
+        /// <summary>
+        /// lblEstadoACTFirmwareDevSix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstadoACTFirmwareDevSix;
+        
+        /// <summary>
+        /// lblPorcentajeActFirmwareDevSix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPorcentajeActFirmwareDevSix;
+        
+        /// <summary>
+        /// ImgPorcActFirmwareDevSix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgPorcActFirmwareDevSix;
+        
+        /// <summary>
+        /// upProgActParametrosOnlineDevSix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress upProgActParametrosOnlineDevSix;
+        
+        /// <summary>
         /// Literal8 control.
         /// </summary>
         /// <remarks>
