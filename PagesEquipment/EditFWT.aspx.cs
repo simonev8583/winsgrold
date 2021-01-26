@@ -2052,7 +2052,7 @@ namespace SistemaGestionRedes
                     //Identificar si el serial del dispositivo pertenece a un SIX 
                     else if (TypeOfDevice.IsSix(serialDevRT))
                     {
-                        dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
+                        dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT_SIX(serialDevRT);
                         GVEquiposRemotos.DataBind();
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Pronto se inicia la actualización.', 'Activar actualización SIX');", true);
                     }
@@ -2083,6 +2083,19 @@ namespace SistemaGestionRedes
                 if (!serialDevRT.Equals(""))
                 {
                     if (TypeOfDevice.IsFci(serialDevRT))
+                    {
+                        using (var db = new SistemaGestionRemotoContainer())
+                        {
+                            FCI fci = db.FCIs.Where(x => x.Serial == serialDevRT).FirstOrDefault();
+                            fci.ProximaVersionFW = "";
+                            fci.PorcentajeToProxVersionFW = null;
+                            fci.FechaSolicitudToProxVersionFW = null;
+
+                            db.SaveChanges();
+                        }
+                        GVEquiposRemotos.DataBind();
+                    }
+                    else if (TypeOfDevice.IsFci(serialDevRT))
                     {
                         using (var db = new SistemaGestionRemotoContainer())
                         {
