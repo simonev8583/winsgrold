@@ -2209,11 +2209,11 @@ namespace SistemaGestionRedes
             switch (estado)
             {
                 case EstadoActualizacionFirmware.Inicio:
-                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwarePendienteIniciarSix"); //"PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE.";
+                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwarePendienteIniciarSix"); //PENDIENTE INICIAR ACTUALIZACIÓN FIRMWARE.;
                         tmrActFirmwareDevSix.Enabled = true;
                     break;
                 case EstadoActualizacionFirmware.Procesando:
-                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizandoSix"); //"ACTUALIZANDO FIRMWARE.";
+                    lblEstadoACTFirmwareDevSix.Text = (string)this.GetLocalResourceObject("lblEstadoACTFirmwareActualizandoSix"); //ACTUALIZANDO FIRMWARE.;
                     double porcActFware;
                     ///Instancia capa datos COSOFT
                     var accesoDatosdatos = new AccesoDatos();
