@@ -82,10 +82,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Celsa.ConexionMensajeria, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\WinScadaVS2015\Celsa.ConexionMensajeria\bin\Debug\Celsa.ConexionMensajeria.dll</HintPath>
-    </Reference>
     <Reference Include="ExportToExcel, Version=1.0.4107.15628, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\ExportToExcel.dll</HintPath>
@@ -1092,6 +1088,12 @@
     <Content Include="PagesReportes\App_LocalResources\ArixEvent.aspx.resx">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Users\dvilla\Desktop\WinScadaVS2015\Celsa.ConexionMensajeria\Celsa.ConexionMensajeria.csproj">
+      <Project>{2e772fe7-83b9-4963-afd5-0ad4d27f5b44}</Project>
+      <Name>Celsa.ConexionMensajeria</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

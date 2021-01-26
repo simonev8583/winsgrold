@@ -355,7 +355,8 @@
       ,CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosUltimo] / 10.0), 'mm') AS [DesplazamientoContactosUltimo]
       ,[AdcTension]
       ,CONVERT(DECIMAL(16,1),[FrecuenciaActualSenalVoltaje] / 10.0 ) AS [FrecuenciaActualSenalVoltaje]
-      ,CONCAT(CONVERT(DECIMAL(16,2),[VoltPanel] * 9 / 255), 'v') as [VoltPanel]
+      ,CONCAT(CONVERT(DECIMAL(16,2),CONVERT(DECIMAL(16,2),[VoltPanel])/10), 'v') as [VoltPanel]
+      ,[SensorPosicion]
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
@@ -388,7 +389,8 @@
       ,CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosUltimo] / 10.0), 'mm') AS [DesplazamientoContactosUltimo]
       ,[AdcTension]
       ,CONVERT(DECIMAL(16,1),[FrecuenciaActualSenalVoltaje] / 10.0 ) AS [FrecuenciaActualSenalVoltaje]
-      ,CONCAT(CONVERT(DECIMAL(16,2),[VoltPanel] * 9 / 255), 'v') as [VoltPanel]
+      ,CONCAT(CONVERT(DECIMAL(16,2),CONVERT(DECIMAL(16,2),[VoltPanel])/10), 'v') as [VoltPanel]
+      ,[SensorPosicion]
       ,[Fecha]
       ,[IdArix]
 	  ,arixs.Serial as [Serial]
@@ -465,7 +467,7 @@ ORDER BY ARIX_InfoHardware.Fecha ASC
                 ConnectionString="<%$ ConnectionStrings:SistemaGestionRemotoConnectionString %>"
                 SelectCommand="select
                 dateadd(HOUR, 0, ARIX_InfoHardware.Fecha) as Fecha,
-CONVERT(DECIMAL(16,1), [VoltPanel] * 9 / 255) AS [VoltPanel]
+CONVERT(DECIMAL(16,2),CONVERT(DECIMAL(16,2),[VoltPanel])/10) AS [VoltPanel]
 FROM ARIX_InfoHardware
 WHERE ARIX_InfoHardware.Fecha between @Finicial and @Ffinal
 and ARIX_InfoHardware.IdArix = @SixId
@@ -543,8 +545,8 @@ MIN(CONCAT([TemperaturaMin], '°')) as [TemperaturaMin],
 MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionAperturaMax] / 100.0), 'm/s')) as [VelActuacionAperturaMax],
 MAX(CONCAT(CONVERT(DECIMAL(16,2), [VelActuacionCierreMax] / 100.0), 'm/s')) as [VelActuacionCierreMax],
 MAX(CONCAT(CONVERT(DECIMAL(16,1), [DesplazamientoContactosMax] / 10.0), 'mm')) as [DesplazamientoContactosMax],
-MAX(CONCAT(CONVERT(DECIMAL(16,2), [VoltPanel] * 9 / 255), 'v')) as [VoltPanelMax],
-MIN(CONCAT(CONVERT(DECIMAL(16,2), [VoltPanel] * 9 / 255), 'v')) as [VoltPanelMin]
+MAX(CONCAT(CONVERT(DECIMAL(16,2),CONVERT(DECIMAL(16,2),[VoltPanel])/10), 'v')) as [VoltPanelMax],
+MIN(CONCAT(CONVERT(DECIMAL(16,2),CONVERT(DECIMAL(16,2),[VoltPanel])/10), 'v')) as [VoltPanelMin]
 FROM [ARIX_InfoHardware] WHERE (IdArix = @SixId or @SixId = 0)
 and  Fecha between @Finicial and @Ffinal
 ">

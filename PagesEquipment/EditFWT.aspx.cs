@@ -2064,6 +2064,13 @@ namespace SistemaGestionRedes
                         GVEquiposRemotos.DataBind();
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Si el ARIX cuenta con más de 4.0v en el supercapacitor, se inicia la actualización.', 'Activar actualización ARIX');", true);
                     }
+                    else if (TypeOfDevice.IsSix(serialDevRT))
+                    {
+                        dataBD.ActivarFirmwareUpgradeFWT_To_DEVRT(serialDevRT);
+                        GVEquiposRemotos.DataBind();
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContent('info','Pronto se inicia la actualización.', 'Activar actualización SIX');", true);
+
+                    }
                 }
             }
             if (e.CommandName.Equals("Cancelar"))
@@ -2130,6 +2137,7 @@ namespace SistemaGestionRedes
                 if (fwt != null)
                 {
                     MostrarEstadoActualizacionFirmwareDevices(fwt.EstadoActFwARIX, fwt.ContaActFwARIX, fwt.Serial);
+                    MostrarEstadoActualizacionFirmwareDevicesSix(fwt.EstadoActFwSIX, fwt.ContaActFwSIX, fwt.Serial);
                 }
             }
         }
@@ -2209,10 +2217,11 @@ namespace SistemaGestionRedes
                     double porcActFware;
                     ///Instancia capa datos COSOFT
                     var accesoDatosdatos = new AccesoDatos();
-                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT_SIX(serial, 4);
+                    short maxContador = accesoDatosdatos.GetMaxContadorActualizacionFwDEVRT_SIX(serial, 3);
                     porcActFware = ((contadorActFW / maxContador) * 100);
                     lblPorcentajeActFirmwareDevSix.Text = porcActFware.ToString("F") + " % ";
                     lblPorcentajeActFirmwareDevSix.Visible = true;
+
                     if ((porcActFware >= 0) && (porcActFware <= 100)) //ProgressBar
                     {
                         ImgPorcActFirmwareDevSix.Width = Unit.Percentage(porcActFware);
@@ -2249,7 +2258,8 @@ namespace SistemaGestionRedes
                 FWT fwt = bData.FWTs.SingleOrDefault(f => f.Serial == lblSerial.Text);
                 if (fwt != null)
                 {
-                    MostrarEstadoActualizacionFirmwareDevicesFci(fwt.EstadoActFwFCI, fwt.ContaActFwFCI, fwt.Serial);
+                    //MostrarEstadoActualizacionFirmwareDevicesFci(fwt.EstadoActFwFCI, fwt.ContaActFwFCI, fwt.Serial);
+                    MostrarEstadoActualizacionFirmwareDevicesSix(fwt.EstadoActFwSIX, fwt.ContaActFwSIX, fwt.Serial);
                 }
             }
         }
