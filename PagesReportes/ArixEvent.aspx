@@ -240,7 +240,8 @@ ARIXs a on (alog.IdArix = a.Id) inner join
 FWTs f on (f.Id = a.FWTId)
 WHERE 
 ((@idAlarma is null) or (te.Codigo = @idAlarma) ) and
-(alog.Fecha between @Finicial and @Ffinal) 
+(alog.Fecha between @Finicial and @Ffinal) and
+alog.Codigo != 171 and alog.Codigo != 43
 ORDER BY alog.Fecha DESC">
                 <SelectParameters>
                     <asp:Parameter Name="Finicial" />
@@ -260,6 +261,7 @@ FWTs f on (f.Id = a.FWTId)
  AND ((@idAlarma is null) or (te.Codigo = @idAlarma) )
   AND ((@idfwt is null) or (f.Id = @idfwt) )
 AND ((@idequipo is null) or (a.Id in (select GUI_IDS_Equipos_Reportes.Col_Id from GUI_IDS_Equipos_Reportes where UserName = @usuario)) )
+and alog.Codigo != 171 and alog.Codigo != 43
 ORDER BY alog.Fecha DESC"
                 CancelSelectOnNullParameter="False">
                 <SelectParameters>
