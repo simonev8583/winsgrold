@@ -154,7 +154,7 @@ namespace SistemaGestionRedes.PagesReportes
                 chartCorriente.Series["SIX_Corrientes"].YValueMembers = "VoltPanel";
                 chartCorriente.Series["SIX_Corrientes"].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
                 chartCorriente.Series["SIX_Corrientes"].Legend = "EquipoIndividual";
-                chartCorriente.Series["SIX_Corrientes"].LegendText = "SIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
+                chartCorriente.Series["SIX_Corrientes"].LegendText = "ARIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
                 chartCorriente.DataBind();
             }
             else
@@ -186,7 +186,7 @@ namespace SistemaGestionRedes.PagesReportes
                 chartCorriente.Series["SIX_Corrientes"].YValueMembers = "ValorCorriente";
                 chartCorriente.Series["SIX_Corrientes"].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
                 chartCorriente.Series["SIX_Corrientes"].Legend = "EquipoIndividual";
-                chartCorriente.Series["SIX_Corrientes"].LegendText = "SIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
+                chartCorriente.Series["SIX_Corrientes"].LegendText = "ARIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
                 chartCorriente.DataBind();
             }
             else
@@ -218,7 +218,7 @@ namespace SistemaGestionRedes.PagesReportes
                 chartCorriente.Series["SIX_Corrientes"].YValueMembers = "ValorCorriente";
                 chartCorriente.Series["SIX_Corrientes"].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
                 chartCorriente.Series["SIX_Corrientes"].Legend = "EquipoIndividual";
-                chartCorriente.Series["SIX_Corrientes"].LegendText = "SIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
+                chartCorriente.Series["SIX_Corrientes"].LegendText = "ARIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
                 chartCorriente.DataBind();
             }
             else
@@ -250,7 +250,7 @@ namespace SistemaGestionRedes.PagesReportes
                 chartCorriente.Series["SIX_Corrientes"].YValueMembers = "ValorCorriente";
                 chartCorriente.Series["SIX_Corrientes"].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
                 chartCorriente.Series["SIX_Corrientes"].Legend = "EquipoIndividual";
-                chartCorriente.Series["SIX_Corrientes"].LegendText = "SIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
+                chartCorriente.Series["SIX_Corrientes"].LegendText = "ARIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
                 chartCorriente.DataBind();
             }
             else
@@ -282,7 +282,7 @@ namespace SistemaGestionRedes.PagesReportes
                 chartCorriente.Series["SIX_Corrientes"].YValueMembers = "ValorCorriente";
                 chartCorriente.Series["SIX_Corrientes"].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
                 chartCorriente.Series["SIX_Corrientes"].Legend = "EquipoIndividual";
-                chartCorriente.Series["SIX_Corrientes"].LegendText = "SIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
+                chartCorriente.Series["SIX_Corrientes"].LegendText = "ARIX " + LstBoxSixs.Items[LstBoxSixs.GetSelectedIndices()[0]].Text;
                 chartCorriente.DataBind();
             }
             else
@@ -361,7 +361,7 @@ namespace SistemaGestionRedes.PagesReportes
             chartObj.Series[nmSerie].XValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.DateTime;
             chartObj.Series[nmSerie].YValueType = System.Web.UI.DataVisualization.Charting.ChartValueType.Int32;
             chartObj.Series[nmSerie].Legend = "EquipoIndividual";
-            chartObj.Series[nmSerie].LegendText = "SIX " + serialSIX;
+            chartObj.Series[nmSerie].LegendText = "ARIX " + serialSIX;
 
             List<GenericaDecimalDateTime> puntosBD = AccesoDatosEFGUI.GetPuntosLogCorrienteSIX(sixId, finicial, ffinal);
             if (puntosBD.Count > 0)

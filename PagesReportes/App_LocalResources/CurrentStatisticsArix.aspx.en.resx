@@ -127,10 +127,10 @@
     <value>There was an error while processing the information in DB</value>
   </data>
   <data name="TextMsgGraficaPara2o3SIX" xml:space="preserve">
-    <value>Shows graphic information for only 2 or 3 SIXs</value>
+    <value>Shows graphic information for only 2 or 3 ARIXs</value>
   </data>
   <data name="TextMsgGraficaParaUnSIX" xml:space="preserve">
-    <value>Shows the chart only for one SIX</value>
+    <value>Shows the chart only for one ARIX</value>
   </data>
   <data name="TextTittleAxisX" xml:space="preserve">
     <value>Date-Time</value>
@@ -145,12 +145,12 @@
     <value>Devices</value>
   </data>
   <data name="TextTittleReporte" xml:space="preserve">
-    <value>Report: SIX Currents Log</value>
+    <value>Report: ARIX Currents Log</value>
   </data>
   <data name="TextToolTipGrafComparativa" xml:space="preserve">
-    <value>Shows a comparative chart of current-time for 2 or 3 SIXs</value>
+    <value>Shows a comparative chart of current-time for 2 or 3 ARIXs</value>
   </data>
   <data name="TextToolTipGraficarUnSIX" xml:space="preserve">
-    <value>Shows a graph of current-time for a SIX</value>
+    <value>Shows a graph of current-time for a ARIX</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CurrentStatisticsSix.aspx.cs" Inherits="SistemaGestionRedes.PagesReportes.CurrentStatisticsSix" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CurrentStatisticsArix.aspx.cs" Inherits="SistemaGestionRedes.PagesReportes.CurrentStatisticsArix" %>
 <%@ Register assembly="RJS.Web.WebControl.PopCalendar.Net.2010" namespace="RJS.Web.WebControl" tagprefix="rjs" %>
 <%@ Register assembly="ExportToExcel" namespace="KrishLabs.Web.Controls" tagprefix="RK" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
