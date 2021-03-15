@@ -100,6 +100,7 @@
                                         <asp:ListItem Value="0" Text="<%$ Resources:TextoModoOperacion_Reconectador %>"></asp:ListItem>
                                         <asp:ListItem Value="1" disabled="disabled" Text="<%$ Resources:TextoModoOperacion_Seccionalizador %>"></asp:ListItem>
                                         <asp:ListItem Value="2" Text="<%$ Resources:TextoModoOperacion_SinReconexion %>"></asp:ListItem>
+                                        <%--<asp:ListItem Value="3" Text="Mantenimiento"></asp:ListItem>--%>
                                     </asp:ListBox>
                                 </td>
 
