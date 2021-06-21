@@ -780,30 +780,29 @@
   <data name="TextToolTipReinicioArix" xml:space="preserve">
     <value>Reinicio del ARIX</value>
   </data>
-<data name="TextAskClockArixRt" xml:space="preserve">
+  <data name="TextAskClockArixRt" xml:space="preserve">
     <value>Preguntar reloj</value>
   </data>
-<data name="TextToolTipAskClockArix" xml:space="preserve">
+  <data name="TextToolTipAskClockArix" xml:space="preserve">
     <value>Hora actual del ARIX</value>
   </data>
-<data name="TextHeaderAskClock" xml:space="preserve">
+  <data name="TextHeaderAskClock" xml:space="preserve">
     <value>Consulta hora </value>
   </data>
-
-<data name="TextUpdClockArixRt" xml:space="preserve">
+  <data name="TextUpdClockArixRt" xml:space="preserve">
     <value>Actualizar reloj</value>
   </data>
-<data name="TextToolTipUpdClockArix" xml:space="preserve">
+  <data name="TextToolTipUpdClockArix" xml:space="preserve">
     <value>Actualizar hora</value>
   </data>
-<data name="TextHeaderUpdClock" xml:space="preserve">
+  <data name="TextHeaderUpdClock" xml:space="preserve">
     <value>Actualizar hora</value>
   </data>
   <data name="TextIdArixCommand" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="TextSerialArixCommand" xml:space="preserve">
-    <value></value>
+    <value />
   </data>
   <data name="TextHeaderModeOperation" xml:space="preserve">
     <value>Modo operación</value>
@@ -813,5 +812,14 @@
   </data>
   <data name="TextModeOperation" xml:space="preserve">
     <value>Modo operación</value>
+  </data>
+  <data name="TextHeaderEventArix" xml:space="preserve">
+    <value>Limpiar eventos ARIX</value>
+  </data>
+  <data name="TextHeaderEventArixFwt" xml:space="preserve">
+    <value>Limpiar eventos ARIX - FWT</value>
+  </data>
+  <data name="TextHeaderEventFwt" xml:space="preserve">
+    <value>Limpiar eventos FWT</value>
   </data>
 </root>

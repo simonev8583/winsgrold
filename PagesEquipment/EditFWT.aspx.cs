@@ -414,6 +414,27 @@ namespace SistemaGestionRedes
                                     exito = true;
                                 }
                                 break;
+                            case ComandosUsuario.ClearArixEventsFromArix:
+                                var respuestaClearEventsArix = msgRespuesta.Respuesta;
+                                if (respuestaClearEventsArix == RespuestasSvrCom.OK)
+                                {
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.ClearArixEventsFromFwt:
+                                var respuestaClearEventsFwt = msgRespuesta.Respuesta;
+                                if (respuestaClearEventsFwt == RespuestasSvrCom.OK)
+                                {
+                                    exito = true;
+                                }
+                                break;
+                            case ComandosUsuario.ClearArixEventsFromArixFwt:
+                                var respuestaClearFwtArix = msgRespuesta.Respuesta;
+                                if (respuestaClearFwtArix == RespuestasSvrCom.OK)
+                                {
+                                    exito = true;
+                                }
+                                break;
 
                         } //end of switch
 
@@ -2389,6 +2410,29 @@ namespace SistemaGestionRedes
                 btnUpdMOpe.CommandArgument = idArix;
                 btnUpdMOpe.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
 
+                Button bntObjClearArixEvents = (Button)e.Row.FindControl("btnClearEventsArix");
+                Button bntObjClearArix = (Button)e.Row.FindControl("btnClearEventsArix");
+                bntObjClearArix.Text = "Limpiar";
+                bntObjClearArix.CommandArgument = idArix;
+                bntObjClearArix.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjClearArixEvents.Visible = true;
+
+                Button bntObjClearFwtEvents = (Button)e.Row.FindControl("btnClearEventsFwt");
+                Button bntObjClearFwt = (Button)e.Row.FindControl("btnClearEventsFwt");
+                bntObjClearFwt.Text = "Limpiar";
+                bntObjClearFwt.CommandArgument = idArix;
+                bntObjClearFwt.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjClearFwtEvents.Visible = true;
+
+                Button bntObjClearArixFwtEvents = (Button)e.Row.FindControl("btnClearEventsArixFwt");
+                Button bntObjClearArixFwt = (Button)e.Row.FindControl("btnClearEventsArixFwt");
+                bntObjClearArixFwt.Text = "Limpiar";
+                bntObjClearArixFwt.CommandArgument = idArix;
+                bntObjClearArixFwt.Enabled = UtilitariosWebGUI.HasAuthorization(OperacionGenerica.Update, User);
+                bntObjClearArixFwtEvents.Visible = true;
+
+
+
                 LabelApertura.Text = "";
                 LabelCerrado.Text = "";
             }
@@ -2435,6 +2479,23 @@ namespace SistemaGestionRedes
             {
                 int idArix = int.Parse(e.CommandArgument.ToString());
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("chooseOperationModeArix({0})", idArix), true);
+            }
+            else if (e.CommandName.Equals("EVENTOS ARIX"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, e.CommandName), true);
+            }
+
+            else if (e.CommandName.Equals("EVENTOS FWT"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, e.CommandName), true);
+            }
+
+            else if (e.CommandName.Equals("EVENTOS ARIX FWT"))
+            {
+                int idArix = int.Parse(e.CommandArgument.ToString());
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", string.Format("validateSerialArix({0},'{1}'); ", idArix, e.CommandName), true);
             }
         }
 
@@ -2532,6 +2593,15 @@ namespace SistemaGestionRedes
                         break;
                     case "MODO MANTENIMIENTO":
                         CommandCheckModeMaintenance(idArix); 
+                        break;
+                    case "EVENTOS ARIX": 
+                        CommandClearArixEvents(idArix);
+                        break;
+                    case "EVENTOS FWT": 
+                        CommandClearFwtEvents(idArix);
+                        break;
+                    case "EVENTOS ARIX FWT":
+                        CommandClearArixFwtEvents(idArix);
                         break;
                 }
              }
@@ -2702,6 +2772,45 @@ namespace SistemaGestionRedes
             }
         }
 
-#endregion
+        private void CommandClearArixEvents(int idArix)
+        {
+            bool isClear = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ClearArixEventsFromArix, null, idArix);
+            if (isClear)
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Se limpiaron los eventos del ARIX en el ARIX', 'success');", true);
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Ocurrió un problema limpiando los eventos en el ARIX.', 'warning');", true);
+            }
+        }
+
+        private void CommandClearFwtEvents(int idArix)
+        {
+            bool isClear = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ClearArixEventsFromFwt, null, idArix);
+            if (isClear)
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Se limpiaron los eventos del ARIX en el FWT', 'success');", true);
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Ocurrió un problema limpiando los eventos en el FWT.', 'warning');", true);
+            }
+        }
+
+        private void CommandClearArixFwtEvents(int idArix)
+        {
+            bool isClear = RealizarComunicacionMessageQueueOnline(ComandosUsuario.ClearArixEventsFromArixFwt, null, idArix);
+            if (isClear)
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", $"sweetAlert('Se limpiaron los eventos del ARIX en el FWT y ARIX', 'success');", true);
+            }
+            else
+            {
+                this.ClientScript.RegisterStartupScript(this.GetType(), "Popup", "sweetAlert('Ocurrió un problema limpiando los eventos en el FWT y ARIX.', 'warning');", true);
+            }
+        }
+
+        #endregion
     }
 }

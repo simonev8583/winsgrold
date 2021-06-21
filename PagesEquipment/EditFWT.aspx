@@ -485,6 +485,27 @@
                                                 CommandName="MODO OPERACION" CssClass="TextBoton" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderEventArix%>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnClearEventsArix" Text="" ToolTip="Limpiar"
+                                                        CommandName="EVENTOS ARIX" CssClass="TextBoton" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderEventFwt%>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnClearEventsFwt" Text="" ToolTip="Limpiar"
+                                                        CommandName="EVENTOS FWT" CssClass="TextBoton" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    
+                                    <asp:TemplateField HeaderText="<%$ Resources:TextHeaderEventArixFwt%>">
+                                        <ItemTemplate>
+                                            <asp:Button runat="server" ID="btnClearEventsArixFwt" Text="" ToolTip="Limpiar"
+                                                        CommandName="EVENTOS ARIX FWT" CssClass="TextBoton" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                                 <FooterStyle BackColor="#0b304f" />
                                 <HeaderStyle BackColor="#0b304f" Font-Bold="True" ForeColor="White" />

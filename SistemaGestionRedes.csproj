@@ -74,13 +74,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ADF.Comunicaciones, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SicProFWTVS2015\ADF.Comunicaciones\bin\Debug\ADF.Comunicaciones.dll</HintPath>
-    </Reference>
     <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Celsa.ConexionMensajeria, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Celsa.ConexionMensajeria.dll</HintPath>
     </Reference>
     <Reference Include="ExportToExcel, Version=1.0.4107.15628, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1090,9 +1090,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Users\dvilla\Desktop\WinScadaVS2015\Celsa.ConexionMensajeria\Celsa.ConexionMensajeria.csproj">
-      <Project>{2e772fe7-83b9-4963-afd5-0ad4d27f5b44}</Project>
-      <Name>Celsa.ConexionMensajeria</Name>
+    <ProjectReference Include="..\..\SicPro Asdu desde 1\DiagnosticsFWTApp\ADF.Comunicaciones\ADF.Comunicaciones.csproj">
+      <Project>{166a6cdb-b025-4ba7-a9fe-725b3bcf0069}</Project>
+      <Name>ADF.Comunicaciones</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
